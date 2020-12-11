@@ -74,10 +74,7 @@ class ColorModule(object):
         NOTNEGATIVE = "\x1B[27m"
         TOBRIGHT = "\x1B[1m"
         NOBRIGHT = "\x1B[2m"
-
-        def CLEARSCREEN():
-            NewLifeUtils.Libs.os.system("cls")
-            return ""
+        CLEARSCREEN = "\x1Bc"
 
         def RANDOMRGB(mode="Color"):
             if mode not in ["Color", "gray"]:
@@ -541,8 +538,7 @@ class TableBuildModule(object):
 
         return f'\n{self.String.screate(title+" IN DEV", round(sum(sizes)/2), "l")}\n{result}\n'
 
-        
-if __name__ == "__main__":
+def testNlu():
     print('succeful start')
     c = ColorModule()
     l = LoggerModule(c)
@@ -551,7 +547,6 @@ if __name__ == "__main__":
     t = TableBuildModule(s, c)
     table = t.createTable(2,[30,60],['Some number','Some text','1',f'{c.FGC.YELLOW}colorful','355214364351',f'{c.BGC.BLUE}more colorful'],header = True)
     print(table)
-    print("\x1B[1;1x")#for test
     e.except_print(Exception('oh no'),'wrn',False)
     l.log(f"This is a log")
     l.log(f"This is a log with custom tag", "MyTag1")
@@ -562,4 +557,10 @@ if __name__ == "__main__":
     l.err(f"This is a error")
     l.err(f"This is a error with custom tag", "MyTag4")
     print('succeful end')
+if __name__ == "__main__":
+    print("TEST \x1B TEST" )
+    os.system('')
+    print("TEST \x1B[1m TEST" )
+    
+    
     
