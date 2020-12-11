@@ -67,7 +67,8 @@ class ColorModule(object):
 
     class ACC:
         AFTERCLEAN = "\x1B[K"
-        RESET = "\x1B[0m"
+        OLDRESET = "\x1B[0m"  
+        RESET = "\x1B[0m" + "\x1B[x" + "\x1B[K"
         UNDERLINE = "\x1B[4m"
         SWAP = "\x1B[7m"
         NOTNEGATIVE = "\x1B[27m"
@@ -133,9 +134,9 @@ class ColorModule(object):
 
 class LoggerModule(object):
     # Init logger
-    def __init__(self, colorModule = None):
-        if type(colorModule) == ColorModule:
-            self.Color = colorModule
+    def __init__(self, Color = None):
+        if type(Color) == ColorModule:
+            self.Color = Color
         else:
             self.Color = ColorModule()
             
@@ -315,15 +316,15 @@ class StringUtilModule(object):
 
 
 class ExceptModule(object):
-    def __init__(self, logger = None, string = None):
-        if type(logger) == LoggerModule:
-            self.logger = logger
+    def __init__(self, Logger = None, String = None):
+        if type(Logger) == LoggerModule:
+            self.Logger = Logger
         else:
-            self.logger = LoggerModule()
-        if type(string) == StringUtilModule:
-            self.string = string
+            self.Logger = LoggerModule()
+        if type(String) == StringUtilModule:
+            self.String = String
         else:
-            self.string = StringUtilModule()
+            self.String = StringUtilModule()
             
     def except_print(self, exception, exceptionType="err", tb=True):
         errorText = "\n-------------- {ExceptionTitle} --------------------\n"
@@ -341,45 +342,216 @@ class ExceptModule(object):
         errorText += "\n-------------- {ExceptionTitle} --------------------\n"
 
         if exceptionType == "attention":
-            self.logger.log(
+            self.Logger.log(
                 errorText.replace(
-                    "{ExceptionTitle}", self.string.screate("Attention!", 20)
+                    "{ExceptionTitle}", self.String.screate("Attention!", 20)
                 )
             )
         if exceptionType == "wrn":
-            self.logger.wrn(
+            self.Logger.wrn(
                 errorText.replace(
-                    "{ExceptionTitle}", self.string.screate("Warning!", 20)
+                    "{ExceptionTitle}", self.String.screate("Warning!", 20)
                 )
             )
         elif exceptionType == "err":
-            self.logger.err(
+            self.Logger.err(
                 errorText.replace(
-                    "{ExceptionTitle}", self.string.screate("Error!", 20)
+                    "{ExceptionTitle}", self.String.screate("Error!", 20)
                 )
             )
         elif exceptionType == "fatal":
-            self.logger.err(
+            self.Logger.err(
                 errorText.replace(
-                    "{ExceptionTitle}", self.string.screate("Fatal Error!", 20)
+                    "{ExceptionTitle}", self.String.screate("Fatal Error!", 20)
                 )
             )
             exit(-1)
         else:
-            self.logger.err(
+            self.Logger.err(
                 errorText.replace(
                     "{ExceptionTitle}",
-                    self.string.screate("Something wrong...", 20),
+                    self.String.screate("Something wrong...", 20),
                 )
             )
 
+class TableBuildModule(object):
+    def __init__(self, String = None, Color = None, default = 'double'):
+        if type(Color) == ColorModule:
+            self.Color = Color
+        else:
+            self.Color = ColorModule()
+            
+        if type(String) == StringUtilModule:
+            self.String = String
+        else:
+            self.String = StringUtilModule()
+            
+        self.tableManagerOneLine = "┌┬┐│─├┼┤└┴┘"
+        self.tableManagerTwoLine = "╔╦╗║═╠╬╣╚╩╝"
+        self.tableManagerDoubleH = "╓╥╖║─╟╫╢╙╨╜"
+        self.tableManagerDoubleV = "╒╤╕│═╞╪╡╘╧╛"
         
+        if default == 'double':
+            self.tableManagerCurrent = "╔╦╗║═╠╬╣╚╩╝"
+        elif default == 'single':
+            self.tableManagerCurrent = "┌┬┐│─├┼┤└┴┘"
+        elif default == 'vertical':
+            self.tableManagerCurrent = "╓╥╖║─╟╫╢╙╨╜"
+        elif default == 'horisontal':
+            self.tableManagerCurrent = "╒╤╕│═╞╪╡╘╧╛"
+        elif default == 'simple':
+            self.tableManagerCurrent = "+++|-++++++"
+        else:
+            self.tableManagerCurrent = self.tableManagerTwoLine
+    def createTable(
+        self,
+        rowCount,
+        sizes,
+        data,
+        title="TABLE",
+        header=True,
+        tableElement="",
+        color='',
+        align="l",
+    ):
+        if color == '':
+            color = self.Color.FGC.CYAN
+        color = self.Color.ACC.RESET + color
+        if align == "r":
+            align = "l"
+        else:
+            align = "r"
+        # ╔  ╦  ╗  ║  ═  ╠  ╬  ╣  ╚  ╩  ╝
+        # 0  1  2  3  4  5  6  7  8  9  10
+
+        if tableElement == "":
+            tableElement = self.tableManagerCurrent
+
+        result = ""
+
+        # Generate Header-line
+        result += f"{color}{tableElement[0]}"
+
+        for sizen in range(rowCount):
+            result += f"{color}{tableElement[4]*sizes[sizen]}{color}{tableElement[1]}"
+        result = result[:-1] + f"{color}{tableElement[2]}"
+
+        # Generate Header
+        if header:
+            result += f"\n{color}{tableElement[3]}"
+            for num in range(rowCount):
+                result += f"{self.String.screate(data[num], sizes[num], align)}{color}{tableElement[3]}"
+            result += f"\n{color}{tableElement[5]}"
+            for headerPieceSize in sizes:
+                result += (
+                    f"{color}{tableElement[4]*headerPieceSize}{color}{tableElement[6]}"
+                )
+            result = result[:-1] + f"{color}{tableElement[7]}"
+            data = data[rowCount:]
+
+        # Generate DataSection
+        for lineNum in range(0, len(data), rowCount):
+            result += f"\n{color}{tableElement[3]}"
+            for rowShift in range(0, rowCount):
+                try:
+                    result += f"{self.String.screate(data[lineNum+rowShift], sizes[rowShift], align)}{color}{tableElement[3]}"
+                except:
+                    result += f'{self.String.screate("", sizes[rowShift], align)}{color}{tableElement[3]}'
+        result += f"\n{color}{tableElement[8]}"
+
+        # Generate Footer-line
+        for sizen in range(rowCount):
+            result += f"{color}{tableElement[4]*sizes[sizen]}{color}{tableElement[9]}"
+        result = result[:-1] + f"{color}{tableElement[10]}{self.Color.ACC.RESET}"
+
+        return f'\n{self.String.screate(title, round(sum(sizes)/2), "l")}\n{result}\n'
+
+    def createMultilineTable(
+        self,
+        rowCount,
+        sizes,
+        data,
+        title="TABLE",
+        tableElement="",
+        color='',
+        align="l",
+    ):
+        if color == '':
+            color = self.Color.FGC.CYAN
+        if align == "r":
+            align = "l"
+        else:
+            align = "r"
+        # ╔  ╦  ╗  ║  ═  ╠  ╬  ╣  ╚  ╩  ╝
+        # 0  1  2  3  4  5  6  7  8  9  10
+        # +  +  +  |  -  +  +  +  +  +  +
+        # 0  1  2  3  4  5  6  7  8  9  10; , tableElement = '+++|-++++++'
+        if tableElement == "":
+            tableElement = self.tableManagerCurrent
+        for i in range(len(data)):
+            data[i] = self.stringManagerSlice(data[i], sizes[i % len(sizes)])
+        result = ""
+        for line in range(0, len(data), rowCount):
+            maxtabsize = 0
+            for row in range(0, rowCount):
+                if len(data[line + row]) > maxtabsize:
+                    maxtabsize = len(data[line + row])
+            for row in range(0, rowCount):
+                if len(data[line + row]) < maxtabsize:
+                    while len(data[line + row]) < maxtabsize:
+                        data[line + row].append("")
+
+        # Generate Header-line
+        result += f"{color}{tableElement[0]}"
+        for headerPieceSize in sizes:
+            result += (
+                f"{color}{tableElement[4]*headerPieceSize}{color}{tableElement[1]}"
+            )
+        result = result[:-1] + f"{color}{tableElement[2]}\n"
+
+        # Generate DataSection
+        for line in range(0, len(data), rowCount):
+            block = []
+            for row in range(0, rowCount):
+                for blockLineNum in range(len(data[line + row])):
+
+                    try:
+                        block[
+                            blockLineNum
+                        ] += f"{tableElement[3]}{self.String.screate(data[line+row][blockLineNum],sizes[row], align)}"
+                    except:
+                        block.append(
+                            f"{tableElement[3]}{self.String.screate(data[line+row][blockLineNum],sizes[row], align)}"
+                        )
+            for blockLineNum in range(len(data[line + row])):
+                block[blockLineNum] += tableElement[3]
+            for line in block:
+                result += f"{line}\n"
+
+            result += f"{tableElement[5]}"
+            for headerPieceSize in sizes:
+                result += f"{tableElement[4]*headerPieceSize}{tableElement[6]}"
+            result = result[:-1] + f"{tableElement[7]}\n"
+
+        # Generate Footer-line
+        result = result[: -1 * (4 + sum(sizes))] + tableElement[8]
+        for headerPieceSize in sizes:
+            result += f"{tableElement[4]*headerPieceSize}{tableElement[9]}"
+        result = result[:-1] + f"{tableElement[10]}{self.Color.ACC.RESET}"
+
+        return f'\n{self.String.screate(title+" IN DEV", round(sum(sizes)/2), "l")}\n{result}\n'
+
         
 if __name__ == "__main__":
     print('succeful start')
     c = ColorModule()
     l = LoggerModule(c)
-    e = ExceptModule(l)
+    s = StringUtilModule()
+    e = ExceptModule(l, s)
+    t = TableBuildModule(s, c)
+    table = t.createTable(2,[30,60],['Some number','Some text','1',f'{c.FGC.YELLOW}colorful','355214364351',f'{c.BGC.BLUE}more colorful'],header = True)
+    print(table)
+    print("\x1B[1;1x")#for test
     e.except_print(Exception('oh no'),'wrn',False)
     l.log(f"This is a log")
     l.log(f"This is a log with custom tag", "MyTag1")
