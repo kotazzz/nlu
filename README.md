@@ -1,14 +1,11 @@
-# NewLifeUtils
-## О проекте
+#NewLifeUtils
+##About the project
+In fact, there is active development, repeated rewriting of the code. All actions are published on github for orderly storage of changes and fixing all my actions. I don't encourage you to use my code. My goal is to learn how to write programs beautifully and learn how to use github. If you have any ideas, criticism, or suggestions , I'm happy to listen
 
-На самом деле идет активная разработка, многократное переписывание кода. Все действия публикуются на гитхаб для упорядоченного хранения изменений и фиксации всех моих действий. Я не призываю как то использовать мой код. Моя цель - научиться красиво писать программы и научиться использовать гитхаб. Если есть идеи, критика и предложения - я рад вас выслушать
+##Project idea.
+Simplify the development of some elements of more significant and large projects with ready-made features. I'm not ready to use external Python modules, besides, it's better to write something yourself and experiment, gain experience. In the future, I will not publish such children's content on such a large platform. I'm just learning
 
-## Идея проекта.
+##Plans and current changes
+In fact, there are quite a lot of them, but they are constantly changing, I just don't have the strength to constantly change something in a bunch of files at the same time
 
-Упростить разработку некоторых элементов более значимых и крупных проектов за счет готовых функций. Я не готов использовать внешние модули Python, к тому же лучше самому что то написать и поэкспериментировать, набраться опыта. В будущем я не буду публиковать такой детский контент на такой крупной платформе. Я пока всего лишь учусь
-
-## Планы и текущие изменения
-
-На самом деле их достаточно много, но они постоянно меняются, мне просто не хватит сил постоянно что то менять в куче файлов одновременно
-
-**Использован переводчик**
+***Translator used**
