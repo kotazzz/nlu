@@ -1,5 +1,3 @@
-
-
 name = "NewLifeUtils"
 version = "v5.0.1 dev"
 description = """
@@ -11,15 +9,19 @@ try:
     import datetime
     import re
     import traceback
+    import time
 except ModuleNotFoundError as e:
-    print(f'Unable to import dependences: {e}')
+    print(f"Unable to import dependences: {e}")
     exit(-1)
 except Exception as e:
-    print(e) 
+    print(e)
     exit(-1)
+
+
 class ColorModule(object):
     def __init__(self):
-        os.system('')
+        os.system("")
+
     class BGC:
         BLACK = "\x1B[40m"
         RED = "\x1B[41m"
@@ -58,7 +60,7 @@ class ColorModule(object):
 
     class ACC:
         AFTERCLEAN = "\x1B[K"
-        OLDRESET = "\x1B[0m"  
+        OLDRESET = "\x1B[0m"
         RESET = "\x1B[0m" + "\x1B[x" + "\x1B[K"
         UNDERLINE = "\x1B[4m"
         SWAP = "\x1B[7m"
@@ -120,9 +122,11 @@ class ColorModule(object):
         ERASELINE = "\x1B[2K"
         REWRITELINE = "\x1B[1G"
 
+
 class StringUtilModule(object):
     def __init__(self):
         pass
+
     def screate(self, string, size=10, insert="r"):
         string = string.encode("unicode_escape").decode()
         matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
@@ -134,8 +138,10 @@ class StringUtilModule(object):
             return str(string.encode().decode("unicode_escape")) + spaces
         if insert == "l":
             return spaces + str(string.encode().decode("unicode_escape"))
+
     def slice(self, text, chunkSize):
         return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+
     def parseArgs(self, readed):
         # [\'][a-zA-ZА-Яа-я\d\s[\]{}()\\\.\":;,-]*[\']|\b[a-zA-Z\d]+
         # [\"\'][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,-]*[\"\']|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,-]+
@@ -163,12 +169,12 @@ class StringUtilModule(object):
 
 class LoggerModule(object):
     # Init logger
-    def __init__(self, Color = None):
+    def __init__(self, Color=None):
         if type(Color) == ColorModule:
             self.Color = Color
         else:
             self.Color = ColorModule()
-            
+
         self.errFormat = "{white}[{time}] {red}{tag}{empty}: {red}{message}{reset}"
         self.logFormat = (
             "{white}[{time}] {green}{tag}{empty}{reset}: {green}{message}{reset}"
@@ -202,9 +208,8 @@ class LoggerModule(object):
             "white": self.Color.ACC.CUSTOMRGB(247, 247, 247),
             "reset": self.Color.ACC.RESET + self.Color.ACC.AFTERCLEAN,
         }
-    def formatter(
-        self, pattern, message, tag, tag_max, date, time, additional=None
-    ):
+
+    def formatter(self, pattern, message, tag, tag_max, date, time, additional=None):
         if additional is None:
             additional = {"void": ""}
 
@@ -303,8 +308,9 @@ class LoggerModule(object):
         print(self.Color.MCC.PREVIOUSLINE + s)
         return read
 
+
 class ExceptModule(object):
-    def __init__(self, Logger = None, String = None):
+    def __init__(self, Logger=None, String=None):
         if type(Logger) == LoggerModule:
             self.Logger = Logger
         else:
@@ -313,18 +319,18 @@ class ExceptModule(object):
             self.String = String
         else:
             self.String = StringUtilModule()
-            
+
     def except_print(self, exception, exceptionType="err", tb=True):
         errorText = "\n-------------- {ExceptionTitle} --------------------\n"
         errorText += f"Type: {type(exception).__name__}\n\n"
-        
+
         if exception.args == 0:
             errorText += f"Unknown error\n"
         else:
             errorText += f"About Error:\n\t{(chr(10)+chr(9)).join(exception.args)}\t\n"
 
         if tb:
-            
+
             errorText += f"\n{traceback.format_exc()}"
 
         errorText += "\n-------------- {ExceptionTitle} --------------------\n"
@@ -343,9 +349,7 @@ class ExceptModule(object):
             )
         elif exceptionType == "err":
             self.Logger.err(
-                errorText.replace(
-                    "{ExceptionTitle}", self.String.screate("Error!", 20)
-                )
+                errorText.replace("{ExceptionTitle}", self.String.screate("Error!", 20))
             )
         elif exceptionType == "fatal":
             self.Logger.err(
@@ -362,35 +366,37 @@ class ExceptModule(object):
                 )
             )
 
+
 class TableBuildModule(object):
-    def __init__(self, String = None, Color = None, default = 'double'):
+    def __init__(self, String=None, Color=None, default="double"):
         if type(Color) == ColorModule:
             self.Color = Color
         else:
             self.Color = ColorModule()
-            
+
         if type(String) == StringUtilModule:
             self.String = String
         else:
             self.String = StringUtilModule()
-            
+
         self.tableManagerOneLine = "┌┬┐│─├┼┤└┴┘"
         self.tableManagerTwoLine = "╔╦╗║═╠╬╣╚╩╝"
         self.tableManagerDoubleH = "╓╥╖║─╟╫╢╙╨╜"
         self.tableManagerDoubleV = "╒╤╕│═╞╪╡╘╧╛"
-        
-        if default == 'double':
+
+        if default == "double":
             self.tableManagerCurrent = "╔╦╗║═╠╬╣╚╩╝"
-        elif default == 'single':
+        elif default == "single":
             self.tableManagerCurrent = "┌┬┐│─├┼┤└┴┘"
-        elif default == 'vertical':
+        elif default == "vertical":
             self.tableManagerCurrent = "╓╥╖║─╟╫╢╙╨╜"
-        elif default == 'horisontal':
+        elif default == "horisontal":
             self.tableManagerCurrent = "╒╤╕│═╞╪╡╘╧╛"
-        elif default == 'simple':
+        elif default == "simple":
             self.tableManagerCurrent = "+++|-++++++"
         else:
             self.tableManagerCurrent = self.tableManagerTwoLine
+
     def createTable(
         self,
         rowCount,
@@ -399,10 +405,10 @@ class TableBuildModule(object):
         title="TABLE",
         header=True,
         tableElement="",
-        color='',
+        color="",
         align="l",
     ):
-        if color == '':
+        if color == "":
             color = self.Color.FGC.CYAN
         color = self.Color.ACC.RESET + color
         if align == "r":
@@ -461,10 +467,10 @@ class TableBuildModule(object):
         data,
         title="TABLE",
         tableElement="",
-        color='',
+        color="",
         align="l",
     ):
-        if color == '':
+        if color == "":
             color = self.Color.FGC.CYAN
         if align == "r":
             align = "l"
@@ -528,8 +534,8 @@ class TableBuildModule(object):
         result = result[:-1] + f"{tableElement[10]}{self.Color.ACC.RESET}"
 
         return f'\n{self.String.screate(title+" IN DEV", round(sum(sizes)/2), "l")}\n{result}\n'
-        
-        
+
+
 class CustomShellModule(object):
     class Command:
         command = "commandname"
@@ -540,19 +546,27 @@ class CustomShellModule(object):
         skipcheck = False
 
         def run(console):
-            console.Logger.log(
-                f'Command "{console.run["command"]}" executed now'
-            )
+            console.Logger.log(f'Command "{console.run["command"]}" executed now')
+
     class Task:
         def execute(console):
             console.Logger.log(f"This is a event task")
+
     class Function:
         name = "mygf"
 
         def execute(console):
             console.Logger.log(f"This is a global function")
 
-    def __init__(self, Logger = None, Except = None, String = None, Color = None, name="root", about="default console"):
+    def __init__(
+        self,
+        Logger=None,
+        Except=None,
+        String=None,
+        Color=None,
+        name="root",
+        about="default console",
+    ):
         self.runState = "init"
         if type(Logger) == LoggerModule:
             self.Logger = Logger
@@ -606,6 +620,7 @@ class CustomShellModule(object):
         aliases = [command]
         required = []
         optional = ["command"]
+
         def run(console):
             class CLR:
                 MDL = console.Color.FGC.RED
@@ -622,7 +637,9 @@ class CustomShellModule(object):
 
             helpPage = ""
             if console.paramCount == 0:
-                helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
+                helpPage += (
+                    f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
+                )
                 for command in console.registeredCommands:
                     syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
                     if command["required"] != []:
@@ -662,9 +679,7 @@ class CustomShellModule(object):
                                 + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
                                 + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
                             )
-                            console.Logger.tip(
-                                helpPage, f"{console.cmdname} HELP"
-                            )
+                            console.Logger.tip(helpPage, f"{console.cmdname} HELP")
                             finded = True
                     if finded != True:
                         console.Logger.wrn(
@@ -673,6 +688,7 @@ class CustomShellModule(object):
                         )
             else:
                 console.invalidUsage()
+
     class __hello(Command):
         command = "hello"
         description = "builtin command"
@@ -685,6 +701,7 @@ class CustomShellModule(object):
                 console.Logger.log(f"Hello, {console.parametrs[0]}")
             else:
                 console.Logger.log(f"Hello, world!")
+
     class __exit(Command):
         command = "exit"
         aliases = [command, "quit"]
@@ -695,18 +712,23 @@ class CustomShellModule(object):
 
         def run(console):
             console.runState = "quit"
+
     class __initDefaultTask(Task):
         def execute(console):
             console.Logger.log(f"Welcome to {console.cmdname}")
+
     class __exitDefaultTask(Task):
         def execute(console):
             console.Logger.log(
                 f"Exit with code: {console.runState}, run command: {console.run}"
             )
+
     def registerInitTask(self, regClass):
         self.registeredInitTask.append(regClass.execute)
+
     def registerExitTask(self, regClass):
         self.registeredExitTask.append(regClass.execute)
+
     def registerGlobalFunctions(self, regClass):
         self.registerGlobalFunctions.append(
             {
@@ -760,9 +782,7 @@ class CustomShellModule(object):
 
         while self.runState == "run":
             try:
-                _ = self.String.parseArgs(
-                    self.Logger.rea(f"{self.cmdname.title()} >")
-                )
+                _ = self.String.parseArgs(self.Logger.rea(f"{self.cmdname.title()} >"))
                 self.command = _["command"]
                 self.parametrs = _["param"]
                 self.paramCount = len(self.parametrs)
@@ -806,37 +826,38 @@ class CustomShellModule(object):
         for itask in self.registeredExitTask:
             itask(self)
 
+
 def testNlu():
     cm = ColorModule()
-    print('ColorModule created')
+    print("ColorModule created")
     sm = StringUtilModule()
-    print('StringUtilModule created')
+    print("StringUtilModule created")
     lm = LoggerModule(cm)
-    print('LoggerModule created')
+    print("LoggerModule created")
     em = ExceptModule(lm, sm)
-    print('ExceptModule created')
+    print("ExceptModule created")
     tbm = TableBuildModule(sm, cm)
-    print('TableBuildModule created')
+    print("TableBuildModule created")
     csm = CustomShellModule(None, em, sm, cm)
-    print('CustomShellModule created')
-    print('succeful!')
+    print("CustomShellModule created")
+    print("succeful!")
     status = [
-        f'Module',
-        f'{cm.FGC.GREEN}ColorModule',
-        f'{cm.FGC.GREEN}LoggerModule',
-        f'{cm.FGC.GREEN}StringUtilModule',
-        f'{cm.FGC.GREEN}ExceptModule',
-        f'{cm.FGC.GREEN}CustomShellModule',
-        f'{cm.FGC.GREEN}TableBuildModule',
-        f'{cm.FGC.RED  }UtilsModule',
-        f'{cm.FGC.RED  }FileModule',
-        f'{cm.FGC.RED  }FilelogModule',
-        f'{cm.FGC.RED  }DatabaseManageModule',
-        f'{cm.FGC.RED  }RandomModule',
+        f"Module",
+        f"{cm.FGC.GREEN}ColorModule",
+        f"{cm.FGC.GREEN}LoggerModule",
+        f"{cm.FGC.GREEN}StringUtilModule",
+        f"{cm.FGC.GREEN}ExceptModule",
+        f"{cm.FGC.GREEN}CustomShellModule",
+        f"{cm.FGC.GREEN}TableBuildModule",
+        f"{cm.FGC.RED  }UtilsModule",
+        f"{cm.FGC.RED  }FileModule",
+        f"{cm.FGC.RED  }FilelogModule",
+        f"{cm.FGC.RED  }DatabaseManageModule",
+        f"{cm.FGC.RED  }RandomModule",
     ]
-    lm.tip(tbm.createTable(1,[40],status,'Test results'))
-    
-    
-    
+    time.sleep(1 / 3)
+    lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
+
+
 if __name__ == "__main__":
     testNlu()
