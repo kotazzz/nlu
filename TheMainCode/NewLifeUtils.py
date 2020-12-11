@@ -123,9 +123,9 @@ class ColorModule(object):
         def CURSORPOSITION(x, y):
             return f"\x1B[{x};{y}H"
 
-        GOTO_FIRSTLINE = "\x1B[1G"
-        GOTO_NEXTLINE = "\x1B[E"
-        GOTO_PREVIOUSLINE = "\x1B[F"
+        FIRSTLINE = "\x1B[1G"
+        NEXTLINE = "\x1B[E"
+        PREVIOUSLINE = "\x1B[F"
         ERASELINE = "\x1B[2K"
         REWRITELINE = "\x1B[1G"
 
@@ -252,7 +252,7 @@ class LoggerModule(object):
         if message[-1] not in [" ", ">", ":"]:
             message += ": "
         print(
-            f"{self.Color_BCUSTOMRGB(0, 43, 112)}{self.Color_CUSTOMRGB(235, 54, 30)}{message}",
+            f"{self.Color.ACC.BCUSTOMRGB(0, 43, 112)}{self.Color.ACC.CUSTOMRGB(235, 54, 30)}{message}",
             end="",
         )
         read = input()
@@ -268,7 +268,7 @@ class LoggerModule(object):
             self.loggerTimeFormat,
             additional={"read": read},
         )
-        print(self.Color_MCC.GOTO_PREVIOUSLINE + s)
+        print(self.Color.MCC.PREVIOUSLINE + s)
         return read
 
 class StringUtilModule(object):
@@ -537,6 +537,283 @@ class TableBuildModule(object):
         result = result[:-1] + f"{tableElement[10]}{self.Color.ACC.RESET}"
 
         return f'\n{self.String.screate(title+" IN DEV", round(sum(sizes)/2), "l")}\n{result}\n'
+        
+        
+class CustomShellModule(object):
+    class Command:
+        command = "commandname"
+        aliases = [command, "commandalias"]
+        description = "My Super Duper Command"
+        required = ["required parametr"]
+        optional = ["optional parametr"]
+        skipcheck = False
+
+        def run(console):
+            console.Logger.log(
+                f'Command "{console.run["command"]}" executed now'
+            )
+    class Task:
+        def execute(console):
+            console.Logger.log(f"This is a event task")
+    class Function:
+        name = "mygf"
+
+        def execute(console):
+            console.Logger.log(f"This is a global function")
+
+    def __init__(self, Logger = None, Except = None, String = None, Color = None, name="root", about="default console"):
+        self.runState = "init"
+        if type(Logger) == LoggerModule:
+            self.Logger = Logger
+        else:
+            self.Logger = LoggerModule()
+        if type(Except) == ExceptModule:
+            self.Except = Except
+        else:
+            self.Except = ExceptModule()
+        if type(String) == StringUtilModule:
+            self.String = String
+        else:
+            self.String = StringUtilModule()
+        if type(Color) == ColorModule:
+            self.Color = Color
+        else:
+            self.Color = ColorModule()
+
+        self.cmdname = name
+        self.cmdabout = about
+
+        self.registeredInitTask = []
+        self.registeredCommands = []
+        self.registeredGlobalFunctions = {}
+        self.registeredExitTask = []
+        self.Logger.TagMaxLenght = len(self.cmdname) + 5
+        self.Logger.logDefaultTag = f"[L] {self.cmdname.title()}"
+        self.Logger.wrnDefaultTag = f"[W] {self.cmdname.title()}"
+        self.Logger.errDefaultTag = f"[E] {self.cmdname.title()}"
+        self.Logger.tipDefaultTag = f"[T] {self.cmdname.title()}"
+        self.Logger.reaDefaultTag = f"[R] {self.cmdname.title()}"
+        self.Logger.reaFormat = (
+            "{white}[{time}] {blue}{tag}{empty}{reset}: {cyan}{read}{reset}"
+        )
+
+        self.runState = "setup"
+
+    class __cls(Command):
+        command = "cls"
+        description = "clears display"
+        aliases = [command, "clearscreen"]
+        required = []
+        optional = []
+
+        def run(console):
+            os.system("cls")
+
+    class __help(Command):
+        command = "help"
+        description = "displays all commands in this module"
+        aliases = [command]
+        required = []
+        optional = ["command"]
+        def run(console):
+            class CLR:
+                MDL = console.Color.FGC.RED
+                MDLDSK = console.Color.FGC.BRED
+                CMD = console.Color.FGC.BLUE
+                CMDDSK = console.Color.FGC.CYAN
+                ALS = console.Color.FGC.PURPLE
+                ALSTXT = console.Color.FGC.BPURPLE
+                STTL = console.Color.FGC.GREEN
+                SCMD = console.Color.ACC.UNDERLINE + console.Color.FGC.WHITE
+                SREQ = console.Color.FGC.BGRAY
+                SOPT = console.Color.FGC.GRAY
+                R = console.Color.ACC.RESET
+
+            helpPage = ""
+            if console.paramCount == 0:
+                helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
+                for command in console.registeredCommands:
+                    syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
+                    if command["required"] != []:
+                        syntax += (
+                            f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
+                        )
+                    if command["optional"] != []:
+                        syntax += (
+                            f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
+                        )
+                    helpPage += (
+                        f'\t{CLR.CMD}{command["command"]}\n'
+                        + f'\t\t{CLR.CMDDSK}Description {CLR.R}: {CLR.CMDDSK}{command["description"]}\n'
+                        + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
+                        + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
+                    )
+                console.Logger.tip(helpPage, f"{console.cmdname} HELP")
+            elif console.paramCount == 1:
+                if console.parametrs[0] == "commands":
+                    helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
+                    for command in console.registeredCommands:
+                        helpPage += f'\t{CLR.CMD}{command["command"]}\n'
+                    console.Logger.tip(helpPage, f"{console.cmdname} HELP")
+                else:
+                    helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
+                    finded = False
+                    for command in console.registeredCommands:
+                        if command["command"] == console.parametrs[0]:
+                            syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
+                            if command["required"] != []:
+                                syntax += f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
+                            if command["optional"] != []:
+                                syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
+                            helpPage += (
+                                f'\t{CLR.CMD}{command["command"]}\n'
+                                + f'\t\t{CLR.CMDDSK}Description: {command["description"]}\n'
+                                + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
+                                + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
+                            )
+                            console.Logger.tip(
+                                helpPage, f"{console.cmdname} HELP"
+                            )
+                            finded = True
+                    if finded != True:
+                        console.Logger.wrn(
+                            f'Cannot find command "{console.parametrs[0]}"',
+                            f"{console.cmdname} HELP",
+                        )
+            else:
+                console.invalidUsage()
+    class __hello(Command):
+        command = "hello"
+        description = "builtin command"
+        aliases = [command, "hi"]
+        required = []
+        optional = ["name"]
+
+        def run(console):
+            if console.paramCount == 1:
+                console.Logger.log(f"Hello, {console.parametrs[0]}")
+            else:
+                console.Logger.log(f"Hello, world!")
+    class __exit(Command):
+        command = "exit"
+        aliases = [command, "quit"]
+        description = "Exit from ConsoleShellManager"
+        required = []
+        optional = []
+        skipcheck = False
+
+        def run(console):
+            console.runState = "quit"
+    class __initDefaultTask(Task):
+        def execute(console):
+            console.Logger.log(f"Welcome to {console.cmdname}")
+    class __exitDefaultTask(Task):
+        def execute(console):
+            console.Logger.log(
+                f"Exit with code: {console.runState}, run command: {console.run}"
+            )
+    def registerInitTask(self, regClass):
+        self.registeredInitTask.append(regClass.execute)
+    def registerExitTask(self, regClass):
+        self.registeredExitTask.append(regClass.execute)
+    def registerGlobalFunctions(self, regClass):
+        self.registerGlobalFunctions.append(
+            {
+                "name": regClass.name,
+                "execute": regClass.execute,
+            }
+        )
+
+    def registerCommand(self, regClass):
+        self.registeredCommands.append(
+            {
+                "command": regClass.command,
+                "aliases": regClass.aliases,
+                "description": regClass.description,
+                "required": regClass.required,
+                "optional": regClass.optional,
+                "skipcheck": regClass.skipcheck,
+                "run": regClass.run,
+            }
+        )
+
+    def invalidUsage(self, command):
+        class CLR:
+            SCMD = self.Color.ACC.UNDERLINE + self.Color.FGC.WHITE
+            SREQ = self.Color.FGC.BGRAY
+            SOPT = self.Color.FGC.GRAY
+            R = self.Color.ACC.RESET
+
+        syntax = ""
+        syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
+        if command["required"] != []:
+            syntax += f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
+        if command["optional"] != []:
+            syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
+        self.Logger.wrn(f"Invalid usage. Syntax: {syntax}")
+
+    def main(self):
+        self.runState = "run"
+
+        # Basic registration
+
+        self.registerCommand(self.__cls)
+        self.registerCommand(self.__help)
+        self.registerCommand(self.__hello)
+        self.registerCommand(self.__exit)
+        self.registerExitTask(self.__exitDefaultTask)
+        self.registerInitTask(self.__initDefaultTask)
+
+        for itask in self.registeredInitTask:
+            itask(self)
+
+        while self.runState == "run":
+            try:
+                _ = self.String.parseArgs(
+                    self.Logger.rea(f"{self.cmdname.title()} >")
+                )
+                self.command = _["command"]
+                self.parametrs = _["param"]
+                self.paramCount = len(self.parametrs)
+
+                if self.command == "fuck":
+                    nlu.tracebackManagerExceptionPrint(
+                        Exception(
+                            "Why you so evil?...",
+                            ":_(",
+                            "TIP: you can be beter",
+                        ),
+                        exceptionType="wrn",
+                        tb=False,
+                    )
+                elif self.command != "":
+                    for registered in self.registeredCommands:
+                        if registered["command"] == self.command:
+                            self.run = registered
+                            if (
+                                not (
+                                    self.paramCount
+                                    > (
+                                        len(self.run["required"])
+                                        + len(self.run["optional"])
+                                    )
+                                    or self.paramCount < len(self.run["required"])
+                                )
+                                or self.run["skipcheck"]
+                            ):
+                                registered["run"](self)
+                            else:
+                                self.invalidUsage(registered)
+                            self.run = None
+                            break
+                    else:
+                        self.Logger.wrn('Unknown Command, type "help"')
+
+            except Exception as e:
+                self.Except.except_print(e)
+
+        for itask in self.registeredExitTask:
+            itask(self)
 
 def testNlu():
     print('succeful start')
@@ -558,9 +835,8 @@ def testNlu():
     l.err(f"This is a error with custom tag", "MyTag4")
     print('succeful end')
 if __name__ == "__main__":
-    print("TEST \x1B TEST" )
-    os.system('')
-    print("TEST \x1B[1m TEST" )
+    console = CustomShellModule()
+    console.main()
     
     
     
