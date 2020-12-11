@@ -1,56 +1,31 @@
-# LibsManager
-# Color
-# Logger
-# RandomManager
-# TableManager
-# DatabaseManager
-# ConsoleShellManager
-# FileManager
-# StringManager
-# TracebackManager
-# FilelogManager
-# Utils
-registered_modules = {}
+# ColorModule
+# LoggerModule
+# ExceptModule
+# CustomShellModule
+# StringUtilModule
+# UtilsModule
+# FileModule
+# FilelogModule
+# TableBuildModule
+# DatabaseManageModule
+# RandomModule
 
-def getModule(name):
-    try:
-        return registered_modules[name]
-    except:
-        print('no module found')
-def registerModule(reg_class):
-    registered_modules[reg_class.name] = reg_class
-    
-    
-class Module(object):
-    name = 'Module'
-    dependences = []
-    
+
+
+
+try:
+    import os
+    import datetime
+except ModuleNotFoundError as e:
+    print(f'Unable to import dependences: {e}')
+    exit(-1)
+except Exception as e:
+    print(e) 
+    exit(-1)
+
+class ColorModule(object):
     def __init__(self):
-        print(f'ginit {self.name}')
-        
-        self.modules = {}
-        for dependence in self.dependences:
-            self.modules[dependence] = getModule(dependence)
+        os.system('')
 
-class MyModule(Module):
-    name = 'MyModule'
-    dependences = []
-    def test(self):
-        print('modulefunction')
-        
-class MyModule2(Module):
-    name = 'MyModule2'
-    dependences = ['MyModule']
-    def test2(self):
-        self.modules['MyModule'].test()
-        print('modulefunction2')
-        
-    
 if __name__ == "__main__":
-    print('hello')
-    registerModule(MyModule)
-    registerModule(MyModule2)
-    mm1 = getModule('MyModule')
-    mm2 = getModule('MyModule2')
-    print()
-    mm1.test()
+    print('succeful')
