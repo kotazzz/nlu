@@ -1,18 +1,10 @@
-# ColorModule
-# LoggerModule
-# StringUtilModule
-# ExceptModule
-# CustomShellModule
-# UtilsModule
-# FileModule
-# FilelogModule
-# TableBuildModule
-# DatabaseManageModule
-# RandomModule
+
 
 name = "NewLifeUtils"
-version = "v5.0.0 dev"
-description = "Utils for you <3"
+version = "v5.0.1 dev"
+description = """
+In fact, there is active development, repeated rewriting of the code. All actions are published on github for orderly storage of changes and fixing all my actions. I don't encourage you to use my code. My goal is to learn how to write programs beautifully and learn how to use github. If you have any ideas, criticism, or suggestions , I'm happy to listen Now this is the 5th attempt to rewrite the code beautifully, each time I change the very structure of the code. In General, I didn't really study the language features, so my code will be disgusting to a professional programmer. Maybe someday I will achieve the effect that I need
+"""
 
 try:
     import os
@@ -25,7 +17,6 @@ except ModuleNotFoundError as e:
 except Exception as e:
     print(e) 
     exit(-1)
-
 class ColorModule(object):
     def __init__(self):
         os.system('')
@@ -128,6 +119,47 @@ class ColorModule(object):
         PREVIOUSLINE = "\x1B[F"
         ERASELINE = "\x1B[2K"
         REWRITELINE = "\x1B[1G"
+
+class StringUtilModule(object):
+    def __init__(self):
+        pass
+    def screate(self, string, size=10, insert="r"):
+        string = string.encode("unicode_escape").decode()
+        matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
+        resultCSILength = 0
+        for match in matches:
+            resultCSILength += len(match)
+        spaces = " " * (size - (len(string.encode()) - resultCSILength))
+        if insert == "r":
+            return str(string.encode().decode("unicode_escape")) + spaces
+        if insert == "l":
+            return spaces + str(string.encode().decode("unicode_escape"))
+    def slice(self, text, chunkSize):
+        return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+    def parseArgs(self, readed):
+        # [\'][a-zA-ZА-Яа-я\d\s[\]{}()\\\.\":;,-]*[\']|\b[a-zA-Z\d]+
+        # [\"\'][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,-]*[\"\']|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,-]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+ (NOW)
+
+        res = re.findall(
+            r"[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+",
+            readed,
+            re.MULTILINE,
+        )
+        res2 = []
+        for item in res:
+            res2.append(re.sub(r"\B'|\b'", "", item))
+        res = [x for x in res2 if x != ""]
+        if len(res) == 0:
+            return {"command": "", "param": []}
+        if len(res) == 1:
+            return {"command": res[0], "param": []}
+        else:
+            return {"command": res[0], "param": res[1 : len(res)]}
+        return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+
 
 class LoggerModule(object):
     # Init logger
@@ -270,47 +302,6 @@ class LoggerModule(object):
         )
         print(self.Color.MCC.PREVIOUSLINE + s)
         return read
-
-class StringUtilModule(object):
-    def __init__(self):
-        pass
-    def screate(self, string, size=10, insert="r"):
-        string = string.encode("unicode_escape").decode()
-        matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
-        resultCSILength = 0
-        for match in matches:
-            resultCSILength += len(match)
-        spaces = " " * (size - (len(string.encode()) - resultCSILength))
-        if insert == "r":
-            return str(string.encode().decode("unicode_escape")) + spaces
-        if insert == "l":
-            return spaces + str(string.encode().decode("unicode_escape"))
-    def slice(self, text, chunkSize):
-        return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
-    def parseArgs(self, readed):
-        # [\'][a-zA-ZА-Яа-я\d\s[\]{}()\\\.\":;,-]*[\']|\b[a-zA-Z\d]+
-        # [\"\'][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,-]*[\"\']|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,-]+
-        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-]+
-        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+
-        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+ (NOW)
-
-        res = re.findall(
-            r"[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+",
-            readed,
-            re.MULTILINE,
-        )
-        res2 = []
-        for item in res:
-            res2.append(re.sub(r"\B'|\b'", "", item))
-        res = [x for x in res2 if x != ""]
-        if len(res) == 0:
-            return {"command": "", "param": []}
-        if len(res) == 1:
-            return {"command": res[0], "param": []}
-        else:
-            return {"command": res[0], "param": res[1 : len(res)]}
-        return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
-
 
 class ExceptModule(object):
     def __init__(self, Logger = None, String = None):
@@ -816,27 +807,36 @@ class CustomShellModule(object):
             itask(self)
 
 def testNlu():
-    print('succeful start')
-    c = ColorModule()
-    l = LoggerModule(c)
-    s = StringUtilModule()
-    e = ExceptModule(l, s)
-    t = TableBuildModule(s, c)
-    table = t.createTable(2,[30,60],['Some number','Some text','1',f'{c.FGC.YELLOW}colorful','355214364351',f'{c.BGC.BLUE}more colorful'],header = True)
-    print(table)
-    e.except_print(Exception('oh no'),'wrn',False)
-    l.log(f"This is a log")
-    l.log(f"This is a log with custom tag", "MyTag1")
-    l.tip(f"This is a tip")
-    l.tip(f"This is a tip with custom tag", "MyTag2")
-    l.wrn(f"This is a warn")
-    l.wrn(f"This is a warn with custom tag", "MyTag3")
-    l.err(f"This is a error")
-    l.err(f"This is a error with custom tag", "MyTag4")
-    print('succeful end')
+    cm = ColorModule()
+    print('ColorModule created')
+    sm = StringUtilModule()
+    print('StringUtilModule created')
+    lm = LoggerModule(cm)
+    print('LoggerModule created')
+    em = ExceptModule(lm, sm)
+    print('ExceptModule created')
+    tbm = TableBuildModule(sm, cm)
+    print('TableBuildModule created')
+    csm = CustomShellModule(None, em, sm, cm)
+    print('CustomShellModule created')
+    print('succeful!')
+    status = [
+        f'Module',
+        f'{cm.FGC.GREEN}ColorModule',
+        f'{cm.FGC.GREEN}LoggerModule',
+        f'{cm.FGC.GREEN}StringUtilModule',
+        f'{cm.FGC.GREEN}ExceptModule',
+        f'{cm.FGC.GREEN}CustomShellModule',
+        f'{cm.FGC.GREEN}TableBuildModule',
+        f'{cm.FGC.RED  }UtilsModule',
+        f'{cm.FGC.RED  }FileModule',
+        f'{cm.FGC.RED  }FilelogModule',
+        f'{cm.FGC.RED  }DatabaseManageModule',
+        f'{cm.FGC.RED  }RandomModule',
+    ]
+    lm.tip(tbm.createTable(1,[40],status,'Test results'))
+    
+    
+    
 if __name__ == "__main__":
-    console = CustomShellModule()
-    console.main()
-    
-    
-    
+    testNlu()
