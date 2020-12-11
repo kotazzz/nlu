@@ -17,6 +17,8 @@ description = "Utils for you <3"
 try:
     import os
     import datetime
+    import re
+    import traceback
 except ModuleNotFoundError as e:
     print(f'Unable to import dependences: {e}')
     exit(-1)
@@ -270,7 +272,106 @@ class LoggerModule(object):
         )
         print(self.Color_MCC.GOTO_PREVIOUSLINE + s)
         return read
-    
+
+class StringUtilModule(object):
+    def __init__(self):
+        pass
+    def screate(self, string, size=10, insert="r"):
+        string = string.encode("unicode_escape").decode()
+        matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
+        resultCSILength = 0
+        for match in matches:
+            resultCSILength += len(match)
+        spaces = " " * (size - (len(string.encode()) - resultCSILength))
+        if insert == "r":
+            return str(string.encode().decode("unicode_escape")) + spaces
+        if insert == "l":
+            return spaces + str(string.encode().decode("unicode_escape"))
+    def slice(self, text, chunkSize):
+        return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+    def parseArgs(self, readed):
+        # [\'][a-zA-ZА-Яа-я\d\s[\]{}()\\\.\":;,-]*[\']|\b[a-zA-Z\d]+
+        # [\"\'][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,-]*[\"\']|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,-]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+ (NOW)
+
+        res = re.findall(
+            r"[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+",
+            readed,
+            re.MULTILINE,
+        )
+        res2 = []
+        for item in res:
+            res2.append(re.sub(r"\B'|\b'", "", item))
+        res = [x for x in res2 if x != ""]
+        if len(res) == 0:
+            return {"command": "", "param": []}
+        if len(res) == 1:
+            return {"command": res[0], "param": []}
+        else:
+            return {"command": res[0], "param": res[1 : len(res)]}
+        return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+
+
+class ExceptModule(object):
+    def __init__(self, logger = None, string = None):
+        if type(logger) == LoggerModule:
+            self.logger = logger
+        else:
+            self.logger = LoggerModule()
+        if type(string) == StringUtilModule:
+            self.string = string
+        else:
+            self.string = StringUtilModule()
+            
+    def except_print(self, exception, exceptionType="err", tb=True):
+        errorText = "\n-------------- {ExceptionTitle} --------------------\n"
+        errorText += f"Type: {type(exception).__name__}\n\n"
+        
+        if exception.args == 0:
+            errorText += f"Unknown error\n"
+        else:
+            errorText += f"About Error:\n\t{(chr(10)+chr(9)).join(exception.args)}\t\n"
+
+        if tb:
+            
+            errorText += f"\n{traceback.format_exc()}"
+
+        errorText += "\n-------------- {ExceptionTitle} --------------------\n"
+
+        if exceptionType == "attention":
+            self.logger.log(
+                errorText.replace(
+                    "{ExceptionTitle}", self.string.screate("Attention!", 20)
+                )
+            )
+        if exceptionType == "wrn":
+            self.logger.wrn(
+                errorText.replace(
+                    "{ExceptionTitle}", self.string.screate("Warning!", 20)
+                )
+            )
+        elif exceptionType == "err":
+            self.logger.err(
+                errorText.replace(
+                    "{ExceptionTitle}", self.string.screate("Error!", 20)
+                )
+            )
+        elif exceptionType == "fatal":
+            self.logger.err(
+                errorText.replace(
+                    "{ExceptionTitle}", self.string.screate("Fatal Error!", 20)
+                )
+            )
+            exit(-1)
+        else:
+            self.logger.err(
+                errorText.replace(
+                    "{ExceptionTitle}",
+                    self.string.screate("Something wrong...", 20),
+                )
+            )
 
         
         
@@ -278,8 +379,8 @@ if __name__ == "__main__":
     print('succeful start')
     c = ColorModule()
     l = LoggerModule(c)
-    #e = ExceptModule(l)
-    #e.except_print(Exception('oh no'),'wrn',False)
+    e = ExceptModule(l)
+    e.except_print(Exception('oh no'),'wrn',False)
     l.log(f"This is a log")
     l.log(f"This is a log with custom tag", "MyTag1")
     l.tip(f"This is a tip")
