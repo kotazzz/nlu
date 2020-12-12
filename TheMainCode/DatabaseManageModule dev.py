@@ -52,10 +52,32 @@ class DatabaseManageModule(object):
             for e in t:
                 data.append(e)
         self.Logger.log(self.Table.createMultilineTable(6,[6,40,10,7,40,2],['cid','name','type','notnull','default','pk']+data))
+    def print_results_mini(self, result, sizes, header = []):
+        if header == []:
+            enable_header = False
+        else:    
+            enable_header = True
+        rowCount = 1
+        if result != []:
+            rowCount = len(result[0])
+        data = []
+        for t in result:
+            for e in t:
+                data.append(e)
+        self.Logger.log(self.Table.createTable(rowCount,sizes,header+data,header=enable_header))
+    def print_results(self, result, sizes, header = []):
+        rowCount = 1
+        if result != []:
+            rowCount = len(result[0])
+        data = []
+        for t in result:
+            for e in t:
+                data.append(e)
+        self.Logger.log(self.Table.createMultilineTable(rowCount,sizes,header+data))
     def get_table_description(self,table_name):
         self.execute(f"PRAGMA TABLE_INFO('{table_name}')")
-        self.last_result = self.get_result()
-        return self.last_result
+        res = self.get_result()
+        return res
     def execute(self, request):
         if self.connection_state == 'connected':
             self.Logger.log(f'Executing: {request}')
@@ -64,9 +86,12 @@ class DatabaseManageModule(object):
              self.Logger.err(f'Unable to execute, connection state is {connection_state}')
     def check_name(self, text):
         if text.split() != 1:
-           text = f"'{text}'"
+           return f"'{text}'"
+        else:
+            return text
     def get_result(self):
-        return self.cursor.fetchall()
+        self.last_result = self.cursor.fetchall()
+        return self.last_result
     def get_connection_state(self):
         return self.connection_state
     def get_connection(self):
@@ -86,10 +111,24 @@ if __name__ == "__main__":
     flm = FilelogModule()
     dmm = DatabaseManageModule()
     dmm.connect()
-    #dmm.create_table('my table', ['first', 'int', 'second', 'text'])
-    dmm.print_table_description('my table')
     
     
+    dmm.get_cursor().execute(f"PRAGMA TABLE_INFO('my table')")
+    r = dmm.get_result()
+    dmm.print_results(r,[])
     
-    
-    
+    dmm.get_cursor().execute("select * from sqlite_master where type = 'table'")
+    r = dmm.get_result()
+    dmm.print_results_mini(r,[])
+# Traceback (most recent call last):
+  # File "E:\Документы\_Repo\NewLifeUtils\TheMainCode\DatabaseManageModule dev.py", line 118, in <module>
+    # dmm.print_results(r,[])
+  # File "E:\Документы\_Repo\NewLifeUtils\TheMainCode\DatabaseManageModule dev.py", line 76, in print_results
+    # self.Logger.log(self.Table.createMultilineTable(rowCount,sizes,header+data))
+  # File "E:\Документы\_Repo\NewLifeUtils\TheMainCode\NewLifeUtils.py", line 515, in createMultilineTable
+    # data[i] = self.String.sslice(data[i], sizes[i % len(sizes)])
+  # File "E:\Документы\_Repo\NewLifeUtils\TheMainCode\NewLifeUtils.py", line 158, in sslice
+    # return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+# ValueError: range() arg 3 must not be zero
+
+# E:\Документы\_Repo\NewLifeUtils\TheMainCode>
