@@ -411,17 +411,17 @@ class TableBuildModule(object):
             self.tableManagerCurrent = "+++|-++++++"
         else:
             self.tableManagerCurrent = self.tableManagerTwoLine
-            
-    def find_max(self,row_count , data):
+
+    def find_max(self, row_count, data):
         line_len = []
         for i in range(row_count):
             line_len.append(0)
-        for linenum in range(0,len(data),row_count):
+        for linenum in range(0, len(data), row_count):
             for row in range(row_count):
-                if len(str(data[linenum+row])) > line_len[row]:
-                    line_len[row] = len(str(data[linenum+row]))
+                if len(str(data[linenum + row])) > line_len[row]:
+                    line_len[row] = len(str(data[linenum + row]))
         return line_len
-        
+
     def createTable(
         self,
         rowCount,
@@ -434,7 +434,7 @@ class TableBuildModule(object):
         align="l",
     ):
         if sizes == []:
-            sizes = self.find_max(rowCount,data)
+            sizes = self.find_max(rowCount, data)
         if color == "":
             color = self.Color.FGC.CYAN
         color = self.Color.ACC.RESET + color
@@ -498,7 +498,7 @@ class TableBuildModule(object):
         align="l",
     ):
         if sizes == []:
-            sizes = self.find_max(rowCount,data)
+            sizes = self.find_max(rowCount, data)
         if color == "":
             color = self.Color.FGC.CYAN
         if align == "r":
@@ -557,7 +557,7 @@ class TableBuildModule(object):
             result = result[:-1] + f"{tableElement[7]}\n"
 
         # Generate Footer-line
-        result = result[: -1 * (2+rowCount + sum(sizes))] + tableElement[8]
+        result = result[: -1 * (2 + rowCount + sum(sizes))] + tableElement[8]
         for headerPieceSize in sizes:
             result += f"{tableElement[4]*headerPieceSize}{tableElement[9]}"
         result = result[:-1] + f"{tableElement[10]}{self.Color.ACC.RESET}"
@@ -915,8 +915,10 @@ class FileModule(object):
             else:
                 f = open(path + name, mode, encoding=encoding)
         return f
-    def get_directory_content(self, directory = ''):
+
+    def get_directory_content(self, directory=""):
         return os.listdir(self.get_path(directory))
+
 
 class FilelogModule(object):
     def __init__(self, File=None, String=None, logname="log", rr=False):
@@ -992,65 +994,73 @@ class FilelogModule(object):
         self.logFile.write(self.formatter(pattern, message, tag, path))
 
 
-
-
 class DatabaseManageModule(object):
-    def __init__(self, Logger = None, File = None, Except = None, Table = None):
-        self.connection_state = 'setup'
-        
+    def __init__(self, Logger=None, File=None, Except=None, Table=None):
+        self.connection_state = "setup"
+
         if type(Logger) == LoggerModule:
             self.Logger = Logger
         else:
             self.Logger = LoggerModule()
-            
+
         if type(File) == FileModule:
             self.File = File
         else:
             self.File = FileModule()
-            
+
         if type(Except) == ExceptModule:
             self.Except = Except
         else:
             self.Except = ExceptModule()
-            
+
         if type(Table) == TableBuildModule:
             self.Table = Table
         else:
             self.Table = TableBuildModule()
-        
+
         self.db_path = self.File.get_path("+database")
-    def connect(self, db_name = 'default_db.db'):
+
+    def connect(self, db_name="default_db.db"):
         self.db_name = db_name
         try:
-            self.Logger.log(f'Connecting to {self.db_name}')
-            self.Logger.log(f'Path: {self.db_path}')
+            self.Logger.log(f"Connecting to {self.db_name}")
+            self.Logger.log(f"Path: {self.db_path}")
             self.connection = sqlite3.connect(self.db_path + self.db_name)
-            self.Logger.log(f'Getting cursor for {self.db_name}...')
+            self.Logger.log(f"Getting cursor for {self.db_name}...")
             self.cursor = self.connection.cursor()
         except Exception as e:
             self.Except.except_print(e)
-            self.Logger.err('Failed to connect to the database')
-            self.connection_state = 'fault'
+            self.Logger.err("Failed to connect to the database")
+            self.connection_state = "fault"
         else:
-            self.Logger.log('Successfully connected to the database')
-            self.connection_state = 'connected'
-    
+            self.Logger.log("Successfully connected to the database")
+            self.connection_state = "connected"
+
     def create_table(self, table_name, fields):
-       table_name = self.check_name(table_name)
-       self.execute(f'CREATE TABLE {table_name} ({", ".join(fields)})')
+        table_name = self.check_name(table_name)
+        self.execute(f'CREATE TABLE {table_name} ({", ".join(fields)})')
+
     def add_into_table(self, table_name, values):
         pass
-    def print_table_description(self,table_name):
+
+    def print_table_description(self, table_name):
         description = list(self.get_table_description(table_name))
         data = []
         for t in description:
             for e in t:
                 data.append(e)
-        self.Logger.log(self.Table.createMultilineTable(6,[6,40,10,7,40,2],['cid','name','type','notnull','default','pk']+data))
-    def print_results_mini(self, result, sizes, header = []):
+        self.Logger.log(
+            self.Table.createMultilineTable(
+                6,
+                [6, 40, 10, 7, 40, 2],
+                ["cid", "name", "type", "notnull", "default", "pk"] + data,
+            )
+        )
+
+    def print_results_mini(self, result, sizes, header=[]):
         if header == []:
             enable_header = False
-        else:    
+        else:
             enable_header = True
         rowCount = 1
         if result != []:
@@ -1059,8 +1069,11 @@ class DatabaseManageModule(object):
         for t in result:
             for e in t:
                 data.append(e)
-        self.Logger.log(self.Table.createTable(rowCount,sizes,header+data,header=enable_header))
-    def print_results(self, result, sizes, header = []):
+        self.Logger.log(
+            self.Table.createTable(rowCount, sizes, header + data, header=enable_header)
+        )
+
+    def print_results(self, result, sizes, header=[]):
         rowCount = 1
         if result != []:
             rowCount = len(result[0])
@@ -1068,35 +1081,47 @@ class DatabaseManageModule(object):
         for t in result:
             for e in t:
                 data.append(e)
-        self.Logger.log(self.Table.createMultilineTable(rowCount,sizes,header+data))
-    def get_table_description(self,table_name):
+        self.Logger.log(self.Table.createMultilineTable(rowCount, sizes, header + data))
+
+    def get_table_description(self, table_name):
         self.execute(f"PRAGMA TABLE_INFO('{table_name}')")
         res = self.get_result()
         return res
+
     def execute(self, request):
-        if self.connection_state == 'connected':
-            self.Logger.log(f'Executing: {request}')
+        if self.connection_state == "connected":
+            self.Logger.log(f"Executing: {request}")
             self.cursor.execute(request)
         else:
-             self.Logger.err(f'Unable to execute, connection state is {connection_state}')
+            self.Logger.err(
+                f"Unable to execute, connection state is {connection_state}"
+            )
+
     def check_name(self, text):
         if text.split() != 1:
-           return f"'{text}'"
+            return f"'{text}'"
         else:
             return text
+
     def get_result(self):
         self.last_result = self.cursor.fetchall()
         return self.last_result
+
     def get_connection_state(self):
         return self.connection_state
+
     def get_connection(self):
         return self.connection
+
     def get_cursor(self):
         return self.cursor
+
 
 class RandomModule(object):
     def __init__(self):
         pass
+
+
 class SortModule(object):
     def __partition(nums, low, high):
         # Выбираем средний элемент в качестве опорного
@@ -1154,7 +1179,7 @@ def testNlu():
     flm = FilelogModule()
     print("FilelogModule created")
     flm = DatabaseManageModule()
-    print("DatabaseManageModule created")  
+    print("DatabaseManageModule created")
     flm = RandomModule()
     print("RandomModule created")
     flm = SortModule()
@@ -1196,3 +1221,4 @@ def testNlu():
 
 if __name__ == "__main__":
     testNlu()
+    generateBlackAlgo()
