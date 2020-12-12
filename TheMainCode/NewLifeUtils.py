@@ -1219,6 +1219,16 @@ def testNlu():
     lm.wrn(f"Elapsed time for init all modules: {elapsed}")
 
 
+def generateBlackAlgo():
+    f = FileModule()
+    pyfiles = []
+    for filename in f.get_directory_content(os.getcwd()):
+        if filename[-3:] == ".py":
+            pyfiles.append(filename)
+    for filename in pyfiles:
+        print(f'black "{filename}"')
+
+
 if __name__ == "__main__":
     testNlu()
     generateBlackAlgo()
