@@ -875,22 +875,37 @@ def testNlu():
     print("succeful!")
     status = [
         f"Module",
-        f"{cm.FGC.GREEN}ColorModule",
-        f"{cm.FGC.GREEN}LoggerModule",
-        f"{cm.FGC.GREEN}StringUtilModule",
-        f"{cm.FGC.GREEN}ExceptModule",
-        f"{cm.FGC.GREEN}CustomShellModule",
-        f"{cm.FGC.GREEN}TableBuildModule",
-        f"{cm.FGC.GREEN}UtilsModule",
-        f"{cm.FGC.RED  }FileModule",
-        f"{cm.FGC.RED  }FilelogModule",
-        f"{cm.FGC.RED  }DatabaseManageModule",
-        f"{cm.FGC.RED  }RandomModule",
+        f"{cm.FGC.GREEN }ColorModule",
+        f"{cm.FGC.GREEN }LoggerModule",
+        f"{cm.FGC.GREEN }StringUtilModule",
+        f"{cm.FGC.GREEN }ExceptModule",
+        f"{cm.FGC.GREEN }CustomShellModule",
+        f"{cm.FGC.GREEN }TableBuildModule",
+        f"{cm.FGC.GREEN }UtilsModule",
+        f"{cm.FGC.YELLOW}FileModule",
+        f"{cm.FGC.RED   }FilelogModule",
+        f"{cm.FGC.RED   }DatabaseManageModule",
+        f"{cm.FGC.RED   }RandomModule",
     ]
     time.sleep(1 / 3)
     lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
 
-
+class FileModule(object):
+    def __init__(self):
+        pass
+        
+class FilelogModule(object):
+    def __init__(self):
+        pass   
+        
+class DatabaseManageModule(object):
+    def __init__(self):
+        pass
+        
+class RandomModule(object):
+    def __init__(self):
+        pass
+        
 if __name__ == "__main__":
     testNlu()
     
