@@ -127,8 +127,18 @@ class ColorModule(object):
 class StringUtilModule(object):
     def __init__(self):
         pass
+
     def remove_csi(self, text):
-        return re.sub(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", '', text.encode("unicode_escape").decode()).encode().decode("unicode_escape")
+        return (
+            re.sub(
+                r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}",
+                "",
+                text.encode("unicode_escape").decode(),
+            )
+            .encode()
+            .decode("unicode_escape")
+        )
+
     def screate(self, string, size=10, insert="r"):
         string = str(string)
         string = string.encode("unicode_escape").decode()
@@ -829,12 +839,14 @@ class CustomShellModule(object):
         for itask in self.registeredExitTask:
             itask(self)
 
+
 class UtilsModule(object):
-    def __init__(self, Logger = None):
+    def __init__(self, Logger=None):
         if type(Logger) == LoggerModule:
             self.Logger = Logger
         else:
             self.Logger = LoggerModule()
+
     def select_rand_list(self, source, use_zero=False):
         try:
             source[0]
@@ -855,10 +867,11 @@ class UtilsModule(object):
             )
             return source[selector]
         return None
-        
+
+
 def testNlu():
+    # try to init
     cm = ColorModule()
-    print("ColorModule created")
     print("ColorModule created")
     sm = StringUtilModule()
     print("StringUtilModule created")
@@ -872,7 +885,26 @@ def testNlu():
     print("CustomShellModule created")
     um = UtilsModule()
     print("UtilsModule created")
+    fm = FileModule()
+    print("FileModule created")
+    flm = FilelogModule()
+    print("FilelogModule created")
     print("succeful!")
+    # try to init
+    # calculate elapsed
+    elapsed = datetime.datetime.now()
+    ColorModule()
+    StringUtilModule()
+    LoggerModule(cm)
+    ExceptModule(lm, sm)
+    TableBuildModule(sm, cm)
+    CustomShellModule(None, em, sm, cm)
+    UtilsModule(lm)
+    FileModule()
+    FilelogModule(fm)
+    elapsed = datetime.datetime.now() - elapsed
+    # calculate elapsed
+    time.sleep(1 / 3)
     status = [
         f"Module",
         f"{cm.FGC.GREEN }ColorModule",
@@ -882,53 +914,58 @@ def testNlu():
         f"{cm.FGC.GREEN }CustomShellModule",
         f"{cm.FGC.GREEN }TableBuildModule",
         f"{cm.FGC.GREEN }UtilsModule",
-        f"{cm.FGC.YELLOW}FileModule",
-        f"{cm.FGC.RED   }FilelogModule",
+        f"{cm.FGC.GREEN }FileModule",
+        f"{cm.FGC.GREEN }FilelogModule",
         f"{cm.FGC.RED   }DatabaseManageModule",
         f"{cm.FGC.RED   }RandomModule",
     ]
-    time.sleep(1 / 3)
     lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
+    lm.wrn(f"Elapsed time for init all modules: {elapsed}")
+
+    def log(text, tag=""):
+        flm.log(text, tag)
+        lm.log(text, tag)
+
+    log("HI!")
+    log("HI!1")
+    log("HI!2")
+    log("HI!3")
+
 
 class FileModule(object):
-    def __init__(self, Logger = None):
-        if type(Logger) == LoggerModule:
-            self.Logger = Logger
-        else:
-            self.Logger = LoggerModule()
-        
-        self.currentDirectory = os.getcwd()+'\\'
+    def __init__(self):
+
+        self.currentDirectory = os.getcwd() + "\\"
         self.workDirectory = self.currentDirectory + "NLUDIR\\"
-    def get_path(self, path = ''):
-        if path == '':
+
+    def get_path(self, path=""):
+        if path == "":
             path = self.workDirectory
-        elif path[0]=='+':
-            if path[-1] not in ['/','\\']:
-                path += '\\'
-            path = self.workDirectory+path[1:]
+        elif path[0] == "+":
+            if path[-1] not in ["/", "\\"]:
+                path += "\\"
+            path = self.workDirectory + path[1:]
         if not os.path.exists(path):
             os.makedirs(path)
         return path
-    def open_file(self, name, mode = '', path = '', encoding = 'utf8'):
+
+    def open_file(self, name, mode="", path="", encoding="utf8"):
         path = self.get_path(path)
-        
+
         try:
-            open(path+name)
+            open(path + name)
         except:
-            open(path+name, 'w')
+            open(path + name, "w")
         finally:
-            if mode == '':
-                f = open(path+name, encoding = encoding)
+            if mode == "":
+                f = open(path + name, encoding=encoding)
             else:
-                f = open(path+name, mode, encoding = encoding)
+                f = open(path + name, mode, encoding=encoding)
         return f
-        
-        
-        
-        
-        
+
+
 class FilelogModule(object):
-    def __init__(self, File = None, String = None, logname = 'log', rr = False):
+    def __init__(self, File=None, String=None, logname="log", rr=False):
         if type(File) == FileModule:
             self.File = File
         else:
@@ -937,39 +974,41 @@ class FilelogModule(object):
             self.String = String
         else:
             self.String = StringUtilModule()
-            
+
         self.dateFormat = "%d-%m-%Y"
         self.timeFormat = "%H:%M:%S"
         startdate = datetime.datetime.now().strftime(self.dateFormat)
         starttime = datetime.datetime.now().strftime(self.timeFormat)
         if rr:
             file_snumber = 1
-            while os.path.exists(f'{self.File.get_path("+log")}{logname}-{startdate}-{file_snumber}.log'):
-                file_snumber+=1
-            self.logFileName = f'{logname}-{startdate}-{file_snumber}.log'
-            self.logFile = self.File.open_file(self.logFileName, path = '+log', mode = 'w')
+            while os.path.exists(
+                f'{self.File.get_path("+log")}{logname}-{startdate}-{file_snumber}.log'
+            ):
+                file_snumber += 1
+            self.logFileName = f"{logname}-{startdate}-{file_snumber}.log"
+            self.logFile = self.File.open_file(self.logFileName, path="+log", mode="w")
         else:
-            self.logFileName = f'{logname}-{startdate}.log'
-            self.logFile = self.File.open_file(self.logFileName, path = '+log', mode = 'a')
-        self.logFile.write(f'------------------ NEW START AT {startdate} - {starttime} ------------------\n')
-            
-        
+            self.logFileName = f"{logname}-{startdate}.log"
+            self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
+        self.logFile.write(f"------ NEW START AT {startdate} - {starttime} ------\n")
+
         self.errDefaultTag = "[!!!] Error"
-        self.logDefaultTag = "[   ]Log"
-        self.wrnDefaultTag = "[_!_]Warn"
-        
+        self.logDefaultTag = "[   ] Log"
+        self.wrnDefaultTag = "[_!_] Warn"
+
         self.TagMaxLenght = 12
-    
+
         self.errFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
         self.logFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
         self.wrnFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+
     def formatter(self, pattern, message, tag, path, additional=None):
         if additional is None:
             additional = {"void": ""}
-            
+
         now = datetime.datetime.now()
         tag = self.String.screate(tag, self.TagMaxLenght)
-        
+
         return pattern.format(
             **additional,
             date=now.strftime(self.dateFormat),
@@ -979,35 +1018,37 @@ class FilelogModule(object):
             tab="\t",
             message=message,
         )
-        
-    def log(self, message, path = 'main', tag = ''):
-        if tag == '':
+
+    def log(self, message, path="main", tag=""):
+        if tag == "":
             tag = self.logDefaultTag
         self.logFile.write(self.formatter(self.logFormat, message, tag, path))
-    def wrn(self, message, path = 'main', tag = ''):
-        if tag == '':
+
+    def wrn(self, message, path="main", tag=""):
+        if tag == "":
             tag = self.wrnDefaultTag
         self.logFile.write(self.formatter(self.wrnFormat, message, tag, path))
-    def err(self, message, path = 'main', tag = ''):
-        if tag == '':
+
+    def err(self, message, path="main", tag=""):
+        if tag == "":
             tag = self.errDefaultTag
         self.logFile.write(self.formatter(self.errFormat, message, tag, path))
-    def cstm(self, pattern, text=''):
+
+    def cstm(self, pattern, text=""):
         self.logFile.write(self.formatter(pattern, message, tag, path))
-        
-        
+
+
 class DatabaseManageModule(object):
     def __init__(self):
         pass
-        
+
+
 class RandomModule(object):
     def __init__(self):
         pass
-        
+
+
 if __name__ == "__main__":
-    # testNlu()
-    flm = FilelogModule()
-    flm.log('hi')
-    flm.wrn('hi')
-    flm.err('hi')
-    
+    testNlu()
+
+    pass
