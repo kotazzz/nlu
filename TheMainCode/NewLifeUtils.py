@@ -900,7 +900,8 @@ class FileModule(object):
             else:
                 f = open(path + name, mode, encoding=encoding)
         return f
-
+    def get_directory_content(self, directory = ''):
+        return os.listdir(self.get_path(directory))
 
 class FilelogModule(object):
     def __init__(self, File=None, String=None, logname="log", rr=False):
@@ -1073,5 +1074,3 @@ def testNlu():
 
 if __name__ == "__main__":
     testNlu()
-
-    pass
