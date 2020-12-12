@@ -153,7 +153,8 @@ class StringUtilModule(object):
         if insert == "l":
             return spaces + str(string.encode().decode("unicode_escape"))
 
-    def slice(self, text, chunkSize):
+    def sslice(self, text, chunkSize):
+        text = str(text)
         return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
 
     def parseArgs(self, readed):
@@ -497,7 +498,7 @@ class TableBuildModule(object):
         if tableElement == "":
             tableElement = self.tableManagerCurrent
         for i in range(len(data)):
-            data[i] = self.stringManagerSlice(data[i], sizes[i % len(sizes)])
+            data[i] = self.String.sslice(data[i], sizes[i % len(sizes)])
         result = ""
         for line in range(0, len(data), rowCount):
             maxtabsize = 0
@@ -542,7 +543,7 @@ class TableBuildModule(object):
             result = result[:-1] + f"{tableElement[7]}\n"
 
         # Generate Footer-line
-        result = result[: -1 * (4 + sum(sizes))] + tableElement[8]
+        result = result[: -1 * (2+rowCount + sum(sizes))] + tableElement[8]
         for headerPieceSize in sizes:
             result += f"{tableElement[4]*headerPieceSize}{tableElement[9]}"
         result = result[:-1] + f"{tableElement[10]}{self.Color.ACC.RESET}"
