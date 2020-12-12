@@ -1068,7 +1068,7 @@ def testNlu():
         f"{cm.FGC.GREEN }UtilsModule",
         f"{cm.FGC.GREEN }FileModule",
         f"{cm.FGC.GREEN }FilelogModule",
-        f"{cm.FGC.RED   }DatabaseManageModule",
+        f"{cm.FGC.YELLOW}DatabaseManageModule",
         f"{cm.FGC.RED   }RandomModule",
     ]
     lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
