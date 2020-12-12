@@ -1,6 +1,6 @@
 from NewLifeUtils import *
 class DatabaseManageModule(object):
-    def __init__(self, Logger = None, File = None, Except = None):
+    def __init__(self, Logger = None, File = None, Except = None, Table = None):
         self.connection_state = 'setup'
         
         if type(Logger) == LoggerModule:
@@ -17,6 +17,11 @@ class DatabaseManageModule(object):
             self.Except = Except
         else:
             self.Except = ExceptModule()
+            
+        if type(Table) == TableBuildModule:
+            self.Table = Table
+        else:
+            self.Table = TableBuildModule()
         
         self.db_path = self.File.get_path("+database")
     def connect(self, db_name = 'default_db.db'):
@@ -35,6 +40,40 @@ class DatabaseManageModule(object):
             self.Logger.log('Successfully connected to the database')
             self.connection_state = 'connected'
     
+    def create_table(self, table_name, fields):
+       table_name = self.check_name(table_name)
+       self.execute(f'CREATE TABLE {table_name} ({", ".join(fields)})')
+    def add_into_table(self, table_name, values):
+        pass
+    def print_table_description(self,table_name):
+        description = list(self.get_table_description(table_name))
+        data = []
+        for t in description:
+            for e in t:
+                data.append(e)
+        self.Logger.log(self.Table.createMultilineTable(6,[6,40,10,7,40,2],['cid','name','type','notnull','default','pk']+data))
+    def get_table_description(self,table_name):
+        self.execute(f"PRAGMA TABLE_INFO('{table_name}')")
+        self.last_result = self.get_result()
+        return self.last_result
+    def execute(self, request):
+        if self.connection_state == 'connected':
+            self.Logger.log(f'Executing: {request}')
+            self.cursor.execute(request)
+        else:
+             self.Logger.err(f'Unable to execute, connection state is {connection_state}')
+    def check_name(self, text):
+        if text.split() != 1:
+           text = f"'{text}'"
+    def get_result(self):
+        return self.cursor.fetchall()
+    def get_connection_state(self):
+        return self.connection_state
+    def get_connection(self):
+        return self.connection
+    def get_cursor(self):
+        return self.cursor
+        
 if __name__ == "__main__":
     # cm = ColorModule()
     # sm = StringUtilModule()
@@ -44,6 +83,13 @@ if __name__ == "__main__":
     # csm = CustomShellModule(None, em, sm, cm)
     # um = UtilsModule()
     # fm = FileModule()
-    # flm = FilelogModule()
+    flm = FilelogModule()
     dmm = DatabaseManageModule()
     dmm.connect()
+    #dmm.create_table('my table', ['first', 'int', 'second', 'text'])
+    dmm.print_table_description('my table')
+    
+    
+    
+    
+    
