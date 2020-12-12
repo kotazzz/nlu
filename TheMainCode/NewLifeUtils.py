@@ -11,6 +11,7 @@ try:
     import traceback
     import time
     import random
+    import sqlite3
 except ModuleNotFoundError as e:
     print(f"Unable to import dependences: {e}")
     exit(-1)
@@ -975,11 +976,6 @@ class FilelogModule(object):
         self.logFile.write(self.formatter(pattern, message, tag, path))
 
 
-class DatabaseManageModule(object):
-    def __init__(self):
-        pass
-
-
 class RandomModule(object):
     def __init__(self):
         pass
@@ -1073,15 +1069,6 @@ def testNlu():
     ]
     lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
     lm.wrn(f"Elapsed time for init all modules: {elapsed}")
-
-    def log(text, tag=""):
-        flm.log(text, tag)
-        lm.log(text, tag)
-
-    log("HI!")
-    log("HI!1")
-    log("HI!2")
-    log("HI!3")
 
 
 if __name__ == "__main__":
