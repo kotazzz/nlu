@@ -202,11 +202,12 @@ class BasicModule(object):
 
     def __parseInput(self, readed):
         import re
-        #[\'][a-zA-ZА-Яа-я\d\s[\]{}()\\\.\":;,-]*[\']|\b[a-zA-Z\d]+
-        #[\"\'][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,-]*[\"\']|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,-]+
-        #[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-]+ 
-        #[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+ 
-        #[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+ (NOW)
+
+        # [\'][a-zA-ZА-Яа-я\d\s[\]{}()\\\.\":;,-]*[\']|\b[a-zA-Z\d]+
+        # [\"\'][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,-]*[\"\']|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,-]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+
+        # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+ (NOW)
 
         res = re.findall(
             r"[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+",
@@ -386,7 +387,7 @@ class BasicModule(object):
                         "Unknown command, type 'help' for get advanced help",
                         f"{self.cmdname} UNKNOWN",
                     )
-                console.nlu.Libs.time.sleep(1/1000)
+                console.nlu.Libs.time.sleep(1 / 1000)
             except Exception as e:
                 self.ExceptionPrint(e)
         for registeredAction in self.registeredExitActions:
@@ -643,7 +644,6 @@ if __name__ == "__main__":
                             console.logger.log(f"Executing: {execute}")
                             console.cursor.execute(execute)
 
-
             class describe(BasicModule.command):
 
                 command = "describe"
@@ -752,7 +752,7 @@ if __name__ == "__main__":
 
                 def run(console):
                     console.registeredFunctions["saveAll"](console)
-                    
+
             class closeconnection(BasicModule.command):
                 command = "closeconnection"
                 description = "closing connection"
@@ -762,7 +762,7 @@ if __name__ == "__main__":
 
                 def run(console):
                     console.registeredFunctions["closeConnection"](console)
-                    
+
             class tablelist(BasicModule.command):
 
                 command = "tablelist"
@@ -770,7 +770,6 @@ if __name__ == "__main__":
                 aliases = [command]
                 required = []
                 optional = []
-
 
                 def run(console):
                     if console.registeredFunctions["checkConnection"](console):

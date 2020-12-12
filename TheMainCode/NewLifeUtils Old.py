@@ -10,16 +10,17 @@
 
 LibsManager
 Color
-Logger         
+Logger
 RandomManager
 TableManager
 DatabaseManager
-ConsoleShellManager 
-FileManager 
-StringManager  
-TracebackManager   
-FilelogManager   
-Utils          
+ConsoleShellManager
+FileManager
+StringManager
+TracebackManager
+FilelogManager
+Utils
+
 
 class NewLifeUtils(object):
     def __init__(self, silent=False):
@@ -75,10 +76,10 @@ class NewLifeUtils(object):
         self.tableManagerCurrent = self.tableManagerTwoLine
 
         # Var set##Var set##Var set##Var set#
-        
+
         # init color
         self.libsManager_os.system("")
-        
+
         # Init NewLifeUtils
         self.name = "NewLifeUtils"
         self.version = "5.1.0"
@@ -87,7 +88,7 @@ class NewLifeUtils(object):
         self.workingDirectory = self.currentDirectory + r"\NLUDIR"
         self.configName = "config.json"
         self.logName = "log-{date}_{num}.log"
-        
+
         if not silent:
             work = f"{self.Color_FGC.YELLOW }Working..."
             complete = f"{self.Color_FGC.GREEN }Initializated"
@@ -96,19 +97,32 @@ class NewLifeUtils(object):
             w = self.Color_FGC.WHITE
             gy = self.Color_FGC.GRAY
             data = [
-                f"{gy}Module name",f"{gy}Status",
-                f"{w }LibsManager",f"{complete}",
-                f"{w }RandomManager",f"{suspended}",
-                f"{w }ConsoleShellManager",f"{complete}",
-                f"{w }TracebackManager",f"{complete}",
-                f"{w }Color",f"{complete}",
-                f"{w }TableManager",f"{complete}",
-                f"{w }FileManager",f"{suspended}",
-                f"{w }FilelogManager",f"{suspended}",
-                f"{w }Logger",f"{complete}",
-                f"{w }DatabaseManager",f"{suspended}",
-                f"{w }StringManager",f"{complete}",
-                f"{w }Utils",f"{complete}",
+                f"{gy}Module name",
+                f"{gy}Status",
+                f"{w }LibsManager",
+                f"{complete}",
+                f"{w }RandomManager",
+                f"{suspended}",
+                f"{w }ConsoleShellManager",
+                f"{complete}",
+                f"{w }TracebackManager",
+                f"{complete}",
+                f"{w }Color",
+                f"{complete}",
+                f"{w }TableManager",
+                f"{complete}",
+                f"{w }FileManager",
+                f"{suspended}",
+                f"{w }FilelogManager",
+                f"{suspended}",
+                f"{w }Logger",
+                f"{complete}",
+                f"{w }DatabaseManager",
+                f"{suspended}",
+                f"{w }StringManager",
+                f"{complete}",
+                f"{w }Utils",
+                f"{complete}",
             ]  #
             self.loggerLog(
                 self.tableManagerCreateTable(
@@ -841,32 +855,29 @@ class NewLifeUtils(object):
             for itask in self.registeredExitTask:
                 itask(self)
 
-
-########################## CONSOLESHELLMANAGER ##################
-########################## FILEMANAGER         ##################       
-# - currentDirectory
-# * openFile        
-# * createFile        
-# * readFile        
-# * renameFile      
-# * copyFile        
-# * cutFile         
-# * closeFile       
-# * saveFile        
-# * goto            
+    ########################## CONSOLESHELLMANAGER ##################
+    ########################## FILEMANAGER         ##################
+    # - currentDirectory
+    # * openFile
+    # * createFile
+    # * readFile
+    # * renameFile
+    # * copyFile
+    # * cutFile
+    # * closeFile
+    # * saveFile
+    # * goto
     # def FileManagerOpenFile(self, filename, path = '', mode = 't'):
-        # if path == '':
-            # path = self.currentDirectory 
-        # modes: rwxabt+
-        # if path[-1] not in ['\\','/']:
-            # path += '/'
-        # return open(path+filename)
-        
+    # if path == '':
+    # path = self.currentDirectory
+    # modes: rwxabt+
+    # if path[-1] not in ['\\','/']:
+    # path += '/'
+    # return open(path+filename)
+
     # def    createFile
 
-
-########################## FILEMANAGER         ##################
-
+    ########################## FILEMANAGER         ##################
 
     def debug(self):
         self.loggerLog(
@@ -875,8 +886,12 @@ class NewLifeUtils(object):
         self.loggerLog(f"{self.Color_FGC.BBLUE} name:              {self.name}")
         self.loggerLog(f"{self.Color_FGC.BBLUE} version:           {self.version}")
         self.loggerLog(f"{self.Color_FGC.BBLUE} description:       {self.description}")
-        self.loggerLog(f"{self.Color_FGC.BBLUE} currentDirectory:   {self.currentDirectory}")
-        self.loggerLog(f"{self.Color_FGC.BBLUE} workingDirectory:  {self.workingDirectory}")
+        self.loggerLog(
+            f"{self.Color_FGC.BBLUE} currentDirectory:   {self.currentDirectory}"
+        )
+        self.loggerLog(
+            f"{self.Color_FGC.BBLUE} workingDirectory:  {self.workingDirectory}"
+        )
         self.loggerLog(f"{self.Color_FGC.BBLUE} configName:        {self.configName}")
         self.loggerLog(f"{self.Color_FGC.BBLUE} logName:           {self.logName}")
         self.loggerLog(
@@ -948,5 +963,5 @@ class NewLifeUtils(object):
 if __name__ == "__main__":
     print("creating self")
     nlu = NewLifeUtils()
-    #nlu.debug()
+    # nlu.debug()
     print("-----------------------------")
