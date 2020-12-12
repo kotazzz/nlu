@@ -891,12 +891,110 @@ def testNlu():
     lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
 
 class FileModule(object):
-    def __init__(self):
-        pass
+    def __init__(self, Logger = None):
+        if type(Logger) == LoggerModule:
+            self.Logger = Logger
+        else:
+            self.Logger = LoggerModule()
+        
+        self.currentDirectory = os.getcwd()+'\\'
+        self.workDirectory = self.currentDirectory + "NLUDIR\\"
+    def get_path(self, path = ''):
+        if path == '':
+            path = self.workDirectory
+        elif path[0]=='+':
+            if path[-1] not in ['/','\\']:
+                path += '\\'
+            path = self.workDirectory+path[1:]
+        if not os.path.exists(path):
+            os.makedirs(path)
+        return path
+    def open_file(self, name, mode = '', path = '', encoding = 'utf8'):
+        path = self.get_path(path)
+        
+        try:
+            open(path+name)
+        except:
+            open(path+name, 'w')
+        finally:
+            if mode == '':
+                f = open(path+name, encoding = encoding)
+            else:
+                f = open(path+name, mode, encoding = encoding)
+        return f
+        
+        
+        
+        
         
 class FilelogModule(object):
-    def __init__(self):
-        pass   
+    def __init__(self, File = None, String = None, logname = 'log', rr = False):
+        if type(File) == FileModule:
+            self.File = File
+        else:
+            self.File = FileModule()
+        if type(String) == StringUtilModule:
+            self.String = String
+        else:
+            self.String = StringUtilModule()
+            
+        self.dateFormat = "%d-%m-%Y"
+        self.timeFormat = "%H:%M:%S"
+        startdate = datetime.datetime.now().strftime(self.dateFormat)
+        starttime = datetime.datetime.now().strftime(self.timeFormat)
+        if rr:
+            file_snumber = 1
+            while os.path.exists(f'{self.File.get_path("+log")}{logname}-{startdate}-{file_snumber}.log'):
+                file_snumber+=1
+            self.logFileName = f'{logname}-{startdate}-{file_snumber}.log'
+            self.logFile = self.File.open_file(self.logFileName, path = '+log', mode = 'w')
+        else:
+            self.logFileName = f'{logname}-{startdate}.log'
+            self.logFile = self.File.open_file(self.logFileName, path = '+log', mode = 'a')
+        self.logFile.write(f'------------------ NEW START AT {startdate} - {starttime} ------------------\n')
+            
+        
+        self.errDefaultTag = "[!!!] Error"
+        self.logDefaultTag = "[   ]Log"
+        self.wrnDefaultTag = "[_!_]Warn"
+        
+        self.TagMaxLenght = 12
+    
+        self.errFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+        self.logFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+        self.wrnFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+    def formatter(self, pattern, message, tag, path, additional=None):
+        if additional is None:
+            additional = {"void": ""}
+            
+        now = datetime.datetime.now()
+        tag = self.String.screate(tag, self.TagMaxLenght)
+        
+        return pattern.format(
+            **additional,
+            date=now.strftime(self.dateFormat),
+            time=now.strftime(self.timeFormat),
+            tag=tag,
+            path=path,
+            tab="\t",
+            message=message,
+        )
+        
+    def log(self, message, path = 'main', tag = ''):
+        if tag == '':
+            tag = self.logDefaultTag
+        self.logFile.write(self.formatter(self.logFormat, message, tag, path))
+    def wrn(self, message, path = 'main', tag = ''):
+        if tag == '':
+            tag = self.wrnDefaultTag
+        self.logFile.write(self.formatter(self.wrnFormat, message, tag, path))
+    def err(self, message, path = 'main', tag = ''):
+        if tag == '':
+            tag = self.errDefaultTag
+        self.logFile.write(self.formatter(self.errFormat, message, tag, path))
+    def cstm(self, pattern, text=''):
+        self.logFile.write(self.formatter(pattern, message, tag, path))
+        
         
 class DatabaseManageModule(object):
     def __init__(self):
@@ -907,5 +1005,9 @@ class RandomModule(object):
         pass
         
 if __name__ == "__main__":
-    testNlu()
+    # testNlu()
+    flm = FilelogModule()
+    flm.log('hi')
+    flm.wrn('hi')
+    flm.err('hi')
     
