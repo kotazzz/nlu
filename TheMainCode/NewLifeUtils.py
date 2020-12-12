@@ -10,6 +10,7 @@ try:
     import re
     import traceback
     import time
+    import random
 except ModuleNotFoundError as e:
     print(f"Unable to import dependences: {e}")
     exit(-1)
@@ -829,10 +830,31 @@ class CustomShellModule(object):
             itask(self)
 
 class UtilsModule(object):
-    def __init__(self):
-        pass
-    def selectRandom(self, fromList):
-        pass
+    def __init__(self, Logger = None):
+        if type(Logger) == LoggerModule:
+            self.Logger = Logger
+        else:
+            self.Logger = LoggerModule()
+    def select_rand_list(self, source, use_zero=False):
+        try:
+            source[0]
+        except IndexError:
+            self.Logger.err(f"{source} is empty", "RS ERROR")
+        except TypeError:
+            self.Logger.err(f"{source} object is not subscriptable", "RS ERROR")
+        else:
+            if use_zero:
+                self.Logger.log("Can use zero", "RS LOG")
+                selector = random.randrange(1, len(source))
+            else:
+                self.Logger.log("Cant use zero", "RS LOG")
+                selector = random.randrange(0, len(source))
+            self.Logger.log(
+                f"Select item #{selector} from {type(source).__name__}; result {source[selector]}",
+                "RS LOG",
+            )
+            return source[selector]
+        return None
         
 def testNlu():
     cm = ColorModule()
@@ -848,6 +870,8 @@ def testNlu():
     print("TableBuildModule created")
     csm = CustomShellModule(None, em, sm, cm)
     print("CustomShellModule created")
+    um = UtilsModule()
+    print("UtilsModule created")
     print("succeful!")
     status = [
         f"Module",
@@ -857,7 +881,7 @@ def testNlu():
         f"{cm.FGC.GREEN}ExceptModule",
         f"{cm.FGC.GREEN}CustomShellModule",
         f"{cm.FGC.GREEN}TableBuildModule",
-        f"{cm.FGC.RED  }UtilsModule",
+        f"{cm.FGC.GREEN}UtilsModule",
         f"{cm.FGC.RED  }FileModule",
         f"{cm.FGC.RED  }FilelogModule",
         f"{cm.FGC.RED  }DatabaseManageModule",
@@ -868,9 +892,5 @@ def testNlu():
 
 
 if __name__ == "__main__":
-    pass
-    
-    
-    
-    #testNlu()
+    testNlu()
     
