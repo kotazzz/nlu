@@ -126,8 +126,10 @@ class ColorModule(object):
 class StringUtilModule(object):
     def __init__(self):
         pass
-
+    def remove_csi(self, text):
+        return re.sub(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", '', text.encode("unicode_escape").decode()).encode().decode("unicode_escape")
     def screate(self, string, size=10, insert="r"):
+        string = str(string)
         string = string.encode("unicode_escape").decode()
         matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
         resultCSILength = 0
@@ -135,7 +137,7 @@ class StringUtilModule(object):
             resultCSILength += len(match)
         spaces = " " * (size - (len(string.encode()) - resultCSILength))
         if insert == "r":
-            return str(string.encode().decode("unicode_escape")) + spaces
+            return string.encode().decode("unicode_escape") + spaces
         if insert == "l":
             return spaces + str(string.encode().decode("unicode_escape"))
 
@@ -826,9 +828,15 @@ class CustomShellModule(object):
         for itask in self.registeredExitTask:
             itask(self)
 
-
+class UtilsModule(object):
+    def __init__(self):
+        pass
+    def selectRandom(self, fromList):
+        pass
+        
 def testNlu():
     cm = ColorModule()
+    print("ColorModule created")
     print("ColorModule created")
     sm = StringUtilModule()
     print("StringUtilModule created")
@@ -860,4 +868,9 @@ def testNlu():
 
 
 if __name__ == "__main__":
-    testNlu()
+    
+    
+    
+    
+    #testNlu()
+    
