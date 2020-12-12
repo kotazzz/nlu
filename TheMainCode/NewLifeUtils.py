@@ -869,69 +869,6 @@ class UtilsModule(object):
         return None
 
 
-def testNlu():
-    # try to init
-    cm = ColorModule()
-    print("ColorModule created")
-    sm = StringUtilModule()
-    print("StringUtilModule created")
-    lm = LoggerModule(cm)
-    print("LoggerModule created")
-    em = ExceptModule(lm, sm)
-    print("ExceptModule created")
-    tbm = TableBuildModule(sm, cm)
-    print("TableBuildModule created")
-    csm = CustomShellModule(None, em, sm, cm)
-    print("CustomShellModule created")
-    um = UtilsModule()
-    print("UtilsModule created")
-    fm = FileModule()
-    print("FileModule created")
-    flm = FilelogModule()
-    print("FilelogModule created")
-    print("succeful!")
-    # try to init
-    # calculate elapsed
-    elapsed = datetime.datetime.now()
-    ColorModule()
-    StringUtilModule()
-    LoggerModule(cm)
-    ExceptModule(lm, sm)
-    TableBuildModule(sm, cm)
-    CustomShellModule(None, em, sm, cm)
-    UtilsModule(lm)
-    FileModule()
-    FilelogModule(fm)
-    elapsed = datetime.datetime.now() - elapsed
-    # calculate elapsed
-    time.sleep(1 / 3)
-    status = [
-        f"Module",
-        f"{cm.FGC.GREEN }ColorModule",
-        f"{cm.FGC.GREEN }LoggerModule",
-        f"{cm.FGC.GREEN }StringUtilModule",
-        f"{cm.FGC.GREEN }ExceptModule",
-        f"{cm.FGC.GREEN }CustomShellModule",
-        f"{cm.FGC.GREEN }TableBuildModule",
-        f"{cm.FGC.GREEN }UtilsModule",
-        f"{cm.FGC.GREEN }FileModule",
-        f"{cm.FGC.GREEN }FilelogModule",
-        f"{cm.FGC.RED   }DatabaseManageModule",
-        f"{cm.FGC.RED   }RandomModule",
-    ]
-    lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
-    lm.wrn(f"Elapsed time for init all modules: {elapsed}")
-
-    def log(text, tag=""):
-        flm.log(text, tag)
-        lm.log(text, tag)
-
-    log("HI!")
-    log("HI!1")
-    log("HI!2")
-    log("HI!3")
-
-
 class FileModule(object):
     def __init__(self):
 
@@ -1046,6 +983,105 @@ class DatabaseManageModule(object):
 class RandomModule(object):
     def __init__(self):
         pass
+
+
+class SortModule(object):
+    def __partition(nums, low, high):
+        # Выбираем средний элемент в качестве опорного
+        # Также возможен выбор первого, последнего
+        # или произвольного элементов в качестве опорного
+        pivot = nums[(low + high) // 2]
+        i = low - 1
+        j = high + 1
+        while True:
+            i += 1
+            while nums[i] < pivot:
+                i += 1
+
+            j -= 1
+            while nums[j] > pivot:
+                j -= 1
+
+            if i >= j:
+                return j
+
+            # Если элемент с индексом i (слева от опорного) больше, чем
+            # элемент с индексом j (справа от опорного), меняем их местами
+            nums[i], nums[j] = nums[j], nums[i]
+
+    def quick_sort(nums):
+        # Создадим вспомогательную функцию, которая вызывается рекурсивно
+        def _quick_sort(items, low, high):
+            if low < high:
+                # This is the index after the pivot, where our lists are split
+                split_index = __partition(items, low, high)
+                _quick_sort(items, low, split_index)
+                _quick_sort(items, split_index + 1, high)
+
+        _quick_sort(nums, 0, len(nums) - 1)
+
+
+def testNlu():
+    # try to init
+    cm = ColorModule()
+    print("ColorModule created")
+    sm = StringUtilModule()
+    print("StringUtilModule created")
+    lm = LoggerModule(cm)
+    print("LoggerModule created")
+    em = ExceptModule(lm, sm)
+    print("ExceptModule created")
+    tbm = TableBuildModule(sm, cm)
+    print("TableBuildModule created")
+    csm = CustomShellModule(None, em, sm, cm)
+    print("CustomShellModule created")
+    um = UtilsModule()
+    print("UtilsModule created")
+    fm = FileModule()
+    print("FileModule created")
+    flm = FilelogModule()
+    print("FilelogModule created")
+    print("succeful!")
+    # try to init
+    # calculate elapsed
+    elapsed = datetime.datetime.now()
+    ColorModule()
+    StringUtilModule()
+    LoggerModule(cm)
+    ExceptModule(lm, sm)
+    TableBuildModule(sm, cm)
+    CustomShellModule(None, em, sm, cm)
+    UtilsModule(lm)
+    FileModule()
+    FilelogModule(fm)
+    elapsed = datetime.datetime.now() - elapsed
+    # calculate elapsed
+    time.sleep(1 / 3)
+    status = [
+        f"Module",
+        f"{cm.FGC.GREEN }ColorModule",
+        f"{cm.FGC.GREEN }LoggerModule",
+        f"{cm.FGC.GREEN }StringUtilModule",
+        f"{cm.FGC.GREEN }ExceptModule",
+        f"{cm.FGC.GREEN }CustomShellModule",
+        f"{cm.FGC.GREEN }TableBuildModule",
+        f"{cm.FGC.GREEN }UtilsModule",
+        f"{cm.FGC.GREEN }FileModule",
+        f"{cm.FGC.GREEN }FilelogModule",
+        f"{cm.FGC.RED   }DatabaseManageModule",
+        f"{cm.FGC.RED   }RandomModule",
+    ]
+    lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
+    lm.wrn(f"Elapsed time for init all modules: {elapsed}")
+
+    def log(text, tag=""):
+        flm.log(text, tag)
+        lm.log(text, tag)
+
+    log("HI!")
+    log("HI!1")
+    log("HI!2")
+    log("HI!3")
 
 
 if __name__ == "__main__":
