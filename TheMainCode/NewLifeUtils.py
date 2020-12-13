@@ -997,7 +997,38 @@ class FilelogModule(object):
 
     def drec(self, text, end="\n"):
         self.logFile.write(text + end)
-
+    def tree(dir_path: Path, level: int=-1, limit_to_directories: bool=False,
+             length_limit: int=1000):
+        """Given a directory Path object print a visual tree structure"""
+        dir_path = Path(dir_path) # accept string coerceable to Path
+        files = 0
+        directories = 0
+        def inner(dir_path: Path, prefix: str='', level=-1):
+            nonlocal files, directories
+            if not level: 
+                return # 0, stop iterating
+            if limit_to_directories:
+                contents = [d for d in dir_path.iterdir() if d.is_dir()]
+            else: 
+                contents = list(dir_path.iterdir())
+            pointers = [tee] * (len(contents) - 1) + [last]
+            for pointer, path in zip(pointers, contents):
+                if path.is_dir():
+                    yield prefix + pointer + path.name
+                    directories += 1
+                    extension = branch if pointer == tee else space 
+                    yield from inner(path, prefix=prefix+extension, level=level-1)
+                elif not limit_to_directories:
+                    yield prefix + pointer + path.name
+                    files += 1
+        lm.log(dir_path.name)
+        iterator = inner(dir_path, level=level)
+        for line in islice(iterator, length_limit):
+            lm.log(line)
+        if next(iterator, None):
+            lm.log(f'... length_limit, {length_limit}, reached, counted:')
+        lm.log('')
+        lm.log(f'{directories} directories' + (f', {files} files' if files else ''))
 
 class DatabaseManageModule(object):
     def __init__(self, Logger=None, File=None, Except=None, Table=None):
@@ -1225,17 +1256,15 @@ def testNlu():
 
 
 cm = ColorModule()
-def file_list(path, ident = ''):
-    filelist = os.listdir(path)
 
-    for attached_file in filelist:
-       try: 
-           os.listdir(f'{path}\\{attached_file}')
-       except Exception as e: #ЕСЛИ ФАЙЛ
-           pass
-       else:                  #ЕСЛИ ПАПКА
-           pass
-    
+def list_files(startpath):
+    for root, dirs, files in os.walk(startpath):
+        level = root.replace(startpath, '').count(os.sep)
+        indent = ' ' * 4 * (level)
+        print('{}{}/'.format(indent, os.path.basename(root)))
+        subindent = ' ' * 4 * (level + 1)
+        for f in files:
+            print('{}{}'.format(subindent, f))
     
 if __name__ == "__main__":
     #testNlu()
@@ -1247,4 +1276,5 @@ if __name__ == "__main__":
     #        pyfiles.append(filename)
     #for filename in pyfiles:
     #    lm.log(f'black "{filename}"')
-    file_list(r"E:\Документы\_Repo\NewLifeUtils\TheMainCode")
+    list_files(r"E:\Документы\_Repo\NewLifeUtils\TheMainCode")
+    

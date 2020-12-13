@@ -1,497 +1,128 @@
------- NEW START AT 13-12-2020 - 12:14:24 ------
------- NEW START AT 13-12-2020 - 12:14:24 ------
------- NEW START AT 13-12-2020 - 13:03:02 ------
------- NEW START AT 13-12-2020 - 13:03:02 ------
------- NEW START AT 13-12-2020 - 13:03:29 ------
------- NEW START AT 13-12-2020 - 13:03:29 ------
-[38;2;173;255;47m[13:03:29] [38;2;144;238;144mLog       [38;2;255;250;250m : [38;2;0;250;154mThis is a log[0m[x[K
-[38;2;173;255;47m[13:03:29] [38;2;144;238;144mMyTag1    [38;2;255;250;250m : [38;2;0;250;154mThis is a log with custom tag[0m[x[K
-[38;2;255;0;255m[13:03:29] [38;2;255;0;255mTip       [38;2;255;250;250m : [38;2;186;85;211mThis is a tip[0m[x[K
-[38;2;255;0;255m[13:03:29] [38;2;255;0;255mMyTag2    [38;2;255;250;250m : [38;2;186;85;211mThis is a tip with custom tag[0m[x[K
-[38;2;255;140;0m[13:03:29] [38;2;255;165;0mWarn      [38;2;255;250;250m : [38;2;255;215;0mThis is a warn[0m[x[K
-[38;2;255;140;0m[13:03:29] [38;2;255;165;0mMyTag3    [38;2;255;250;250m : [38;2;255;215;0mThis is a warn with custom tag[0m[x[K
-[38;2;220;20;60m[13:03:29] [38;2;255;0;0mError     [38;2;255;250;250m : [38;2;178;34;34mThis is a error[0m[x[K
-[38;2;220;20;60m[13:03:29] [38;2;255;0;0mMyTag4    [38;2;255;250;250m : [38;2;178;34;34mThis is a error with custom tag[0m[x[K
------- NEW START AT 13-12-2020 - 13:04:44 ------
------- NEW START AT 13-12-2020 - 13:04:44 ------
-[13:04:44] Log        : This is a log
-[13:04:44] MyTag1     : This is a log with custom tag
-[13:04:44] Tip        : This is a tip
-[13:04:44] MyTag2     : This is a tip with custom tag
-[13:04:44] Warn       : This is a warn
-[13:04:44] MyTag3     : This is a warn with custom tag
-[13:04:44] Error      : This is a error
-[13:04:44] MyTag4     : This is a error with custom tag
-[13:04:53] Read       : hello:  > [Привет из файла!]
------- NEW START AT 13-12-2020 - 13:09:08 ------
------- NEW START AT 13-12-2020 - 13:09:08 ------
-[13:09:08] Log        : This is a log
-[13:09:08] MyTag1     : This is a log with custom tag
-[13:09:08] Tip        : This is a tip
-[13:09:08] MyTag2     : This is a tip with custom tag
-[13:09:08] Warn       : This is a warn
-[13:09:08] MyTag3     : This is a warn with custom tag
-[13:09:08] Error      : This is a error
-[13:09:08] MyTag4     : This is a error with custom tag
-[13:09:16] Read       : hello:  > [asd]
------- NEW START AT 13-12-2020 - 13:09:27 ------
------- NEW START AT 13-12-2020 - 13:09:28 ------
-[13:09:28] Log        : This is a log
-[13:09:28] MyTag1     : This is a log with custom tag
-[13:09:28] Tip        : This is a tip
-[13:09:28] MyTag2     : This is a tip with custom tag
-[13:09:28] Warn       : This is a warn
-[13:09:28] MyTag3     : This is a warn with custom tag
-[13:09:28] Error      : This is a error
-[13:09:28] MyTag4     : This is a error with custom tag
-[13:09:30] Read       : hello:  > [dfsg]
------- NEW START AT 13-12-2020 - 13:12:02 ------
------- NEW START AT 13-12-2020 - 13:12:02 ------
------- NEW START AT 13-12-2020 - 13:14:14 ------
------- NEW START AT 13-12-2020 - 13:14:14 ------
------- NEW START AT 13-12-2020 - 13:14:51 ------
------- NEW START AT 13-12-2020 - 13:14:51 ------
------- NEW START AT 13-12-2020 - 13:15:04 ------
------- NEW START AT 13-12-2020 - 13:15:04 ------
------- NEW START AT 13-12-2020 - 13:15:36 ------
------- NEW START AT 13-12-2020 - 13:15:36 ------
------- NEW START AT 13-12-2020 - 13:16:02 ------
------- NEW START AT 13-12-2020 - 13:16:02 ------
------- NEW START AT 13-12-2020 - 13:17:14 ------
------- NEW START AT 13-12-2020 - 13:17:14 ------
------- NEW START AT 13-12-2020 - 13:17:17 ------
------- NEW START AT 13-12-2020 - 13:17:41 ------
------- NEW START AT 13-12-2020 - 13:17:41 ------
------- NEW START AT 13-12-2020 - 13:17:52 ------
------- NEW START AT 13-12-2020 - 13:19:33 ------
------- NEW START AT 13-12-2020 - 13:19:33 ------
-[13:19:33] Log        : This is a log
-[13:19:33] MyTag1     : This is a log with custom tag
-[13:19:33] Tip        : This is a tip
-[13:19:33] MyTag2     : This is a tip with custom tag
-[13:19:33] Warn       : This is a warn
-[13:19:33] MyTag3     : This is a warn with custom tag
-[13:19:33] Error      : This is a error
-[13:19:33] MyTag4     : This is a error with custom tag
-[13:19:34] Read       : hello:  > [g]
------- NEW START AT 13-12-2020 - 13:20:46 ------
------- NEW START AT 13-12-2020 - 13:20:52 ------
------- NEW START AT 13-12-2020 - 13:20:52 ------
-[13:20:53] Log        : This is a log
-[13:20:53] MyTag1     : This is a log with custom tag
-[13:20:53] Tip        : This is a tip
-[13:20:53] MyTag2     : This is a tip with custom tag
-[13:20:53] Warn       : This is a warn
-[13:20:53] MyTag3     : This is a warn with custom tag
-[13:20:53] Error      : This is a error
-[13:20:53] MyTag4     : This is a error with custom tag
-[13:20:57] Read       : hello:  > [пзвоахщздлотшгщлзджльощзджюдльошлщд]
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:22:56 ------
-[13:22:57] Tip        : c
-      Project Status
-╔════════════════════════════════════════╗
-║Module                                  ║
-╠════════════════════════════════════════╣
-║ColorModule                             ║
-║LoggerModule                            ║
-║StringUtilModule                        ║
-║ExceptModule                            ║
-║CustomShellModule                       ║
-║TableBuildModule                        ║
-║UtilsModule                             ║
-║FileModule                              ║
-║FilelogModule                           ║
-║SortModule                              ║
-║DatabaseManageModule                    ║
-║RandomModule                            ║
-╚════════════════════════════════════════╝
-
-[13:22:57] Warn       : Elapsed time for init all modules: 0:00:00.230857
------- NEW START AT 13-12-2020 - 13:22:56 ------
------- NEW START AT 13-12-2020 - 13:23:38 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:23:43 ------
-[13:23:44] Tip        : c
-      Project Status
-╔════════════════════════════════════════╗
-║Module                                  ║
-╠════════════════════════════════════════╣
-║ColorModule                             ║
-║LoggerModule                            ║
-║StringUtilModule                        ║
-║ExceptModule                            ║
-║CustomShellModule                       ║
-║TableBuildModule                        ║
-║UtilsModule                             ║
-║FileModule                              ║
-║FilelogModule                           ║
-║SortModule                              ║
-║DatabaseManageModule                    ║
-║RandomModule                            ║
-╚════════════════════════════════════════╝
-
-[13:23:44] Warn       : Elapsed time for init all modules: 0:00:00.247846
------- NEW START AT 13-12-2020 - 13:23:43 ------
------- NEW START AT 13-12-2020 - 13:26:03 ------
------- NEW START AT 13-12-2020 - 13:26:03 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:03 ------
------- NEW START AT 13-12-2020 - 13:26:03 ------
-[13:26:04] Tip        : c
-      Project Status
-╔════════════════════════════════════════╗
-║Module                                  ║
-╠════════════════════════════════════════╣
-║ColorModule                             ║
-║LoggerModule                            ║
-║StringUtilModule                        ║
-║ExceptModule                            ║
-║CustomShellModule                       ║
-║TableBuildModule                        ║
-║UtilsModule                             ║
-║FileModule                              ║
-║FilelogModule                           ║
-║SortModule                              ║
-║DatabaseManageModule                    ║
-║RandomModule                            ║
-╚════════════════════════════════════════╝
-
-[13:26:05] Warn       : Elapsed time for init all modules: 0:00:00.233850
------- NEW START AT 13-12-2020 - 13:26:04 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:26:12 ------
-[13:26:13] Tip        : c
-      Project Status
-╔════════════════════════════════════════╗
-║Module                                  ║
-╠════════════════════════════════════════╣
-║ColorModule                             ║
-║LoggerModule                            ║
-║StringUtilModule                        ║
-║ExceptModule                            ║
-║CustomShellModule                       ║
-║TableBuildModule                        ║
-║UtilsModule                             ║
-║FileModule                              ║
-║FilelogModule                           ║
-║SortModule                              ║
-║DatabaseManageModule                    ║
-║RandomModule                            ║
-╚════════════════════════════════════════╝
-
-[13:26:13] Warn       : Elapsed time for init all modules: 0:00:00.207876
------- NEW START AT 13-12-2020 - 13:26:12 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:23 ------
------- NEW START AT 13-12-2020 - 13:27:23 ------
------- NEW START AT 13-12-2020 - 13:27:23 ------
------- NEW START AT 13-12-2020 - 13:27:23 ------
------- NEW START AT 13-12-2020 - 13:27:23 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:22 ------
-[13:27:23] Tip        : c
-      Project Status
-╔════════════════════════════════════════╗
-║Module                                  ║
-╠════════════════════════════════════════╣
-║ColorModule                             ║
-║LoggerModule                            ║
-║StringUtilModule                        ║
-║ExceptModule                            ║
-║CustomShellModule                       ║
-║TableBuildModule                        ║
-║UtilsModule                             ║
-║FileModule                              ║
-║FilelogModule                           ║
-║SortModule                              ║
-║DatabaseManageModule                    ║
-║RandomModule                            ║
-╚════════════════════════════════════════╝
-
-[13:27:23] Warn       : Elapsed time for init all modules: 0:00:00.214867
------- NEW START AT 13-12-2020 - 13:27:22 ------
------- NEW START AT 13-12-2020 - 13:27:23 ------
------- NEW START AT 13-12-2020 - 13:27:23 ------
-[13:27:23] Log        : black "DatabaseManageModule dev.py"
-[13:27:23] Log        : black "Math test.py"
-[13:27:23] Log        : black "New Logger.py"
-[13:27:23] Log        : black "NewLifeUtils Old.py"
-[13:27:23] Log        : black "NewLifeUtils.py"
-[13:27:23] Log        : black "NLU line 1.1.2.py"
-[13:27:23] Log        : black "NLU Line Rawcode.py"
-[13:27:23] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:53 ------
------- NEW START AT 13-12-2020 - 13:27:53 ------
------- NEW START AT 13-12-2020 - 13:27:53 ------
------- NEW START AT 13-12-2020 - 13:27:53 ------
------- NEW START AT 13-12-2020 - 13:27:53 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:52 ------
-[13:27:53] Tip        : c
-      Project Status
-╔════════════════════════════════════════╗
-║Module                                  ║
-╠════════════════════════════════════════╣
-║ColorModule                             ║
-║LoggerModule                            ║
-║StringUtilModule                        ║
-║ExceptModule                            ║
-║CustomShellModule                       ║
-║TableBuildModule                        ║
-║UtilsModule                             ║
-║FileModule                              ║
-║FilelogModule                           ║
-║SortModule                              ║
-║DatabaseManageModule                    ║
-║RandomModule                            ║
-╚════════════════════════════════════════╝
-
-[13:27:53] Warn       : Elapsed time for init all modules: 0:00:00.224858
------- NEW START AT 13-12-2020 - 13:27:52 ------
------- NEW START AT 13-12-2020 - 13:27:53 ------
------- NEW START AT 13-12-2020 - 13:27:53 ------
-[13:27:53] Log        : black "DatabaseManageModule dev.py"
-[13:27:53] Log        : black "Math test.py"
-[13:27:53] Log        : black "New Logger.py"
-[13:27:53] Log        : black "NewLifeUtils Old.py"
-[13:27:53] Log        : black "NewLifeUtils.py"
-[13:27:53] Log        : black "NLU line 1.1.2.py"
-[13:27:53] Log        : black "NLU Line Rawcode.py"
-[13:27:53] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:25 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:24 ------
------- NEW START AT 13-12-2020 - 13:29:25 ------
------- NEW START AT 13-12-2020 - 13:29:25 ------
-[13:29:25] Log        : black "DatabaseManageModule dev.py"
-[13:29:25] Log        : black "Math test.py"
-[13:29:25] Log        : black "New Logger.py"
-[13:29:25] Log        : black "NewLifeUtils Old.py"
-[13:29:25] Log        : black "NewLifeUtils.py"
-[13:29:25] Log        : black "NLU line 1.1.2.py"
-[13:29:25] Log        : black "NLU Line Rawcode.py"
-[13:29:25] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:30:20 ------
------- NEW START AT 13-12-2020 - 13:30:20 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:20 ------
------- NEW START AT 13-12-2020 - 13:30:20 ------
------- NEW START AT 13-12-2020 - 13:30:21 ------
------- NEW START AT 13-12-2020 - 13:30:22 ------
------- NEW START AT 13-12-2020 - 13:30:22 ------
-[13:30:22] Log        : black "DatabaseManageModule dev.py"
-[13:30:22] Log        : black "Math test.py"
-[13:30:22] Log        : black "New Logger.py"
-[13:30:22] Log        : black "NewLifeUtils Old.py"
-[13:30:22] Log        : black "NewLifeUtils.py"
-[13:30:22] Log        : black "NLU line 1.1.2.py"
-[13:30:22] Log        : black "NLU Line Rawcode.py"
-[13:30:22] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:36 ------
------- NEW START AT 13-12-2020 - 13:30:36 ------
------- NEW START AT 13-12-2020 - 13:30:36 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:35 ------
------- NEW START AT 13-12-2020 - 13:30:36 ------
------- NEW START AT 13-12-2020 - 13:30:36 ------
-[13:30:36] Log        : black "DatabaseManageModule dev.py"
-[13:30:36] Log        : black "Math test.py"
-[13:30:36] Log        : black "New Logger.py"
-[13:30:36] Log        : black "NewLifeUtils Old.py"
-[13:30:36] Log        : black "NewLifeUtils.py"
-[13:30:36] Log        : black "NLU line 1.1.2.py"
-[13:30:36] Log        : black "NLU Line Rawcode.py"
-[13:30:36] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:00 ------
------- NEW START AT 13-12-2020 - 13:31:01 ------
------- NEW START AT 13-12-2020 - 13:31:01 ------
-[13:31:01] Log        : black "DatabaseManageModule dev.py"
-[13:31:01] Log        : black "Math test.py"
-[13:31:01] Log        : black "New Logger.py"
-[13:31:01] Log        : black "NewLifeUtils Old.py"
-[13:31:01] Log        : black "NewLifeUtils.py"
-[13:31:01] Log        : black "NLU line 1.1.2.py"
-[13:31:01] Log        : black "NLU Line Rawcode.py"
-[13:31:01] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:08 ------
------- NEW START AT 13-12-2020 - 13:31:09 ------
------- NEW START AT 13-12-2020 - 13:31:09 ------
-[13:31:09] Log        : black "DatabaseManageModule dev.py"
-[13:31:09] Log        : black "Math test.py"
-[13:31:09] Log        : black "New Logger.py"
-[13:31:09] Log        : black "NewLifeUtils Old.py"
-[13:31:09] Log        : black "NewLifeUtils.py"
-[13:31:09] Log        : black "NLU line 1.1.2.py"
-[13:31:09] Log        : black "NLU Line Rawcode.py"
-[13:31:09] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:37 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:38 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:31:38 FROM NewLifeUtils.py------
-[13:31:38] Log        : black "DatabaseManageModule dev.py"
-[13:31:38] Log        : black "Math test.py"
-[13:31:38] Log        : black "New Logger.py"
-[13:31:38] Log        : black "NewLifeUtils Old.py"
-[13:31:38] Log        : black "NewLifeUtils.py"
-[13:31:38] Log        : black "NLU line 1.1.2.py"
-[13:31:38] Log        : black "NLU Line Rawcode.py"
-[13:31:38] Log        : black "Sort test.py"
------- NEW START AT 13-12-2020 - 13:37:09 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:09 FROM NewLifeUtils.py------
------- NEW START AT 13-12-2020 - 13:37:10 FROM NewLifeUtils.py------
+------ NEW START AT 13-12-2020 - 17:30:36 FROM NewLifeUtils.py------
+------ NEW START AT 13-12-2020 - 17:30:36 FROM NewLifeUtils.py------
+[17:30:36] Log        : TheMainCode
+[17:30:36] Log        : ├─ DatabaseManageModule dev.py
+[17:30:36] Log        : ├─ DispPath.py
+[17:30:36] Log        : ├─ doc
+[17:30:36] Log        : │  └─ NewLifeUtils Documentation.txt
+[17:30:36] Log        : ├─ files
+[17:30:36] Log        : │  ├─ 1-2000 pow form results esc-off.txt
+[17:30:36] Log        : │  ├─ 1-2000 pow form results esc-on.txt
+[17:30:36] Log        : │  └─ Colors.txt
+[17:30:36] Log        : ├─ Math test.py
+[17:30:36] Log        : ├─ New Logger.py
+[17:30:36] Log        : ├─ NewLifeUtils.py
+[17:30:36] Log        : ├─ NLUDIR
+[17:30:36] Log        : │  ├─ database
+[17:30:36] Log        : │  │  └─ default_db.db
+[17:30:36] Log        : │  ├─ log
+[17:30:36] Log        : │  │  ├─ log-12-12-2020.log
+[17:30:36] Log        : │  │  └─ log-13-12-2020.log
+[17:30:36] Log        : │  └─ logger_data
+[17:30:36] Log        : │     ├─ colors.json
+[17:30:36] Log        : │     └─ colorsformated.json2
+[17:30:36] Log        : ├─ old py
+[17:30:36] Log        : │  ├─ NewLifeUtils Old.py
+[17:30:36] Log        : │  ├─ NLU line 1.1.2.py
+[17:30:36] Log        : │  └─ NLU Line Rawcode.py
+[17:30:36] Log        : ├─ Sort test.py
+[17:30:36] Log        : └─ __pycache__
+[17:30:36] Log        :    └─ NewLifeUtils.cpython-39.pyc
+[17:30:36] Log        : 
+8 directories, 19 files
+------ NEW START AT 13-12-2020 - 17:30:47 FROM NewLifeUtils.py------
+------ NEW START AT 13-12-2020 - 17:30:47 FROM NewLifeUtils.py------
+[17:30:47] Log        : TheMainCode
+[17:30:47] Log        : ├─ DatabaseManageModule dev.py
+[17:30:47] Log        : ├─ DispPath.py
+[17:30:47] Log        : ├─ doc
+[17:30:47] Log        : │  └─ NewLifeUtils Documentation.txt
+[17:30:47] Log        : ├─ files
+[17:30:47] Log        : │  ├─ 1-2000 pow form results esc-off.txt
+[17:30:47] Log        : │  ├─ 1-2000 pow form results esc-on.txt
+[17:30:47] Log        : │  └─ Colors.txt
+[17:30:47] Log        : ├─ Math test.py
+[17:30:47] Log        : ├─ New Logger.py
+[17:30:47] Log        : ├─ NewLifeUtils.py
+[17:30:47] Log        : ├─ NLUDIR
+[17:30:47] Log        : │  ├─ database
+[17:30:47] Log        : │  │  └─ default_db.db
+[17:30:47] Log        : │  ├─ log
+[17:30:47] Log        : │  │  ├─ log-12-12-2020.log
+[17:30:47] Log        : │  │  └─ log-13-12-2020.log
+[17:30:47] Log        : │  └─ logger_data
+[17:30:47] Log        : │     ├─ colors.json
+[17:30:47] Log        : │     └─ colorsformated.json2
+[17:30:47] Log        : ├─ old py
+[17:30:47] Log        : │  ├─ NewLifeUtils Old.py
+[17:30:47] Log        : │  ├─ NLU line 1.1.2.py
+[17:30:47] Log        : │  └─ NLU Line Rawcode.py
+[17:30:47] Log        : ├─ Sort test.py
+[17:30:47] Log        : └─ __pycache__
+[17:30:47] Log        :    └─ NewLifeUtils.cpython-39.pyc
+[17:30:47] Log        : 
+8 directories, 19 files
+------ NEW START AT 13-12-2020 - 17:31:16 FROM NewLifeUtils.py------
+------ NEW START AT 13-12-2020 - 17:31:16 FROM NewLifeUtils.py------
+[17:31:16] Log        : TheMainCode
+[17:31:16] Log        : ├─ DatabaseManageModule dev.py
+[17:31:16] Log        : ├─ DispPath.py
+[17:31:16] Log        : ├─ doc
+[17:31:16] Log        : │  └─ NewLifeUtils Documentation.txt
+[17:31:16] Log        : ├─ files
+[17:31:16] Log        : │  ├─ 1-2000 pow form results esc-off.txt
+[17:31:16] Log        : │  ├─ 1-2000 pow form results esc-on.txt
+[17:31:16] Log        : │  └─ Colors.txt
+[17:31:16] Log        : ├─ Math test.py
+[17:31:16] Log        : ├─ New Logger.py
+[17:31:16] Log        : ├─ NewLifeUtils.py
+[17:31:16] Log        : ├─ NLUDIR
+[17:31:16] Log        : │  ├─ database
+[17:31:16] Log        : │  │  └─ default_db.db
+[17:31:16] Log        : │  ├─ log
+[17:31:16] Log        : │  │  ├─ log-12-12-2020.log
+[17:31:16] Log        : │  │  └─ log-13-12-2020.log
+[17:31:16] Log        : │  └─ logger_data
+[17:31:16] Log        : │     ├─ colors.json
+[17:31:16] Log        : │     └─ colorsformated.json2
+[17:31:16] Log        : ├─ old py
+[17:31:16] Log        : │  ├─ NewLifeUtils Old.py
+[17:31:16] Log        : │  ├─ NLU line 1.1.2.py
+[17:31:16] Log        : │  └─ NLU Line Rawcode.py
+[17:31:16] Log        : ├─ Sort test.py
+[17:31:16] Log        : └─ __pycache__
+[17:31:16] Log        :    └─ NewLifeUtils.cpython-39.pyc
+[17:31:16] Log        : 
+[17:31:16] Log        : 8 directories, 19 files
+------ NEW START AT 13-12-2020 - 17:31:35 FROM NewLifeUtils.py------
+------ NEW START AT 13-12-2020 - 17:31:35 FROM NewLifeUtils.py------
+[17:31:35] Log        : TheMainCode
+[17:31:35] Log        : ├─ DatabaseManageModule dev.py
+[17:31:35] Log        : ├─ DispPath.py
+[17:31:35] Log        : ├─ doc
+[17:31:35] Log        : │  └─ NewLifeUtils Documentation.txt
+[17:31:35] Log        : ├─ files
+[17:31:35] Log        : │  ├─ 1-2000 pow form results esc-off.txt
+[17:31:35] Log        : │  ├─ 1-2000 pow form results esc-on.txt
+[17:31:35] Log        : │  └─ Colors.txt
+[17:31:35] Log        : ├─ Math test.py
+[17:31:35] Log        : ├─ New Logger.py
+[17:31:35] Log        : ├─ NewLifeUtils.py
+[17:31:35] Log        : ├─ NLUDIR
+[17:31:35] Log        : │  ├─ database
+[17:31:35] Log        : │  │  └─ default_db.db
+[17:31:35] Log        : │  ├─ log
+[17:31:35] Log        : │  │  ├─ log-12-12-2020.log
+[17:31:35] Log        : │  │  └─ log-13-12-2020.log
+[17:31:35] Log        : │  └─ logger_data
+[17:31:35] Log        : │     ├─ colors.json
+[17:31:35] Log        : │     └─ colorsformated.json2
+[17:31:35] Log        : ├─ old py
+[17:31:35] Log        : │  ├─ NewLifeUtils Old.py
+[17:31:35] Log        : │  ├─ NLU line 1.1.2.py
+[17:31:35] Log        : │  └─ NLU Line Rawcode.py
+[17:31:35] Log        : ├─ Sort test.py
+[17:31:35] Log        : └─ __pycache__
+[17:31:35] Log        :    └─ NewLifeUtils.cpython-39.pyc
+[17:31:35] Log        : 
+[17:31:35] Log        : 8 directories, 19 files
