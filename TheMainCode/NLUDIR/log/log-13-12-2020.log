@@ -1,0 +1,88 @@
+------ NEW START AT 13-12-2020 - 12:14:24 ------
+------ NEW START AT 13-12-2020 - 12:14:24 ------
+------ NEW START AT 13-12-2020 - 13:03:02 ------
+------ NEW START AT 13-12-2020 - 13:03:02 ------
+------ NEW START AT 13-12-2020 - 13:03:29 ------
+------ NEW START AT 13-12-2020 - 13:03:29 ------
+[38;2;173;255;47m[13:03:29] [38;2;144;238;144mLog       [38;2;255;250;250m : [38;2;0;250;154mThis is a log[0m[x[K
+[38;2;173;255;47m[13:03:29] [38;2;144;238;144mMyTag1    [38;2;255;250;250m : [38;2;0;250;154mThis is a log with custom tag[0m[x[K
+[38;2;255;0;255m[13:03:29] [38;2;255;0;255mTip       [38;2;255;250;250m : [38;2;186;85;211mThis is a tip[0m[x[K
+[38;2;255;0;255m[13:03:29] [38;2;255;0;255mMyTag2    [38;2;255;250;250m : [38;2;186;85;211mThis is a tip with custom tag[0m[x[K
+[38;2;255;140;0m[13:03:29] [38;2;255;165;0mWarn      [38;2;255;250;250m : [38;2;255;215;0mThis is a warn[0m[x[K
+[38;2;255;140;0m[13:03:29] [38;2;255;165;0mMyTag3    [38;2;255;250;250m : [38;2;255;215;0mThis is a warn with custom tag[0m[x[K
+[38;2;220;20;60m[13:03:29] [38;2;255;0;0mError     [38;2;255;250;250m : [38;2;178;34;34mThis is a error[0m[x[K
+[38;2;220;20;60m[13:03:29] [38;2;255;0;0mMyTag4    [38;2;255;250;250m : [38;2;178;34;34mThis is a error with custom tag[0m[x[K
+------ NEW START AT 13-12-2020 - 13:04:44 ------
+------ NEW START AT 13-12-2020 - 13:04:44 ------
+[13:04:44] Log        : This is a log
+[13:04:44] MyTag1     : This is a log with custom tag
+[13:04:44] Tip        : This is a tip
+[13:04:44] MyTag2     : This is a tip with custom tag
+[13:04:44] Warn       : This is a warn
+[13:04:44] MyTag3     : This is a warn with custom tag
+[13:04:44] Error      : This is a error
+[13:04:44] MyTag4     : This is a error with custom tag
+[13:04:53] Read       : hello:  > [Привет из файла!]
+------ NEW START AT 13-12-2020 - 13:09:08 ------
+------ NEW START AT 13-12-2020 - 13:09:08 ------
+[13:09:08] Log        : This is a log
+[13:09:08] MyTag1     : This is a log with custom tag
+[13:09:08] Tip        : This is a tip
+[13:09:08] MyTag2     : This is a tip with custom tag
+[13:09:08] Warn       : This is a warn
+[13:09:08] MyTag3     : This is a warn with custom tag
+[13:09:08] Error      : This is a error
+[13:09:08] MyTag4     : This is a error with custom tag
+[13:09:16] Read       : hello:  > [asd]
+------ NEW START AT 13-12-2020 - 13:09:27 ------
+------ NEW START AT 13-12-2020 - 13:09:28 ------
+[13:09:28] Log        : This is a log
+[13:09:28] MyTag1     : This is a log with custom tag
+[13:09:28] Tip        : This is a tip
+[13:09:28] MyTag2     : This is a tip with custom tag
+[13:09:28] Warn       : This is a warn
+[13:09:28] MyTag3     : This is a warn with custom tag
+[13:09:28] Error      : This is a error
+[13:09:28] MyTag4     : This is a error with custom tag
+[13:09:30] Read       : hello:  > [dfsg]
+------ NEW START AT 13-12-2020 - 13:12:02 ------
+------ NEW START AT 13-12-2020 - 13:12:02 ------
+------ NEW START AT 13-12-2020 - 13:14:14 ------
+------ NEW START AT 13-12-2020 - 13:14:14 ------
+------ NEW START AT 13-12-2020 - 13:14:51 ------
+------ NEW START AT 13-12-2020 - 13:14:51 ------
+------ NEW START AT 13-12-2020 - 13:15:04 ------
+------ NEW START AT 13-12-2020 - 13:15:04 ------
+------ NEW START AT 13-12-2020 - 13:15:36 ------
+------ NEW START AT 13-12-2020 - 13:15:36 ------
+------ NEW START AT 13-12-2020 - 13:16:02 ------
+------ NEW START AT 13-12-2020 - 13:16:02 ------
+------ NEW START AT 13-12-2020 - 13:17:14 ------
+------ NEW START AT 13-12-2020 - 13:17:14 ------
+------ NEW START AT 13-12-2020 - 13:17:17 ------
+------ NEW START AT 13-12-2020 - 13:17:41 ------
+------ NEW START AT 13-12-2020 - 13:17:41 ------
+------ NEW START AT 13-12-2020 - 13:17:52 ------
+------ NEW START AT 13-12-2020 - 13:19:33 ------
+------ NEW START AT 13-12-2020 - 13:19:33 ------
+[13:19:33] Log        : This is a log
+[13:19:33] MyTag1     : This is a log with custom tag
+[13:19:33] Tip        : This is a tip
+[13:19:33] MyTag2     : This is a tip with custom tag
+[13:19:33] Warn       : This is a warn
+[13:19:33] MyTag3     : This is a warn with custom tag
+[13:19:33] Error      : This is a error
+[13:19:33] MyTag4     : This is a error with custom tag
+[13:19:34] Read       : hello:  > [g]
+------ NEW START AT 13-12-2020 - 13:20:46 ------
+------ NEW START AT 13-12-2020 - 13:20:52 ------
+------ NEW START AT 13-12-2020 - 13:20:52 ------
+[13:20:53] Log        : This is a log
+[13:20:53] MyTag1     : This is a log with custom tag
+[13:20:53] Tip        : This is a tip
+[13:20:53] MyTag2     : This is a tip with custom tag
+[13:20:53] Warn       : This is a warn
+[13:20:53] MyTag3     : This is a warn with custom tag
+[13:20:53] Error      : This is a error
+[13:20:53] MyTag4     : This is a error with custom tag
+[13:20:57] Read       : hello:  > [пзвоахщздлотшгщлзджльощзджюдльошлщд]
