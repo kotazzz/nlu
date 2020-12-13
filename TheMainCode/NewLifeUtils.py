@@ -948,7 +948,7 @@ class FilelogModule(object):
         else:
             self.logFileName = f"{logname}-{startdate}.log"
             self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
-        self.logFile.write(f"------ NEW START AT {startdate} - {starttime} ------\n")
+        self.logFile.write(f"------ NEW START AT {startdate} - {starttime} FROM {os.path.basename(__file__)}------\n")
 
         self.errDefaultTag = "[!!!] Error"
         self.logDefaultTag = "[   ] Log"
@@ -1169,7 +1169,7 @@ def testNlu():
     print("ColorModule created")
     sm = StringUtilModule()
     print("StringUtilModule created")
-    lm = LoggerModule(cm)
+    lm = LoggerModule(cm, enableFileLog = False)
     print("LoggerModule created")
     em = ExceptModule(lm, sm)
     print("ExceptModule created")
@@ -1195,7 +1195,7 @@ def testNlu():
     elapsed = datetime.datetime.now()
     ColorModule()
     StringUtilModule()
-    LoggerModule(cm)
+    LoggerModule(cm, enableFileLog = False)
     ExceptModule(lm, sm)
     TableBuildModule(sm, cm)
     CustomShellModule(None, em, sm, cm)
@@ -1224,16 +1224,16 @@ def testNlu():
     lm.wrn(f"Elapsed time for init all modules: {elapsed}")
 
 
-def generateBlackAlgo():
+
+
+if __name__ == "__main__":
+    testNlu()
+    lm = LoggerModule()
     f = FileModule()
     pyfiles = []
     for filename in f.get_directory_content(os.getcwd()):
         if filename[-3:] == ".py":
             pyfiles.append(filename)
     for filename in pyfiles:
-        print(f'black "{filename}"')
-
-
-if __name__ == "__main__":
-    testNlu()
-    generateBlackAlgo()
+        lm.log(f'black "{filename}"')
+    print()
