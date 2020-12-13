@@ -13,19 +13,20 @@ Simplify the development of some elements of more significant and large projects
 In fact, there are quite a lot of them, but they are constantly changing, I just don't have the strength to constantly change something in a bunch of files at the same time
 
 
-| Module name |  Description |  Status |
+| Module name  |  Description  |  Status       |
 | ------------ | ------------- | ------------- |
-| `ColorModule`          | Provides color output capabilities| <span style="color:#e01414"> **Complete** </span> |
-| `LoggerModule`         | Provides the ability to display information in an orderly manner on the screen  | <span style="color:#e01414"> **Complete** </span> |
-| `StringUtilModule`     | Module with additional options for processing and converting strings  | <span style="color:#e01414"> **Complete** </span> |
-| `ExceptModule`         | An additional module for working with errors during the execution of your code   | <span style="color:#e01414"> **Complete** </span> |
-| `CustomShellModule`    | CustomShellModule is a module that automates user input and output, creates the right          development environment, and provides the right API | <span style="color:#e01414"> **Complete** </span> |
-| `TableBuildModule`     | Module for working with tables, displaying them on the screen and arranging them inside the table itself | <span style="color:#e01414"> **Complete** </span> |
-| `UtilsModule`          | List of various other functions and add-ons that are not included in the above modules  | <span style="color:#b8b212"> **Working** </span> |
-| `FileModule`           | Wrapper module for simplified file management | <span style="color:#b8b212"> **Working** </span> |
-| `FilelogModule`        | Add-on for working with logs | <span style="color:#b8b212"> **Working** </span> |
-| `DatabaseManageModule` | A specialized class for working with databases and data inside them. It allows you to simplify working with them as much as possible, but due to  size of the original API, it does not allow you to implement absolutely all functions, so this class also provides access to direct database management     | <span style="color:#b8b212"> **Working** </span> |
-| `RandomModule`         | A module that provides a redesigned API for working with pseudo-random numbers  | <span style="color:#b8b212"> **Working** </span> |
+| `ColorModule`          | Provides color output capabilities |  **Complete**  |
+| `LoggerModule`         | Provides the ability to display information in an orderly manner on the screen  |  **Complete**  |
+| `StringUtilModule`     | Module with additional options for processing and converting strings  |  **Complete**  |
+| `ExceptModule`         | An additional module for working with errors during the execution of your code   |  **Complete**  |
+| `CustomShellModule`    | CustomShellModule is a module that automates user input and output, creates the right          development environment, and provides the right API |  **Complete**  |
+| `TableBuildModule`     | Module for working with tables, displaying them on the screen and arranging them inside the table itself |  **Complete**  |
+| `UtilsModule`          | List of various other functions and add-ons that are not included in the above modules  |  **Complete**  |
+| `FileModule`           | Wrapper module for simplified file management |  **Complete**  |
+| `FilelogModule`        | Add-on for working with logs |  **Complete**  |
+| `SortModule`           | A module for sorting data that currently only supports quick sorting|  **Complete**  |
+| `DatabaseManageModule` | A specialized class for working with databases and data inside them. It allows you to simplify working with them as much as possible, but due to  size of the original API, it does not allow you to implement absolutely all functions, so this class also provides access to direct database management     |  **Complete**  |
+| `RandomModule`         | A module that provides a redesigned API for working with pseudo-random numbers  |  **Working**  |
 
 
 ***Translator used**
