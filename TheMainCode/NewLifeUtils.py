@@ -1224,16 +1224,27 @@ def testNlu():
     lm.wrn(f"Elapsed time for init all modules: {elapsed}")
 
 
+cm = ColorModule()
+def file_list(path, ident = ''):
+    filelist = os.listdir(path)
 
-
+    for attached_file in filelist:
+       try: 
+           os.listdir(f'{path}\\{attached_file}')
+       except Exception as e: #ЕСЛИ ФАЙЛ
+           pass
+       else:                  #ЕСЛИ ПАПКА
+           pass
+    
+    
 if __name__ == "__main__":
-    testNlu()
-    lm = LoggerModule()
-    f = FileModule()
-    pyfiles = []
-    for filename in f.get_directory_content(os.getcwd()):
-        if filename[-3:] == ".py":
-            pyfiles.append(filename)
-    for filename in pyfiles:
-        lm.log(f'black "{filename}"')
-    print()
+    #testNlu()
+    #lm = LoggerModule()
+    #f = FileModule()
+    #pyfiles = []
+    #for filename in f.get_directory_content(os.getcwd()):
+    #    if filename[-3:] == ".py":
+    #        pyfiles.append(filename)
+    #for filename in pyfiles:
+    #    lm.log(f'black "{filename}"')
+    file_list(r"E:\Документы\_Repo\NewLifeUtils\TheMainCode")
