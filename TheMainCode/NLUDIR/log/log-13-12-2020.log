@@ -86,3 +86,76 @@
 [13:20:53] Error      : This is a error
 [13:20:53] MyTag4     : This is a error with custom tag
 [13:20:57] Read       : hello:  > [пзвоахщздлотшгщлзджльощзджюдльошлщд]
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+[13:22:57] Tip        : c
+      Project Status
+╔════════════════════════════════════════╗
+║Module                                  ║
+╠════════════════════════════════════════╣
+║ColorModule                             ║
+║LoggerModule                            ║
+║StringUtilModule                        ║
+║ExceptModule                            ║
+║CustomShellModule                       ║
+║TableBuildModule                        ║
+║UtilsModule                             ║
+║FileModule                              ║
+║FilelogModule                           ║
+║SortModule                              ║
+║DatabaseManageModule                    ║
+║RandomModule                            ║
+╚════════════════════════════════════════╝
+
+[13:22:57] Warn       : Elapsed time for init all modules: 0:00:00.230857
+------ NEW START AT 13-12-2020 - 13:22:56 ------
+------ NEW START AT 13-12-2020 - 13:23:38 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+------ NEW START AT 13-12-2020 - 13:23:43 ------
+[13:23:44] Tip        : c
+      Project Status
+╔════════════════════════════════════════╗
+║Module                                  ║
+╠════════════════════════════════════════╣
+║ColorModule                             ║
+║LoggerModule                            ║
+║StringUtilModule                        ║
+║ExceptModule                            ║
+║CustomShellModule                       ║
+║TableBuildModule                        ║
+║UtilsModule                             ║
+║FileModule                              ║
+║FilelogModule                           ║
+║SortModule                              ║
+║DatabaseManageModule                    ║
+║RandomModule                            ║
+╚════════════════════════════════════════╝
+
+[13:23:44] Warn       : Elapsed time for init all modules: 0:00:00.247846
+------ NEW START AT 13-12-2020 - 13:23:43 ------

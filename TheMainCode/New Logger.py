@@ -2,29 +2,31 @@ from NewLifeUtils import *
 
 
 class LoggerModule(object):
-    def __init__(self, File=None, Color=None, String=None, FileLogger =None, enableFileLog = True):
+    def __init__(
+        self, File=None, Color=None, String=None, FileLogger=None, enableFileLog=True
+    ):
         if type(FileLogger) == FilelogModule():
             self.FileLogger = FileLogger
         else:
             self.FileLogger = FilelogModule()
-            
+
         if type(File) == FileModule:
             self.File = File
         else:
             self.File = FileModule()
-        
+
         if type(Color) == ColorModule:
             self.Color = Color
         else:
             self.Color = ColorModule()
-            
+
         if type(String) == StringUtilModule:
             self.String = String
         else:
             self.String = StringUtilModule()
-            
+
         self.enableFileLog = enableFileLog
-        
+
         f = self.File.open_file("colors.json", mode="r+", path="+logger_data")
         try:
             self.color_map = json.loads(f.read())
@@ -48,20 +50,22 @@ class LoggerModule(object):
         self.log_pattern = "{greenyellow}[{time}] {lightgreen}{tag}{snow} : {mediumspringgreen}{message}"
         self.wrn_pattern = "{darkorange}[{time}] {orange}{tag}{snow} : {gold}{message}"
         self.err_pattern = "{crimson}[{time}] {red}{tag}{snow} : {firebrick}{message}"
-        self.tip_pattern = "{fuchsia}[{time}] {magenta}{tag}{snow} : {mediumorchid}{message}"
+        self.tip_pattern = (
+            "{fuchsia}[{time}] {magenta}{tag}{snow} : {mediumorchid}{message}"
+        )
         self.rea_pattern = "{cyan}[{time}] {lightcyan}{tag}{snow} : {paleturquoise}{message} > {mediumslateblue}[{readed}]"
-        
+
         self.log_default_tag = "Log"
         self.wrn_default_tag = "Warn"
         self.err_default_tag = "Error"
         self.tip_default_tag = "Tip"
         self.rea_default_tag = "Read"
-        
-        #  READ    
+
+        #  READ
 
         self.date_format = "%d-%m-%Y"
         self.time_format = "%H:%M:%S"
-        
+
         self.tag_length = 10
 
     def tag_check(self, tag, default):
@@ -82,10 +86,12 @@ class LoggerModule(object):
             )
             + self.color_map["reset"]
         )
+
     def out(self, text):
         if self.enableFileLog:
             self.FileLogger.drec(self.String.remove_csi(text))
         print(text)
+
     log = lambda self, message, tag="": self.out(
         self.to_format(
             self.log_pattern,
@@ -110,13 +116,9 @@ class LoggerModule(object):
             {"message": message, "tag": self.tag_check(tag, self.tip_default_tag)},
         )
     )
-    cstm = lambda self, pattern, text, args: self.out(
-        self.to_format(
-            pattern,
-            **args
-        )
-    )
-    def read(self, message, tag = ''):
+    cstm = lambda self, pattern, text, args: self.out(self.to_format(pattern, **args))
+
+    def read(self, message, tag=""):
         if message[-1] not in [" ", ">", ":"]:
             message += ": "
         print(
@@ -124,12 +126,20 @@ class LoggerModule(object):
             end="",
         )
         readed = input()
-         
-        self.out(self.Color.MCC.PREVIOUSLINE  + self.Color.ACC.RESET  + 
-        self.to_format(
-            self.rea_pattern, {'message': message, 'tag' : self.tag_check(tag, self.rea_default_tag), 'readed' : readed}
+
+        self.out(
+            self.Color.MCC.PREVIOUSLINE
+            + self.Color.ACC.RESET
+            + self.to_format(
+                self.rea_pattern,
+                {
+                    "message": message,
+                    "tag": self.tag_check(tag, self.rea_default_tag),
+                    "readed": readed,
+                },
+            )
         )
-    )
+
 
 if __name__ == "__main__":
     l = LoggerModule()
@@ -141,5 +151,5 @@ if __name__ == "__main__":
     l.wrn(f"This is a warn with custom tag", "MyTag3")
     l.err(f"This is a error")
     l.err(f"This is a error with custom tag", "MyTag4")
-    l.read('hello')
+    l.read("hello")
     print(l.color_data["table"])
