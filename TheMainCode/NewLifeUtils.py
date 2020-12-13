@@ -13,6 +13,9 @@ try:
     import random
     import sqlite3
     import json
+
+    from pathlib import Path
+    from itertools import islice
 except ModuleNotFoundError as e:
     print(f"Unable to import dependences: {e}")
     exit(-1)
@@ -889,6 +892,10 @@ class FileModule(object):
 
         self.currentDirectory = os.getcwd() + "\\"
         self.workDirectory = self.currentDirectory + "NLUDIR\\"
+        self.space = "   "
+        self.branch = "│  "
+        self.tee = "├─ "
+        self.last = "└─ "
 
     def get_path(self, path=""):
         if path == "":
@@ -921,6 +928,63 @@ class FileModule(object):
     def exists(self, path):
         return os.path.exists(get_path(path))
 
+    def tree(
+        self,
+        dir_path: Path,
+        level: int = -1,
+        limit_to_directories: bool = False,
+        length_limit: int = 1000,
+    ):
+        """Given a directory Path object print a visual tree structure"""
+        resultpath = ""
+        dir_path = Path(dir_path)  # accept string coerceable to Path
+        files = 0
+        directories = 0
+
+        def inner(dir_path: Path, prefix: str = "", level=-1):
+            nonlocal files, directories
+            if not level:
+                return  # 0, stop iterating
+            if limit_to_directories:
+                contents = [d for d in dir_path.iterdir() if d.is_dir()]
+            else:
+                contents = list(dir_path.iterdir())
+            pointers = [self.tee] * (len(contents) - 1) + [self.last]
+            for pointer, path in zip(pointers, contents):
+                if path.is_dir():
+                    yield prefix + pointer + path.name
+                    directories += 1
+                    extension = self.branch if pointer == self.tee else self.space
+                    yield from inner(path, prefix=prefix + extension, level=level - 1)
+                elif not limit_to_directories:
+                    yield prefix + pointer + path.name
+                    files += 1
+
+        resultpath += "\n" + (dir_path.name)
+        iterator = inner(dir_path, level=level)
+        for line in islice(iterator, length_limit):
+            resultpath += "\n" + (line)
+        if next(iterator, None):
+            resultpath += "\n" + (
+                f"... length_limit, {length_limit}, reached, counted:"
+            )
+        resultpath += "\n" + ("")
+        resultpath += "\n" + (
+            f"{directories} directories" + (f", {files} files" if files else "")
+        )
+        return resultpath
+
+    def old_tree(startpath):
+        resultpath = ""
+        for root, dirs, files in os.walk(startpath):
+            level = root.replace(startpath, "").count(os.sep)
+            indent = " " * 4 * (level)
+            resultpath += "\n" + ("{}{}/".format(indent, os.path.basename(root)))
+            subindent = " " * 4 * (level + 1)
+            for f in files:
+                resultpath += "\n" + ("{}{}".format(subindent, f))
+        return resultpath
+
 
 class FilelogModule(object):
     def __init__(self, File=None, String=None, logname="log", rr=False):
@@ -948,7 +1012,9 @@ class FilelogModule(object):
         else:
             self.logFileName = f"{logname}-{startdate}.log"
             self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
-        self.logFile.write(f"------ NEW START AT {startdate} - {starttime} FROM {os.path.basename(__file__)}------\n")
+        self.logFile.write(
+            f"------ NEW START AT {startdate} - {starttime} FROM {os.path.basename(__file__)}------\n"
+        )
 
         self.errDefaultTag = "[!!!] Error"
         self.logDefaultTag = "[   ] Log"
@@ -997,38 +1063,7 @@ class FilelogModule(object):
 
     def drec(self, text, end="\n"):
         self.logFile.write(text + end)
-    def tree(dir_path: Path, level: int=-1, limit_to_directories: bool=False,
-             length_limit: int=1000):
-        """Given a directory Path object print a visual tree structure"""
-        dir_path = Path(dir_path) # accept string coerceable to Path
-        files = 0
-        directories = 0
-        def inner(dir_path: Path, prefix: str='', level=-1):
-            nonlocal files, directories
-            if not level: 
-                return # 0, stop iterating
-            if limit_to_directories:
-                contents = [d for d in dir_path.iterdir() if d.is_dir()]
-            else: 
-                contents = list(dir_path.iterdir())
-            pointers = [tee] * (len(contents) - 1) + [last]
-            for pointer, path in zip(pointers, contents):
-                if path.is_dir():
-                    yield prefix + pointer + path.name
-                    directories += 1
-                    extension = branch if pointer == tee else space 
-                    yield from inner(path, prefix=prefix+extension, level=level-1)
-                elif not limit_to_directories:
-                    yield prefix + pointer + path.name
-                    files += 1
-        lm.log(dir_path.name)
-        iterator = inner(dir_path, level=level)
-        for line in islice(iterator, length_limit):
-            lm.log(line)
-        if next(iterator, None):
-            lm.log(f'... length_limit, {length_limit}, reached, counted:')
-        lm.log('')
-        lm.log(f'{directories} directories' + (f', {files} files' if files else ''))
+
 
 class DatabaseManageModule(object):
     def __init__(self, Logger=None, File=None, Except=None, Table=None):
@@ -1200,7 +1235,7 @@ def testNlu():
     print("ColorModule created")
     sm = StringUtilModule()
     print("StringUtilModule created")
-    lm = LoggerModule(cm, enableFileLog = False)
+    lm = LoggerModule(cm, enableFileLog=False)
     print("LoggerModule created")
     em = ExceptModule(lm, sm)
     print("ExceptModule created")
@@ -1226,7 +1261,7 @@ def testNlu():
     elapsed = datetime.datetime.now()
     ColorModule()
     StringUtilModule()
-    LoggerModule(cm, enableFileLog = False)
+    LoggerModule(cm, enableFileLog=False)
     ExceptModule(lm, sm)
     TableBuildModule(sm, cm)
     CustomShellModule(None, em, sm, cm)
@@ -1257,24 +1292,15 @@ def testNlu():
 
 cm = ColorModule()
 
-def list_files(startpath):
-    for root, dirs, files in os.walk(startpath):
-        level = root.replace(startpath, '').count(os.sep)
-        indent = ' ' * 4 * (level)
-        print('{}{}/'.format(indent, os.path.basename(root)))
-        subindent = ' ' * 4 * (level + 1)
-        for f in files:
-            print('{}{}'.format(subindent, f))
-    
+
 if __name__ == "__main__":
-    #testNlu()
-    #lm = LoggerModule()
-    #f = FileModule()
-    #pyfiles = []
-    #for filename in f.get_directory_content(os.getcwd()):
-    #    if filename[-3:] == ".py":
-    #        pyfiles.append(filename)
-    #for filename in pyfiles:
-    #    lm.log(f'black "{filename}"')
-    list_files(r"E:\Документы\_Repo\NewLifeUtils\TheMainCode")
-    
+    testNlu()
+    lm = LoggerModule()
+    f = FileModule()
+    pyfiles = []
+    for filename in f.get_directory_content(os.getcwd()):
+        if filename[-3:] == ".py":
+            pyfiles.append(filename)
+    for filename in pyfiles:
+        lm.log(f'black "{filename}"')
+    pass
