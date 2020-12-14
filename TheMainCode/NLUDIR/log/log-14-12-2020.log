@@ -200,3 +200,84 @@
 [17:03:09] Warn       : Unknown Command, type "help"
 [17:03:10] Read       : Root > > [a]
 [17:03:10] Warn       : Unknown Command, type "help"
+[14-12-2020|17:09:29] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[17:09:29] Log        : Welcome to root
+[17:09:32] Read       : Root > > [help]
+[17:09:32] root HELP  : 
+root - default console
+	commandname
+		Description : My Super Duper Command
+		Aliases     : commandname, commandalias
+		Usage       : commandname <required parametr> [optional parametr] 
+	cls
+		Description : clears display
+		Aliases     : cls, clearscreen
+		Usage       : cls 
+	help
+		Description : displays all commands in this module
+		Aliases     : help
+		Usage       : help [command] 
+	hello
+		Description : builtin command
+		Aliases     : hello, hi
+		Usage       : hello [name] 
+	exit
+		Description : Exit from ConsoleShellManager
+		Aliases     : exit, quit
+		Usage       : exit 
+
+[17:21:03] Read       : Root > > [commandname]
+[17:21:03] Warn       : Invalid usage. Syntax: commandname <required parametr> [optional parametr] 
+[17:21:05] Read       : Root > > [commandname 1]
+[17:21:05] Log        : Command "commandname" executed now
+[17:21:07] Read       : Root > > [commandname 1 1]
+[17:21:07] Log        : Command "commandname" executed now
+[17:21:08] Read       : Root > > [commandname 1 1 1]
+[17:21:08] Warn       : Invalid usage. Syntax: commandname <required parametr> [optional parametr] 
+[14-12-2020|17:21:16] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[17:21:16] Log        : Welcome to root
+[17:21:22] Read       : Root > > [commandname 1 1 1]
+[17:21:22] Log        : Command "commandname" executed now
+[14-12-2020|17:22:36] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[14-12-2020|17:22:42] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[14-12-2020|17:24:58] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[17:24:58] Log        : Welcome to root
+[17:25:00] Read       : Root > > [инфо]
+[17:25:00] Log        : Command "инфо" executed now
+[17:25:06] Read       : Root > > [информация]
+[17:25:06] Warn       : Unknown Command, type "help"
+[17:25:13] Read       : Root > > [инфо]
+[17:25:13] Log        : Command "инфо" executed now
+[17:25:17] Read       : Root > > [help]
+[17:25:17] root HELP  : 
+root - default console
+	инфо
+		Description : Вся информация о коммандах
+		Aliases     : инфо, информация
+		Usage       : инфо 
+	cls
+		Description : clears display
+		Aliases     : cls, clearscreen
+		Usage       : cls 
+	help
+		Description : displays all commands in this module
+		Aliases     : help
+		Usage       : help [command] 
+	hello
+		Description : builtin command
+		Aliases     : hello, hi
+		Usage       : hello [name] 
+	exit
+		Description : Exit from ConsoleShellManager
+		Aliases     : exit, quit
+		Usage       : exit 
+
+[17:25:22] Read       : Root > > [информация]
+[17:25:22] Warn       : Unknown Command, type "help"
+[17:25:24] Read       : Root > > [информация ]
+[17:25:24] Warn       : Unknown Command, type "help"
+[17:25:29] Read       : Root > > [информация]
+[17:25:29] Warn       : Unknown Command, type "help"
+[17:25:38] Read       : Root > > [hi]
+[17:25:38] Warn       : Unknown Command, type "help"
+[14-12-2020|17:27:15] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()

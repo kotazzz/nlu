@@ -639,7 +639,7 @@ class CustomShellModule(object):
 
         self.runState = "setup"
 
-    class __cls(Command):
+    class cls_(Command):
         command = "cls"
         description = "clears display"
         aliases = [command, "clearscreen"]
@@ -649,7 +649,7 @@ class CustomShellModule(object):
         def run(console):
             os.system("cls")
 
-    class __help(Command):
+    class help_(Command):
         command = "help"
         description = "displays all commands in this module"
         aliases = [command]
@@ -724,7 +724,7 @@ class CustomShellModule(object):
             else:
                 console.invalidUsage()
 
-    class __hello(Command):
+    class hello_(Command):
         command = "hello"
         description = "builtin command"
         aliases = [command, "hi"]
@@ -737,7 +737,7 @@ class CustomShellModule(object):
             else:
                 console.Logger.log(f"Hello, world!")
 
-    class __exit(Command):
+    class exit_(Command):
         command = "exit"
         aliases = [command, "quit"]
         description = "Exit from ConsoleShellManager"
@@ -748,11 +748,11 @@ class CustomShellModule(object):
         def run(console):
             console.runState = "quit"
 
-    class __initDefaultTask(Task):
+    class initDefaultTask_(Task):
         def execute(console):
             console.Logger.log(f"Welcome to {console.cmdname}")
 
-    class __exitDefaultTask(Task):
+    class exitDefaultTask_(Task):
         def execute(console):
             console.Logger.log(
                 f"Exit with code: {console.runState}, run command: {console.run}"
@@ -805,12 +805,12 @@ class CustomShellModule(object):
 
         # Basic registration
 
-        self.registerCommand(self.__cls)
-        self.registerCommand(self.__help)
-        self.registerCommand(self.__hello)
-        self.registerCommand(self.__exit)
-        self.registerExitTask(self.__exitDefaultTask)
-        self.registerInitTask(self.__initDefaultTask)
+        self.registerCommand(self.cls_)
+        self.registerCommand(self.help_)
+        self.registerCommand(self.hello_)
+        self.registerCommand(self.exit_)
+        self.registerExitTask(self.exitDefaultTask_)
+        self.registerInitTask(self.initDefaultTask_)
 
         for itask in self.registeredInitTask:
             itask(self)
@@ -1080,7 +1080,6 @@ class FilelogModule(object):
             self.log(
                 f"New Logger from {os.path.basename(__file__)}/{Global.lastFilelogModuleInit.replace(' ', '')}"
             )
-            
 
     def formatter(self, pattern, message, tag, path, additional=None):
         if additional is None:
@@ -1102,25 +1101,26 @@ class FilelogModule(object):
     def log(self, message, path="main", tag=""):
         if tag == "":
             tag = self.logDefaultTag
-        self.drec(self.formatter(self.logFormat, message, tag, path), end = '')
+        self.drec(self.formatter(self.logFormat, message, tag, path), end="")
 
     def wrn(self, message, path="main", tag=""):
         if tag == "":
             tag = self.wrnDefaultTag
-        self.drec(self.formatter(self.wrnFormat, message, tag, path), end = '')
+        self.drec(self.formatter(self.wrnFormat, message, tag, path), end="")
 
     def err(self, message, path="main", tag=""):
         if tag == "":
             tag = self.errDefaultTag
-        self.drec(self.formatter(self.errFormat, message, tag, path), end = '')
+        self.drec(self.formatter(self.errFormat, message, tag, path), end="")
 
     def cstm(self, pattern, text=""):
-        self.drec(self.formatter(pattern, message, tag, path), end = '')
+        self.drec(self.formatter(pattern, message, tag, path), end="")
 
     def drec(self, text, end="\n"):
         self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
         self.logFile.write(text + end)
         self.logFile.close()
+
 
 class DatabaseManageModule(object):
     def __init__(self, Logger=None, File=None, Except=None, Table=None):
