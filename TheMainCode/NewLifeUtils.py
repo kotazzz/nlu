@@ -883,10 +883,12 @@ class UtilsModule(object):
             return source[selector]
         return None
         
-    def getfromfname(self, class_obj = None):
-        print(inspect.getmembers(class_obj))
-
-        return ''
+    def getfromfname(self, a):
+        res = ''
+        i = 0
+        for e in inspect.stack():
+            res+=e.code_context[0]
+        return res.rstrip('\n').rsplit('\n', 1)[-1]
         
     def __partition(self, nums, low, high):
         # Выбираем средний элемент в качестве опорного
@@ -1021,6 +1023,8 @@ class FileModule(object):
                 resultpath += "\n" + ("{}{}".format(subindent, f))
         return resultpath
 
+class Global:
+    lastFilelogModuleInit = ''
 
 class FilelogModule(object):
     def __init__(self, File=None, String=None, Utils=None, logname="log", rr=False):
@@ -1039,8 +1043,20 @@ class FilelogModule(object):
 
         self.dateFormat = "%d-%m-%Y"
         self.timeFormat = "%H:%M:%S"
+        
         startdate = datetime.datetime.now().strftime(self.dateFormat)
         starttime = datetime.datetime.now().strftime(self.timeFormat)
+        
+        self.errDefaultTag = "[!!!] Error"
+        self.logDefaultTag = "[   ] Log"
+        self.wrnDefaultTag = "[_!_] Warn"
+
+        self.TagMaxLenght = 12
+
+        self.errFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+        self.logFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+        self.wrnFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+        
         if rr:
             file_snumber = 1
             while os.path.exists(
@@ -1052,20 +1068,15 @@ class FilelogModule(object):
         else:
             self.logFileName = f"{logname}-{startdate}.log"
             self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
-        print(self.Utils.getfromfname(self))
-        self.logFile.write(
-            f"------ NEW START AT {startdate} - {starttime} FROM {os.path.basename(__file__)}/------\n"
-        )
+        
+        if Global.lastFilelogModuleInit != self.Utils.getfromfname(self):
+            Global.lastFilelogModuleInit = self.Utils.getfromfname(self)
+            self.log(
+                f"New Logger from {os.path.basename(__file__)}/{Global.lastFilelogModuleInit.replace(' ', '')}"
+            )
+            
 
-        self.errDefaultTag = "[!!!] Error"
-        self.logDefaultTag = "[   ] Log"
-        self.wrnDefaultTag = "[_!_] Warn"
-
-        self.TagMaxLenght = 12
-
-        self.errFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
-        self.logFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
-        self.wrnFormat = "[{date}|{time}] <{path}>:{tag}: {message}\n"
+        
 
     def formatter(self, pattern, message, tag, path, additional=None):
         if additional is None:
@@ -1236,6 +1247,7 @@ class RandomModule(object):
 
 
 
+
 def testNlu():
     # try to init
     cm = ColorModule()
@@ -1289,18 +1301,17 @@ def testNlu():
         f"{cm.FGC.GREEN }FilelogModule",
         f"{cm.FGC.YELLOW}DatabaseManageModule",
         f"{cm.FGC.RED   }RandomModule",
-    ]#cm.ACC.CLEARSCREEN + 
-    lm.tip(tbm.createTable(1, [40], status, "Project Status"))
+    ]
+    lm.tip(cm.ACC.CLEARSCREEN +tbm.createTable(1, [40], status, "Project Status"))
     lm.wrn(f"Elapsed time for init all modules: {elapsed}")
 
 
-cm = ColorModule()
-
-
 if __name__ == "__main__":
-    #testNlu()
-    FilelogModule()
+    testNlu()
+    #test()
+    #FilelogModule()
     #lm = LoggerModule()
+    #CustomShellModule() 
     #f = FileModule()
     #pyfiles = []
     #for filename in f.get_directory_content(os.getcwd()):
