@@ -12,3 +12,191 @@
 [16:46:53] Log        : black "NewLifeUtils.py"
 [16:46:53] Log        : black "Sort test.py"
 [16:46:53] Log        : black "Unnamed project.py"
+[14-12-2020|16:48:34] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14-12-2020|16:49:49] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14-12-2020|16:50:22] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|16:50:22] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|16:50:22] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[16:50:22] Log        : black "DatabaseManageModule dev.py"
+[16:50:22] Log        : black "DispPath.py"
+[16:50:22] Log        : black "Math test.py"
+[16:50:22] Log        : black "New Logger.py"
+[16:50:22] Log        : black "NewLifeUtils.py"
+[16:50:22] Log        : black "Sort test.py"
+[16:50:22] Log        : black "Unnamed project.py"
+[14-12-2020|16:50:28] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14-12-2020|16:51:17] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|16:51:17] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|16:51:17] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[16:51:18] Log        : black "DatabaseManageModule dev.py"hello
+
+[16:51:18] Log        : black "DispPath.py"hello
+
+[16:51:18] Log        : black "Math test.py"hello
+
+[16:51:18] Log        : black "New Logger.py"hello
+
+[16:51:18] Log        : black "NewLifeUtils.py"hello
+
+[16:51:18] Log        : black "Sort test.py"hello
+
+[16:51:18] Log        : black "Unnamed project.py"hello
+
+[14-12-2020|16:52:17] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|16:52:17] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|16:52:17] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[16:52:17] Log        : black "DatabaseManageModule dev.py"hello
+
+[16:52:17] Log        : black "DispPath.py"hello
+
+[16:52:17] Log        : black "Math test.py"hello
+
+[16:52:17] Log        : black "New Logger.py"hello
+
+[16:52:17] Log        : black "NewLifeUtils.py"hello
+
+[16:52:17] Log        : black "Sort test.py"hello
+
+[16:52:17] Log        : black "Unnamed project.py"hello
+
+[14-12-2020|16:52:20] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14-12-2020|16:52:58] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[14-12-2020|16:53:59] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[14-12-2020|16:54:27] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[14-12-2020|16:54:34] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|16:54:34] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|16:54:34] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[16:54:35] Log        : black "DatabaseManageModule dev.py"
+[16:54:35] Log        : black "DispPath.py"
+[16:54:35] Log        : black "Math test.py"
+[16:54:35] Log        : black "New Logger.py"
+[16:54:35] Log        : black "NewLifeUtils.py"
+[16:54:35] Log        : black "Sort test.py"
+[16:54:35] Log        : black "Unnamed project.py"
+[14-12-2020|16:56:09] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[14-12-2020|16:56:16] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[14-12-2020|16:56:37] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[14-12-2020|16:56:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|16:56:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|16:56:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[16:56:53] Log        : black "DatabaseManageModule dev.py"
+[16:56:53] Log        : black "DispPath.py"
+[16:56:53] Log        : black "Math test.py"
+[16:56:53] Log        : black "New Logger.py"
+[16:56:53] Log        : black "NewLifeUtils.py"
+[16:56:53] Log        : black "Sort test.py"
+[16:56:53] Log        : black "Unnamed project.py"
+[14-12-2020|16:57:07] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[14-12-2020|16:58:18] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+
+[14-12-2020|16:58:18] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+
+[14-12-2020|16:58:18] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+
+[16:58:18] Log        : black "DatabaseManageModule dev.py"
+[16:58:18] Log        : black "DispPath.py"
+[16:58:18] Log        : black "Math test.py"
+[16:58:18] Log        : black "New Logger.py"
+[16:58:18] Log        : black "NewLifeUtils.py"
+[16:58:18] Log        : black "Sort test.py"
+[16:58:18] Log        : black "Unnamed project.py"
+[14-12-2020|16:58:29] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+
+[14-12-2020|16:58:29] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+
+[14-12-2020|16:58:29] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+
+[16:58:29] Log        : black "DatabaseManageModule dev.py"
+[16:58:29] Log        : black "DispPath.py"
+[16:58:29] Log        : black "Math test.py"
+[16:58:29] Log        : black "New Logger.py"
+[16:58:29] Log        : black "NewLifeUtils.py"
+[16:58:29] Log        : black "Sort test.py"
+[16:58:29] Log        : black "Unnamed project.py"
+[14-12-2020|16:58:58] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|16:58:58] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|16:58:58] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[16:58:59] Log        : black "DatabaseManageModule dev.py"
+[16:58:59] Log        : black "DispPath.py"
+[16:58:59] Log        : black "Math test.py"
+[16:58:59] Log        : black "New Logger.py"
+[16:58:59] Log        : black "NewLifeUtils.py"
+[16:58:59] Log        : black "Sort test.py"
+[16:58:59] Log        : black "Unnamed project.py"
+[14-12-2020|16:59:36] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|16:59:36] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|16:59:36] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[16:59:36] Log        : black "DatabaseManageModule dev.py"
+[16:59:36] Log        : black "DispPath.py"
+[16:59:36] Log        : black "Math test.py"
+[16:59:36] Log        : black "New Logger.py"
+[16:59:36] Log        : black "NewLifeUtils.py"
+[16:59:36] Log        : black "Sort test.py"
+[16:59:36] Log        : black "Unnamed project.py"
+[14-12-2020|17:00:02] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|17:00:02] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|17:00:02] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[17:00:02] Log        : black "DatabaseManageModule dev.py"
+[17:00:02] Log        : black "DispPath.py"
+[17:00:02] Log        : black "Math test.py"
+[17:00:02] Log        : black "New Logger.py"
+[17:00:02] Log        : black "NewLifeUtils.py"
+[17:00:02] Log        : black "Sort test.py"
+[17:00:02] Log        : black "Unnamed project.py"
+[14-12-2020|17:00:09] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|17:00:09] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|17:00:09] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[17:00:09] Log        : black "DatabaseManageModule dev.py"
+[17:00:09] Log        : black "DispPath.py"
+[17:00:09] Log        : black "Math test.py"
+[17:00:09] Log        : black "New Logger.py"
+[17:00:09] Log        : black "NewLifeUtils.py"
+[17:00:09] Log        : black "Sort test.py"
+[17:00:09] Log        : black "Unnamed project.py"
+[14-12-2020|17:02:26] <main>:[   ] Log   : New Logger from NewLifeUtils.py/FilelogModule()
+[14-12-2020|17:02:26] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[14-12-2020|17:02:26] <main>:[   ] Log   : New Logger from NewLifeUtils.py/CustomShellModule()
+[17:02:26] Log        : black "DatabaseManageModule dev.py"
+[17:02:26] Log        : black "DispPath.py"
+[17:02:26] Log        : black "Math test.py"
+[17:02:26] Log        : black "New Logger.py"
+[17:02:26] Log        : black "NewLifeUtils.py"
+[17:02:26] Log        : black "Sort test.py"
+[17:02:26] Log        : black "Unnamed project.py"
+[14-12-2020|17:02:33] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule(LoggerModule(enableFileLog=True))
+[17:02:33] Log        : Welcome to root
+[17:02:35] Read       : Root > > [asd]
+[17:02:35] Warn       : Unknown Command, type "help"
+[17:02:36] Read       : Root > > [asd]
+[17:02:36] Warn       : Unknown Command, type "help"
+[14-12-2020|17:03:04] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[17:03:04] Log        : Welcome to root
+[17:03:05] Read       : Root > > [asdfghjr]
+[17:03:05] Warn       : Unknown Command, type "help"
+[17:03:05] Read       : Root > > [yetwrsaf]
+[17:03:05] Warn       : Unknown Command, type "help"
+[17:03:06] Read       : Root > > [gdfh]
+[17:03:06] Warn       : Unknown Command, type "help"
+[17:03:06] Read       : Root > > [rtewS]
+[17:03:06] Warn       : Unknown Command, type "help"
+[17:03:06] Read       : Root > > [DFG]
+[17:03:06] Warn       : Unknown Command, type "help"
+[17:03:06] Read       : Root > > [JUY]
+[17:03:06] Warn       : Unknown Command, type "help"
+[17:03:06] Read       : Root > > [TRED]
+[17:03:06] Warn       : Unknown Command, type "help"
+[17:03:07] Read       : Root > > [SFGHY]
+[17:03:07] Warn       : Unknown Command, type "help"
+[17:03:07] Read       : Root > > [U]
+[17:03:07] Warn       : Unknown Command, type "help"
+[17:03:07] Read       : Root > > [TREDS]
+[17:03:07] Warn       : Unknown Command, type "help"
+[17:03:07] Read       : Root > > [FGDT]
+[17:03:07] Warn       : Unknown Command, type "help"
+[17:03:08] Read       : Root > > [REDS]
+[17:03:08] Warn       : Unknown Command, type "help"
+[17:03:08] Read       : Root > > []
+[17:03:09] Read       : Root > > [A]
+[17:03:09] Warn       : Unknown Command, type "help"
+[17:03:10] Read       : Root > > [a]
+[17:03:10] Warn       : Unknown Command, type "help"

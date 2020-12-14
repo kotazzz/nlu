@@ -1073,13 +1073,14 @@ class FilelogModule(object):
             self.logFile = self.File.open_file(self.logFileName, path="+log", mode="w")
         else:
             self.logFileName = f"{logname}-{startdate}.log"
-            self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
-
+        self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
+        self.logFile.close()
         if Global.lastFilelogModuleInit != self.Utils.getfromfname(self):
             Global.lastFilelogModuleInit = self.Utils.getfromfname(self)
             self.log(
                 f"New Logger from {os.path.basename(__file__)}/{Global.lastFilelogModuleInit.replace(' ', '')}"
             )
+            
 
     def formatter(self, pattern, message, tag, path, additional=None):
         if additional is None:
@@ -1101,24 +1102,25 @@ class FilelogModule(object):
     def log(self, message, path="main", tag=""):
         if tag == "":
             tag = self.logDefaultTag
-        self.logFile.write(self.formatter(self.logFormat, message, tag, path))
+        self.drec(self.formatter(self.logFormat, message, tag, path), end = '')
 
     def wrn(self, message, path="main", tag=""):
         if tag == "":
             tag = self.wrnDefaultTag
-        self.logFile.write(self.formatter(self.wrnFormat, message, tag, path))
+        self.drec(self.formatter(self.wrnFormat, message, tag, path), end = '')
 
     def err(self, message, path="main", tag=""):
         if tag == "":
             tag = self.errDefaultTag
-        self.logFile.write(self.formatter(self.errFormat, message, tag, path))
+        self.drec(self.formatter(self.errFormat, message, tag, path), end = '')
 
     def cstm(self, pattern, text=""):
-        self.logFile.write(self.formatter(pattern, message, tag, path))
+        self.drec(self.formatter(pattern, message, tag, path), end = '')
 
     def drec(self, text, end="\n"):
+        self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
         self.logFile.write(text + end)
-
+        self.logFile.close()
 
 class DatabaseManageModule(object):
     def __init__(self, Logger=None, File=None, Except=None, Table=None):
