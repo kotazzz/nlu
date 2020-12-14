@@ -1,5 +1,5 @@
+__version__ = "5.0.1"
 name = "NewLifeUtils"
-version = "v5.0.1 dev"
 description = """
 In fact, there is active development, repeated rewriting of the code. All actions are published on github for orderly storage of changes and fixing all my actions. I don't encourage you to use my code. My goal is to learn how to write programs beautifully and learn how to use github. If you have any ideas, criticism, or suggestions , I'm happy to listen Now this is the 5th attempt to rewrite the code beautifully, each time I change the very structure of the code. In General, I didn't really study the language features, so my code will be disgusting to a professional programmer. Maybe someday I will achieve the effect that I need
 """
@@ -1322,3 +1322,4 @@ if __name__ == "__main__":
     # for filename in pyfiles:
     #     lm.log(f'black "{filename}"')
     # print()
+    input()

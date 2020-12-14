@@ -304,3 +304,4 @@ KeyError: 'alias'
 [17:31:30] Log        : Hello, world!
 [17:31:33] Read       : Root > > [информация]
 [17:31:33] Log        : Command "инфо" executed now
+[14-12-2020|18:20:00] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
