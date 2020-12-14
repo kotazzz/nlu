@@ -24,7 +24,6 @@ In fact, there are quite a lot of them, but they are constantly changing, I just
 | `UtilsModule`          | List of various other functions and add-ons that are not included in the above modules  |  **Complete**  |
 | `FileModule`           | Wrapper module for simplified file management |  **Complete**  |
 | `FilelogModule`        | Add-on for working with logs |  **Complete**  |
-| `SortModule`           | A module for sorting data that currently only supports quick sorting|  **Complete**  |
 | `DatabaseManageModule` | A specialized class for working with databases and data inside them. It allows you to simplify working with them as much as possible, but due to  size of the original API, it does not allow you to implement absolutely all functions, so this class also provides access to direct database management     |  **Complete**  |
 | `RandomModule`         | A module that provides a redesigned API for working with pseudo-random numbers  |  **Working**  |
 
