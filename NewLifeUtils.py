@@ -933,7 +933,7 @@ class FileModule(object):
     def __init__(self):
 
         self.currentDirectory = os.getcwd() + "\\"
-        self.workDirectory = self.currentDirectory + "NLUDIR\\"
+        self.workDirectory = self.currentDirectory + "NewLifeUtils Directory\\"
         self.space = "   "
         self.branch = "│  "
         self.tee = "├─ "
