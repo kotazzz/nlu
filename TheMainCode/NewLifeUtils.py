@@ -1309,16 +1309,16 @@ def testNlu():
 
 
 if __name__ == "__main__":
-    # testNlu()
+    testNlu()
     # test()
-    FilelogModule()
-    lm = LoggerModule()
-    CustomShellModule()
-    f = FileModule()
-    pyfiles = []
-    for filename in f.get_directory_content(os.getcwd()):
-        if filename[-3:] == ".py":
-            pyfiles.append(filename)
-    for filename in pyfiles:
-        lm.log(f'black "{filename}"')
-    print()
+    # FilelogModule()
+    # lm = LoggerModule()
+    # CustomShellModule()
+    # f = FileModule()
+    # pyfiles = []
+    # for filename in f.get_directory_content(os.getcwd()):
+    #     if filename[-3:] == ".py":
+    #         pyfiles.append(filename)
+    # for filename in pyfiles:
+    #     lm.log(f'black "{filename}"')
+    # print()
