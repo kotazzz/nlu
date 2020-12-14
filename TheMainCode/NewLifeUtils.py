@@ -834,7 +834,7 @@ class CustomShellModule(object):
                     )
                 elif self.command != "":
                     for registered in self.registeredCommands:
-                        if registered["command"] == self.command:
+                        if self.command in registered["aliases"]:
                             self.run = registered
                             if (
                                 not (

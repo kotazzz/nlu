@@ -281,3 +281,26 @@ root - default console
 [17:25:38] Read       : Root > > [hi]
 [17:25:38] Warn       : Unknown Command, type "help"
 [14-12-2020|17:27:15] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[14-12-2020|17:31:13] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[17:31:13] Log        : Welcome to root
+[17:31:15] Read       : Root > > [pass]
+[17:31:15] Error      : 
+-------------- Error!               --------------------
+Type: KeyError
+
+About Error:
+	alias	
+
+Traceback (most recent call last):
+  File "E:\Документы\_Repo\NewLifeUtils\TheMainCode\NewLifeUtils.py", line 837, in main
+    if self.command in registered["alias"]:
+KeyError: 'alias'
+
+-------------- Error!               --------------------
+
+[14-12-2020|17:31:25] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[17:31:25] Log        : Welcome to root
+[17:31:29] Read       : Root > > [hi]
+[17:31:30] Log        : Hello, world!
+[17:31:33] Read       : Root > > [информация]
+[17:31:33] Log        : Command "инфо" executed now
