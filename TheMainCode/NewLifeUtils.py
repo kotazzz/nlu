@@ -884,7 +884,8 @@ class UtilsModule(object):
         return None
         
     def getfromfname(self, class_obj = None):
-        print(inspect)
+        print(inspect.getmembers(class_obj))
+
         return ''
         
     def __partition(self, nums, low, high):
@@ -1298,15 +1299,6 @@ cm = ColorModule()
 
 if __name__ == "__main__":
     #testNlu()
-    LoggerModule()
-    ColorModule()
-    StringUtilModule()
-    LoggerModule()
-    ExceptModule()
-    TableBuildModule()
-    CustomShellModule()
-    UtilsModule()
-    FileModule()
     FilelogModule()
     #lm = LoggerModule()
     #f = FileModule()
