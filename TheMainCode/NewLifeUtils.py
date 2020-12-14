@@ -13,7 +13,8 @@ try:
     import random
     import sqlite3
     import json
-
+    import inspect
+    
     from pathlib import Path
     from itertools import islice
 except ModuleNotFoundError as e:
@@ -859,12 +860,8 @@ class CustomShellModule(object):
 
 
 class UtilsModule(object):
-    def __init__(self, Logger=None):
-        if type(Logger) == LoggerModule:
-            self.Logger = Logger
-        else:
-            self.Logger = LoggerModule()
-
+    def __init__(self):
+        pass
     def select_rand_list(self, source, use_zero=False):
         try:
             source[0]
@@ -885,7 +882,12 @@ class UtilsModule(object):
             )
             return source[selector]
         return None
-    def __partition(nums, low, high):
+        
+    def getfromfname(self, class_obj = None):
+        print(inspect)
+        return ''
+        
+    def __partition(self, nums, low, high):
         # Выбираем средний элемент в качестве опорного
         # Также возможен выбор первого, последнего
         # или произвольного элементов в качестве опорного
@@ -908,7 +910,7 @@ class UtilsModule(object):
             # элемент с индексом j (справа от опорного), меняем их местами
             nums[i], nums[j] = nums[j], nums[i]
 
-    def quick_sort(nums):
+    def quick_sort(self, nums):
         # Создадим вспомогательную функцию, которая вызывается рекурсивно
         def _quick_sort(items, low, high):
             if low < high:
@@ -1020,7 +1022,7 @@ class FileModule(object):
 
 
 class FilelogModule(object):
-    def __init__(self, File=None, String=None, logname="log", rr=False):
+    def __init__(self, File=None, String=None, Utils=None, logname="log", rr=False):
         if type(File) == FileModule:
             self.File = File
         else:
@@ -1029,6 +1031,10 @@ class FilelogModule(object):
             self.String = String
         else:
             self.String = StringUtilModule()
+        if type(Utils) == UtilsModule:
+            self.Utils = Utils
+        else:
+            self.Utils = UtilsModule()
 
         self.dateFormat = "%d-%m-%Y"
         self.timeFormat = "%H:%M:%S"
@@ -1045,8 +1051,9 @@ class FilelogModule(object):
         else:
             self.logFileName = f"{logname}-{startdate}.log"
             self.logFile = self.File.open_file(self.logFileName, path="+log", mode="a")
+        print(self.Utils.getfromfname(self))
         self.logFile.write(
-            f"------ NEW START AT {startdate} - {starttime} FROM {os.path.basename(__file__)}------\n"
+            f"------ NEW START AT {startdate} - {starttime} FROM {os.path.basename(__file__)}/------\n"
         )
 
         self.errDefaultTag = "[!!!] Error"
@@ -1252,8 +1259,6 @@ def testNlu():
     print("DatabaseManageModule created")
     flm = RandomModule()
     print("RandomModule created")
-    flm = SortModule()
-    print("SortModule created")
     print("succeful!")
     # try to init
     # calculate elapsed
@@ -1264,7 +1269,7 @@ def testNlu():
     ExceptModule(lm, sm)
     TableBuildModule(sm, cm)
     CustomShellModule(None, em, sm, cm)
-    UtilsModule(lm)
+    UtilsModule()
     FileModule()
     FilelogModule(fm)
     elapsed = datetime.datetime.now() - elapsed
@@ -1281,11 +1286,10 @@ def testNlu():
         f"{cm.FGC.GREEN }UtilsModule",
         f"{cm.FGC.GREEN }FileModule",
         f"{cm.FGC.GREEN }FilelogModule",
-        f"{cm.FGC.GREEN }SortModule",
         f"{cm.FGC.YELLOW}DatabaseManageModule",
         f"{cm.FGC.RED   }RandomModule",
-    ]
-    lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
+    ]#cm.ACC.CLEARSCREEN + 
+    lm.tip(tbm.createTable(1, [40], status, "Project Status"))
     lm.wrn(f"Elapsed time for init all modules: {elapsed}")
 
 
@@ -1293,13 +1297,23 @@ cm = ColorModule()
 
 
 if __name__ == "__main__":
-    testNlu()
-    lm = LoggerModule()
-    f = FileModule()
-    pyfiles = []
-    for filename in f.get_directory_content(os.getcwd()):
-        if filename[-3:] == ".py":
-            pyfiles.append(filename)
-    for filename in pyfiles:
-        lm.log(f'black "{filename}"')
-    pass
+    #testNlu()
+    LoggerModule()
+    ColorModule()
+    StringUtilModule()
+    LoggerModule()
+    ExceptModule()
+    TableBuildModule()
+    CustomShellModule()
+    UtilsModule()
+    FileModule()
+    FilelogModule()
+    #lm = LoggerModule()
+    #f = FileModule()
+    #pyfiles = []
+    #for filename in f.get_directory_content(os.getcwd()):
+    #    if filename[-3:] == ".py":
+    #        pyfiles.append(filename)
+    #for filename in pyfiles:
+    #    lm.log(f'black "{filename}"')
+    #print()
