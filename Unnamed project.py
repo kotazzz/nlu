@@ -8,7 +8,11 @@ class Info(CustomShellModule.Command):
     optional = []
     skipcheck = False
     def run(console):
-        console.Logger.log(f'Command "{console.run["command"]}" executed now')
+        info = '\n---------------------------------------------\n'
+        info += 'Это мой новый проект основанный на NLU5\n'
+        info += 'Больше нет доступной информации\n'
+        info += '---------------------------------------------\n'
+        console.Logger.log(info)
 
 if __name__ == "__main__":
     #Init CustomShellModule
