@@ -1,0 +1,16 @@
+The structure of the project
+NewLifeUtils
+├── ColorModule
+│   ├── __init__.py
+│   ├── FGC
+│   ├── BGC
+│   ├── ACC
+│   └── MCC
+├── StringUtilModule
+│   ├── __init__.py
+│   ├── FGC
+│   ├── BGC
+│   ├── ACC
+│   └── MCC
+├── setup.py
+└── README.txt

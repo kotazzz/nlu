@@ -891,7 +891,10 @@ class UtilsModule(object):
         res = ""
         i = 0
         for e in inspect.stack():
-            res += e.code_context[0]
+            try:
+                res += e.code_context[0]
+            except Exception as e:
+                res += ' <Unknown> '
         return res.rstrip("\n").rsplit("\n", 1)[-1]
 
     def __partition(self, nums, low, high):
