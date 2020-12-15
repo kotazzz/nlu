@@ -799,7 +799,7 @@ class CustomShellModule(object):
         if command["optional"] != []:
             syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
         self.Logger.wrn(f"Invalid usage. Syntax: {syntax}")
-
+        
     def main(self):
         self.runState = "run"
 
@@ -811,7 +811,20 @@ class CustomShellModule(object):
         self.registerCommand(self.exit_)
         self.registerExitTask(self.exitDefaultTask_)
         self.registerInitTask(self.initDefaultTask_)
-
+        cmdnames = []
+        for command in self.registeredCommands:
+            cmdnames.append(command['command'])
+        print(cmdnames)
+        if len(cmdnames) != len(set(cmdnames)):
+            self.Except.except_print(
+                        Exception(
+                            "Console commands with the same names were registered. here is a list of registered console commands (their names)",
+                            f"Commands: {', '.join(cmdnames)}",
+                            "TIP: check register section and delete or change one of the commands",
+                        ),
+                        exceptionType="fatal",
+                        tb=False,
+                    )
         for itask in self.registeredInitTask:
             itask(self)
 
@@ -823,7 +836,7 @@ class CustomShellModule(object):
                 self.paramCount = len(self.parametrs)
 
                 if self.command == "fuck":
-                    nlu.tracebackManagerExceptionPrint(
+                    self.Except.except_print(
                         Exception(
                             "Why you so evil?...",
                             ":_(",
