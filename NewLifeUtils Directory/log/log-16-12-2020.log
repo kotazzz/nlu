@@ -162,3 +162,5 @@ oroot - odefault console
 		Aliases     : oexit, oquit
 		Usage       : oexit 
 
+[16-12-2020|14:46:04] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:46:04] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
