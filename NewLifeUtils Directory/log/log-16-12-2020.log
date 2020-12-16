@@ -63,3 +63,102 @@ and opendir), and leave all pathname manipulation to os.path
 [13:25:33] Log        : ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
 [16-12-2020|13:25:41] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
 [13:25:41] Log        : ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+[16-12-2020|13:36:12] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[13:36:12] Log        : ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+[16-12-2020|14:07:14] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:09:08] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:10:31] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:10:39] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:10:47] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:10:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:12:16] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:14:12] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:14:24] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:14:24] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|14:14:35] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:14:35] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|14:27:24] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:27:24] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|14:41:59] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|14:41:59] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|14:42:03] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14:42:03] Error[!]   : 
+-------------- Fatal Error![!]      --------------------
+Type: Exception
+
+About Error:[!]:
+	Console commands with the same names were registered. here is a list of registered console commands (their names)
+	Commands: инфо, cls[!], cls[!], hello[!], exit[!]
+	TIP: check register section and delete or change one of the commands	
+
+-------------- Fatal Error![!]      --------------------
+
+[16-12-2020|14:42:14] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14:42:14] Error[!]   : 
+-------------- Fatal Error![!]      --------------------
+Type: Exception
+
+About Error:[!]:
+	Console commands with the same names were registered. here is a list of registered console commands (their names)
+	Commands: инфо, cls[!], cls[!], hello[!], exit[!]
+	TIP: check register section and delete or change one of the commands	
+
+-------------- Fatal Error![!]      --------------------
+
+[16-12-2020|14:43:03] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14:43:03] Log[!]     : Welcome to [!] root[!]
+[14:43:04] Read[!]    : Root[!] > > [asd]
+[14:43:04] Warn[!]    : Unknown Command, type "help"
+[14:43:08] Read[!]    : Root[!] > > [help]
+[14:43:08] Warn[!]    : Unknown Command, type "help"
+[14:43:12] Read[!]    : Root[!] > > [help]
+[14:43:12] Warn[!]    : Unknown Command, type "help"
+[14:43:15] Read[!]    : Root[!] > > [help[!]]
+[14:43:15] Warn[!]    : Unknown Command, type "help"
+[14:43:18] Read[!]    : Root[!] > > ['help[!]']
+[14:43:18] Warn[!]    : Unknown Command, type "help"
+[14:43:22] Read[!]    : Root[!] > > ["help[!]"]
+[14:43:22] Warn[!]    : Unknown Command, type "help"
+[16-12-2020|14:43:44] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14:43:44] Log_deben  : Welcome to _deben root_deben
+[14:43:51] Read_deben : Root_Deben > > [help_deben]
+[14:43:51] Warn_deben : Unknown Command, type "help"
+[14:43:53] Read_deben : Root_Deben > > [help]
+[14:43:53] Warn_deben : Unknown Command, type "help"
+[14:43:57] Read_deben : Root_Deben > > [help _deben]
+[14:43:57] Warn_deben : Unknown Command, type "help"
+[16-12-2020|14:44:08] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14:44:08] Log_       : Welcome to _ root_
+[14:44:12] Read_      : Root_ > > [help)]
+[14:44:12] Warn_      : Unknown Command, type "help"
+[14:44:14] Read_      : Root_ > > [help_]
+[14:44:14] Warn_      : Unknown Command, type "help"
+[14:44:16] Read_      : Root_ > > []
+[14:44:17] Read_      : Root_ > > [help]
+[14:44:17] Warn_      : Unknown Command, type "help"
+[16-12-2020|14:45:00] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[14:45:00] oLog       : oWelcome to  oroot
+[14:45:04] oRead      : Oroot > > [ohelp]
+[14:45:04] oroot HELP : 
+oroot - odefault console
+	инфо
+		Description : Вся информация о коммандах
+		Aliases     : инфо, информация
+		Usage       : инфо 
+	ocls
+		Description : oclears display
+		Aliases     : ocls, oclearscreen
+		Usage       : ocls 
+	ohelp
+		Description : odisplays all commands in this module
+		Aliases     : ohelp
+		Usage       : ohelp [ocommand|'commands'] 
+	ohello
+		Description : obuiltin command
+		Aliases     : ohello, ohi
+		Usage       : ohello [oname] 
+	oexit
+		Description : oExit from ConsoleShellManager
+		Aliases     : oexit, oquit
+		Usage       : oexit 
+

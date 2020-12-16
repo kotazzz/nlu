@@ -3,7 +3,7 @@ name = "NewLifeUtils"
 description = """
 In fact, there is active development, repeated rewriting of the code. All actions are published on github for orderly storage of changes and fixing all my actions. I don't encourage you to use my code. My goal is to learn how to write programs beautifully and learn how to use github. If you have any ideas, criticism, or suggestions , I'm happy to listen Now this is the 5th attempt to rewrite the code beautifully, each time I change the very structure of the code. In General, I didn't really study the language features, so my code will be disgusting to a professional programmer. Maybe someday I will achieve the effect that I need
 """
-
+lang = "en"
 
 try:
     import os
@@ -25,10 +25,71 @@ except Exception as e:
     print(e)
     exit(-1)
 
+# Language Setting Up
+if lang.lower() not in ["en", "ru"]:
+    lang = "en"
+if lang.lower() == "en":
+    currentLangStorage = {
+        "LoggerModule": {
+            "log_default_tag": "Log",
+            "wrn_default_tag": "Warn",
+            "err_default_tag": "Error",
+            "tip_default_tag": "Tip",
+            "rea_default_tag": "Read",
+        },
+        "ExceptModule": {
+            "unknown": "Unknown Error",
+            "about": "About Error:",
+            "attention": "Attention!",
+            "warning": "Warning!",
+            "fatal": "Fatal Error!",
+            "wrong": "Something wrong...",
+        },
+        "CustomShellModule": {
+            "unknown": "Unknown Command, type 'help'",
+            "some_err1": "Why you so evil?...",
+            "some_err2": ":_(",
+            "some_err3": "TIP: you can be beter",
+            "same_name_err1": "Console commands with the same names were registered.",
+            "same_name_err2": "Commands",
+            "same_name_err3": "TIP: check register section and delete or change one of the commands",
+            "exit2": "run command",
+            "exit1": "Exit with code:",
+            "welcome": "Welcome to ",
+            "def_exit_cmd": "exit",
+            "def_exit_dsk": "Exit from ConsoleShellManager",
+            "def_exit_al1": "quit",
+            "def_hello_cmd": "hello",
+            "def_hello_dsk": "builtin command",
+            "def_hello_al1": "hi",
+            "def_hello_op1": "name",
+            "def_help_cmd": "help",
+            "def_help_dsk": "displays all commands in this module",
+            "def_help_op1": "command|'commands'",
+            "def_cmdname": "root",
+            "def_cmdabout": "default console",
+            "def_cls_cmd": "cls",
+            "def_cls_dsk": "clears display",
+            "def_cls_al1": "clearscreen",
+        },
+        
+    }
+
+
+def getlang(modulename, key):
+    if modulename not in currentLangStorage.keys():
+        return " <Underfined Module> "
+    else:
+        try:
+            return currentLangStorage[modulename][key]
+        except:
+            return " <Underfined Key> "
+
 
 class Global:
     lastFilelogModuleInit = ""
-    
+
+
 class ColorModule(object):
     def __init__(self):
         os.system("")
@@ -149,7 +210,7 @@ class StringUtilModule(object):
             .decode("unicode_escape")
         )
 
-    def screate(self, string, size=10, insert="r", filler_symbol = ' '):
+    def screate(self, string, size=10, insert="r", filler_symbol=" "):
         string = str(string)
         string = string.encode("unicode_escape").decode()
         matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
@@ -245,11 +306,11 @@ class LoggerModule(object):
         )
         self.rea_pattern = "{cyan}[{time}] {lightcyan}{tag}{snow} : {paleturquoise}{message} > {mediumslateblue}[{readed}]"
 
-        self.log_default_tag = "Log"
-        self.wrn_default_tag = "Warn"
-        self.err_default_tag = "Error"
-        self.tip_default_tag = "Tip"
-        self.rea_default_tag = "Read"
+        self.log_default_tag = getlang("LoggerModule", "log_default_tag")
+        self.wrn_default_tag = getlang("LoggerModule", "wrn_default_tag")
+        self.err_default_tag = getlang("LoggerModule", "err_default_tag")
+        self.tip_default_tag = getlang("LoggerModule", "tip_default_tag")
+        self.rea_default_tag = getlang("LoggerModule", "rea_default_tag")
 
         #  READ
 
@@ -350,9 +411,9 @@ class ExceptModule(object):
         errorText += f"Type: {type(exception).__name__}\n\n"
 
         if exception.args == 0:
-            errorText += f"Unknown error\n"
+            errorText += f'{getlang("ExceptModule","unknown")}\n'
         else:
-            errorText += f"About Error:\n\t{(chr(10)+chr(9)).join(exception.args)}\t\n"
+            errorText += f'{getlang("ExceptModule","about")}:\n\t{(chr(10)+chr(9)).join(exception.args)}\t\n'
 
         if tb:
 
@@ -363,23 +424,29 @@ class ExceptModule(object):
         if exceptionType == "attention":
             self.Logger.log(
                 errorText.replace(
-                    "{ExceptionTitle}", self.String.screate("Attention!", 20)
+                    "{ExceptionTitle}",
+                    self.String.screate(getlang("ExceptModule", "attention"), 20),
                 )
             )
         if exceptionType == "wrn":
             self.Logger.wrn(
                 errorText.replace(
-                    "{ExceptionTitle}", self.String.screate("Warning!", 20)
+                    "{ExceptionTitle}",
+                    self.String.screate(getlang("ExceptModule", "warning"), 20),
                 )
             )
         elif exceptionType == "err":
             self.Logger.err(
-                errorText.replace("{ExceptionTitle}", self.String.screate("Error!", 20))
+                errorText.replace(
+                    "{ExceptionTitle}",
+                    self.String.screate(getlang("ExceptModule", "error"), 20),
+                )
             )
         elif exceptionType == "fatal":
             self.Logger.err(
                 errorText.replace(
-                    "{ExceptionTitle}", self.String.screate("Fatal Error!", 20)
+                    "{ExceptionTitle}",
+                    self.String.screate(getlang("ExceptModule", "fatal"), 20),
                 )
             )
             exit(-1)
@@ -387,7 +454,7 @@ class ExceptModule(object):
             self.Logger.err(
                 errorText.replace(
                     "{ExceptionTitle}",
-                    self.String.screate("Something wrong...", 20),
+                    self.String.screate(getlang("ExceptModule", "wrong"), 20),
                 )
             )
 
@@ -603,8 +670,8 @@ class CustomShellModule(object):
         Except=None,
         String=None,
         Color=None,
-        name="root",
-        about="default console",
+        name=   getlang("CustomShellModule", "def_cmdname"),
+        about=getlang("CustomShellModule", "def_cmdabout")
     ):
         self.runState = "init"
         if type(Logger) == LoggerModule:
@@ -644,9 +711,9 @@ class CustomShellModule(object):
         self.runState = "setup"
 
     class cls_(Command):
-        command = "cls"
-        description = "clears display"
-        aliases = [command, "clearscreen"]
+        command = getlang("CustomShellModule", "def_cls_cmd")
+        description = getlang("CustomShellModule", "def_cls_dsk")
+        aliases = [command, getlang("CustomShellModule", "def_cls_al1")]
         required = []
         optional = []
 
@@ -654,11 +721,11 @@ class CustomShellModule(object):
             os.system("cls")
 
     class help_(Command):
-        command = "help"
-        description = "displays all commands in this module"
+        command = getlang("CustomShellModule", "def_help_cmd")
+        description =  getlang("CustomShellModule", "def_help_dsk")
         aliases = [command]
         required = []
-        optional = ["command"]
+        optional = [ getlang("CustomShellModule", "def_help_op1")]
 
         def run(console):
             class CLR:
@@ -729,11 +796,11 @@ class CustomShellModule(object):
                 console.invalidUsage()
 
     class hello_(Command):
-        command = "hello"
-        description = "builtin command"
-        aliases = [command, "hi"]
+        command = getlang("CustomShellModule", "def_hello_cmd")
+        description = getlang("CustomShellModule", "def_hello_dsk")
+        aliases = [command, getlang("CustomShellModule", "def_hello_al1")]
         required = []
-        optional = ["name"]
+        optional = [getlang("CustomShellModule", "def_hello_op1")]
 
         def run(console):
             if console.paramCount == 1:
@@ -742,9 +809,9 @@ class CustomShellModule(object):
                 console.Logger.log(f"Hello, world!")
 
     class exit_(Command):
-        command = "exit"
-        aliases = [command, "quit"]
-        description = "Exit from ConsoleShellManager"
+        command = getlang("CustomShellModule", "def_exit_cmd")
+        aliases = [command, getlang("CustomShellModule", "def_exit_al1")]
+        description = getlang("CustomShellModule", "def_exit_dsk")
         required = []
         optional = []
         skipcheck = False
@@ -754,12 +821,12 @@ class CustomShellModule(object):
 
     class initDefaultTask_(Task):
         def execute(console):
-            console.Logger.log(f"Welcome to {console.cmdname}")
+            console.Logger.log(f'{getlang("CustomShellModule", "welcome")} {console.cmdname}')
 
     class exitDefaultTask_(Task):
         def execute(console):
             console.Logger.log(
-                f"Exit with code: {console.runState}, run command: {console.run}"
+                f'{getlang("CustomShellModule", "exit1")}: {console.runState}, {getlang("CustomShellModule", "exit2")}: {console.run}'
             )
 
     def registerInitTask(self, regClass):
@@ -803,7 +870,7 @@ class CustomShellModule(object):
         if command["optional"] != []:
             syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
         self.Logger.wrn(f"Invalid usage. Syntax: {syntax}")
-        
+
     def main(self):
         self.runState = "run"
 
@@ -817,24 +884,26 @@ class CustomShellModule(object):
         self.registerInitTask(self.initDefaultTask_)
         cmdnames = []
         for command in self.registeredCommands:
-            cmdnames.append(command['command'])
+            cmdnames.append(command["command"])
         print(cmdnames)
         if len(cmdnames) != len(set(cmdnames)):
             self.Except.except_print(
-                        Exception(
-                            "Console commands with the same names were registered. here is a list of registered console commands (their names)",
-                            f"Commands: {', '.join(cmdnames)}",
-                            "TIP: check register section and delete or change one of the commands",
-                        ),
-                        exceptionType="fatal",
-                        tb=False,
-                    )
+                Exception(
+                    "Console commands with the same names were registered. here is a list of registered console commands (their names)",
+                    f"Commands: {', '.join(cmdnames)}",
+                    "TIP: check register section and delete or change one of the commands",
+                ),
+                exceptionType="fatal",
+                tb=False,
+            )
         for itask in self.registeredInitTask:
             itask(self)
 
         while self.runState == "run":
             try:
-                readed = self.String.parseArgs(self.Logger.rea(f"{self.cmdname.title()} >"))
+                readed = self.String.parseArgs(
+                    self.Logger.rea(f"{self.cmdname.title()} >")
+                )
                 self.command = readed["command"]
                 self.parametrs = readed["param"]
                 self.paramCount = len(self.parametrs)
@@ -1364,16 +1433,13 @@ def testNlu():
 
 if __name__ == "__main__":
     lm = LoggerModule()
-    lm.log(dir(__builtins__))
-    
+    testNlu()
     input()
-    
-    
-    
-    # testNlu()
+
+    #
     # test()
     # FilelogModule()
-    # 
+    #
     # CustomShellModule()
     # f = FileModule()
     # pyfiles = []
