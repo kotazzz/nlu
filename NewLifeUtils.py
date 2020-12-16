@@ -210,17 +210,13 @@ class StringUtilModule(object):
         )
 
     def screate(self, string, size=10, insert="r", filler_symbol=" "):
-        string = str(string)
-        string = string.encode("unicode_escape").decode()
-        matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
-        resultCSILength = 0
-        for match in matches:
-            resultCSILength += len(match)
-        spaces = str(filler_symbol) * (size - (len(string.encode()) - resultCSILength))
+        calcstreeng = self.remove_csi(string)
+        
+        spaces = str(filler_symbol) * (size - len(calcstreeng))
         if insert == "r":
-            return string.encode().decode("unicode_escape") + spaces
+            return string + spaces
         if insert == "l":
-            return spaces + str(string.encode().decode("unicode_escape"))
+            return spaces + string
 
     def sslice(self, text, chunkSize):
         text = str(text)
