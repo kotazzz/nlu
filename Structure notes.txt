@@ -1,19 +1,24 @@
 The structure of the project
 NewLifeUtils
-├── ColorModule
-│   ├── __init__.py
-│   ├── FGC
-│   ├── BGC
-│   ├── ACC
-│   └── MCC
-├── StringUtilModule
-│   ├── __init__.py
-│   ├── FGC
-│   ├── BGC
-│   ├── ACC
-│   └── MCC
+├── __init__.py
+├── LocalStorage
+│   ├── VarStorage.py
+│   └── LangStorage.py
+├── LocalStorage
+│   ├── ColorModule.py
+│   ├── StringUtilModule.py
+│   ├── LoggerModule.py
+│   ├── ExceptModule.py
+│   ├── TableBuildModule.py
+│   ├── CustomShellModule.py
+│   ├── UtilsModule.py
+│   ├── FileModule.py
+│   ├── FilelogModule.py
+│   ├── DatabaseManageModule.py
+│   └── RandomModule.py
 ├── setup.py
 └── README.txt
+
 ==================================================================
 from setuptools import setup, find_packages
 from os.path import join, dirname
@@ -58,3 +63,4 @@ setup(
 > python setup.py sdist
 
 > virtualenv env
+> setup.py install
