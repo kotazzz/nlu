@@ -1,0 +1,25 @@
+[16-12-2020|13:06:43] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|13:07:03] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|13:07:04] <main>:[   ] Log   : New Logger from NewLifeUtils.py/c=CustomShellModule()
+[13:07:04] Log        : Welcome to root
+[13:07:06] Read       : Root > > [asd]
+[13:07:06] Error      : 
+-------------- Error!               --------------------
+Type: NameError
+
+About Error:
+	name '_' is not defined	
+
+Traceback (most recent call last):
+  File "E:\Документы\_Repo\NewLifeUtils\NewLifeUtils.py", line 834, in main
+    self.command = _["command"]
+NameError: name '_' is not defined
+
+-------------- Error!               --------------------
+
+[16-12-2020|13:07:51] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|13:07:52] <main>:[   ] Log   : New Logger from NewLifeUtils.py/c=CustomShellModule()
+[13:07:52] Log        : Welcome to root
+[13:07:52] Read       : Root > > [asdf]
+[13:07:52] Warn       : Unknown Command, type "help"
+[16-12-2020|13:09:15] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()

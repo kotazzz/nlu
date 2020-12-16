@@ -830,9 +830,9 @@ class CustomShellModule(object):
 
         while self.runState == "run":
             try:
-                _ = self.String.parseArgs(self.Logger.rea(f"{self.cmdname.title()} >"))
-                self.command = _["command"]
-                self.parametrs = _["param"]
+                readed = self.String.parseArgs(self.Logger.rea(f"{self.cmdname.title()} >"))
+                self.command = readed["command"]
+                self.parametrs = readed["param"]
                 self.paramCount = len(self.parametrs)
 
                 if self.command == "fuck":
