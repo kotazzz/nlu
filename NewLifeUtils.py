@@ -26,6 +26,9 @@ except Exception as e:
     exit(-1)
 
 
+class Global:
+    lastFilelogModuleInit = ""
+    
 class ColorModule(object):
     def __init__(self):
         os.system("")
@@ -1043,10 +1046,6 @@ class FileModule(object):
             for f in files:
                 resultpath += "\n" + ("{}{}".format(subindent, f))
         return resultpath
-
-
-class Global:
-    lastFilelogModuleInit = ""
 
 
 class FilelogModule(object):
