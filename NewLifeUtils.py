@@ -530,7 +530,7 @@ class TableBuildModule(object):
         result += f"{color}{tableElement[0]}"
 
         for sizen in range(rowCount):
-            result += f"{color}{tableElement[4]*sizes[sizen]}{color}{tableElement[1]}"
+            result += f"{color}{tableElement[4]*int(sizes[sizen])}{color}{tableElement[1]}"
         result = result[:-1] + f"{color}{tableElement[2]}"
 
         # Generate Header
