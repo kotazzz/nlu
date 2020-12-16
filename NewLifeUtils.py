@@ -886,7 +886,7 @@ class CustomShellModule(object):
         cmdnames = []
         for command in self.registeredCommands:
             cmdnames.append(command["command"])
-        print(cmdnames)
+
         if len(cmdnames) != len(set(cmdnames)):
             self.Except.except_print(
                 Exception(

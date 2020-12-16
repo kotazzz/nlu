@@ -164,3 +164,11 @@ oroot - odefault console
 
 [16-12-2020|14:46:04] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
 [16-12-2020|14:46:04] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|15:17:44] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|15:17:44] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|15:30:15] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[15:30:15] Log        : Welcome to  root
+[16-12-2020|15:30:41] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|15:30:42] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|15:30:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[16-12-2020|15:30:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
