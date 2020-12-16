@@ -172,3 +172,23 @@ oroot - odefault console
 [16-12-2020|15:30:42] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
 [16-12-2020|15:30:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
 [16-12-2020|15:30:53] <main>:[   ] Log   : New Logger from NewLifeUtils.py/testNlu()
+[16-12-2020|15:34:12] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[15:34:12] Log        : Welcome to  root
+[16-12-2020|15:51:11] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[15:51:12] Log        : {'Names': [('Аркадий', 'Алексей')]}
+[16-12-2020|15:59:10] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[15:59:10] Log        : {'name': [('Аркадий', 'Елизавета')], 'surname': [('Котазов', 'Алексей')], 'patronymic': [('Аркадий', 'Алексей')]}
+[16-12-2020|15:59:48] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[15:59:48] Log        : {'name': [('Аркадий', 'Елизавета')], 'surname': [('Котазов', 'Алексей')], 'patronymic': [('Аркадий', 'Алексей')]}
+[16-12-2020|16:00:18] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[16:00:18] Log        : {'name': [('Аркадий', 'Елизавета')], 'surname': [('Котазов', 'Алексей')], 'patronymic': [('Аркадий', 'Алексей')]}
+[16-12-2020|16:00:26] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[16:00:26] Log        : {'name': [('Аркадий', 'Елизавета')], 'surname': [('Котазов', 'Алексей')], 'patronymic': [('Аркадий', 'Алексей')]}
+[16-12-2020|16:01:15] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[16:01:16] Log        : {'name': [('Аркадий', 'Елизавета')], 'surname': [('Котазов', 'Алексей')], 'patronymic': [('Аркадий', 'Алексей')]}
+[16-12-2020|16:01:28] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[16:01:28] Log        : {'name': [('Аркадий', 'Елизавета')], 'surname': [('Котазов', 'Алексей')], 'patronymic': [('Аркадий', 'Алексей')]}
+[16-12-2020|16:01:37] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[16:01:38] Log        : {'name': [('Аркадий', 'Елизавета')], 'surname': [('Котазов', 'Алексей')], 'patronymic': [('Аркадий', 'Алексей')]}
+[16-12-2020|16:02:06] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[16:02:06] Log        : {'name': ['Аркадий', 'Елизавета'], 'surname': ['Котазов', 'Алексей'], 'patronymic': ['Аркадий', 'Алексей']}
