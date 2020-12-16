@@ -4,6 +4,7 @@ description = """
 In fact, there is active development, repeated rewriting of the code. All actions are published on github for orderly storage of changes and fixing all my actions. I don't encourage you to use my code. My goal is to learn how to write programs beautifully and learn how to use github. If you have any ideas, criticism, or suggestions , I'm happy to listen Now this is the 5th attempt to rewrite the code beautifully, each time I change the very structure of the code. In General, I didn't really study the language features, so my code will be disgusting to a professional programmer. Maybe someday I will achieve the effect that I need
 """
 
+
 try:
     import os
     import datetime
@@ -145,14 +146,14 @@ class StringUtilModule(object):
             .decode("unicode_escape")
         )
 
-    def screate(self, string, size=10, insert="r"):
+    def screate(self, string, size=10, insert="r", filler_symbol = ' '):
         string = str(string)
         string = string.encode("unicode_escape").decode()
         matches = re.findall(r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}", string, re.MULTILINE)
         resultCSILength = 0
         for match in matches:
             resultCSILength += len(match)
-        spaces = " " * (size - (len(string.encode()) - resultCSILength))
+        spaces = str(filler_symbol) * (size - (len(string.encode()) - resultCSILength))
         if insert == "r":
             return string.encode().decode("unicode_escape") + spaces
         if insert == "l":
@@ -1363,10 +1364,17 @@ def testNlu():
 
 
 if __name__ == "__main__":
-    testNlu()
+    lm = LoggerModule()
+    lm.log(dir(__builtins__))
+    
+    input()
+    
+    
+    
+    # testNlu()
     # test()
     # FilelogModule()
-    # lm = LoggerModule()
+    # 
     # CustomShellModule()
     # f = FileModule()
     # pyfiles = []
@@ -1376,4 +1384,3 @@ if __name__ == "__main__":
     # for filename in pyfiles:
     #     lm.log(f'black "{filename}"')
     # print()
-    input()
