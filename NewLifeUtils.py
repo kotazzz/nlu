@@ -128,7 +128,9 @@ class ColorModule(object):
         BPURPLE = "\x1B[95m"
         BCYAN = "\x1B[96m"
         WHITE = "\x1B[97m"
-
+    class CLU:
+        def arr_to_rgb(arr):
+            return f"\x1B[38;2;{arr[0]};{arr[1]};{arr[2]}m"
     class ACC:
         AFTERCLEAN = "\x1B[K"
         OLDRESET = "\x1B[0m"
@@ -139,7 +141,7 @@ class ColorModule(object):
         TOBRIGHT = "\x1B[1m"
         NOBRIGHT = "\x1B[2m"
         CLEARSCREEN = "\x1Bc"
-
+        
         def RANDOMRGB(mode="Color"):
             if mode not in ["Color", "gray"]:
                 mode = "Color"
@@ -192,7 +194,7 @@ class ColorModule(object):
         PREVIOUSLINE = "\x1B[F"
         ERASELINE = "\x1B[2K"
         REWRITELINE = "\x1B[1G"
-
+    
 
 class StringUtilModule(object):
     def __init__(self):
@@ -281,7 +283,7 @@ class LoggerModule(object):
             f.write(defaultcolormap)
             self.color_map = json.loads(defaultcolormap)
         f.close()
-
+        origcolors = json.loads(defaultcolormap)
         colors = []
         for key in self.color_map:
             self.color_map[key] = self.Color.ACC.CUSTOMRGB(*tuple(self.color_map[key]))
@@ -291,7 +293,7 @@ class LoggerModule(object):
         t = TableBuildModule()
         self.color_data = {}
         self.color_data["table"] = t.createTable(5, [], colors[:-1], header=False)
-        self.color_data["colors"] = colors
+        self.color_data["colors"] = origcolors
 
         self.log_pattern = "{greenyellow}[{time}] {lightgreen}{tag}{snow} : {mediumspringgreen}{message}"
         self.wrn_pattern = "{darkorange}[{time}] {orange}{tag}{snow} : {gold}{message}"
@@ -1516,6 +1518,8 @@ def testNlu():
 if __name__ == "__main__":
     lm = LoggerModule()
     #testNlu()
+    print(LoggerModule().color_data["table"])
+    print(ColorModule().CLU.arr_to_rgb(LoggerModule().color_data["colors"]['mediumspringgreen']))
     UtilsModule().bprint('hi')
     UtilsModule().bprint('Hello World', 6, 'air')
     input()
