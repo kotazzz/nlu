@@ -1,16 +1,20 @@
 #New BigPrinter
 from NewLifeUtils import *
 files = ['Font.json','Font2.json']
-import json
+
 def bprint(text, maxlinelength = 9, font = 'default'):
+    fonts = []
     for file in files:
         current = open(file, encoding = 'utf-8')
         fontsrc = json.loads(current.read())
+        fonts.append(fontsrc['name'])
         if fontsrc['name'] == font:
             sym = fontsrc
             break
     else:
-        print('cant found')
+        print(f'font "{font}" cant found. Avaliable: {", ".join(fonts)}')
+        sym = {"letters":
+        {"E":'E', 'R':'R', 'O':'O'}}
         
     def bprintletter(text):
         try:
@@ -34,5 +38,5 @@ def bprint(text, maxlinelength = 9, font = 'default'):
     for text in r:
         bprintletter(text)
 bprint('hello')
-bprint('hello', font = 'air')
+bprint('hello', font = 'airs')
                                                                                                               

@@ -989,8 +989,11 @@ class CustomShellModule(object):
 
 
 class UtilsModule(object):
-    def __init__(self):
-        pass
+    def __init__(self, File = None):
+        if type(File) == FileModule:
+            self.File = File
+        else:
+            self.File = FileModule()
 
     def select_rand_list(self, source, use_zero=False):
         try:
@@ -1045,7 +1048,7 @@ class UtilsModule(object):
             # Если элемент с индексом i (слева от опорного) больше, чем
             # элемент с индексом j (справа от опорного), меняем их местами
             nums[i], nums[j] = nums[j], nums[i]
-
+    
     def quick_sort(self, nums):
         # Создадим вспомогательную функцию, которая вызывается рекурсивно
         def _quick_sort(items, low, high):
@@ -1057,6 +1060,45 @@ class UtilsModule(object):
 
         _quick_sort(nums, 0, len(nums) - 1)
 
+    def bprint(self, text, maxlinelength = 9, font = 'default'):
+        filenamess = self.File.get_directory_content('+fonts')
+        files = []
+        for filename in filenamess:
+            files.append(self.File.get_path('+fonts')+filename)
+        fonts = []
+        for file in files:
+            current = open(file, encoding = 'utf-8')
+            fontsrc = json.loads(current.read())
+            fonts.append(fontsrc['name'])
+            if fontsrc['name'] == font:
+                sym = fontsrc
+                break
+        else:
+            print(f'font "{font}" cant found. Avaliable: {", ".join(fonts)}')
+            sym = {"letters":
+            {"E":'E', 'R':'R', 'O':'O'}}
+            
+        def bprintletter(text):
+            try:
+                printline = []
+                for i in range(len(sym['letters'][list(sym['letters'].keys())[0]])):
+                    printline.append("")
+                for letter in text:
+                    for line in range(len(sym['letters'][letter])):
+                        printline[line] += sym['letters'][letter][line]
+                print("\n".join(printline))
+            except KeyError :
+                bprintletter("ERROR")
+                print("Unable to continue print text, unknown characters")
+                avaliableKeys = []
+                avaliableKeys = list(sym['letters'].keys())
+                avaliableKeys = "".join(avaliableKeys)
+                print(f"Avaliable: {avaliableKeys}")
+        
+        import re
+        r = [text[i : i + maxlinelength] for i in range(0, len(text), maxlinelength)]
+        for text in r:
+            bprintletter(text)
 
 class FileModule(object):
     def __init__(self):
@@ -1473,7 +1515,9 @@ def testNlu():
 
 if __name__ == "__main__":
     lm = LoggerModule()
-    testNlu()
+    #testNlu()
+    UtilsModule().bprint('hi')
+    UtilsModule().bprint('Hello World', 6, 'air')
     input()
 
     #
