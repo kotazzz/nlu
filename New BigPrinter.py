@@ -1,27 +1,17 @@
 #New BigPrinter
-
-sym = {
-'name':'my font',
-'letters' : {
-"t":[
-"s",
-"s",
-"s",
-"s",
-"s",
-"s",
-],
-"y":[
-"y",
-"y",
-"y",
-"y",
-"y",
-"y",
-],
-}}
-
-def bprint(text, maxlinelength = 9):
+from NewLifeUtils import *
+files = ['Font.json','Font2.json']
+import json
+def bprint(text, maxlinelength = 9, font = 'default'):
+    for file in files:
+        current = open(file, encoding = 'utf-8')
+        fontsrc = json.loads(current.read())
+        if fontsrc['name'] == font:
+            sym = fontsrc
+            break
+    else:
+        print('cant found')
+        
     def bprintletter(text):
         try:
             printline = []
@@ -32,9 +22,8 @@ def bprint(text, maxlinelength = 9):
                     printline[line] += sym['letters'][letter][line]
             print("\n".join(printline))
         except KeyError :
-            bprintletter("err")
-            print("Unable to print text, unknown characters")
-            print("May be its unknown color?")
+            bprintletter("ERROR")
+            print("Unable to continue print text, unknown characters")
             avaliableKeys = []
             avaliableKeys = list(sym['letters'].keys())
             avaliableKeys = "".join(avaliableKeys)
@@ -44,11 +33,6 @@ def bprint(text, maxlinelength = 9):
     r = [text[i : i + maxlinelength] for i in range(0, len(text), maxlinelength)]
     for text in r:
         bprintletter(text)
-bprint('tyyyyyttytytt')
-# ████████╗██╗   ██╗██████╗ ███████╗    ███████╗ ██████╗ ███╗   ███╗███████╗████████╗██╗  ██╗██╗███╗   ██╗ ██████╗     
-# ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔════╝    ██╔════╝██╔═══██╗████╗ ████║██╔════╝╚══██╔══╝██║  ██║██║████╗  ██║██╔════╝     
-   # ██║    ╚████╔╝ ██████╔╝█████╗      ███████╗██║   ██║██╔████╔██║█████╗     ██║   ███████║██║██╔██╗ ██║██║  ███╗    
-   # ██║     ╚██╔╝  ██╔═══╝ ██╔══╝      ╚════██║██║   ██║██║╚██╔╝██║██╔══╝     ██║   ██╔══██║██║██║╚██╗██║██║   ██║    
-   # ██║      ██║   ██║     ███████╗    ███████║╚██████╔╝██║ ╚═╝ ██║███████╗   ██║   ██║  ██║██║██║ ╚████║╚██████╔╝    
-   # ╚═╝      ╚═╝   ╚═╝     ╚══════╝    ╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝     
-                                                                                                                     
+bprint('hello')
+bprint('hello', font = 'air')
+                                                                                                              
