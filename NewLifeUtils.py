@@ -673,6 +673,11 @@ class TableBuildModule(object):
             for row in range(len(columns)):
                 table.append(columns[row][line])
         return table
+    def get_record(self,row_count, data, record_id):
+        return data[row_count*record_id:row_count*record_id+row_count]
+        
+    def get_record_count(self,row_count, data):
+        return len(data)/row_count
 
 
 class CustomShellModule(object):
