@@ -635,7 +635,29 @@ class TableBuildModule(object):
         result = result[:-1] + f"{tableElement[10]}{self.Color.ACC.RESET}"
 
         return f'\n{self.String.screate(title+" IN DEV", round(sum(sizes)/2), "l")}\n{result}\n'
-
+    def get_column(self, data, row_count, num):
+        num = num % row_count
+        table = []
+        for line in range(0, len(data), row_count):
+            linearr = []
+            for row in range(0, row_count):
+                linearr.append(data[line+row])
+            table.append(linearr)
+        results = []
+        for line in table:
+            results.append(line[num-1])
+        return results
+        
+    def get_multi_column(self, data, row_count, ids):
+        columns = []
+        for num in ids:
+            columns.append(get_column(data, row_count, num))
+        sizes = len(columns[0])
+        restabledata = []
+        for num in range(sizes):
+            for column in columns:
+                restabledata.append(column[num])
+        return restabledata
 
 class CustomShellModule(object):
     class Command:
