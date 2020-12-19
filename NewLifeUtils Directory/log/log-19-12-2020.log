@@ -24,3 +24,7 @@
 [18:45:23] Log        : Школа в посёлок городского типе Нарьян-Мар #109
 [19-12-2020|18:45:58] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
 [18:45:59] Log        : Школа в посёлок городского типе Урюпинск #48
+[19-12-2020|18:51:13] <main>:[   ] Log   : New Logger from NewLifeUtils.py/logger=LoggerModule()
+[19-12-2020|18:53:10] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd=CustomShellModule()
+[19-12-2020|18:53:10] <main>:[   ] Log   : New Logger from NewLifeUtils.py/cmd.main()
+[18:53:10] Log        : Welcome to  root
