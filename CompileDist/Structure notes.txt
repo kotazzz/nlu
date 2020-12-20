@@ -8,6 +8,8 @@ NewLifeUtils
 │   └── Languages
 │       ├── en.py
 │       └── ru.py
+├───InternalStorage
+│       Main.py
 ├── Modules
 │   ├── ColorModule.py
 │   ├── StringUtilModule.py
@@ -22,6 +24,7 @@ NewLifeUtils
 │   └── RandomModule.py
 ├── setup.py
 └── README.txt
+
 The structure of the project (real)
 ├───NewLifeUtils
 │   │   __init__.py
