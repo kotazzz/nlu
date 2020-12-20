@@ -1,5 +1,5 @@
 ## Contact me
-[Test pypi](https://test.pypi.org/project/NewLifeUtils/5.0.1/ "Test pypi")
+[Test pypi](https://test.pypi.org/project/NewLifeUtils/5.0.1/)
 [Real pypi 5.0.1](https://pypi.org/project/NewLifeUtils/5.0.1/)
 [Real pypi 5.0.2](https://pypi.org/project/NewLifeUtils/5.0.2/)
 [My website](http://newlife-learn.h1n.ru)
