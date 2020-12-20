@@ -9,7 +9,7 @@ NewLifeUtils
 │       ├── en.py
 │       └── ru.py
 ├───InternalStorage
-│       Main.py
+│       LanguageManager.py
 ├── Modules
 │   ├── ColorModule.py
 │   ├── StringUtilModule.py

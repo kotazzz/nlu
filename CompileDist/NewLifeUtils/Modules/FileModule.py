@@ -1,4 +1,5 @@
-from NewLifeUtils import os
+from NewLifeUtils import os, islice, Path
+
 currentDirectory = os.getcwd() + "\\"
 workDirectory = currentDirectory + "NewLifeUtils Directory\\"
 space = "   "

@@ -2,6 +2,8 @@ import NewLifeUtils.Modules.FileModule       as File
 import NewLifeUtils.Modules.ColorModule      as Color
 import NewLifeUtils.Modules.StringUtilModule as String
 import NewLifeUtils.Modules.FilelogModule    as FileLogger
+from NewLifeUtils import json
+import NewLifeUtils.InternalStorage.LanguageManager
 # File
 # Color
 # String
@@ -26,9 +28,8 @@ for key in color_map:
     colors.append(f"{color_map[key]}{key}{color_map[key]}")
 color_map["reset"] = Color.ACC.RESET
 
-t = TableBuildModule()
 color_data = {}
-color_data["table"] = t.createTable(5, [], colors[:-1], header=False)
+color_data["tabledate"] = colors[:-1]
 color_data["colors"] = origcolors
 
 log_pattern = (
