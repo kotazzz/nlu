@@ -1,8 +1,6 @@
 __version__ = "5.0.1"
 name = "NewLifeUtils"
 
-lang = "en"
-
 try:
     import os
     import datetime

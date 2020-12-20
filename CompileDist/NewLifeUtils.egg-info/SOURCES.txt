@@ -1,5 +1,6 @@
 README.txt
 setup.py
+NewLifeUtils/OneCode.py
 NewLifeUtils/__init__.py
 NewLifeUtils.egg-info/PKG-INFO
 NewLifeUtils.egg-info/SOURCES.txt

@@ -1,0 +1,3 @@
+[20-12-2020|12:22:25] <main>:[   ] Log   : New Logger from OneCode.py/lm=LoggerModule()
+[20-12-2020|12:22:25] <main>:[   ] Log   : New Logger from OneCode.py/print(LoggerModule().color_data["table"])
+[20-12-2020|12:22:25] <main>:[   ] Log   : New Logger from OneCode.py/print(LoggerModule().color_data["colors"]["mediumspringgreen"])
