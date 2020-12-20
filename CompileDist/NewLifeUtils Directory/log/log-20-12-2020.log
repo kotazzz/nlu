@@ -9,3 +9,508 @@
 [15:44:19] Log        : hi
 [15:44:19] Log        : hi
 [15:44:19] Log        : hi
+[15:47:41] Log        : hi
+[15:47:42] Read       : hi:  > [s]
+[15:47:42] Log        : hi
+[15:47:42] Log        : hi
+[15:47:42] Log        : hi
+[15:47:42] Log        : hi
+[15:47:42] Log        : hi
+[15:47:53] Log        : hi
+[15:47:55] Read       : hi:  > [s]
+[15:47:55] Log        : hi
+[15:47:55] Log        : hi
+[15:47:55] Log        : hi
+[15:47:55] Log        : hi
+[15:47:55] Log        : hi
+[15:48:06] Log        : hi
+[15:48:07] Read       : hi:  > [s]
+[15:48:07] Log        : hi
+[15:48:07] Log        : hi
+[15:48:07] Log        : hi
+[15:48:07] Log        : hi
+[15:48:07] Log        : hi
+[15:48:56] Log        : hi
+[15:48:57] Read       : hi:  > [s]
+[15:48:57] Log        : hi
+[15:48:57] Log        : hi
+[15:48:57] Log        : hi
+[15:48:57] Log        : hi
+[15:48:57] Log        : hi
+[15:49:16] Log        : hi
+[15:49:17] Read       : hi:  > [a]
+[15:49:17] Log        : hi
+[15:49:17] Log        : hi
+[15:49:17] Log        : hi
+[15:49:17] Log        : hi
+[15:49:17] Log        : hi
+[15:49:17] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: Exception
+
+About Error::
+	hello	
+
+NoneType: None
+
+--------------  <Underfined Key>    --------------------
+
+[15:50:37] Log        : hi
+[15:50:39] Read       : hi:  > [asd]
+[15:50:39] Log        : hi
+[15:50:39] Log        : hi
+[15:50:39] Log        : hi
+[15:50:39] Log        : hi
+[15:50:39] Log        : hi
+[15:50:39] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: Exception
+
+About Error::
+	hello	
+
+NoneType: None
+
+--------------  <Underfined Key>    --------------------
+
+[15:50:51] Log        : hi
+[15:50:52] Read       : hi:  > [s]
+[15:50:52] Log        : hi
+[15:50:52] Log        : hi
+[15:50:52] Log        : hi
+[15:50:52] Log        : hi
+[15:50:52] Log        : hi
+[15:50:52] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: Exception
+
+About Error::
+	hello	
+
+NoneType: None
+
+--------------  <Underfined Key>    --------------------
+
+[15:51:32] Log        : hi
+[15:51:33] Read       : hi:  > [s]
+[15:51:33] Log        : hi
+[15:51:33] Log        : hi
+[15:51:33] Log        : hi
+[15:51:33] Log        : hi
+[15:51:33] Log        : hi
+[15:51:33] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: Exception
+
+About Error::
+	hello	
+
+NoneType: None
+
+--------------  <Underfined Key>    --------------------
+
+[15:51:54] Log        : hi
+[15:51:55] Read       : hi:  > [s]
+[15:51:55] Log        : hi
+[15:51:55] Log        : hi
+[15:51:55] Log        : hi
+[15:51:55] Log        : hi
+[15:51:55] Log        : hi
+[15:51:55] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: Exception
+
+About Error::
+	hello	
+
+NoneType: None
+
+--------------  <Underfined Key>    --------------------
+
+[15:52:16] Log        : hi
+[15:52:24] Read       : hi:  > [asd]
+[15:52:24] Log        : hi
+[15:52:24] Log        : hi
+[15:52:24] Log        : hi
+[15:52:24] Log        : hi
+[15:52:24] Log        : hi
+[15:52:24] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: Exception
+
+About Error::
+	hello	
+
+NoneType: None
+
+--------------  <Underfined Key>    --------------------
+
+[15:52:37] Log        : hi
+[15:52:38] Read       : hi:  > [d[oibjoepkwl[;flke]
+[15:52:38] Log        : hi
+[15:52:38] Log        : hi
+[15:52:38] Log        : hi
+[15:52:38] Log        : hi
+[15:52:38] Log        : hi
+[15:52:38] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: Exception
+
+About Error::
+	d[oibjoepkwl[;flke	
+
+NoneType: None
+
+--------------  <Underfined Key>    --------------------
+
+[15:53:34] Log        : hi
+[15:53:35] Read       : hi:  > [s]
+[15:53:35] Log        : hi
+[15:53:35] Log        : hi
+[15:53:35] Log        : hi
+[15:53:35] Log        : hi
+[15:53:35] Log        : hi
+[15:53:35] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	s	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[15:56:26] Log        : hi
+[15:56:27] Read       : hi:  > [s]
+[15:56:27] Log        : hi
+[15:56:27] Log        : hi
+[15:56:27] Log        : hi
+[15:56:27] Log        : hi
+[15:56:27] Log        : hi
+[15:56:27] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	s	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[15:57:18] Log        : hi
+[15:57:19] Read       : hi:  > [asd]
+[15:57:19] Log        : hi
+[15:57:19] Log        : hi
+[15:57:19] Log        : hi
+[15:57:19] Log        : hi
+[15:57:19] Log        : hi
+[15:57:19] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[15:58:01] Log        : hi
+[15:58:02] Read       : hi:  > [sa]
+[15:58:02] Log        : hi
+[15:58:02] Log        : hi
+[15:58:02] Log        : hi
+[15:58:02] Log        : hi
+[15:58:02] Log        : hi
+[15:58:02] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	sa	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[15:58:24] Log        : hi
+[15:58:25] Read       : hi:  > [s]
+[15:58:25] Log        : hi
+[15:58:25] Log        : hi
+[15:58:25] Log        : hi
+[15:58:25] Log        : hi
+[15:58:25] Log        : hi
+[15:58:25] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	s	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[15:58:35] Log        : hi
+[15:58:36] Read       : hi:  > [s]
+[15:58:36] Log        : hi
+[15:58:36] Log        : hi
+[15:58:36] Log        : hi
+[15:58:36] Log        : hi
+[15:58:36] Log        : hi
+[15:58:36] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	s	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[15:59:17] Log        : hi
+[15:59:18] Read       : hi:  > [asd]
+[15:59:18] Log        : hi
+[15:59:18] Log        : hi
+[15:59:18] Log        : hi
+[15:59:18] Log        : hi
+[15:59:18] Log        : hi
+[15:59:18] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:01:24] Log        : hi
+[16:01:25] Read       : hi:  > [фы]
+[16:01:25] Log        : hi
+[16:01:25] Log        : hi
+[16:01:25] Log        : hi
+[16:01:25] Log        : hi
+[16:01:25] Log        : hi
+[16:01:25] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	фы	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:02:21] Log        : hi
+[16:02:23] Read       : hi:  > []
+[16:02:23] Log        : hi
+[16:02:23] Log        : hi
+[16:02:23] Log        : hi
+[16:02:23] Log        : hi
+[16:02:23] Log        : hi
+[16:02:23] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+		
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:07:59] Log        : hi
+[16:08:01] Read       : hi:  > [asd]
+[16:08:01] Log        : hi
+[16:08:01] Log        : hi
+[16:08:01] Log        : hi
+[16:08:01] Log        : hi
+[16:08:01] Log        : hi
+[16:08:01] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:10:02] Log        : hi
+[16:10:04] Read       : hi:  > [a]
+[16:10:04] Log        : hi
+[16:10:04] Log        : hi
+[16:10:04] Log        : hi
+[16:10:04] Log        : hi
+[16:10:04] Log        : hi
+[16:10:04] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	a	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:10:59] Log        : hi
+[16:11:00] Read       : hi:  > [asd]
+[16:11:00] Log        : hi
+[16:11:00] Log        : hi
+[16:11:00] Log        : hi
+[16:11:00] Log        : hi
+[16:11:00] Log        : hi
+[16:11:00] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:11:53] Log        : hi
+[16:11:54] Read       : hi:  > [asd]
+[16:11:54] Log        : hi
+[16:11:54] Log        : hi
+[16:11:54] Log        : hi
+[16:11:54] Log        : hi
+[16:11:54] Log        : hi
+[16:11:54] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:11:54] Error      : 
+-------------- Fatal Error!         --------------------
+Type: Exception
+
+About Error::
+	Console commands with the same names were registered. here is a list of registered console commands (their names)
+	Commands:  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> 
+	TIP: check register section and delete or change one of the commands	
+
+-------------- Fatal Error!         --------------------
+
+[16:13:10] Log        : hi
+[16:13:11] Read       : hi:  > [asd]
+[16:13:11] Log        : hi
+[16:13:11] Log        : hi
+[16:13:11] Log        : hi
+[16:13:11] Log        : hi
+[16:13:11] Log        : hi
+[16:13:11] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:13:11] Error      : 
+-------------- Fatal Error!         --------------------
+Type: Exception
+
+About Error::
+	Console commands with the same names were registered. here is a list of registered console commands (their names)
+	Commands:  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> 
+	TIP: check register section and delete or change one of the commands	
+
+-------------- Fatal Error!         --------------------
+
+[16:13:47] Log        : hi
+[16:14:06] Log        : hi
+[16:15:29] Log        : hi
+[16:15:40] Log        : hi
+[16:15:49] Log        : hi
+[16:24:48] Log        : hi
+[16:24:51] Read       : hi:  > [asd]
+[16:24:51] Log        : hi
+[16:24:51] Log        : hi
+[16:24:51] Log        : hi
+[16:24:51] Log        : hi
+[16:24:51] Log        : hi
+[16:24:51] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:24:51] Error      : 
+-------------- Fatal Error!         --------------------
+Type: Exception
+
+About Error::
+	Console commands with the same names were registered. here is a list of registered console commands (their names)
+	Commands:  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> 
+	TIP: check register section and delete or change one of the commands	
+
+-------------- Fatal Error!         --------------------
+
+[16:25:02] Log        : hi
+[16:25:08] Log        : hi
+[16:25:19] Log        : hi
+[16:26:51] Log        : hi
+[16:27:20] Log        : hi
+[16:27:30] Log        : hi
+[16:27:37] Log        : hi
+[16:27:44] Log        : hi
+[16:27:47] Read       : hi:  > [asd]
+[16:27:47] Log        : hi
+[16:27:47] Log        : hi
+[16:27:47] Log        : hi
+[16:27:47] Log        : hi
+[16:27:47] Log        : hi
+[16:27:47] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:27:47] Error      : 
+-------------- Fatal Error!         --------------------
+Type: Exception
+
+About Error::
+	Console commands with the same names were registered. here is a list of registered console commands (their names)
+	Commands:  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> 
+	TIP: check register section and delete or change one of the commands	
+
+-------------- Fatal Error!         --------------------
+
+[16:28:48] Log        : hi
+[16:29:34] Log        : hi
+[16:29:51] Log        : hi
+[16:32:32] Log        : hi
+[16:32:45] Log        : hi
+[16:32:58] Log        : hi
+[16:33:57] Log        : hi
