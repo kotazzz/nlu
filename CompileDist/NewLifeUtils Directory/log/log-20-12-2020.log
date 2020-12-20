@@ -696,3 +696,55 @@ NoneType: None
 [16:44:12] Read       : Root > > [exit]
 [16:44:12] Logafsdghe : Exit with code:: quit, run command: None
 [20-12-2020|16:44:12] <main>:[   ] Log   : New Logger from OneCode.py/octester.testNlu()
+[16:48:38] Logafsdghe : hi
+[16:48:40] Read       : hi:  > [asdf]
+[16:48:40] Logafsdghe : hi
+[16:48:40] Logafsdghe : hi
+[16:48:40] Logafsdghe : hi
+[16:48:40] Logafsdghe : hi
+[16:48:40] Logafsdghe : hi
+[16:48:40] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asdf	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:48:40] Logafsdghe : Welcome to  root
+[16:48:53] Read       : Root > > [asdf]
+[16:48:53] Warn       : Unknown Command, type "help"
+[16:48:54] Read       : Root > > [asdf]
+[16:48:54] Warn       : Unknown Command, type "help"
+[16:48:56] Read       : Root > > [exit]
+[16:48:56] Logafsdghe : Exit with code:: quit, run command: None
+[20-12-2020|16:48:56] <main>:[   ] Log   : New Logger from OneCode.py/octester.testNlu()
+[16:49:04] Logafsdghe : hi
+[16:49:05] Read       : hi:  > [asdg]
+[16:49:05] Logafsdghe : hi
+[16:49:05] Logafsdghe : hi
+[16:49:05] Logafsdghe : hi
+[16:49:05] Logafsdghe : hi
+[16:49:05] Logafsdghe : hi
+[16:49:05] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asdg	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:49:05] Logafsdghe : Welcome to  root
+[16:49:07] Read       : Root > > [exit]
+[16:49:07] Logafsdghe : Exit with code:: quit, run command: None
+[20-12-2020|16:49:07] <main>:[   ] Log   : New Logger from OneCode.py/octester.testNlu()
+[16:49:53] Logafsdghe : hi
+[16:49:56] Logafsdghe : hi
+[16:51:17] Logafsdghe : hi
+[16:51:39] Logafsdghe : hi

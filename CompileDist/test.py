@@ -5,9 +5,11 @@ import NewLifeUtils.Modules.ExceptModule as em
 import NewLifeUtils.Modules.RandomModule as rm
 import NewLifeUtils.Modules.TableBuildModule as tbm
 import NewLifeUtils.Modules.CustomShellModule as csm
+import NewLifeUtils.Modules.FileModule as fm
 import NewLifeUtils.OneCode as octester
 
 print('|'+sm.screate(f'{cm.FGC.RED}HELLO{cm.ACC.RESET}')+'|')
+print(fm.tree(r'D:\Документы\GitHub\NewLifeUtils\CompileDist\NewLifeUtils'))
 lm.log('hi')
 s = lm.rea('hi')
 lm.log('hi')
@@ -22,3 +24,4 @@ print(t)
 print(rm.format_number())
 csm.Shell().main()
 octester.testNlu()
+input()
