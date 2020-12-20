@@ -10,5 +10,6 @@ setup(
     author_email='semechkagent@gmail.com',
     url='newlife-learn.h1n.ru',
     packages=find_packages(),
-    long_description=open(join(dirname(__file__), 'README.txt')).read(),
+    long_description=open(join(dirname(__file__), 'README.md')).read(),
+    long_description_content_type="text/markdown"
 )
