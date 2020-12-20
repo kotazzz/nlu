@@ -459,7 +459,8 @@ class ExceptModule(object):
                     self.String.screate(getlang("ExceptModule", "wrong"), 20),
                 )
             )
-
+    def get_etypes(self):
+        return ['attention','wrn','err','fatal']
 
 class TableBuildModule(object):
     def __init__(self, String=None, Color=None, default="double"):
