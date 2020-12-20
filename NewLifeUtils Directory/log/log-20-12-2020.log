@@ -19,3 +19,6 @@
 [20-12-2020|11:21:25] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
 [20-12-2020|11:21:25] <main>:[   ] Log   : New Logger from NewLifeUtils.py/print(LoggerModule().color_data["table"])
 [20-12-2020|11:21:26] <main>:[   ] Log   : New Logger from NewLifeUtils.py/print(LoggerModule().color_data["colors"]['mediumspringgreen'])
+[20-12-2020|11:28:33] <main>:[   ] Log   : New Logger from NewLifeUtils.py/lm=LoggerModule()
+[20-12-2020|11:28:33] <main>:[   ] Log   : New Logger from NewLifeUtils.py/print(LoggerModule().color_data["table"])
+[20-12-2020|11:28:33] <main>:[   ] Log   : New Logger from NewLifeUtils.py/print(LoggerModule().color_data["colors"]["mediumspringgreen"])
