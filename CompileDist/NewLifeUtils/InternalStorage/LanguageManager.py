@@ -55,8 +55,7 @@ if lang == 'en' and filedata == '':
 }
 '''
     file.write(default)
-
-    langstorage = json.loads(default)
+    currentLangStorage = json.loads(default)
 def getlang(modulename, key):
     if modulename not in currentLangStorage.keys():
         return " <Underfined Module> "

@@ -2,8 +2,8 @@ import NewLifeUtils.Modules.FileModule       as File
 import NewLifeUtils.Modules.ColorModule      as Color
 import NewLifeUtils.Modules.StringUtilModule as String
 import NewLifeUtils.Modules.FilelogModule    as FileLogger
-from NewLifeUtils import json
-import NewLifeUtils.InternalStorage.LanguageManager
+import NewLifeUtils.InternalStorage.LanguageManager as Language
+from NewLifeUtils import json, datetime
 # File
 # Color
 # String
@@ -40,11 +40,11 @@ err_pattern = "{crimson}[{time}] {red}{tag}{snow} : {firebrick}{message}"
 tip_pattern = "{fuchsia}[{time}] {magenta}{tag}{snow} : {mediumorchid}{message}"
 rea_pattern = "{cyan}[{time}] {lightcyan}{tag}{snow} : {paleturquoise}{message} > {mediumslateblue}[{readed}]"
 
-log_default_tag = getlang("LoggerModule", "log_default_tag")
-wrn_default_tag = getlang("LoggerModule", "wrn_default_tag")
-err_default_tag = getlang("LoggerModule", "err_default_tag")
-tip_default_tag = getlang("LoggerModule", "tip_default_tag")
-rea_default_tag = getlang("LoggerModule", "rea_default_tag")
+log_default_tag = Language.getlang("LoggerModule", "log_default_tag")
+wrn_default_tag = Language.getlang("LoggerModule", "wrn_default_tag")
+err_default_tag = Language.getlang("LoggerModule", "err_default_tag")
+tip_default_tag = Language.getlang("LoggerModule", "tip_default_tag")
+rea_default_tag = Language.getlang("LoggerModule", "rea_default_tag")
 
 #  READ
 
