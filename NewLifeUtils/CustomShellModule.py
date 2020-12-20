@@ -1,8 +1,8 @@
-import NewLifeUtils.Modules.LoggerModule       as Logger
-import NewLifeUtils.Modules.ColorModule      as Color
-import NewLifeUtils.Modules.StringUtilModule as String
-import NewLifeUtils.Modules.ExceptModule    as Except
-import NewLifeUtils.InternalStorage.LanguageManager as Language
+import NewLifeUtils.LoggerModule       as Logger
+import NewLifeUtils.ColorModule      as Color
+import NewLifeUtils.StringUtilModule as String
+import NewLifeUtils.ExceptModule    as Except
+import NewLifeUtils.LanguageManager as Language
 
 
 class Command:

@@ -1,8 +1,8 @@
-import NewLifeUtils.Modules.FileModule       as File
-import NewLifeUtils.Modules.ColorModule      as Color
-import NewLifeUtils.Modules.StringUtilModule as String
-import NewLifeUtils.Modules.FilelogModule    as FileLogger
-import NewLifeUtils.InternalStorage.LanguageManager as Language
+import NewLifeUtils.FileModule       as File
+import NewLifeUtils.ColorModule      as Color
+import NewLifeUtils.StringUtilModule as String
+import NewLifeUtils.FilelogModule    as FileLogger
+import NewLifeUtils.LanguageManager as Language
 from NewLifeUtils import json, datetime
 
 enableFileLog = True

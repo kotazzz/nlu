@@ -1,4 +1,4 @@
-import NewLifeUtils.Modules.FileModule       as File
+import NewLifeUtils.FileModule       as File
 from NewLifeUtils import inspect
 
 def select_rand_list( source, use_zero=False):

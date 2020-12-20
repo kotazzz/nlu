@@ -1,6 +1,6 @@
-import NewLifeUtils.Modules.FileModule       as File
-import NewLifeUtils.Modules.UtilsModule      as Utils
-import NewLifeUtils.Modules.StringUtilModule as String
+import NewLifeUtils.FileModule       as File
+import NewLifeUtils.UtilsModule      as Utils
+import NewLifeUtils.StringUtilModule as String
 from NewLifeUtils import datetime, json
 
 rr=False

@@ -1,5 +1,5 @@
 from NewLifeUtils import json
-import NewLifeUtils.Modules.FileModule as File
+import NewLifeUtils.FileModule as File
 
 lang = "en"
 file = File.open_file(f"{lang}.json", "r+", path="+lang", encoding="utf-8")

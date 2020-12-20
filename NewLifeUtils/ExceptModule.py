@@ -1,6 +1,6 @@
-import NewLifeUtils.Modules.LoggerModule       as Logger
-import NewLifeUtils.Modules.StringUtilModule   as String
-import NewLifeUtils.InternalStorage.LanguageManager as Language
+import NewLifeUtils.LoggerModule       as Logger
+import NewLifeUtils.StringUtilModule   as String
+import NewLifeUtils.LanguageManager as Language
 from NewLifeUtils import traceback
 def except_print( exception, exceptionType="err", tb=True):
     errorText = "\n-------------- {ExceptionTitle} --------------------\n"

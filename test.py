@@ -1,15 +1,15 @@
-import NewLifeUtils.Modules.ColorModule as cm
-import NewLifeUtils.Modules.StringUtilModule as sm
-import NewLifeUtils.Modules.LoggerModule as lm
-import NewLifeUtils.Modules.ExceptModule as em
-import NewLifeUtils.Modules.RandomModule as rm
-import NewLifeUtils.Modules.TableBuildModule as tbm
-import NewLifeUtils.Modules.CustomShellModule as csm
-import NewLifeUtils.Modules.FileModule as fm
+import NewLifeUtils.ColorModule as cm
+import NewLifeUtils.StringUtilModule as sm
+import NewLifeUtils.LoggerModule as lm
+import NewLifeUtils.ExceptModule as em
+import NewLifeUtils.RandomModule as rm
+import NewLifeUtils.TableBuildModule as tbm
+import NewLifeUtils.CustomShellModule as csm
+import NewLifeUtils.FileModule as fm
 import NewLifeUtils.OneCode as octester
 
 print('|'+sm.screate(f'{cm.FGC.RED}HELLO{cm.ACC.RESET}')+'|')
-print(fm.tree(r'D:\Документы\GitHub\NewLifeUtils\CompileDist\NewLifeUtils'))
+print(fm.tree(r'D:\Документы\GitHub\NewLifeUtils\NewLifeUtils'))
 lm.log('hi')
 s = lm.rea('hi')
 lm.log('hi')
