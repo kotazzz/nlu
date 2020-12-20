@@ -5,6 +5,7 @@ import NewLifeUtils.Modules.ExceptModule as em
 import NewLifeUtils.Modules.RandomModule as rm
 import NewLifeUtils.Modules.TableBuildModule as tbm
 import NewLifeUtils.Modules.CustomShellModule as csm
+import NewLifeUtils.OneCode as octester
 
 print('|'+sm.screate(f'{cm.FGC.RED}HELLO{cm.ACC.RESET}')+'|')
 lm.log('hi')
@@ -20,3 +21,4 @@ t = tbm.createTable(2,[],data)
 print(t)
 print(rm.format_number())
 csm.Shell().main()
+octester.testNlu()

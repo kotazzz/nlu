@@ -14,16 +14,16 @@ class Command:
     skipcheck = False
 
     def run(console):
-        console.Logger.log(f'Command "{console.run["command"]}" executed now')
+        Logger.log(f'Command "{console.run["command"]}" executed now')
 
 class Task:
     def execute(console):
-        console.Logger.log(f"This is a event task")
+        Logger.log(f"This is a event task")
 
 class Function:
     name = "mygf"
     def execute(console):
-        console.Logger.log(f"This is a global function")
+        Logger.log(f"This is a global function")
         
 class Shell(object):
     
@@ -75,17 +75,17 @@ class Shell(object):
 
         def run(console):
             class CLR:
-                MDL = console.Color.FGC.RED
-                MDLDSK = console.Color.FGC.BRED
-                CMD = console.Color.FGC.BLUE
-                CMDDSK = console.Color.FGC.CYAN
-                ALS = console.Color.FGC.PURPLE
-                ALSTXT = console.Color.FGC.BPURPLE
-                STTL = console.Color.FGC.GREEN
-                SCMD = console.Color.ACC.UNDERLINE + console.Color.FGC.WHITE
-                SREQ = console.Color.FGC.BGRAY
-                SOPT = console.Color.FGC.GRAY
-                R = console.Color.ACC.RESET
+                MDL = Color.FGC.RED
+                MDLDSK = Color.FGC.BRED
+                CMD = Color.FGC.BLUE
+                CMDDSK = Color.FGC.CYAN
+                ALS = Color.FGC.PURPLE
+                ALSTXT = Color.FGC.BPURPLE
+                STTL = Color.FGC.GREEN
+                SCMD = Color.ACC.UNDERLINE + Color.FGC.WHITE
+                SREQ = Color.FGC.BGRAY
+                SOPT = Color.FGC.GRAY
+                R = Color.ACC.RESET
 
             helpPage = ""
             if console.paramCount == 0:
@@ -108,13 +108,13 @@ class Shell(object):
                         + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
                         + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
                     )
-                console.Logger.tip(helpPage, f"{console.cmdname} HELP")
+                Logger.tip(helpPage, f"{console.cmdname} HELP")
             elif console.paramCount == 1:
                 if console.parametrs[0] == "commands":
                     helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
                     for command in console.registeredCommands:
                         helpPage += f'\t{CLR.CMD}{command["command"]}\n'
-                    console.Logger.tip(helpPage, f"{console.cmdname} HELP")
+                    Logger.tip(helpPage, f"{console.cmdname} HELP")
                 else:
                     helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
                     finded = False
@@ -131,10 +131,10 @@ class Shell(object):
                                 + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
                                 + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
                             )
-                            console.Logger.tip(helpPage, f"{console.cmdname} HELP")
+                            Logger.tip(helpPage, f"{console.cmdname} HELP")
                             finded = True
                     if finded != True:
-                        console.Logger.wrn(
+                        Logger.wrn(
                             f'Cannot find command "{console.parametrs[0]}"',
                             f"{console.cmdname} HELP",
                         )
@@ -150,9 +150,9 @@ class Shell(object):
 
         def run(console):
             if console.paramCount == 1:
-                console.Logger.log(f"Hello, {console.parametrs[0]}")
+                Logger.log(f"Hello, {console.parametrs[0]}")
             else:
-                console.Logger.log(f"Hello, world!")
+                Logger.log(f"Hello, world!")
 
     class exit_(Command):
         command = Language.getlang("Shell", "def_exit_cmd")
@@ -167,13 +167,13 @@ class Shell(object):
 
     class initDefaultTask_(Task):
         def execute(console):
-            console.Logger.log(
+            Logger.log(
                 f'{Language.getlang("Shell", "welcome")} {console.cmdname}'
             )
 
     class exitDefaultTask_(Task):
         def execute(console):
-            console.Logger.log(
+            Logger.log(
                 f'{Language.getlang("Shell", "exit1")}: {console.runState}, {Language.getlang("Shell", "exit2")}: {console.run}'
             )
 

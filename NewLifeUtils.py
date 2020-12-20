@@ -1516,8 +1516,8 @@ def testNlu():
         f"{cm.FGC.GREEN }UtilsModule",
         f"{cm.FGC.GREEN }FileModule",
         f"{cm.FGC.GREEN }FilelogModule",
-        f"{cm.FGC.YELLOW}DatabaseManageModule",
-        f"{cm.FGC.RED   }RandomModule",
+        f"{cm.FGC.GREEN }DatabaseManageModule",
+        f"{cm.FGC.GREEN }RandomModule",
     ]
     lm.tip(cm.ACC.CLEARSCREEN + tbm.createTable(1, [40], status, "Project Status"))
     lm.wrn(f"Elapsed time for init all modules: {elapsed}")

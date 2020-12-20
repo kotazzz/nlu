@@ -514,3 +514,185 @@ About Error::
 [16:32:45] Log        : hi
 [16:32:58] Log        : hi
 [16:33:57] Log        : hi
+[16:34:26] Log        : hi
+[16:34:58] Log        : hi
+[16:35:33] Log        : hi
+[16:36:35] Log        : hi
+[16:36:53] Log        : hi
+[16:37:21] Log        : hi
+[16:37:22] Read       : hi:  > [das]
+[16:37:22] Log        : hi
+[16:37:22] Log        : hi
+[16:37:22] Log        : hi
+[16:37:22] Log        : hi
+[16:37:22] Log        : hi
+[16:37:22] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	das	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:37:22] Error      : 
+-------------- Fatal Error!         --------------------
+Type: Exception
+
+About Error::
+	Console commands with the same names were registered. here is a list of registered console commands (their names)
+	Commands:  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> ,  <Underfined Module> 
+	TIP: check register section and delete or change one of the commands	
+
+-------------- Fatal Error!         --------------------
+
+[16:37:51] Log        : hi
+[16:38:38] Log        : hi
+[16:38:39] Read       : hi:  > [asd]
+[16:38:39] Log        : hi
+[16:38:39] Log        : hi
+[16:38:39] Log        : hi
+[16:38:39] Log        : hi
+[16:38:39] Log        : hi
+[16:38:39] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:38:51] Logafsdghe : hi
+[16:39:05] Logafsdghe : hi
+[16:39:06] Read       : hi:  > [asd]
+[16:39:06] Logafsdghe : hi
+[16:39:06] Logafsdghe : hi
+[16:39:06] Logafsdghe : hi
+[16:39:06] Logafsdghe : hi
+[16:39:06] Logafsdghe : hi
+[16:39:06] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:39:41] Logafsdghe : hi
+[16:39:43] Read       : hi:  > [ads]
+[16:39:43] Logafsdghe : hi
+[16:39:43] Logafsdghe : hi
+[16:39:43] Logafsdghe : hi
+[16:39:43] Logafsdghe : hi
+[16:39:43] Logafsdghe : hi
+[16:39:43] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	ads	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:39:43] Logafsdghe : Welcome to  root
+[16:39:44] Read       : Root > > [asd]
+[16:39:44] Warn       : Unknown Command, type "help"
+[16:39:45] Read       : Root > > [help]
+[16:39:46] Error      : 
+--------------  <Underfined Key>    --------------------
+Type: AttributeError
+
+About Error::
+	'Shell' object has no attribute 'Color'	
+
+Traceback (most recent call last):
+  File "D:\Документы\GitHub\NewLifeUtils\CompileDist\NewLifeUtils\Modules\CustomShellModule.py", line 284, in main
+    registered["run"](self)
+  File "D:\Документы\GitHub\NewLifeUtils\CompileDist\NewLifeUtils\Modules\CustomShellModule.py", line 77, in run
+    class CLR:
+  File "D:\Документы\GitHub\NewLifeUtils\CompileDist\NewLifeUtils\Modules\CustomShellModule.py", line 78, in CLR
+    MDL = console.Color.FGC.RED
+AttributeError: 'Shell' object has no attribute 'Color'
+
+--------------  <Underfined Key>    --------------------
+
+[16:40:22] Logafsdghe : hi
+[16:40:23] Read       : hi:  > [asfd]
+[16:40:23] Logafsdghe : hi
+[16:40:23] Logafsdghe : hi
+[16:40:23] Logafsdghe : hi
+[16:40:23] Logafsdghe : hi
+[16:40:23] Logafsdghe : hi
+[16:40:23] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asfd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:40:23] Logafsdghe : Welcome to  root
+[16:40:26] Read       : Root > > [hello]
+[16:40:26] Logafsdghe : Hello, world!
+[16:40:29] Read       : Root > > [hello я]
+[16:40:29] Logafsdghe : Hello, я
+[16:40:35] Read       : Root > > [hello МЯВВВВВВК]
+[16:40:35] Logafsdghe : Hello, МЯВВВВВВК
+[16:43:10] Logafsdghe : hi
+[16:43:10] Read       : hi:  > [s]
+[16:43:10] Logafsdghe : hi
+[16:43:10] Logafsdghe : hi
+[16:43:10] Logafsdghe : hi
+[16:43:10] Logafsdghe : hi
+[16:43:10] Logafsdghe : hi
+[16:43:10] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	s	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:43:10] Logafsdghe : Welcome to  root
+[16:43:13] Read       : Root > > [exit]
+[16:43:13] Logafsdghe : Exit with code:: quit, run command: None
+[20-12-2020|16:43:13] <main>:[   ] Log   : New Logger from OneCode.py/octester.testNlu()
+[16:43:51] Logafsdghe : hi
+[16:44:08] Logafsdghe : hi
+[16:44:10] Read       : hi:  > [asd]
+[16:44:10] Logafsdghe : hi
+[16:44:10] Logafsdghe : hi
+[16:44:10] Logafsdghe : hi
+[16:44:10] Logafsdghe : hi
+[16:44:10] Logafsdghe : hi
+[16:44:10] Warn       : 
+-------------- Warning!             --------------------
+Type: Exception
+
+About Error::
+	asd	
+
+NoneType: None
+
+-------------- Warning!             --------------------
+
+[16:44:10] Logafsdghe : Welcome to  root
+[16:44:12] Read       : Root > > [exit]
+[16:44:12] Logafsdghe : Exit with code:: quit, run command: None
+[20-12-2020|16:44:12] <main>:[   ] Log   : New Logger from OneCode.py/octester.testNlu()

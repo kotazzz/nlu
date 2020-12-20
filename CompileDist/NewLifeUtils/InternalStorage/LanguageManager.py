@@ -2,13 +2,12 @@ from NewLifeUtils import json
 import NewLifeUtils.Modules.FileModule as File
 
 lang = "en"
-file = File.open_file(f"{lang}.json", "w+", path="+lang", encoding="utf-8")
+file = File.open_file(f"{lang}.json", "r+", path="+lang", encoding="utf-8")
 filedata = file.read()
-eg = Exception()
+
 try:
     currentLangStorage = json.loads(filedata)
-except Exception as e:
-    eg = e
+except:
     default = json.dumps(
             {
                 "LoggerModule": {
@@ -26,7 +25,7 @@ except Exception as e:
                     "warning": "Warning!",
                     "wrong": "Something wrong...",
                 },
-                "CustomShellModule": {
+                "Shell": {
                     "def_cls_al1": "clearscreen",
                     "def_cls_cmd": "cls",
                     "def_cls_dsk": "clears display",
@@ -53,15 +52,14 @@ except Exception as e:
                     "unknown": "Unknown Command, type 'help'",
                     "welcome": "Welcome to ",
                 },
-            }
+            }, indent=4, sort_keys=True
         )
     file.write(default)
     currentLangStorage = json.loads(default)
+    
 file.close()
 
-
 def getlang(modulename, key):
-    print(filedata)
     if modulename not in currentLangStorage.keys():
         return " <Underfined Module> "
     else:

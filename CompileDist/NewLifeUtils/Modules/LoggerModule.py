@@ -4,10 +4,6 @@ import NewLifeUtils.Modules.StringUtilModule as String
 import NewLifeUtils.Modules.FilelogModule    as FileLogger
 import NewLifeUtils.InternalStorage.LanguageManager as Language
 from NewLifeUtils import json, datetime
-# File
-# Color
-# String
-# FileLogger
 
 enableFileLog = True
 
