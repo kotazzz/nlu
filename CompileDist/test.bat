@@ -1,5 +1,4 @@
 python setup.py sdist
-virtualenv env
-setup.py install
-python test.py
+env\Scripts\python setup.py install
+env\Scripts\python test.py
 pause
