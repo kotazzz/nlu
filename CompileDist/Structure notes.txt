@@ -1,0 +1,100 @@
+The structure of the project (plan)
+NewLifeUtils
+├── __init__.py
+├── DistributedData
+│   ├── Fonts.py
+│   ├── ColorPalete.py
+│   ├── DefaultSettings.py
+│   └── Languages
+│       ├── en.py
+│       └── ru.py
+├── Modules
+│   ├── ColorModule.py
+│   ├── StringUtilModule.py
+│   ├── LoggerModule.py
+│   ├── ExceptModule.py
+│   ├── TableBuildModule.py
+│   ├── CustomShellModule.py
+│   ├── UtilsModule.py
+│   ├── FileModule.py
+│   ├── FilelogModule.py
+│   ├── DatabaseManageModule.py
+│   └── RandomModule.py
+├── setup.py
+└── README.txt
+The structure of the project (real)
+├───NewLifeUtils
+│   │   __init__.py
+│   │
+│   ├───DistributedData
+│   │   │   ColorPalete.py
+│   │   │   DefaultSettings.py
+│   │   │   Fonts.py
+│   │   │
+│   │   └───Languages
+│   │           en.py
+│   │           ru.py
+│   │
+│   ├───LocalStorage
+│   │       LangStorage.py
+│   │       VarStorage.py
+│   │
+│   ├───Modules
+│   │       ColorModule.py
+│   │       CustomShellModule.py
+│   │       DatabaseManageModule.py
+│   │       ExceptModule.py
+│   │       FilelogModule.py
+│   │       FileModule.py
+│   │       LoggerModule.py
+│   │       RandomModule.py
+│   │       StringUtilModule.py
+│   │       TableBuildModule.py
+│   │       UtilsModule.py
+│   │
+│   └───__pycache__
+│           __init__.cpython-39.pyc
+==================================================================
+from setuptools import setup, find_packages
+from os.path import join, dirname
+
+setup(
+    name='helloworld',
+    version='1.0',
+    packages=find_packages(),
+    long_description=open(join(dirname(__file__), 'README.txt')).read(),
+)
+__________________________________________________________________
+setup(
+    ...
+    entry_points={
+        'console_scripts':
+            ['helloworld = helloworld.core:print_message']
+        }
+    )
+__________________________________________________________________
+__version__ = '1.0' # < project
+
+...
+import helloworld
+
+setup(
+    name='helloworld',
+    version=helloworld.__version__,
+    ...
+	install_requires=[
+		'Flask==0.8'
+	]
+==================================================================
+**MANIFEST.in
+recursive-include helloworld/templates *.html
+setup(
+	...
+	include_package_data=True
+	)
+==================================================================
+-----$$ https://klen.github.io/create-python-packages.html $$-----
+==================================================================
+> python setup.py sdist
+> virtualenv env
+> setup.py install
