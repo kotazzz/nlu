@@ -128,9 +128,11 @@ class ColorModule(object):
         BPURPLE = "\x1B[95m"
         BCYAN = "\x1B[96m"
         WHITE = "\x1B[97m"
+
     class CLU:
         def arr_to_rgb(arr):
             return f"\x1B[38;2;{arr[0]};{arr[1]};{arr[2]}m"
+
     class ACC:
         AFTERCLEAN = "\x1B[K"
         OLDRESET = "\x1B[0m"
@@ -141,7 +143,7 @@ class ColorModule(object):
         TOBRIGHT = "\x1B[1m"
         NOBRIGHT = "\x1B[2m"
         CLEARSCREEN = "\x1Bc"
-        
+
         def RANDOMRGB(mode="Color"):
             if mode not in ["Color", "gray"]:
                 mode = "Color"
@@ -194,7 +196,7 @@ class ColorModule(object):
         PREVIOUSLINE = "\x1B[F"
         ERASELINE = "\x1B[2K"
         REWRITELINE = "\x1B[1G"
-    
+
 
 class StringUtilModule(object):
     def __init__(self):
@@ -676,11 +678,12 @@ class TableBuildModule(object):
             for row in range(len(columns)):
                 table.append(columns[row][line])
         return table
-    def get_record(self,row_count, data, record_id):
-        return data[row_count*record_id:row_count*record_id+row_count]
-        
-    def get_record_count(self,row_count, data):
-        return len(data)/row_count
+
+    def get_record(self, row_count, data, record_id):
+        return data[row_count * record_id : row_count * record_id + row_count]
+
+    def get_record_count(self, row_count, data):
+        return len(data) / row_count
 
 
 class CustomShellModule(object):
@@ -992,7 +995,7 @@ class CustomShellModule(object):
 
 
 class UtilsModule(object):
-    def __init__(self, File = None):
+    def __init__(self, File=None):
         if type(File) == FileModule:
             self.File = File
         else:
@@ -1051,7 +1054,7 @@ class UtilsModule(object):
             # Если элемент с индексом i (слева от опорного) больше, чем
             # элемент с индексом j (справа от опорного), меняем их местами
             nums[i], nums[j] = nums[j], nums[i]
-    
+
     def quick_sort(self, nums):
         # Создадим вспомогательную функцию, которая вызывается рекурсивно
         def _quick_sort(items, low, high):
@@ -1063,45 +1066,46 @@ class UtilsModule(object):
 
         _quick_sort(nums, 0, len(nums) - 1)
 
-    def bprint(self, text, maxlinelength = 9, font = 'default'):
-        filenamess = self.File.get_directory_content('+fonts')
+    def bprint(self, text, maxlinelength=9, font="default"):
+        filenamess = self.File.get_directory_content("+fonts")
         files = []
         for filename in filenamess:
-            files.append(self.File.get_path('+fonts')+filename)
+            files.append(self.File.get_path("+fonts") + filename)
         fonts = []
         for file in files:
-            current = open(file, encoding = 'utf-8')
+            current = open(file, encoding="utf-8")
             fontsrc = json.loads(current.read())
-            fonts.append(fontsrc['name'])
-            if fontsrc['name'] == font:
+            fonts.append(fontsrc["name"])
+            if fontsrc["name"] == font:
                 sym = fontsrc
                 break
         else:
             print(f'font "{font}" cant found. Avaliable: {", ".join(fonts)}')
-            sym = {"letters":
-            {"E":'E', 'R':'R', 'O':'O'}}
-            
+            sym = {"letters": {"E": "E", "R": "R", "O": "O"}}
+
         def bprintletter(text):
             try:
                 printline = []
-                for i in range(len(sym['letters'][list(sym['letters'].keys())[0]])):
+                for i in range(len(sym["letters"][list(sym["letters"].keys())[0]])):
                     printline.append("")
                 for letter in text:
-                    for line in range(len(sym['letters'][letter])):
-                        printline[line] += sym['letters'][letter][line]
+                    for line in range(len(sym["letters"][letter])):
+                        printline[line] += sym["letters"][letter][line]
                 print("\n".join(printline))
-            except KeyError :
+            except KeyError:
                 bprintletter("ERROR")
                 print("Unable to continue print text, unknown characters")
                 avaliableKeys = []
-                avaliableKeys = list(sym['letters'].keys())
+                avaliableKeys = list(sym["letters"].keys())
                 avaliableKeys = "".join(avaliableKeys)
                 print(f"Avaliable: {avaliableKeys}")
-        
+
         import re
+
         r = [text[i : i + maxlinelength] for i in range(0, len(text), maxlinelength)]
         for text in r:
             bprintletter(text)
+
 
 class FileModule(object):
     def __init__(self):
@@ -1518,11 +1522,11 @@ def testNlu():
 
 if __name__ == "__main__":
     lm = LoggerModule()
-    #testNlu()
+    # testNlu()
     print(LoggerModule().color_data["table"])
-    print(LoggerModule().color_data["colors"]['mediumspringgreen'])
-    UtilsModule().bprint('hi')
-    UtilsModule().bprint('Hello World', 6, 'air')
+    print(LoggerModule().color_data["colors"]["mediumspringgreen"])
+    UtilsModule().bprint("hi")
+    UtilsModule().bprint("Hello World", 6, "air")
     input()
 
     #
