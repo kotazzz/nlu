@@ -1,117 +1,103 @@
-from NewLifeUtils import os
+import os
 
-info = """
-Dependence: ---
-Dependents: ---
-About: ---
-"""
-os.system("")
-
+os.system('')
 
 class BGC:
-    BLACK = "\x1B[40m"
-    RED = "\x1B[41m"
-    GREEN = "\x1B[42m"
-    YELLOW = "\x1B[43m"
-    BLUE = "\x1B[44m"
-    PURPLE = "\x1B[45m"
-    CYAN = "\x1B[46m"
-    BGRAY = "\x1B[47m"
-    GRAY = "\x1B[100m"
-    BRED = "\x1B[101m"
-    BGREEN = "\x1B[102m"
-    BYELLOW = "\x1B[103m"
-    BBLUE = "\x1B[104m"
-    BPURPLE = "\x1B[105m"
-    BCYAN = "\x1B[106m"
-    WHITE = "\x1B[107m"
-
-
+    BLACK 	 	 = "\x1B[40m"
+    RED 	 	 = "\x1B[41m"
+    GREEN 	 	 = "\x1B[42m"
+    YELLOW 	 	 = "\x1B[43m"
+    BLUE 	 	 = "\x1B[44m"
+    PURPLE 	 	 = "\x1B[45m"
+    CYAN 	 	 = "\x1B[46m"
+    BGRAY 	 	 = "\x1B[47m"
+    GRAY 	 	 = "\x1B[100m"
+    BRED 	 	 = "\x1B[101m"
+    LIME 	 	 = "\x1B[102m"
+    BYELLOW 	 	 = "\x1B[103m"
+    BBLUE 	 	 = "\x1B[104m"
+    MAGENTA 	 	 = "\x1B[105m"
+    BCYAN 	 	 = "\x1B[106m"
+    WHITE 	 	 = "\x1B[107m"
 class FGC:
-    BLACK = "\x1B[30m"
-    RED = "\x1B[31m"
-    GREEN = "\x1B[32m"
-    YELLOW = "\x1B[33m"
-    BLUE = "\x1B[34m"
-    PURPLE = "\x1B[35m"
-    CYAN = "\x1B[36m"
-    BGRAY = "\x1B[37m"
-    GRAY = "\x1B[90m"
-    BRED = "\x1B[91m"
-    BGREEN = "\x1B[92m"
-    BYELLOW = "\x1B[93m"
-    BBLUE = "\x1B[94m"
-    BPURPLE = "\x1B[95m"
-    BCYAN = "\x1B[96m"
-    WHITE = "\x1B[97m"
-
-
-class CLU:
-    def arr_to_rgb(arr):
-        return f"\x1B[38;2;{arr[0]};{arr[1]};{arr[2]}m"
-
-
+    BLACK 	  = "\x1B[30m"
+    RED 	  = "\x1B[31m"
+    GREEN 	  = "\x1B[32m"
+    YELLOW 	  = "\x1B[33m"
+    BLUE 	  = "\x1B[34m"
+    PURPLE 	  = "\x1B[35m"
+    CYAN 	  = "\x1B[36m"
+    BGRAY 	  = "\x1B[37m"
+    GRAY 	  = "\x1B[90m"
+    BRED 	  = "\x1B[91m"
+    LIME 	  = "\x1B[92m"
+    BYELLOW 	 = "\x1B[93m"
+    BBLUE 	  = "\x1B[94m"
+    MAGENTA 	 = "\x1B[95m"
+    BCYAN 	  = "\x1B[96m"
+    WHITE 	  = "\x1B[97m"
 class ACC:
-    AFTERCLEAN = "\x1B[K"
-    OLDRESET = "\x1B[0m"
-    RESET = "\x1B[0m" + "\x1B[x" + "\x1B[K"
+    RESET = "\x1B[0m"
+    
+    BRIGHT = "\x1B[1m"
+    
     UNDERLINE = "\x1B[4m"
-    SWAP = "\x1B[7m"
-    NOTNEGATIVE = "\x1B[27m"
-    TOBRIGHT = "\x1B[1m"
-    NOBRIGHT = "\x1B[2m"
-    CLEARSCREEN = "\x1Bc"
-
-    def RANDOMRGB(mode="Color"):
-        if mode not in ["Color", "gray"]:
-            mode = "Color"
-        if mode == "Color":
-            r, g, b = (
-                NewLifeUtils.Libs.random.randrange(0, 255),
-                NewLifeUtils.Libs.random.randrange(0, 255),
-                NewLifeUtils.Libs.random.randrange(0, 255),
-            )
-        else:
-            r = NewLifeUtils.Libs.random.randrange(0, 255)
-            g = r
-            b = r
-        return f"\x1B[38;2;{r};{g};{b}m"
-
-    def RANDOMD():
-        n = NewLifeUtils.Libs.random.randrange(0, 255)
-        return f"\x1B[38;5;{n}m"
-
-    def CUSTOMRGB(r, g, b):
-        return f"\x1B[38;2;{r};{g};{b}m"
-
-    def CUSTOMC(n):
-        return f"\x1B[38;5;{n}m"
-
-    def BCUSTOMRGB(r, g, b):
-        return f"\x1B[48;2;{r};{g};{b}m"
-
-    def BCUSTOMC(n):
-        return f"\x1B[48;5;{n}m"
-
-
+    NO_UNDERLINE = "\x1B[24m"
+    
+    REVERSE = "\x1B[7m"
+    NO_REVERSE = "\x1B[27m"
+class CUF:
+    pass
 class MCC:
-    def UP(count):
+    CURSOR_DBLINK = '\x1B[?12h'
+    CURSOR_EBLINK = '\x1B[?12l'
+    CURSOR_HIDE = '\x1B[?25l'
+    CURSOR_SHOW = '\x1B[?25h'
+    
+    ERASE_NXT_WINDOW = '\x1B[0J'
+    ERASE_PRV_WINDOW = '\x1B[1J'
+    ERASE_ALL_WINDOW = '\x1B[2J'
+    ERASE_NXT_LINE = '\x1B[0K'
+    ERASE_PRV_LINE = '\x1B[1K'
+    ERASE_ALL_LINE = '\x1B[2K'
+    SET_TAB = '\x1BH'
+    def UP(count = 1):
         return f"\x1B[{count}A"
 
-    def DOWN(count):
+    def DOWN(count = 1):
         return f"\x1B[{count}B"
 
-    def RIGHT(count):
-        return f"\x1B[{count}V"
+    def RIGHT(count = 1):
+        return f"\x1B[{count}C"
 
-    def LEFT(count):
+    def LEFT(count = 1):
         return f"\x1B[{count}D"
 
     def CURSORPOSITION(x, y):
         return f"\x1B[{x};{y}H"
+    def SAVE_CURSOR():
+        return "\x1B[s"
+    def LOAD_CURSOR():
+        return "\x1B[u"
+    def SCROLL_DOWN(count):
+        return f"\x1B[{count}T"
+    def SCROLL_UP(count):
+        return f"\x1B[{count}S"
+        
+    def PUSH_RIGHT(count):
+        return f"\x1B[{count}@"
+    def ERASE_RIGHT(count):
+        return f"\x1B[{count}P"
+    def REPLACE_RIGHT(count):
+        return f"\x1B[{count}X"
+    def PUSH_DOWN(count):
+        return f"\x1B[{count}L"
+    def ERASE_DOWN(count):
+        return f"\x1B{count}M"
+    
+from time import sleep
 
-    FIRSTLINE = "\x1B[1G"
-    NEXTLINE = "\x1B[E"
-    PREVIOUSLINE = "\x1B[F"
-    ERASELINE = "\x1B[2K"
-    REWRITELINE = "\x1B[1G"
+print("11111\x1BH 1111\x1BH")
+print("\t111\t111")
+h = input()
+print(h)
