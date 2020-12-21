@@ -1,5 +1,5 @@
-import ColorModule     as Color
-import StringUtilModule as String
+import NewLifeUtils.ColorModule     as Color
+import NewLifeUtils.StringUtilModule as String
 
 default="double"
 
