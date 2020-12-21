@@ -1,6 +1,5 @@
-import os
-
-os.system('')
+from os import system
+system('')
 
 class BGC:
     BLACK 	 	 = "\x1B[40m"
@@ -38,16 +37,22 @@ class FGC:
     WHITE 	  = "\x1B[97m"
 class ACC:
     RESET = "\x1B[0m"
+    RELOAD = "\x1B[!p" 
     
     BRIGHT = "\x1B[1m"
+    NO_BRIGHT = "\x1B[2m"
     
     UNDERLINE = "\x1B[4m"
     NO_UNDERLINE = "\x1B[24m"
     
     REVERSE = "\x1B[7m"
     NO_REVERSE = "\x1B[27m"
-class CUF:
-    pass
+    
+    ALTERNATIVE_BUFF = '\x1B[?1049h'
+    ORIGINAL_BUFF = '\x1B[?1049l'
+    
+    def TITLE(title):
+        return f"\x1B]2;{title}\x07"
 class MCC:
     CURSOR_DBLINK = '\x1B[?12h'
     CURSOR_EBLINK = '\x1B[?12l'
@@ -61,6 +66,9 @@ class MCC:
     ERASE_PRV_LINE = '\x1B[1K'
     ERASE_ALL_LINE = '\x1B[2K'
     SET_TAB = '\x1BH'
+    DEL_TAB = '\x1B[0g'
+    RES_TAB = '\x1B[3g'
+    
     def UP(count = 1):
         return f"\x1B[{count}A"
 
@@ -72,6 +80,9 @@ class MCC:
 
     def LEFT(count = 1):
         return f"\x1B[{count}D"
+        
+    def ROW(count = 1):
+        return f"\x1B[{count}G"
 
     def CURSORPOSITION(x, y):
         return f"\x1B[{x};{y}H"
@@ -94,10 +105,10 @@ class MCC:
         return f"\x1B[{count}L"
     def ERASE_DOWN(count):
         return f"\x1B{count}M"
-    
-from time import sleep
-
-print("11111\x1BH 1111\x1BH")
-print("\t111\t111")
-h = input()
-print(h)
+        
+    def NEXT_TAB(count):
+        return f"\x1B{count}I"
+    def PREV_TAB(count):
+        return f"\x1B{count}Z"
+class CUF:
+    pass
