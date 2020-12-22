@@ -38,6 +38,7 @@ class FGC:
 class ACC:
     RESET = "\x1B[0m"
     RELOAD = "\x1B[!p" 
+    CLEARSCREEN = "\x1Bc"
     
     BRIGHT = "\x1B[1m"
     NO_BRIGHT = "\x1B[2m"
@@ -53,6 +54,38 @@ class ACC:
     
     def TITLE(title):
         return f"\x1B]2;{title}\x07"
+    
+
+    def RANDOMRGB(mode="Color"):
+        if mode not in ["Color", "gray"]:
+            mode = "Color"
+        if mode == "Color":
+            r, g, b = (
+                NewLifeUtils.Libs.random.randrange(0, 255),
+                NewLifeUtils.Libs.random.randrange(0, 255),
+                NewLifeUtils.Libs.random.randrange(0, 255),
+            )
+        else:
+            r = NewLifeUtils.Libs.random.randrange(0, 255)
+            g = r
+            b = r
+        return f"\x1B[38;2;{r};{g};{b}m"
+
+    def RANDOMD():
+        n = NewLifeUtils.Libs.random.randrange(0, 255)
+        return f"\x1B[38;5;{n}m"
+
+    def CUSTOMRGB(r, g, b):
+        return f"\x1B[38;2;{r};{g};{b}m"
+
+    def CUSTOMC(n):
+        return f"\x1B[38;5;{n}m"
+
+    def BCUSTOMRGB(r, g, b):
+        return f"\x1B[48;2;{r};{g};{b}m"
+
+    def BCUSTOMC(n):
+        return f"\x1B[48;5;{n}m"
 class MCC:
     CURSOR_DBLINK = '\x1B[?12h'
     CURSOR_EBLINK = '\x1B[?12l'
