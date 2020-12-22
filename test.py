@@ -8,7 +8,7 @@ import NewLifeUtils.CustomShellModule as csm
 import NewLifeUtils.FileModule as fm
 import NewLifeUtils.OneCode as octester
 
-print('|'+sm.screate(f'{cm.FGC.RED}HELLO{cm.ACC.RESET}')+'|')
+print('|'+sm.screate(f'{cm.FGC.RED}HELLO{cm.ACC.RESET}')+'|', end = '')
 print(fm.tree(r'D:\Документы\GitHub\NewLifeUtils\NewLifeUtils'))
 lm.log('hi')
 s = lm.rea('hi')
