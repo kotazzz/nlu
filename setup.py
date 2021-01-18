@@ -4,7 +4,7 @@ from os.path import join, dirname
 import NewLifeUtils
 
 setup(
-    name=NewLifeUtils.name, 
+    name="NewLifeUtils", 
     version=NewLifeUtils.__version__,
     author='New Life',
     author_email='semechkagent@gmail.com',

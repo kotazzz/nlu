@@ -7,9 +7,9 @@ import NewLifeUtils.TableBuildModule as tbm
 import NewLifeUtils.CustomShellModule as csm
 import NewLifeUtils.FileModule as fm
 import NewLifeUtils.OneCode as octester
-
+octester.testNlu()
 print('|'+sm.screate(f'{cm.FGC.RED}HELLO{cm.ACC.RESET}')+'|', end = '')
-print(fm.tree(r'D:\Документы\GitHub\NewLifeUtils\NewLifeUtils'))
+#print(fm.tree(r'D:\Документы\GitHub\NewLifeUtils\NewLifeUtils'))
 lm.log('hi')
 s = lm.rea('hi')
 lm.log('hi')
@@ -23,5 +23,5 @@ t = tbm.createTable(2,[],data)
 print(t)
 print(rm.format_number())
 csm.Shell().main()
-octester.testNlu()
+
 input()
