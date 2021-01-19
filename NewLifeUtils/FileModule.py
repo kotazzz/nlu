@@ -1,4 +1,5 @@
 import os
+from yaml import load, FullLoader
 
 wd_name = "NLU Config"
 cwd = os.path.join(os.getcwd(), wd_name)
@@ -11,13 +12,14 @@ def create_dirs(path):
         os.makedirs(path)
 
 
-def create_config(configname, file, path=""):
+def create_config(configname, file, path="", default_data=""):
     fullpath = os.path.join(os.path.join(cwd, path), "")
     create_dirs(fullpath)
     try:
         f = open(fullpath + f"\\{file}", "a")
     except:
         f = open(fullpath + f"\\{file}", "w")
+        config_rewrite(configname, default_data)
     configs[configname] = os.path.join(cwd, path) + f"\\{file}"
     f.close()
 
@@ -44,9 +46,6 @@ def readall(configname):
     f.close()
     return r
 
+def get_json(configname):
+    return load(readall(configname), Loader=FullLoader)
 
-if __name__ == "__main__":
-    create_config("cfg", "mycfg.txt")
-    create_config("cfg2", "mycfg2.txt")
-    print(get_configs())
-    print(readall("cfg2"))
