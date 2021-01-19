@@ -1011,7 +1011,7 @@ def out(text):
     now = datetime.datetime.now()
     if enableFileLog:
         if not file_exist("log"):
-            create_files("log", f"{logname.format(time=logtime)}.log", "logs")
+            create_files("log", f"{logname.format(time=now.strftime(logtime))}.log", "logs")
 
         file_apwrite("log", remove_csi(text))
 
