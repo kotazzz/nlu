@@ -1051,13 +1051,13 @@ def read(message, tag=""):
     if message[-1] not in [" ", ">", ":"]:
         message += ": "
     print(
-        f"{ACC.BCUSTOMRGB(0, 43, 112)}{ACC.CUSTOMRGB(235, 54, 30)}{message}",
+        f"{ACC.bcustomrgb(0, 43, 112)}{ACC.customrgb(235, 54, 30)}{message}",
         end="",
     )
     readed = input()
 
     out(
-        MCC.PREVIOUSLINE
+        MCC.up(1)
         + ACC.RESET
         + to_format(
             rea_pattern,

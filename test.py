@@ -1,27 +1,12 @@
-import NewLifeUtils.ColorModule as cm
-import NewLifeUtils.StringUtilModule as sm
-import NewLifeUtils.LoggerModule as lm
-import NewLifeUtils.ExceptModule as em
-import NewLifeUtils.RandomModule as rm
-import NewLifeUtils.TableBuildModule as tbm
-import NewLifeUtils.CustomShellModule as csm
-import NewLifeUtils.FileModule as fm
-import NewLifeUtils.OneCode as octester
-octester.testNlu()
-print('|'+sm.screate(f'{cm.FGC.RED}HELLO{cm.ACC.RESET}')+'|', end = '')
-#print(fm.tree(r'D:\Документы\GitHub\NewLifeUtils\NewLifeUtils'))
-lm.log('hi')
-s = lm.rea('hi')
-lm.log('hi')
-lm.log('hi')
-lm.log('hi')
-lm.log('hi')
-lm.log('hi')
-em.except_print(Exception(s), 'wrn')
-data = ['1','2','3','4','5','6']
-t = tbm.createTable(2,[],data)
-print(t)
-print(rm.format_number())
-csm.Shell().main()
-
-input()
+from NewLifeUtils.LoggerModule import *
+import os
+if __name__ == '__main__':
+    log("Что то случилось!")
+    log("Записиваю информацию...")
+    log("Взламываю пентагон")
+    wrn("Обрати внимание, что то опасное!")
+    err("Что то сломалось, иди чини, даун!")
+    tip("Подсказка: выкини комп в помойку, он лагает")
+    res = rea("Введите что нибудь")
+    tip(f"Перменаая res - {res}")
+    os.system("pause")
