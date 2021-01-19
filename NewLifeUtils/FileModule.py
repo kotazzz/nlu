@@ -4,63 +4,75 @@ from yaml import load, FullLoader
 wd_name = "NLU Config"
 cwd = os.path.join(os.getcwd(), wd_name)
 
-configs = {}
+files = {}
 
 
+def get_cwd(folder):
+    return os.path.join(cwd,folder)
 def create_dirs(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
 
-def create_config(configname, file, path="", default_data=""):
+def create_files(filename, file, path="", default_data=""):
     fullpath = os.path.join(os.path.join(cwd, path), "")
     create_dirs(fullpath)
     try:
-        f = open(fullpath + f"\\{file}", "a")
+        f = open(fullpath + f"{file}", "a")
         state = False
     except:
-        f = open(fullpath + f"\\{file}", "w")
-        config_rewrite(configname, default_data)
+        f = open(fullpath + f"{file}", "w")
+        file_rewrite(filename, default_data)
         state = True
-    configs[configname] = os.path.join(cwd, path) + f"\\{file}"
+    files[filename] = os.path.join(cwd, path) + f"\\{file}"
     f.close()
     return state
 
+def file_exist(filename):
+    try:
+        files[filename]
+    except:
+        return False
+    else:
+        return os.path.exists(files[filename])
 
-def get_configs():
-    return configs
 
+def get_files(filename):
+    return files[filename]
 
-def config_rewrite(configname, data):
-    f = open(configs[configname], "w")
-    f.write(data)
+def get_file(filename, file, path=""):
+    return os.path.join(os.path.join(cwd, path), file)
+
+def file_rewrite(filename, data, end ='\n'):
+    f = open(files[filename], "w")
+    f.write(data+end)
     f.close()
 
 
-def config_apwrite(configname, data):
-    f = open(configs[configname], "a")
-    f.write(data)
+def file_apwrite(filename, data, end ='\n'):
+    f = open(files[filename], "a")
+    f.write(data+end)
     f.close()
 
 
-def readall(configname):
-    f = open(configs[configname], "r")
+def readall(filename):
+    f = open(files[filename], "r")
     r = f.read()
     f.close()
     return r
 
 
-def get_yaml(configname, regen_data = ''):
+def get_yaml(filename, regen_data = ''):
     try:
-        retobj = load(readall(configname), Loader=FullLoader)
+        retobj = load(readall(filename), Loader=FullLoader)
         if retobj == None:
             raise Exception
         else:
             return retobj
     except Exception as e:
         if regen_data != '':
-            config_rewrite(configname, regen_data)
+            file_rewrite(filename, regen_data)
         try:
-            return load(readall(configname), Loader=FullLoader)
+            return load(readall(filename), Loader=FullLoader)
         except Exception as e2:
             return None

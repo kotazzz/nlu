@@ -44,21 +44,21 @@ class FGC:
 
 
 class ACC:
-    reset = "\x1B[0m"
-    reload = "\x1B[!p"
-    clearscreen = "\x1Bc"
+    RESET = "\x1B[0m"
+    RELOAD = "\x1B[!p"
+    CLEARSCREEN = "\x1Bc"
 
-    bright = "\x1B[1m"
-    no_bright = "\x1B[2m"
+    BRIGHT = "\x1B[1m"
+    NO_BRIGHT = "\x1B[2m"
 
-    underline = "\x1B[4m"
-    no_underline = "\x1B[24m"
+    UNDERLINE = "\x1B[4m"
+    NO_UNDERLINE = "\x1B[24m"
 
-    reverse = "\x1B[7m"
-    no_reverse = "\x1B[27m"
+    REVERSE = "\x1B[7m"
+    NO_REVERSE = "\x1B[27m"
 
-    alternative_buff = "\x1B[?1049h"
-    original_buff = "\x1B[?1049l"
+    ALTERNATIVE_BUFF = "\x1B[?1049h"
+    ORIGINAL_BUFF = "\x1B[?1049l"
 
     def title(title):
         return f"\x1B]2;{title}\x07"

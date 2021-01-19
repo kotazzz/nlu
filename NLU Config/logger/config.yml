@@ -1,0 +1,24 @@
+
+log_pattern: "{greenyellow}[{time}] {lightgreen}{tag}{snow} : {mediumspringgreen}{message}"
+wrn_pattern: "{darkorange}[{time}] {orange}{tag}{snow} : {gold}{message}"
+err_pattern: "{crimson}[{time}] {red}{tag}{snow} : {firebrick}{message}"
+tip_pattern: "{fuchsia}[{time}] {magenta}{tag}{snow} : {mediumorchid}{message}"
+rea_pattern: "{cyan}[{time}] {lightcyan}{tag}{snow} : {paleturquoise}{message} > {mediumslateblue}[{readed}]"
+
+log_default_tag: "Log"
+wrn_default_tag: "Warn"
+err_default_tag: "Error"
+tip_default_tag: "Tip"
+rea_default_tag: "Read"
+
+date_format: "%d-%m-%Y"
+time_format: "%H:%M:%S"
+
+tag_length: 10
+
+colormap: 1
+
+file_log: true
+logtime: "%d-%m-%Y_%H-%M-%S"
+logname: "log_{time}"
+
