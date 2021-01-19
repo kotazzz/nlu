@@ -4,6 +4,7 @@ GOTO START
 pause
 :START
 CLS
+SET M=''
 ECHO +--------------------------------------+-------+
 ECHO + Type number and press Enter          +  UID  +
 ECHO +--------------------------------------+-------+
