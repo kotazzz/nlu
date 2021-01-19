@@ -17,11 +17,14 @@ def create_config(configname, file, path="", default_data=""):
     create_dirs(fullpath)
     try:
         f = open(fullpath + f"\\{file}", "a")
+        state = False
     except:
         f = open(fullpath + f"\\{file}", "w")
         config_rewrite(configname, default_data)
+        state = True
     configs[configname] = os.path.join(cwd, path) + f"\\{file}"
     f.close()
+    return state
 
 
 def get_configs():
@@ -46,6 +49,18 @@ def readall(configname):
     f.close()
     return r
 
-def get_json(configname):
-    return load(readall(configname), Loader=FullLoader)
 
+def get_yaml(configname, regen_data = ''):
+    try:
+        retobj = load(readall(configname), Loader=FullLoader)
+        if retobj == None:
+            raise Exception
+        else:
+            return retobj
+    except Exception as e:
+        if regen_data != '':
+            config_rewrite(configname, regen_data)
+        try:
+            return load(readall(configname), Loader=FullLoader)
+        except Exception as e2:
+            return None
