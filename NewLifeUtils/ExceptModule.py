@@ -5,18 +5,24 @@ from NewLifeUtils.LoggerModule import err, log, wrn
 from NewLifeUtils.StringUtilModule import screate
 
 default_lang = """
+type: "Type"
 unknown: "Unknown Error"
 about: "More information"
-attention: "More information"
+attention: "Attention"
+info: "Info"
+warning: "Warn"
+error: "Error"
+fatal: "Fatal error"
+wrong: "Something wrong..."
 
 """
-create_files("except_translation", "lanf.yml", "exceptsettings", default_lang)
+create_files("except_translation", "lang.yml", "exceptsettings", default_lang)
 translation = get_yaml("except_translation", default_lang)
 
 
 def except_print(exception, exceptionType="err", tb=True):
     errorText = "\n-------------- {ExceptionTitle} --------------------\n"
-    errorText += f"Type: {type(exception).__name__}\n\n"
+    errorText += f"{translation['type']}: {type(exception).__name__}\n\n"
 
     if exception.args == 0:
         errorText += f'{translation["unknown"]}\n'
