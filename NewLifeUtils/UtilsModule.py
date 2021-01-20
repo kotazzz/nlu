@@ -73,7 +73,7 @@ def quick_sort(nums):
 
 
 def bprint(text, maxlinelength=9, font="default"):
-    pass
+    print(get_files_from_dir("fonts"))
 
 
 def format_number(

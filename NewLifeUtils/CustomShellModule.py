@@ -7,7 +7,6 @@ default_translation = """
 default_cmd_name: "My CMD"
 default_cmd_description: "My new command line instance"
 help_description: ""
-
 """
 
 create_files("shell_translation","lang.yml","shell",default_translation)

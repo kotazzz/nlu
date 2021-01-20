@@ -8,7 +8,9 @@ files = {}
 
 
 def get_cwd(folder):
-    return os.path.join(cwd,folder)
+    return os.path.join(cwd, folder)
+
+
 def create_dirs(path):
     if not os.path.exists(path):
         os.makedirs(path)
@@ -28,6 +30,7 @@ def create_files(filename, file, path="", default_data=""):
     f.close()
     return state
 
+
 def file_exist(filename):
     try:
         files[filename]
@@ -37,21 +40,19 @@ def file_exist(filename):
         return os.path.exists(files[filename])
 
 
-def get_files(filename):
+def get_file(filename):
     return files[filename]
 
-def get_file(filename, file, path=""):
-    return os.path.join(os.path.join(cwd, path), file)
 
-def file_rewrite(filename, data, end ='\n'):
+def file_rewrite(filename, data, end='\n'):
     f = open(files[filename], "w")
-    f.write(data+end)
+    f.write(data + end)
     f.close()
 
 
-def file_apwrite(filename, data, end ='\n', coding = "utf-8"):
+def file_apwrite(filename, data, end='\n', coding="utf-8"):
     f = open(files[filename], "a", encoding=coding)
-    f.write(data+end)
+    f.write(data + end)
     f.close()
 
 
@@ -62,7 +63,7 @@ def readall(filename):
     return r
 
 
-def get_yaml(filename, regen_data = ''):
+def get_yaml(filename, regen_data=''):
     try:
         retobj = load(readall(filename), Loader=FullLoader)
         if retobj == None:
@@ -76,3 +77,12 @@ def get_yaml(filename, regen_data = ''):
             return load(readall(filename), Loader=FullLoader)
         except Exception as e2:
             return None
+
+
+def get_files_from_dir(folder):
+    path = os.listdir(os.path.join(os.path.join(cwd, folder), ""))
+    files = []
+    for some in path:
+        if path.isfile(os.path.join(path, some)):
+            files.append(some)
+    return files
