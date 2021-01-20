@@ -1,6 +1,7 @@
 
 import os
 
+from NewLifeUtils.ExceptModule import except_print
 from NewLifeUtils.LoggerModule import log, err,wrn,tip,rea
 from NewLifeUtils.TableBuildModule import createTable
 from NewLifeUtils.UtilsModule import select_rand_list
@@ -24,8 +25,11 @@ if __name__ == '__main__':
     tip(f"Я создал табличку: {mytab}")
     log(f"Список данных: 1 2 3 4 5 6 7 8")
     tip(f"Выбор: {select_rand_list([1,2,3,4,5,6,7,8])}")
-
-
+    log("Сейчас произайдет ошибка")
+    try:
+        0/0
+    except Exception as e:
+        except_print(e)
 
 
 
