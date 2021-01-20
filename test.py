@@ -3,6 +3,7 @@ import os
 
 from NewLifeUtils.LoggerModule import log, err,wrn,tip,rea
 from NewLifeUtils.TableBuildModule import createTable
+from NewLifeUtils.UtilsModule import select_rand_list
 
 if __name__ == '__main__':
     mytab = createTable(3, [], [
@@ -21,6 +22,8 @@ if __name__ == '__main__':
     res = rea("Введите что нибудь")
     tip(f"Перменаая res - {res}")
     tip(f"Я создал табличку: {mytab}")
+    log(f"Список данных: 1 2 3 4 5 6 7 8")
+    tip(f"Выбор: {select_rand_list([1,2,3,4,5,6,7,8])}")
 
 
 
