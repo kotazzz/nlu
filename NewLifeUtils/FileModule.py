@@ -49,8 +49,8 @@ def file_rewrite(filename, data, end ='\n'):
     f.close()
 
 
-def file_apwrite(filename, data, end ='\n'):
-    f = open(files[filename], "a")
+def file_apwrite(filename, data, end ='\n', coding = "utf-8"):
+    f = open(files[filename], "a", encoding=coding)
     f.write(data+end)
     f.close()
 
