@@ -5,6 +5,7 @@ from NewLifeUtils.ExceptModule import except_print
 from NewLifeUtils.LoggerModule import log, err,wrn,tip,rea
 from NewLifeUtils.TableBuildModule import createTable
 from NewLifeUtils.UtilsModule import select_rand_list
+from NewLifeUtils_old.OneCode import CustomShellModule
 
 if __name__ == '__main__':
     mytab = createTable(3, [], [
@@ -30,7 +31,8 @@ if __name__ == '__main__':
         0/0
     except Exception as e:
         except_print(e)
-
+    shell = CustomShellModule()
+    shell.main()
 
 
 
