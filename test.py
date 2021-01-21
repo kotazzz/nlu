@@ -7,7 +7,11 @@ from NewLifeUtils.TableBuildModule import createTable
 from NewLifeUtils.UtilsModule import select_rand_list, bprint
 from NewLifeUtils.CustomShellModule import *
 
+import readline
+
 if __name__ == '__main__':
+    while True:
+        input("Enter для продолжения")
     shell = Shell()
     shell.main()
 
