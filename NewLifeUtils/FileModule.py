@@ -80,7 +80,9 @@ def get_yaml(filename, regen_data=''):
 
 
 def get_files_from_dir(folder):
-    path = os.listdir(os.path.join(os.path.join(cwd, folder), ""))
+    path = os.path.join(os.path.join(cwd, folder), "")
+    create_dirs(path)
+    path = os.listdir(path)
     files = []
     for some in path:
         if path.isfile(os.path.join(path, some)):

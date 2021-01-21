@@ -1,16 +1,29 @@
-from NewLifeUtils.LoggerModule     import *
-from NewLifeUtils.ColorModule      import *
+from NewLifeUtils.LoggerModule import *
+from NewLifeUtils.ColorModule import *
 from NewLifeUtils.StringUtilModule import *
-from NewLifeUtils.ExceptModule     import *
+from NewLifeUtils.ExceptModule import *
 import os
+
 default_translation = """
 default_cmd_name: "My CMD"
 default_cmd_description: "My new command line instance"
-help_description: ""
+welcome: "Welcome to"
+help_description: "This is the help"
+cls_description: "Clears display"
+hello_description: "Say 'Hello'"
+exit_description: "Exit from cmd"
+exit_code_label: "Exit with code"
+exit_from_label: "from"
+
+same_command:
+- "Console commands with the same names were registered." 
+- "Here is a list of registered console commands (their names):"
+- "{list}"
 """
 
-create_files("shell_translation","lang.yml","shell",default_translation)
+create_files("shell_translation", "lang.yml", "shell", default_translation)
 translation = get_yaml("shell_translation", default_translation)
+
 
 class Command:
     command = "commandname"
@@ -44,7 +57,6 @@ class Shell(object):
             about=translation["default_cmd_description"],
     ):
         self.runState = "init"
-
         self.cmdname = name
         self.cmdabout = about
 
@@ -52,13 +64,15 @@ class Shell(object):
         self.registeredCommands = []
         self.registeredGlobalFunctions = {}
         self.registeredExitTask = []
-        tag_length = len(self.cmdname) + 5
-        log_default_tag = f"[L] {self.cmdname.title()}"
-        wrn_default_tag = f"[W] {self.cmdname.title()}"
-        err_default_tag = f"[E] {self.cmdname.title()}"
-        tip_default_tag = f"[T] {self.cmdname.title()}"
-        rea_default_tag = f"[R] {self.cmdname.title()}"
-        rea_pattern = "{white}[{time}] {blue}{tag}{empty}{reset}: {cyan}{read}{reset}"
+        set_settings(
+            new_tag_length=len(self.cmdname) + 5,
+            new_log_default_tag=f"[L] {self.cmdname.title()}",
+            new_wrn_default_tag=f"[W] {self.cmdname.title()}",
+            new_err_default_tag=f"[E] {self.cmdname.title()}",
+            new_tip_default_tag=f"[T] {self.cmdname.title()}",
+            new_rea_default_tag=f"[R] {self.cmdname.title()}",
+            new_rea_pattern="{cyan}[{time}] {lightcyan}{tag}{snow} : {paleturquoise}{message} {mediumslateblue}[{readed}]"
+        )
 
         self.runState = "setup"
 
@@ -86,7 +100,7 @@ class Shell(object):
                 CMD = FGC.BLUE
                 CMDDSK = FGC.CYAN
                 ALS = FGC.PURPLE
-                ALSTXT = FGC.BPURPLE
+                ALSTXT = FGC.MAGENTA
                 STTL = FGC.GREEN
                 SCMD = ACC.UNDERLINE + FGC.WHITE
                 SREQ = FGC.BGRAY
@@ -226,6 +240,10 @@ class Shell(object):
         wrn(f"Invalid usage. Syntax: {syntax}")
 
     def main(self):
+
+
+
+
         self.runState = "run"
 
         # Basic registration
@@ -254,6 +272,7 @@ class Shell(object):
 
         while self.runState == "run":
             try:
+
                 readed = parseArgs(
                     rea(f"{self.cmdname.title()} >")
                 )

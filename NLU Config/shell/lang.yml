@@ -1,0 +1,16 @@
+
+default_cmd_name: "My CMD"
+default_cmd_description: "My new command line instance"
+welcome: "Welcome to"
+help_description: "This is the help"
+cls_description: "Clears display"
+hello_description: "Say 'Hello'"
+exit_description: "Exit from cmd"
+exit_code_label: "Exit with code"
+exit_from_label: "from"
+
+same_command:
+- "Console commands with the same names were registered." 
+- "Here is a list of registered console commands (their names):"
+- "{list}"
+

@@ -968,11 +968,64 @@ rea_default_tag = settings_config["rea_default_tag"]
 date_format = settings_config["date_format"]
 time_format = settings_config["time_format"]
 tag_length = settings_config["tag_length"]
-enableFileLog = settings_config["file_log"]
+enable_file_fog = settings_config["file_log"]
 logtime = settings_config["logtime"]
 logname = settings_config["logname"]
 colormap_type = settings_config["colormap"]
 colormap = {}
+
+
+def set_settings(
+        new_log_pattern=log_pattern,
+        new_wrn_pattern=wrn_pattern,
+        new_err_pattern=err_pattern,
+        new_tip_pattern=tip_pattern,
+        new_rea_pattern=rea_pattern,
+        new_log_default_tag=log_default_tag,
+        new_wrn_default_tag=wrn_default_tag,
+        new_err_default_tag=err_default_tag,
+        new_tip_default_tag=tip_default_tag,
+        new_rea_default_tag=rea_default_tag,
+        new_date_format=date_format,
+        new_time_format=time_format,
+        new_tag_length=tag_length,
+        new_enable_file_fog=enable_file_fog,
+        new_logtime=logtime,
+        new_logname=logname,
+):
+    global log_pattern
+    global wrn_pattern
+    global err_pattern
+    global tip_pattern
+    global rea_pattern
+    global log_default_tag
+    global wrn_default_tag
+    global err_default_tag
+    global tip_default_tag
+    global rea_default_tag
+    global date_format
+    global time_format
+    global tag_length
+    global enable_file_fog
+    global logtime
+    global logname
+
+    log_pattern = new_log_pattern
+    wrn_pattern = new_wrn_pattern
+    err_pattern = new_err_pattern
+    tip_pattern = new_tip_pattern
+    rea_pattern = new_rea_pattern
+    log_default_tag = new_log_default_tag
+    wrn_default_tag = new_wrn_default_tag
+    err_default_tag = new_err_default_tag
+    tip_default_tag = new_tip_default_tag
+    rea_default_tag = new_rea_default_tag
+    date_format = new_date_format
+    time_format = new_time_format
+    tag_length = new_tag_length
+    enable_file_fog = new_enable_file_fog
+    logtime = new_logtime
+    logname = new_logname
 
 if colormap_type == 2:
     settings_color2 = get_yaml("logger_colors2", default_colors2)
@@ -1009,7 +1062,7 @@ def to_format(pattern, args):
 def out(text):
     n = 1
     now = datetime.datetime.now()
-    if enableFileLog:
+    if enable_file_fog:
         if not file_exist("log"):
             create_files("log", f"{logname.format(time=now.strftime(logtime))}.log", "logs")
 
