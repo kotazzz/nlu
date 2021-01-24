@@ -1,23 +1,57 @@
-import win32api
-import win32con
+from __future__ import print_function
+from pynput.keyboard import Key, Listener
+from NewLifeUtils.ColorModule import MCC, ACC
+import pynput
 import sys
+from msvcrt import getwch
 
-from NewLifeUtils.ColorModule import ACC
-from NewLifeUtils.StringUtilModule import screate
+from NewLifeUtils.ColorModule import FGC
+from NewLifeUtils.StringUtilModule import screate, parse_args
 
-while True:
-    pass
 
-# Get states of all keys
-#
-# from time import sleep
-#
-# import win32api
-# import win32con
-# import sys
-#
-# from NewLifeUtils.ColorModule import ACC
-# from NewLifeUtils.StringUtilModule import screate
+def complete(readed, completes):
+    parsed = parse_args(readed)
+    text = [parsed["command"]]
+    for param in parsed["param"]:
+        text.append(param)
+    for key in completes:
+        if text[-1].startswith(key):
+            text[-1] = key
+    return readed
+
+
+def smart_input(text='', completes={}, end='\n'):
+    readed = ''
+    print(text+MCC.save_cursor, end='')
+    sys.stdout.flush()
+    while True:
+        key = getwch()
+        if ord(key) == 224:
+            print(ord(getwch()))
+        elif ord(key) == 0:
+            print(ord(getwch()))
+        else:
+            if ord(key) == 8:
+                readed = readed[:-1]
+                print(MCC.load_cursor+MCC.erase_nxt_line+readed, end='')
+
+            elif ord(key) == 13:
+                break
+            elif ord(key) == 9:
+                readed = complete(readed, completes)
+                print(MCC.load_cursor+MCC.erase_nxt_line+readed, end='')
+            else:
+                readed += key
+                print(MCC.load_cursor+MCC.erase_nxt_line+readed, end='')
+        sys.stdout.flush()
+    print(end)
+    return readed
+
+
+if __name__ == '__main__':
+    inp = smart_input('Введите текст:', {"hello": {"world": {}}, "hi": {"friend": {}}})
+    print(f'Вы ввели: {inp}')
+
 #
 # KEYS = {
 #    "LBUTTON": 1,

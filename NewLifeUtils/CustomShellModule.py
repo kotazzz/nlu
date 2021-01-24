@@ -273,7 +273,7 @@ class Shell(object):
         while self.runState == "run":
             try:
 
-                readed = parseArgs(
+                readed = parse_args(
                     rea(f"{self.cmdname.title()} >")
                 )
                 self.command = readed["command"]

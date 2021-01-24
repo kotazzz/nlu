@@ -249,7 +249,7 @@ class Shell(object):
 
         while self.runState == "run":
             try:
-                readed = String.parseArgs(
+                readed = String.parse_args(
                     Logger.rea(f"{self.cmdname.title()} >")
                 )
                 self.command = readed["command"]
