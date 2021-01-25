@@ -1,0 +1,26 @@
+[22:46:03] [L] My Cmd  : Welcome to My CMD
+[22:46:03] [L] My Cmd  : {}
+[22:46:04] [R] My Cmd  : My Cmd > [help]
+[22:46:04] My CMD HELP : 
+My CMD - My new command line instance
+	cls
+		Description : Clears display
+		Aliases     : cls, clearscreen
+		Usage       : cls 
+	help
+		Description : This is the help
+		Aliases     : help
+		Usage       : help [command|commands] 
+	hello
+		Description : Say 'Hello'
+		Aliases     : hello, hi
+		Usage       : hello [name] 
+	exit
+		Description : Exit from cmd
+		Aliases     : exit, quit
+		Usage       : exit 
+
+[22:46:30] [R] My Cmd  : My Cmd > [help co]
+[22:46:30] My CMD HELP : Cannot find command "co"
+[22:46:31] [R] My Cmd  : My Cmd > [exit]
+[22:46:31] [L] My Cmd  : Exit with code: quit, from: None

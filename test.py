@@ -5,6 +5,7 @@ import sys
 from msvcrt import getwch
 
 from NewLifeUtils.ColorModule import FGC
+from NewLifeUtils.CustomShellModule import Shell
 from NewLifeUtils.StringUtilModule import screate, parse_args, remove_csi
 
 selector = 0
@@ -95,5 +96,7 @@ def smart_input(text='', completes={}, end='\n'):
 
 
 if __name__ == '__main__':
-    inp = smart_input('Введите текст:', {"hello": {"world": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}})
-    print(f'Вы ввели: {inp}')
+    #inp = smart_input('Введите текст:', {"hello": {"world": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}})
+    #print(f'Вы ввели: {inp}')
+    c = Shell()
+    c.main()

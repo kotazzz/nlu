@@ -1,0 +1,5 @@
+[22:40:34] [L] My Cmd  : Welcome to My CMD
+[22:41:31] [R] My Cmd  : My Cmd > [he]
+[22:41:31] [W] My Cmd  : Unknown Command, type "help"
+[22:41:32] [R] My Cmd  : My Cmd > [exit]
+[22:41:32] [L] My Cmd  : Exit with code: quit, from: None
