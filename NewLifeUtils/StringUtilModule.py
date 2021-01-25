@@ -47,6 +47,6 @@ def parse_args(readed):
     if len(res) == 0:
         return {"command": "", "param": [], "paramCount": 0, "split": []}
     if len(res) == 1:
-        return {"command": res[0], "param": [], "paramCount": 0, "split": res[0]}
+        return {"command": res[0], "param": [], "paramCount": 0, "split": [res[0]]}
     else:
         return {"command": res[0], "param": res[1:], "paramCount": len(res[1:]), "split": res}
