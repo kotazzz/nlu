@@ -1,8 +1,9 @@
-from NewLifeUtils.ColorModule import ACC, MCC
+from NewLifeUtils.ColorModule import ACC, MCC, FGC
 from NewLifeUtils.FileModule import create_files, file_rewrite, get_yaml, file_exist, get_cwd, file_apwrite
-from yaml import load, FullLoader
-from NewLifeUtils.StringUtilModule import screate, remove_csi
+from NewLifeUtils.StringUtilModule import screate, remove_csi, parse_args
 import datetime
+import sys
+from msvcrt import getwch
 
 default_colors = """
 indianred:
@@ -1097,21 +1098,112 @@ tip = lambda message, tag="": out(
 )
 cstm = lambda pattern, text, args: out(to_format(pattern, **args))
 
-rea = lambda message, tag="": read(message, tag)
+rea = lambda message, tag="", completion={}: read(message, tag, completion)
 
 
-def read(message, tag=""):
+def read(message, tag="", completion=None):
+    if completion is None:
+        completion = {}
+    selector = 0
+
+    current_text = ''
+
+    def complete(readed, completes):
+        nonlocal selector
+        nonlocal current_text
+        # print(f'{ACC.CLEARSCREEN}')
+        if current_text == '':
+            current_text = readed
+        work_parsed = parse_args(readed)["split"]
+        if readed != '':
+            if readed[-1] == ' ':
+                work_parsed.append('')
+
+        keys = completes.keys()
+
+        # print(readed)
+        # print(current_text)
+        aval = []
+        if readed == '':
+            aval = list(completes.keys())
+        else:
+            for argnum, arg in enumerate(work_parsed, start=1):
+                aval = []
+                next_sel = False
+                for key in keys:
+                    # print(f'{FGC.GREEN}arg: {arg}, key: {key}, result: {key.startswith(arg)}')
+                    sys.stdout.flush()
+                    if key.startswith(arg):
+                        aval.append(key)
+                        next_sel = True
+                        try:
+                            completes[key]
+                        except KeyError:
+                            pass  # no completion next
+                            keys = {}
+                        else:
+                            sys.stdout.flush()
+                            keys = completes[key]
+                            next_sel = True
+
+                if next_sel:
+                    selector += 1
+                    selector %= len(aval)
+                if len(aval) == 1:
+                    work_parsed[argnum - 1] = aval[0]
+                elif len(aval) > 0:
+                    work_parsed[argnum - 1] = aval[selector]
+                    # print(f'{FGC.MAGENTA}com: {aval}, next: {keys}, CURRENT: {selector} - {aval[selector]}')
+
+        # print(ACC.RESET)
+
+        return ' '.join(work_parsed), aval
+
+    def smart_input(text='', completes={}, end='\n'):
+        readed = ''
+        print(text + MCC.save_cursor, end='')
+        sys.stdout.flush()
+        while True:
+            key = getwch()
+            if ord(key) == 224:
+                pass
+            elif ord(key) == 0:
+                pass
+            else:
+                if ord(key) == 8:
+                    readed = readed[:-1]
+                    print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
+
+                elif ord(key) == 13:
+                    break
+                elif ord(key) == 9:
+                    readed, aval = complete(readed, completes)
+                    if len(aval) > 0:
+                        avalr = ', '.join(aval)
+                    else:
+                        avalr = 'no suggestion'
+                    avaltext = f'{FGC.GRAY} ({avalr}) {ACC.RESET}'
+                    print(
+                        MCC.load_cursor + MCC.erase_nxt_line + readed + avaltext + MCC.left(len(remove_csi(avaltext))),
+                        end='')
+                else:
+                    readed += key
+                    print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
+            sys.stdout.flush()
+        print(end)
+        return readed
+
     if message[-1] not in [" ", ">", ":"]:
         message += ": "
     print(
         f"{ACC.bcustomrgb(0, 43, 112)}{ACC.customrgb(235, 54, 30)}{message}",
         end="",
     )
-    readed = input()
+    readed = smart_input(completes=completion)
 
     out(
-        MCC.up(1)
-        + ACC.RESET
+        MCC.up(2)+ ACC.RESET
+        +MCC.erase_all_line
         + to_format(
             rea_pattern,
             {
