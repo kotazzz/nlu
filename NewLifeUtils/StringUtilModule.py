@@ -1,5 +1,6 @@
 import re
 
+
 def remove_csi(text):
     return (
         re.sub(
@@ -7,8 +8,8 @@ def remove_csi(text):
             "",
             text.encode("unicode_escape").decode(),
         )
-        .encode()
-        .decode("unicode_escape")
+            .encode()
+            .decode("unicode_escape")
     )
 
 
@@ -24,7 +25,7 @@ def screate(string, size=10, insert="r", filler_symbol=" "):
 
 def sslice(text, chunkSize):
     text = str(text)
-    return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+    return [text[i: i + chunkSize] for i in range(0, len(text), chunkSize)]
 
 
 def parse_args(readed):
@@ -44,9 +45,8 @@ def parse_args(readed):
         res2.append(re.sub(r"\B'|\b'", "", item))
     res = [x for x in res2 if x != ""]
     if len(res) == 0:
-        return {"command": "", "param": []}
+        return {"command": "", "param": [], "paramCount": 0, "split": []}
     if len(res) == 1:
-        return {"command": res[0], "param": []}
+        return {"command": res[0], "param": [], "paramCount": 0, "split": res[0]}
     else:
-        return {"command": res[0], "param": res[1 : len(res)]}
-    return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+        return {"command": res[0], "param": res[1:], "paramCount": len(res[1:]), "split": res}
