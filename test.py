@@ -8,21 +8,48 @@ from msvcrt import getwch
 from NewLifeUtils.ColorModule import FGC
 from NewLifeUtils.StringUtilModule import screate, parse_args
 
+selector = 0
+
 
 def complete(readed, completes):
+    global selector
+    print(f'{ACC.CLEARSCREEN}')
     parsed = parse_args(readed)
-    text = [parsed["command"]]
-    for param in parsed["param"]:
-        text.append(param)
-    for key in completes:
-        if text[-1].startswith(key):
-            text[-1] = key
+    keys = completes.keys()
+
+    for arg in parsed["split"]:
+        aval = []
+        next_sel = False
+        for key in keys:
+            print(f'{FGC.GREEN}arg: {arg}, key: {key}, result: {key.startswith(arg)}')
+            sys.stdout.flush()
+            if key.startswith(arg):
+                aval.append(key)
+                next_sel = True
+                try:
+                    completes[key]
+                except KeyError:
+                    pass  # no completion next
+                    keys = {}
+                else:
+                    sys.stdout.flush()
+                    keys = completes[key]
+                    next_sel = True
+            elif key == arg:
+                keys = completes[key]
+                break
+        if next_sel:
+            selector += 1
+            selector %= len(aval)
+        if len(aval) > 0:
+            print(f'{FGC.MAGENTA}com: {aval} ({keys}), CURRENT: {selector} - {aval[selector]}')
+
     return readed
 
 
 def smart_input(text='', completes={}, end='\n'):
     readed = ''
-    print(text+MCC.save_cursor, end='')
+    print(text + MCC.save_cursor, end='')
     sys.stdout.flush()
     while True:
         key = getwch()
@@ -33,23 +60,23 @@ def smart_input(text='', completes={}, end='\n'):
         else:
             if ord(key) == 8:
                 readed = readed[:-1]
-                print(MCC.load_cursor+MCC.erase_nxt_line+readed, end='')
+                print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
 
             elif ord(key) == 13:
                 break
             elif ord(key) == 9:
                 readed = complete(readed, completes)
-                print(MCC.load_cursor+MCC.erase_nxt_line+readed, end='')
+                print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
             else:
                 readed += key
-                print(MCC.load_cursor+MCC.erase_nxt_line+readed, end='')
+                print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
         sys.stdout.flush()
     print(end)
     return readed
 
 
 if __name__ == '__main__':
-    inp = smart_input('Введите текст:', {"hello": {"world": {}}, "hi": {"friend": {}}})
+    inp = smart_input('Введите текст:', {"hello": {"world": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}})
     print(f'Вы ввели: {inp}')
 
 #
