@@ -75,6 +75,7 @@ class Shell(object):
         )
 
         self.runState = "setup"
+        self.fist_completer = {}
 
     class cls_(Command):
         command = "cls"
@@ -190,6 +191,7 @@ class Shell(object):
             log(
                 f'{translation["welcome"]} {console.cmdname}'
             )
+            log(console.fist_completer)
 
     class exitDefaultTask_(Task):
         def execute(console):
@@ -243,7 +245,6 @@ class Shell(object):
 
 
 
-
         self.runState = "run"
 
         # Basic registration
@@ -270,11 +271,14 @@ class Shell(object):
         for itask in self.registeredInitTask:
             itask(self)
 
+        for command in self.registeredCommands:
+            self.fist_completer[command['command']] = {}
+
         while self.runState == "run":
             try:
 
                 readed = parse_args(
-                    rea(f"{self.cmdname.title()} >")
+                    rea(f"{self.cmdname.title()} >", completion=self.fist_completer)
                 )
                 self.command = readed["command"]
                 self.parametrs = readed["param"]
