@@ -28,20 +28,77 @@ Recently, the code was rewritten, but without using notepad. I was able to under
 
 ## Modules
 - ColorModule
-- CustomShellModule
-- DatabaseManageModule
+- LoggerModule
 - ExceptModule
 - FileModule
-- LoggerModule
 - StringUtilModule
 - TableBuildModule
 - UtilsModule
+- CustomShellModule
+- DatabaseManageModule (working)
 ### ColorModule
 ![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/ColorModule.jpg?raw=true)
+```py
+from NewLifeUtils.ColorModule import FGC, ACC
 
+print(f'{FGC.RED}Red text')
+print(f'{FGC.GREEN}Green text')
+print(f'{ACC.UNDERLINE}UNDERLINE')
+print(f'{ACC.RESET}No formating')
+```
 
+### LoggerModule
+![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/LoggerModule-1.jpg?raw=true)
+![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/LoggerModule-2.jpg?raw=true)
+```py
+from NewLifeUtils.LoggerModule import log, wrn, err, tip, rea
 
+a = rea('input your data:')
+log('My Event')
+wrn('Something is wrong')
+err('I broke something.')
+tip('Tip #1, I recommend it to you...')
+log('Event with tag', 'my tag')
+```
 
+### ExceptModule
+![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/ExceptModule.jpg?raw=true)
+```py
+from NewLifeUtils.ExceptModule import except_print
+
+try:
+    a = [1,2,3]
+    a[3]
+except Exception as e:
+    except_print(e,"fatal", tb=True)
+```
+
+### StringUtilModule
+![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/StringUtilModule.jpg?raw=true)
+```py
+from NewLifeUtils.StringUtilModule import screate,remove_csi
+from NewLifeUtils.ColorModule import FGC, ACC
+
+text = f'{FGC.RED}r{FGC.GREEN}g{FGC.BLUE}b{ACC.RESET}'
+print(f'Original: {text}')
+print('|'+screate(text, size=10, insert="r", filler_symbol=" ")+'| - right 10 (" ")')
+print('|'+screate(text, size=10, insert="l", filler_symbol=" ")+'| - left 10 (" ")')
+print('|'+screate(text, size=10, insert="l", filler_symbol="@")+'| - left 10 ("@")')
+print(remove_csi(text))
+```
+
+### TableBuildModule
+![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/TableBuildModule.jpg?raw=true)
+```py
+from NewLifeUtils.TableBuildModule import *
+data = [
+    "header", "header number 2", "num",
+    "data","tooooooooooooooooo long string", "123",
+    "data2", "small","15436"
+    ]
+table = create_table(3,[],data)
+print(table)
+```
 
 
 ## Project idea.

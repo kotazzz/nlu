@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/NewLifeUtils.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/ColorModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/ColorModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/CustomShellModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/CustomShellModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/DatabaseManageModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/DatabaseManageModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/ExceptModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/ExceptModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/FileModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/FileModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/StringUtilModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/StringUtilModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/TableBuildModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/TableBuildModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/UtilsModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/UtilsModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/NewLifeUtils-5.1.1-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/NewLifeUtils-5.1.1-py3.9.egg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/NewLifeUtils-5.1.1.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
