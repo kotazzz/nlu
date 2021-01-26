@@ -265,7 +265,7 @@ class Shell(object):
                 Exception(
                     *[cmd.format(list=cmds) for cmd in translation["same_command"]]
                 ),
-                exceptionType="fatal",
+                exception_type="fatal",
                 tb=False,
             )
         for itask in self.registeredInitTask:
@@ -291,7 +291,7 @@ class Shell(object):
                             ":_(",
                             "TIP: you can be beter",
                         ),
-                        exceptionType="wrn",
+                        exception_type="wrn",
                         tb=False,
                     )
                 elif self.command != "":

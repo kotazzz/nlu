@@ -55,7 +55,7 @@ class DatabaseManageModule(object):
             for e in t:
                 data.append(e)
         self.Logger.log(
-            self.Table.createMultilineTable(
+            self.Table.create_multiline_table(
                 6,
                 [6, 40, 10, 7, 40, 2],
                 ["cid", "name", "type", "notnull", "default", "pk"] + data,
@@ -75,7 +75,7 @@ class DatabaseManageModule(object):
             for e in t:
                 data.append(e)
         self.Logger.log(
-            self.Table.createTable(rowCount, sizes, header + data, header=enable_header)
+            self.Table.create_table(rowCount, sizes, header + data, header=enable_header)
         )
 
     def print_results(self, result, sizes, header=[]):
@@ -86,7 +86,7 @@ class DatabaseManageModule(object):
         for t in result:
             for e in t:
                 data.append(e)
-        self.Logger.log(self.Table.createMultilineTable(rowCount, sizes, header + data))
+        self.Logger.log(self.Table.create_multiline_table(rowCount, sizes, header + data))
 
     def get_table_description(self, table_name):
         self.execute(f"PRAGMA TABLE_INFO('{table_name}')")

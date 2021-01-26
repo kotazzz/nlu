@@ -1,5 +1,5 @@
 from NewLifeUtils.ColorModule import ACC, MCC, FGC
-from NewLifeUtils.FileModule import create_files, file_rewrite, get_yaml, file_exist, get_cwd, file_apwrite
+from NewLifeUtils.FileModule import create_files, get_yaml, file_exist, file_apwrite
 from NewLifeUtils.StringUtilModule import screate, remove_csi, parse_args
 import datetime
 import sys
@@ -977,22 +977,22 @@ colormap = {}
 
 
 def set_settings(
-        new_log_pattern=log_pattern,
-        new_wrn_pattern=wrn_pattern,
-        new_err_pattern=err_pattern,
-        new_tip_pattern=tip_pattern,
-        new_rea_pattern=rea_pattern,
-        new_log_default_tag=log_default_tag,
-        new_wrn_default_tag=wrn_default_tag,
-        new_err_default_tag=err_default_tag,
-        new_tip_default_tag=tip_default_tag,
-        new_rea_default_tag=rea_default_tag,
-        new_date_format=date_format,
-        new_time_format=time_format,
-        new_tag_length=tag_length,
-        new_enable_file_fog=enable_file_fog,
-        new_logtime=logtime,
-        new_logname=logname,
+    new_log_pattern=log_pattern,
+    new_wrn_pattern=wrn_pattern,
+    new_err_pattern=err_pattern,
+    new_tip_pattern=tip_pattern,
+    new_rea_pattern=rea_pattern,
+    new_log_default_tag=log_default_tag,
+    new_wrn_default_tag=wrn_default_tag,
+    new_err_default_tag=err_default_tag,
+    new_tip_default_tag=tip_default_tag,
+    new_rea_default_tag=rea_default_tag,
+    new_date_format=date_format,
+    new_time_format=time_format,
+    new_tag_length=tag_length,
+    new_enable_file_fog=enable_file_fog,
+    new_logtime=logtime,
+    new_logname=logname,
 ):
     global log_pattern
     global wrn_pattern
@@ -1028,11 +1028,12 @@ def set_settings(
     logtime = new_logtime
     logname = new_logname
 
+
 if colormap_type == 2:
     settings_color2 = get_yaml("logger_colors2", default_colors2)
     for color in settings_color2:
         h = settings_color2[color].lstrip("#")
-        colormap[color] = (tuple(int(h[i:i + 2], 16) for i in (0, 2, 4)))
+        colormap[color] = tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
 else:
     settings_color1 = get_yaml("logger_colors", default_colors)
     for color in settings_color1:
@@ -1050,22 +1051,24 @@ def to_format(pattern, args):
     now = datetime.datetime.now()
 
     return (
-            pattern.format(
-                **args,
-                **colormap,
-                date=now.strftime(date_format),
-                time=now.strftime(time_format),
-            )
-            + ACC.RESET
+        pattern.format(
+            **args,
+            **colormap,
+            date=now.strftime(date_format),
+            time=now.strftime(time_format),
+        )
+        + ACC.RESET
     )
 
 
 def out(text):
-    n = 1
+
     now = datetime.datetime.now()
     if enable_file_fog:
         if not file_exist("log"):
-            create_files("log", f"{logname.format(time=now.strftime(logtime))}.log", "logs")
+            create_files(
+                "log", f"{logname.format(time=now.strftime(logtime))}.log", "logs"
+            )
 
         file_apwrite("log", remove_csi(text))
 
@@ -1098,7 +1101,7 @@ tip = lambda message, tag="": out(
 )
 cstm = lambda pattern, text, args: out(to_format(pattern, **args))
 
-rea = lambda message, tag="", completion={}: read(message, tag, completion)
+rea = lambda message, tag="", completion=None: read(message, tag, completion)
 
 
 def read(message, tag="", completion=None):
@@ -1106,25 +1109,25 @@ def read(message, tag="", completion=None):
         completion = {}
     selector = 0
 
-    current_text = ''
+    current_text = ""
 
     def complete(readed, completes):
         nonlocal selector
         nonlocal current_text
         # print(f'{ACC.CLEARSCREEN}')
-        if current_text == '':
+        if current_text == "":
             current_text = readed
         work_parsed = parse_args(readed)["split"]
-        if readed != '':
-            if readed[-1] == ' ':
-                work_parsed.append('')
+        if readed != "":
+            if readed[-1] == " ":
+                work_parsed.append("")
 
         keys = completes.keys()
 
         # print(readed)
         # print(current_text)
         aval = []
-        if readed == '':
+        if readed == "":
             aval = list(completes.keys())
         else:
             for argnum, arg in enumerate(work_parsed, start=1):
@@ -1157,11 +1160,11 @@ def read(message, tag="", completion=None):
 
         # print(ACC.RESET)
 
-        return ' '.join(work_parsed), aval
+        return " ".join(work_parsed), aval
 
-    def smart_input(text='', completes={}, end='\n'):
-        readed = ''
-        print(text + MCC.save_cursor, end='')
+    def smart_input(text="", completes=None, end="\n"):
+        readed = ""
+        print(text + MCC.save_cursor, end="")
         sys.stdout.flush()
         while True:
             key = getwch()
@@ -1172,23 +1175,28 @@ def read(message, tag="", completion=None):
             else:
                 if ord(key) == 8:
                     readed = readed[:-1]
-                    print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
+                    print(MCC.load_cursor + MCC.erase_nxt_line + readed, end="")
 
                 elif ord(key) == 13:
                     break
                 elif ord(key) == 9:
                     readed, aval = complete(readed, completes)
                     if len(aval) > 0:
-                        avalr = ', '.join(aval)
+                        avalr = ", ".join(aval)
                     else:
-                        avalr = 'no suggestion'
-                    avaltext = f'{FGC.GRAY} ({avalr}) {ACC.RESET}'
+                        avalr = "no suggestion"
+                    avaltext = f"{FGC.GRAY} ({avalr}) {ACC.RESET}"
                     print(
-                        MCC.load_cursor + MCC.erase_nxt_line + readed + avaltext + MCC.left(len(remove_csi(avaltext))),
-                        end='')
+                        MCC.load_cursor
+                        + MCC.erase_nxt_line
+                        + readed
+                        + avaltext
+                        + MCC.left(len(remove_csi(avaltext))),
+                        end="",
+                    )
                 else:
                     readed += key
-                    print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
+                    print(MCC.load_cursor + MCC.erase_nxt_line + readed, end="")
             sys.stdout.flush()
         print(end)
         return readed
@@ -1202,8 +1210,9 @@ def read(message, tag="", completion=None):
     readed = smart_input(completes=completion)
 
     out(
-        MCC.up(2)+ ACC.RESET
-        +MCC.erase_all_line
+        MCC.up(2)
+        + ACC.RESET
+        + MCC.erase_all_line
         + to_format(
             rea_pattern,
             {

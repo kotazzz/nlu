@@ -5,19 +5,19 @@ default = "double"
 
 custom = "╔╦╗║═╠╬╣╚╩╝"
 if default == "double":
-    tableManagerCurrent = "╔╦╗║═╠╬╣╚╩╝"
+    table_manager_current = "╔╦╗║═╠╬╣╚╩╝"
 elif default == "single":
-    tableManagerCurrent = "┌┬┐│─├┼┤└┴┘"
+    table_manager_current = "┌┬┐│─├┼┤└┴┘"
 elif default == "vertical":
-    tableManagerCurrent = "╓╥╖║─╟╫╢╙╨╜"
+    table_manager_current = "╓╥╖║─╟╫╢╙╨╜"
 elif default == "horisontal":
-    tableManagerCurrent = "╒╤╕│═╞╪╡╘╧╛"
+    table_manager_current = "╒╤╕│═╞╪╡╘╧╛"
 elif default == "simple":
-    tableManagerCurrent = "+++|-++++++"
+    table_manager_current = "+++|-++++++"
 elif default == "custom":
-    tableManagerCurrent = custom
+    table_manager_current = custom
 else:
-    tableManagerCurrent = "╔╦╗║═╠╬╣╚╩╝"
+    table_manager_current = "╔╦╗║═╠╬╣╚╩╝"
 
 
 def find_max(row_count, data):
@@ -31,19 +31,18 @@ def find_max(row_count, data):
     return line_len
 
 
-def createTable(
-
-        rowCount,
-        sizes,
-        data,
-        title="TABLE",
-        header=True,
-        tableElement="",
-        color="",
-        align="l",
+def create_table(
+    row_count,
+    sizes,
+    data,
+    title="TABLE",
+    header=True,
+    table_element="",
+    color="",
+    align="l",
 ):
-    if sizes == []:
-        sizes = find_max(rowCount, data)
+    if not sizes:
+        sizes = find_max(row_count, data)
     if color == "":
         color = FGC.CYAN
     color = ACC.RESET + color
@@ -54,61 +53,64 @@ def createTable(
     # ╔  ╦  ╗  ║  ═  ╠  ╬  ╣  ╚  ╩  ╝
     # 0  1  2  3  4  5  6  7  8  9  10
 
-    if tableElement == "":
-        tableElement = tableManagerCurrent
+    if table_element == "":
+        table_element = table_manager_current
 
     result = ""
 
     # Generate Header-line
-    result += f"{color}{tableElement[0]}"
+    result += f"{color}{table_element[0]}"
 
-    for sizen in range(rowCount):
-        result += f"{color}{tableElement[4] * sizes[sizen]}{color}{tableElement[1]}"
-    result = result[:-1] + f"{color}{tableElement[2]}"
+    for sizen in range(row_count):
+        result += f"{color}{table_element[4] * sizes[sizen]}{color}{table_element[1]}"
+    result = result[:-1] + f"{color}{table_element[2]}"
 
     # Generate Header
     if header:
-        result += f"\n{color}{tableElement[3]}"
-        for num in range(rowCount):
-            result += f"{screate(data[num], sizes[num], align)}{color}{tableElement[3]}"
-        result += f"\n{color}{tableElement[5]}"
+        result += f"\n{color}{table_element[3]}"
+        for num in range(row_count):
+            result += (
+                f"{screate(data[num], sizes[num], align)}{color}{table_element[3]}"
+            )
+        result += f"\n{color}{table_element[5]}"
         for headerPieceSize in sizes:
             result += (
-                f"{color}{tableElement[4] * headerPieceSize}{color}{tableElement[6]}"
+                f"{color}{table_element[4] * headerPieceSize}{color}{table_element[6]}"
             )
-        result = result[:-1] + f"{color}{tableElement[7]}"
-        data = data[rowCount:]
+        result = result[:-1] + f"{color}{table_element[7]}"
+        data = data[row_count:]
 
     # Generate DataSection
-    for lineNum in range(0, len(data), rowCount):
-        result += f"\n{color}{tableElement[3]}"
-        for rowShift in range(0, rowCount):
+    for lineNum in range(0, len(data), row_count):
+        result += f"\n{color}{table_element[3]}"
+        for rowShift in range(0, row_count):
             try:
-                result += f"{screate(data[lineNum + rowShift], sizes[rowShift], align)}{color}{tableElement[3]}"
+                result += f"{screate(data[lineNum + rowShift], sizes[rowShift], align)}{color}{table_element[3]}"
             except:
-                result += f'{screate("", sizes[rowShift], align)}{color}{tableElement[3]}'
-    result += f"\n{color}{tableElement[8]}"
+                result += (
+                    f'{screate("", sizes[rowShift], align)}{color}{table_element[3]}'
+                )
+    result += f"\n{color}{table_element[8]}"
 
     # Generate Footer-line
-    for sizen in range(rowCount):
-        result += f"{color}{tableElement[4] * sizes[sizen]}{color}{tableElement[9]}"
-    result = result[:-1] + f"{color}{tableElement[10]}{ACC.RESET}"
+    for sizen in range(row_count):
+        result += f"{color}{table_element[4] * sizes[sizen]}{color}{table_element[9]}"
+    result = result[:-1] + f"{color}{table_element[10]}{ACC.RESET}"
 
     return f'\n{screate(title, round(sum(sizes) / 2), "l")}\n{result}\n'
 
 
-def createMultilineTable(
-
-        rowCount,
-        sizes,
-        data,
-        title="TABLE",
-        table_element="",
-        color="",
-        align="l",
+def create_multiline_table(
+    row_count,
+    sizes,
+    data,
+    title="TABLE",
+    table_element="",
+    color="",
+    align="l",
 ):
-    if sizes == []:
-        sizes = find_max(rowCount, data)
+    if not sizes:
+        sizes = find_max(row_count, data)
     if color == "":
         color = FGC.CYAN
     if align == "r":
@@ -120,16 +122,16 @@ def createMultilineTable(
     # +  +  +  |  -  +  +  +  +  +  +
     # 0  1  2  3  4  5  6  7  8  9  10; , tableElement = '+++|-++++++'
     if table_element == "":
-        table_element = tableManagerCurrent
+        table_element = table_manager_current
     for i in range(len(data)):
         data[i] = sslice(data[i], sizes[i % len(sizes)])
     result = ""
-    for line in range(0, len(data), rowCount):
+    for line in range(0, len(data), row_count):
         maxtabsize = 0
-        for row in range(0, rowCount):
+        for row in range(0, row_count):
             if len(data[line + row]) > maxtabsize:
                 maxtabsize = len(data[line + row])
-        for row in range(0, rowCount):
+        for row in range(0, row_count):
             if len(data[line + row]) < maxtabsize:
                 while len(data[line + row]) < maxtabsize:
                     data[line + row].append("")
@@ -143,9 +145,9 @@ def createMultilineTable(
     result = result[:-1] + f"{color}{table_element[2]}\n"
 
     # Generate DataSection
-    for line in range(0, len(data), rowCount):
+    for line in range(0, len(data), row_count):
         block = []
-        for row in range(0, rowCount):
+        for row in range(0, row_count):
             for blockLineNum in range(len(data[line + row])):
 
                 try:
@@ -158,8 +160,8 @@ def createMultilineTable(
                     )
         for blockLineNum in range(len(data[line + row])):
             block[blockLineNum] += table_element[3]
-        for line in block:
-            result += f"{line}\n"
+        for blockline in block:
+            result += f"{blockline}\n"
 
         result += f"{table_element[5]}"
         for headerPieceSize in sizes:
@@ -167,7 +169,7 @@ def createMultilineTable(
         result = result[:-1] + f"{table_element[7]}\n"
 
     # Generate Footer-line
-    result = result[: -1 * (2 + rowCount + sum(sizes))] + table_element[8]
+    result = result[: -1 * (2 + row_count + sum(sizes))] + table_element[8]
     for headerPieceSize in sizes:
         result += f"{table_element[4] * headerPieceSize}{table_element[9]}"
     result = result[:-1] + f"{table_element[10]}{ACC.RESET}"
@@ -217,7 +219,7 @@ def join_column(columns):
 
 
 def get_record(row_count, data, record_id):
-    return data[row_count * record_id: row_count * record_id + row_count]
+    return data[row_count * record_id : row_count * record_id + row_count]
 
 
 def get_record_count(row_count, data):

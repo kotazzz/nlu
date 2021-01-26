@@ -29,11 +29,10 @@ def select_rand_list(source, use_zero=False):
 
 def getfromfname(a):
     res = ""
-    i = 0
     for e in inspect.stack():
         try:
             res += e.code_context[0]
-        except Exception as e:
+        except Exception:
             res += " <Unknown>"
     return res.rstrip("\n").rsplit("\n", 1)[-1]
 
@@ -79,8 +78,8 @@ def bprint(text, maxlinelength=9, font="default"):
 
 
 def format_number(
-        number=random.randrange(1111111111111111, 9999999999999999),
-        numform="4444",
+    number=random.randrange(1111111111111111, 9999999999999999),
+    numform="4444",
 ):
     # A total conversion
     number = int(number)
@@ -104,7 +103,7 @@ def format_number(
     result = str(number)
     shift = 0
     for pos in numform:
-        result = result[: int(pos) + shift] + " " + result[int(pos) + shift:]
+        result = result[: int(pos) + shift] + " " + result[int(pos) + shift :]
         shift += int(pos) + 1
     return result
 

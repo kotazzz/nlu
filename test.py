@@ -104,6 +104,7 @@ def smart_input(text='', completes={}, end='\n'):
 
 
 if __name__ == '__main__':
+    pass
     # inp = smart_input('Введите текст:',
     #                  {"hello": {"world": {}, "world2": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}})
     #print(f'Вы ввели: {inp}')

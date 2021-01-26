@@ -19,7 +19,7 @@ lm.log('hi')
 lm.log('hi')
 em.except_print(Exception(s), 'wrn')
 data = ['1','2','3','4','5','6']
-t = tbm.createTable(2,[],data)
+t = tbm.create_table(2, [], data)
 print(t)
 print(rm.format_number())
 csm.Shell().main()

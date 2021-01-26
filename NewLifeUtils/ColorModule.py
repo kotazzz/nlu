@@ -1,4 +1,3 @@
-from enum import Enum
 from os import system
 from random import randrange
 
@@ -63,10 +62,10 @@ class ACC:
     def title(title):
         return f"\x1B]2;{title}\x07"
 
-    def rabdomrgb(mode="Color"):
-        if mode not in ["Color", "gray"]:
-            mode = "Color"
-        if mode == "Color":
+    def rabdomrgb(self="Color"):
+        if self not in ["Color", "gray"]:
+            self = "Color"
+        if self == "Color":
             r, g, b = (
                 randrange(0, 255),
                 randrange(0, 255),
@@ -114,52 +113,47 @@ class MCC:
     save_cursor = "\x1B[s"
     load_cursor = "\x1B[u"
 
-    def up(count=1):
-        return f"\x1B[{count}A"
+    def up(self=1):
+        return f"\x1B[{self}A"
 
-    def down(count=1):
-        return f"\x1B[{count}B"
+    def down(self=1):
+        return f"\x1B[{self}B"
 
-    def right(count=1):
-        return f"\x1B[{count}C"
+    def right(self=1):
+        return f"\x1B[{self}C"
 
-    def left(count=1):
-        return f"\x1B[{count}D"
+    def left(self=1):
+        return f"\x1B[{self}D"
 
-    def row(count=1):
-        return f"\x1B[{count}G"
+    def row(self=1):
+        return f"\x1B[{self}G"
 
     def cursor_position(x, y):
         return f"\x1B[{x};{y}H"
 
+    def scroll_down(self=1):
+        return f"\x1B[{self}T"
 
+    def scroll_up(self=1):
+        return f"\x1B[{self}S"
 
+    def push_right(self=1):
+        return f"\x1B[{self}@"
 
-    def scroll_down(count=1):
-        return f"\x1B[{count}T"
+    def erase_right(self=1):
+        return f"\x1B[{self}P"
 
-    def scroll_up(count=1):
-        return f"\x1B[{count}S"
+    def replace_right(self=1):
+        return f"\x1B[{self}X"
 
-    def push_right(count=1):
-        return f"\x1B[{count}@"
+    def push_down(self=1):
+        return f"\x1B[{self}L"
 
-    def erase_right(count=1):
-        return f"\x1B[{count}P"
+    def erase_down(self=1):
+        return f"\x1B{self}M"
 
-    def replace_right(count=1):
-        return f"\x1B[{count}X"
+    def next_tab(self):
+        return f"\x1B{self}I"
 
-    def push_down(count=1):
-        return f"\x1B[{count}L"
-
-    def erase_down(count=1):
-        return f"\x1B{count}M"
-
-    def next_tab(count):
-        return f"\x1B{count}I"
-
-    def prev_tab(count):
-        return f"\x1B{count}Z"
-
-
+    def prev_tab(self):
+        return f"\x1B{self}Z"

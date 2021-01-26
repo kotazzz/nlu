@@ -1,2 +1,2 @@
 def hello():
-    print('im lazy')
+    print("im lazy")

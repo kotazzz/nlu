@@ -241,7 +241,7 @@ class Shell(object):
                     f"Commands: {', '.join(cmdnames)}",
                     "TIP: check register section and delete or change one of the commands",
                 ),
-                exceptionType="fatal",
+                exception_type="fatal",
                 tb=False,
             )
         for itask in self.registeredInitTask:
@@ -263,7 +263,7 @@ class Shell(object):
                             ":_(",
                             "TIP: you can be beter",
                         ),
-                        exceptionType="wrn",
+                        exception_type="wrn",
                         tb=False,
                     )
                 elif self.command != "":

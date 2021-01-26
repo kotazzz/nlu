@@ -3,7 +3,7 @@ import os
 
 from NewLifeUtils.ExceptModule import except_print
 from NewLifeUtils.LoggerModule import log, err,wrn,tip,rea
-from NewLifeUtils.TableBuildModule import createTable
+from NewLifeUtils.TableBuildModule import create_table
 from NewLifeUtils.UtilsModule import select_rand_list, bprint
 from NewLifeUtils.CustomShellModule import *
 

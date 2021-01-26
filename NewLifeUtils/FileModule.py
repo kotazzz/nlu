@@ -44,13 +44,13 @@ def get_file(filename):
     return files[filename]
 
 
-def file_rewrite(filename, data, end='\n'):
+def file_rewrite(filename, data, end="\n"):
     f = open(files[filename], "w")
     f.write(data + end)
     f.close()
 
 
-def file_apwrite(filename, data, end='\n', coding="utf-8"):
+def file_apwrite(filename, data, end="\n", coding="utf-8"):
     f = open(files[filename], "a", encoding=coding)
     f.write(data + end)
     f.close()
@@ -63,19 +63,19 @@ def readall(filename):
     return r
 
 
-def get_yaml(filename, regen_data=''):
+def get_yaml(filename, regen_data=""):
     try:
         retobj = load(readall(filename), Loader=FullLoader)
-        if retobj == None:
+        if retobj is None:
             raise Exception
         else:
             return retobj
-    except Exception as e:
-        if regen_data != '':
+    except Exception:
+        if regen_data != "":
             file_rewrite(filename, regen_data)
         try:
             return load(readall(filename), Loader=FullLoader)
-        except Exception as e2:
+        except Exception:
             return None
 
 
