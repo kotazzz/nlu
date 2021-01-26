@@ -1,10 +1,10 @@
-from NewLifeUtils import re
+import re
 
 
 def remove_csi(text):
     return (
         re.sub(
-            r"\\x1[bB]\[[\d;]*[a-zA-Z]{1}",
+            r"\\x1[bB]\[[\d;]*[a-zA-Z]",
             "",
             text.encode("unicode_escape").decode(),
         )
@@ -23,12 +23,12 @@ def screate(string, size=10, insert="r", filler_symbol=" "):
         return spaces + string
 
 
-def sslice(text, chunkSize):
+def sslice(text, chunk_size):
     text = str(text)
-    return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+    return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
 
 
-def parseArgs(readed):
+def parse_args(readed):
     # [\'][a-zA-ZА-Яа-я\d\s[\]{}()\\\.\":;,-]*[\']|\b[a-zA-Z\d]+
     # [\"\'][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,-]*[\"\']|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,-]+
     # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@\\\.:;,\'-]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-]+
@@ -36,7 +36,7 @@ def parseArgs(readed):
     # [\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+ (NOW)
 
     res = re.findall(
-        r"[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?\*\\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d\.[\]{}()@\\\.:;,\'-/]+",
+        r"[\"][a-zA-ZА-Яа-яЁё\d\s[\]{}()@#_=%?*\\.:;,\'-/]*[\"]|[a-zA-ZA-ZА-Яа-яЁё\d.[\]{}()@\\:;,\'-/]+",
         readed,
         re.MULTILINE,
     )
@@ -45,9 +45,13 @@ def parseArgs(readed):
         res2.append(re.sub(r"\B'|\b'", "", item))
     res = [x for x in res2 if x != ""]
     if len(res) == 0:
-        return {"command": "", "param": []}
+        return {"command": "", "param": [], "paramCount": 0, "split": []}
     if len(res) == 1:
-        return {"command": res[0], "param": []}
+        return {"command": res[0], "param": [], "paramCount": 0, "split": [res[0]]}
     else:
-        return {"command": res[0], "param": res[1 : len(res)]}
-    return [text[i : i + chunkSize] for i in range(0, len(text), chunkSize)]
+        return {
+            "command": res[0],
+            "param": res[1:],
+            "paramCount": len(res[1:]),
+            "split": res,
+        }

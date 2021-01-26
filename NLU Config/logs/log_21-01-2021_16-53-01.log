@@ -1,0 +1,581 @@
+[16:53:01] [L] My Cmd  : Welcome to My CMD
+[16:53:01] [L] My Cmd  : ----------------------------------------------------------------------------
+[16:53:01] [L] My Cmd  : ----------------------------------------------------------------------------
+[16:53:31] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:37] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:40] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:40] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:40] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:40] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:41] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:46] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+
+[16:53:48] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: EOFError
+
+More information:
+		
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 287, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1110, in read
+    readed = input()
+EOFError
+
+-------------- Error                --------------------
+

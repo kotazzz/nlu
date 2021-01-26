@@ -1,0 +1,47 @@
+[22:38:26] [L] My Cmd  : Welcome to My CMD
+[22:38:28] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: NameError
+
+More information:
+	name 'current_text' is not defined	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 279, in main
+    rea(f"{self.cmdname.title()} >",completion=self.fist_completer)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1101, in <lambda>
+    rea = lambda message, tag="", completion={}: read(message, tag, completion)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1199, in read
+    readed = smart_input(completes=completion)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1177, in smart_input
+    readed, aval = complete(readed, completes)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in complete
+    if current_text == '':
+NameError: name 'current_text' is not defined
+
+-------------- Error                --------------------
+
+[22:38:52] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: NameError
+
+More information:
+	name 'current_text' is not defined	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 279, in main
+    rea(f"{self.cmdname.title()} >",completion=self.fist_completer)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1101, in <lambda>
+    rea = lambda message, tag="", completion={}: read(message, tag, completion)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1199, in read
+    readed = smart_input(completes=completion)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1177, in smart_input
+    readed, aval = complete(readed, completes)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in complete
+    if current_text == '':
+NameError: name 'current_text' is not defined
+
+-------------- Error                --------------------
+
+[22:38:56] [R] My Cmd  : My Cmd > [exit]
+[22:38:56] [L] My Cmd  : Exit with code: quit, from: None

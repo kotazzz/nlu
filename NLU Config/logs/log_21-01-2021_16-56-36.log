@@ -1,0 +1,21 @@
+[16:56:36] [L] My Cmd  : Welcome to My CMD
+[16:56:43] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	empty	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 277, in main
+    rea(f"{self.cmdname.title()} >")
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1100, in <lambda>
+    rea = lambda message, tag="": read(message, tag)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1115, in read
+    + to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 1052, in to_format
+    pattern.format(
+KeyError: 'empty'
+
+-------------- Error                --------------------
+

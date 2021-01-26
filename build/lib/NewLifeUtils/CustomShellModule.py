@@ -1,42 +1,61 @@
-import NewLifeUtils.LoggerModule       as Logger
-import NewLifeUtils.ColorModule      as Color
-import NewLifeUtils.StringUtilModule as String
-import NewLifeUtils.ExceptModule    as Except
-import NewLifeUtils.LanguageManager as Language
+from NewLifeUtils.LoggerModule import *
+from NewLifeUtils.ColorModule import *
+from NewLifeUtils.StringUtilModule import *
+from NewLifeUtils.ExceptModule import *
+import os
+
+default_translation = """
+default_cmd_name: "My CMD"
+default_cmd_description: "My new command line instance"
+welcome: "Welcome to"
+help_description: "This is the help"
+cls_description: "Clears display"
+hello_description: "Say 'Hello'"
+exit_description: "Exit from cmd"
+exit_code_label: "Exit with code"
+exit_from_label: "from"
+
+same_command:
+- "Console commands with the same names were registered." 
+- "Here is a list of registered console commands (their names):"
+- "{list}"
+"""
+
+create_files("shell_translation", "lang.yml", "shell", default_translation)
+translation = get_yaml("shell_translation", default_translation)
 
 
 class Command:
     command = "commandname"
     aliases = [command, "commandalias"]
-    description = "My Super Duper Command"
-    required = ["required parametr"]
-    optional = ["optional parametr"]
+    description = "My Super Command"
+    required = ["required parameter"]
+    optional = ["optional parameter"]
     skipcheck = False
 
     def run(console):
-        Logger.log(f'Command "{console.run["command"]}" executed now')
+        log(f"Command \"{console.run['command']}\" executed now")
+
 
 class Task:
     def execute(console):
-        Logger.log(f"This is a event task")
+        log(f"This is a event task")
+
 
 class Function:
     name = "mygf"
+
     def execute(console):
-        Logger.log(f"This is a global function")
-        
+        log(f"This is a global function")
+
+
 class Shell(object):
-    
-
-
-
     def __init__(
         self,
-        name=Language.getlang("Shell", "def_cmdname"),
-        about=Language.getlang("Shell", "def_cmdabout"),
+        name=translation["default_cmd_name"],
+        about=translation["default_cmd_description"],
     ):
         self.runState = "init"
-
         self.cmdname = name
         self.cmdabout = about
 
@@ -44,22 +63,23 @@ class Shell(object):
         self.registeredCommands = []
         self.registeredGlobalFunctions = {}
         self.registeredExitTask = []
-        Logger.TagMaxLenght = len(self.cmdname) + 5
-        Logger.logDefaultTag = f"[L] {self.cmdname.title()}"
-        Logger.wrnDefaultTag = f"[W] {self.cmdname.title()}"
-        Logger.errDefaultTag = f"[E] {self.cmdname.title()}"
-        Logger.tipDefaultTag = f"[T] {self.cmdname.title()}"
-        Logger.reaDefaultTag = f"[R] {self.cmdname.title()}"
-        Logger.reaFormat = (
-            "{white}[{time}] {blue}{tag}{empty}{reset}: {cyan}{read}{reset}"
+        set_settings(
+            new_tag_length=len(self.cmdname) + 5,
+            new_log_default_tag=f"[L] {self.cmdname.title()}",
+            new_wrn_default_tag=f"[W] {self.cmdname.title()}",
+            new_err_default_tag=f"[E] {self.cmdname.title()}",
+            new_tip_default_tag=f"[T] {self.cmdname.title()}",
+            new_rea_default_tag=f"[R] {self.cmdname.title()}",
+            new_rea_pattern="{cyan}[{time}] {lightcyan}{tag}{snow} : {paleturquoise}{message} {mediumslateblue}[{readed}]",
         )
 
         self.runState = "setup"
+        self.fist_completer = {}
 
     class cls_(Command):
-        command = Language.getlang("Shell", "def_cls_cmd")
-        description = Language.getlang("Shell", "def_cls_dsk")
-        aliases = [command, Language.getlang("Shell", "def_cls_al1")]
+        command = "cls"
+        description = translation["cls_description"]
+        aliases = [command, "clearscreen"]
         required = []
         optional = []
 
@@ -67,25 +87,25 @@ class Shell(object):
             os.system("cls")
 
     class help_(Command):
-        command = Language.getlang("Shell", "def_help_cmd")
-        description = Language.getlang("Shell", "def_help_dsk")
+        command = "help"
+        description = translation["help_description"]
         aliases = [command]
         required = []
-        optional = [Language.getlang("Shell", "def_help_op1")]
+        optional = ["command|commands"]
 
         def run(console):
             class CLR:
-                MDL = Color.FGC.RED
-                MDLDSK = Color.FGC.BRED
-                CMD = Color.FGC.BLUE
-                CMDDSK = Color.FGC.CYAN
-                ALS = Color.FGC.PURPLE
-                ALSTXT = Color.FGC.BPURPLE
-                STTL = Color.FGC.GREEN
-                SCMD = Color.ACC.UNDERLINE + Color.FGC.WHITE
-                SREQ = Color.FGC.BGRAY
-                SOPT = Color.FGC.GRAY
-                R = Color.ACC.RESET
+                MDL = FGC.RED
+                MDLDSK = FGC.BRED
+                CMD = FGC.BLUE
+                CMDDSK = FGC.CYAN
+                ALS = FGC.PURPLE
+                ALSTXT = FGC.MAGENTA
+                STTL = FGC.GREEN
+                SCMD = ACC.UNDERLINE + FGC.WHITE
+                SREQ = FGC.BGRAY
+                SOPT = FGC.GRAY
+                R = ACC.RESET
 
             helpPage = ""
             if console.paramCount == 0:
@@ -94,11 +114,11 @@ class Shell(object):
                 )
                 for command in console.registeredCommands:
                     syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
-                    if command["required"] != []:
+                    if command["required"]:
                         syntax += (
                             f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
                         )
-                    if command["optional"] != []:
+                    if command["optional"]:
                         syntax += (
                             f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
                         )
@@ -108,22 +128,22 @@ class Shell(object):
                         + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
                         + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
                     )
-                Logger.tip(helpPage, f"{console.cmdname} HELP")
+                tip(helpPage, f"{console.cmdname} HELP")
             elif console.paramCount == 1:
                 if console.parametrs[0] == "commands":
                     helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
                     for command in console.registeredCommands:
                         helpPage += f'\t{CLR.CMD}{command["command"]}\n'
-                    Logger.tip(helpPage, f"{console.cmdname} HELP")
+                    tip(helpPage, f"{console.cmdname} HELP")
                 else:
                     helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
                     finded = False
                     for command in console.registeredCommands:
                         if command["command"] == console.parametrs[0]:
                             syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
-                            if command["required"] != []:
+                            if command["required"]:
                                 syntax += f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
-                            if command["optional"] != []:
+                            if command["optional"]:
                                 syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
                             helpPage += (
                                 f'\t{CLR.CMD}{command["command"]}\n'
@@ -131,10 +151,10 @@ class Shell(object):
                                 + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
                                 + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
                             )
-                            Logger.tip(helpPage, f"{console.cmdname} HELP")
+                            tip(helpPage, f"{console.cmdname} HELP")
                             finded = True
-                    if finded != True:
-                        Logger.wrn(
+                    if not finded:
+                        wrn(
                             f'Cannot find command "{console.parametrs[0]}"',
                             f"{console.cmdname} HELP",
                         )
@@ -142,22 +162,22 @@ class Shell(object):
                 console.invalidUsage()
 
     class hello_(Command):
-        command = Language.getlang("Shell", "def_hello_cmd")
-        description = Language.getlang("Shell", "def_hello_dsk")
-        aliases = [command, Language.getlang("Shell", "def_hello_al1")]
+        command = "hello"
+        description = translation["hello_description"]
+        aliases = [command, "hi"]
         required = []
-        optional = [Language.getlang("Shell", "def_hello_op1")]
+        optional = ["name"]
 
         def run(console):
             if console.paramCount == 1:
-                Logger.log(f"Hello, {console.parametrs[0]}")
+                log(f"Hello, {console.parametrs[0]}")
             else:
-                Logger.log(f"Hello, world!")
+                log(f"Hello, world!")
 
     class exit_(Command):
-        command = Language.getlang("Shell", "def_exit_cmd")
-        aliases = [command, Language.getlang("Shell", "def_exit_al1")]
-        description = Language.getlang("Shell", "def_exit_dsk")
+        command = "exit"
+        aliases = [command, "quit"]
+        description = translation["exit_description"]
         required = []
         optional = []
         skipcheck = False
@@ -167,31 +187,30 @@ class Shell(object):
 
     class initDefaultTask_(Task):
         def execute(console):
-            Logger.log(
-                f'{Language.getlang("Shell", "welcome")} {console.cmdname}'
-            )
+            log(f'{translation["welcome"]} {console.cmdname}')
+            log(console.fist_completer)
 
     class exitDefaultTask_(Task):
         def execute(console):
-            Logger.log(
-                f'{Language.getlang("Shell", "exit1")}: {console.runState}, {Language.getlang("Shell", "exit2")}: {console.run}'
+            log(
+                f'{translation["exit_code_label"]}: {console.runState}, {translation["exit_from_label"]}: {console.run}'
             )
 
-    def registerInitTask(self, regClass):
-        self.registeredInitTask.append(regClass.execute)
+    def register_init_task(self, reg_class):
+        self.registeredInitTask.append(reg_class.execute)
 
-    def registerExitTask(self, regClass):
-        self.registeredExitTask.append(regClass.execute)
+    def register_exit_task(self, reg_class):
+        self.registeredExitTask.append(reg_class.execute)
 
-    def registerGlobalFunctions(self, regClass):
-        self.registerGlobalFunctions.append(
+    def register_global_functions(self, reg_class):
+        self.register_global_functions.append(
             {
-                "name": regClass.name,
-                "execute": regClass.execute,
+                "name": reg_class.name,
+                "execute": reg_class.execute,
             }
         )
 
-    def registerCommand(self, regClass):
+    def register_command(self, regClass):
         self.registeredCommands.append(
             {
                 "command": regClass.command,
@@ -206,64 +225,67 @@ class Shell(object):
 
     def invalidUsage(self, command):
         class CLR:
-            SCMD = Color.ACC.UNDERLINE + Color.FGC.WHITE
-            SREQ = Color.FGC.BGRAY
-            SOPT = Color.FGC.GRAY
-            R = Color.ACC.RESET
+            SCMD = ACC.UNDERLINE + FGC.WHITE
+            SREQ = FGC.BGRAY
+            SOPT = FGC.GRAY
+            R = ACC.RESET
 
-        syntax = ""
         syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
-        if command["required"] != []:
+        if command["required"]:
             syntax += f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
-        if command["optional"] != []:
+        if command["optional"]:
             syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
-        Logger.wrn(f"Invalid usage. Syntax: {syntax}")
+        wrn(f"Invalid usage. Syntax: {syntax}")
 
     def main(self):
+
         self.runState = "run"
 
         # Basic registration
 
-        self.registerCommand(self.cls_)
-        self.registerCommand(self.help_)
-        self.registerCommand(self.hello_)
-        self.registerCommand(self.exit_)
-        self.registerExitTask(self.exitDefaultTask_)
-        self.registerInitTask(self.initDefaultTask_)
+        self.register_command(self.cls_)
+        self.register_command(self.help_)
+        self.register_command(self.hello_)
+        self.register_command(self.exit_)
+        self.register_exit_task(self.exitDefaultTask_)
+        self.register_init_task(self.initDefaultTask_)
         cmdnames = []
         for command in self.registeredCommands:
             cmdnames.append(command["command"])
 
         if len(cmdnames) != len(set(cmdnames)):
-            Except.except_print(
+            cmds = ", ".join(cmdnames)
+            except_print(
                 Exception(
-                    "Console commands with the same names were registered. here is a list of registered console commands (their names)",
-                    f"Commands: {', '.join(cmdnames)}",
-                    "TIP: check register section and delete or change one of the commands",
+                    *[cmd.format(list=cmds) for cmd in translation["same_command"]]
                 ),
-                exceptionType="fatal",
+                exception_type="fatal",
                 tb=False,
             )
         for itask in self.registeredInitTask:
             itask(self)
 
+        for command in self.registeredCommands:
+            self.fist_completer[command["command"]] = {}
+
         while self.runState == "run":
             try:
-                readed = String.parseArgs(
-                    Logger.rea(f"{self.cmdname.title()} >")
+
+                readed = parse_args(
+                    rea(f"{self.cmdname.title()} >", completion=self.fist_completer)
                 )
                 self.command = readed["command"]
                 self.parametrs = readed["param"]
                 self.paramCount = len(self.parametrs)
 
                 if self.command == "fuck":
-                    Except.except_print(
+                    except_print(
                         Exception(
                             "Why you so evil?...",
                             ":_(",
                             "TIP: you can be beter",
                         ),
-                        exceptionType="wrn",
+                        exception_type="wrn",
                         tb=False,
                     )
                 elif self.command != "":
@@ -287,10 +309,10 @@ class Shell(object):
                             self.run = None
                             break
                     else:
-                        Logger.wrn('Unknown Command, type "help"')
+                        wrn('Unknown Command, type "help"')
 
             except Exception as e:
-                Except.except_print(e)
+                except_print(e)
 
         for itask in self.registeredExitTask:
             itask(self)

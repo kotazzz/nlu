@@ -1,57 +1,78 @@
-import NewLifeUtils.LoggerModule       as Logger
-import NewLifeUtils.StringUtilModule   as String
-import NewLifeUtils.LanguageManager as Language
-from NewLifeUtils import traceback
-def except_print( exception, exceptionType="err", tb=True):
-    errorText = "\n-------------- {ExceptionTitle} --------------------\n"
-    errorText += f"Type: {type(exception).__name__}\n\n"
+import traceback
+
+from NewLifeUtils.FileModule import create_files, get_yaml
+from NewLifeUtils.LoggerModule import err, log, wrn
+from NewLifeUtils.StringUtilModule import screate
+
+default_lang = """
+type: "Type"
+unknown: "Unknown Error"
+about: "More information"
+attention: "Attention"
+info: "Info"
+warning: "Warn"
+error: "Error"
+fatal: "Fatal error"
+wrong: "Something wrong..."
+
+"""
+create_files("except_translation", "lang.yml", "exceptsettings", default_lang)
+translation = get_yaml("except_translation", default_lang)
+
+
+def except_print(exception, exception_type="err", tb=True):
+    error_text = "\n-------------- {ExceptionTitle} --------------------\n"
+    error_text += f"{translation['type']}: {type(exception).__name__}\n\n"
 
     if exception.args == 0:
-        errorText += f'{Language.getlang("ExceptModule","unknown")}\n'
+        error_text += f'{translation["unknown"]}\n'
     else:
-        errorText += f'{Language.getlang("ExceptModule","about")}:\n\t{(chr(10)+chr(9)).join(exception.args)}\t\n'
+        error_text += (
+            f'{translation["about"]}:\n\t{(chr(10) + chr(9)).join(exception.args)}\t\n'
+        )
 
     if tb:
+        error_text += f"\n{traceback.format_exc()}"
 
-        errorText += f"\n{traceback.format_exc()}"
+    error_text += "\n-------------- {ExceptionTitle} --------------------\n"
 
-    errorText += "\n-------------- {ExceptionTitle} --------------------\n"
-
-    if exceptionType == "attention":
-        Logger.log(
-            errorText.replace(
+    if exception_type == "attention":
+        log(
+            error_text.replace(
                 "{ExceptionTitle}",
-                String.screate(Language.getlang("ExceptModule", "attention"), 20),
+                screate(translation["attention"], 20),
             )
         )
-    if exceptionType == "wrn":
-        Logger.wrn(
-            errorText.replace(
+    if exception_type == "wrn":
+        wrn(
+            error_text.replace(
                 "{ExceptionTitle}",
-                String.screate(Language.getlang("ExceptModule", "warning"), 20),
+                screate(translation["warning"], 20),
             )
         )
-    elif exceptionType == "err":
-        Logger.err(
-            errorText.replace(
+    elif exception_type == "err":
+        err(
+            error_text.replace(
                 "{ExceptionTitle}",
-                String.screate(Language.getlang("ExceptModule", "error"), 20),
+                screate(translation["error"], 20),
             )
         )
-    elif exceptionType == "fatal":
-        Logger.err(
-            errorText.replace(
+    elif exception_type == "fatal":
+        err(
+            error_text.replace(
                 "{ExceptionTitle}",
-                String.screate(Language.getlang("ExceptModule", "fatal"), 20),
+                screate(translation["fatal"], 20),
             )
         )
         exit(-1)
     else:
-        Logger.err(
-            errorText.replace(
+        err(
+            error_text.replace(
                 "{ExceptionTitle}",
-                String.screate(Language.getlang("ExceptModule", "wrong"), 20),
+                screate(translation["wrong"], 20),
             )
         )
+
+
 def get_etypes(self):
-    return ['attention','wrn','err','fatal']
+    return ["attention", "wrn", "err", "fatal"]

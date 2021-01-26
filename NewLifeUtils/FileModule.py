@@ -1,70 +1,90 @@
 import os
-from pathlib import Path
-from itertools import islice
+from yaml import load, FullLoader
 
-working_directory = os.path.join(os.getcwd(), 'NewLifeUtils Directory')
-if not os.path.exists(working_directory):
-    os.mkdir(working_directory)
+wd_name = "NLU Config"
+cwd = os.path.join(os.getcwd(), wd_name)
+
+files = {}
 
 
-def get_path(folder):
-    return os.path.join(working_directory, folder)
-    
-def get_dir_content( directory=""):
-    return os.listdir(directory)
-def tree(
-    
-    dir_path: Path,
-    level: int = -1,
-    limit_to_directories: bool = False,
-    length_limit: int = 1000,
-):
-    """Given a directory Path object print a visual tree structure"""
-    resultpath = ""
-    dir_path = Path(dir_path)  # accept string coerceable to Path
-    files = 0
-    directories = 0
+def get_cwd(folder):
+    return os.path.join(cwd, folder)
 
-    def inner(dir_path: Path, prefix: str = "", level=-1):
-        nonlocal files, directories
-        if not level:
-            return  # 0, stop iterating
-        if limit_to_directories:
-            contents = [d for d in dir_path.iterdir() if d.is_dir()]
+
+def create_dirs(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+
+def create_files(filename, file, path="", default_data=""):
+    fullpath = os.path.join(os.path.join(cwd, path), "")
+    create_dirs(fullpath)
+    try:
+        f = open(fullpath + f"{file}", "a")
+        state = False
+    except:
+        f = open(fullpath + f"{file}", "w")
+        file_rewrite(filename, default_data)
+        state = True
+    files[filename] = os.path.join(cwd, path) + f"\\{file}"
+    f.close()
+    return state
+
+
+def file_exist(filename):
+    try:
+        files[filename]
+    except:
+        return False
+    else:
+        return os.path.exists(files[filename])
+
+
+def get_file(filename):
+    return files[filename]
+
+
+def file_rewrite(filename, data, end="\n"):
+    f = open(files[filename], "w")
+    f.write(data + end)
+    f.close()
+
+
+def file_apwrite(filename, data, end="\n", coding="utf-8"):
+    f = open(files[filename], "a", encoding=coding)
+    f.write(data + end)
+    f.close()
+
+
+def readall(filename):
+    f = open(files[filename], "r")
+    r = f.read()
+    f.close()
+    return r
+
+
+def get_yaml(filename, regen_data=""):
+    try:
+        retobj = load(readall(filename), Loader=FullLoader)
+        if retobj is None:
+            raise Exception
         else:
-            contents = list(dir_path.iterdir())
-        pointers = [tee] * (len(contents) - 1) + [last]
-        for pointer, path in zip(pointers, contents):
-            if path.is_dir():
-                yield prefix + pointer + path.name
-                directories += 1
-                extension = branch if pointer == tee else space
-                yield from inner(path, prefix=prefix + extension, level=level - 1)
-            elif not limit_to_directories:
-                yield prefix + pointer + path.name
-                files += 1
+            return retobj
+    except Exception:
+        if regen_data != "":
+            file_rewrite(filename, regen_data)
+        try:
+            return load(readall(filename), Loader=FullLoader)
+        except Exception:
+            return None
 
-    resultpath += "\n" + (dir_path.name)
-    iterator = inner(dir_path, level=level)
-    for line in islice(iterator, length_limit):
-        resultpath += "\n" + (line)
-    if next(iterator, None):
-        resultpath += "\n" + (
-            f"... length_limit, {length_limit}, reached, counted:"
-        )
-    resultpath += "\n" + ("")
-    resultpath += "\n" + (
-        f"{directories} directories" + (f", {files} files" if files else "")
-    )
-    return resultpath
 
-def old_tree(startpath):
-    resultpath = ""
-    for root, dirs, files in os.walk(startpath):
-        level = root.replace(startpath, "").count(os.sep)
-        indent = " " * 4 * (level)
-        resultpath += "\n" + ("{}{}/".format(indent, os.path.basename(root)))
-        subindent = " " * 4 * (level + 1)
-        for f in files:
-            resultpath += "\n" + ("{}{}".format(subindent, f))
-    return resultpath
+def get_files_from_dir(folder):
+    path = os.path.join(os.path.join(cwd, folder), "")
+    create_dirs(path)
+    path = os.listdir(path)
+    files = []
+    for some in path:
+        if path.isfile(os.path.join(path, some)):
+            files.append(some)
+    return files

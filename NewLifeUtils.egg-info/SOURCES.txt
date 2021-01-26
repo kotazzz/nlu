@@ -5,14 +5,11 @@ NewLifeUtils/CustomShellModule.py
 NewLifeUtils/DatabaseManageModule.py
 NewLifeUtils/ExceptModule.py
 NewLifeUtils/FileModule.py
-NewLifeUtils/FilelogModule.py
-NewLifeUtils/LanguageManager.py
 NewLifeUtils/LoggerModule.py
-NewLifeUtils/OneCode.py
-NewLifeUtils/RandomModule.py
 NewLifeUtils/StringUtilModule.py
 NewLifeUtils/TableBuildModule.py
 NewLifeUtils/UtilsModule.py
+NewLifeUtils/__init__.py
 NewLifeUtils.egg-info/PKG-INFO
 NewLifeUtils.egg-info/SOURCES.txt
 NewLifeUtils.egg-info/dependency_links.txt

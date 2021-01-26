@@ -1,11 +1,7 @@
-from NewLifeUtils import os
+from os import system
+from random import randrange
 
-info = """
-Dependence: ---
-Dependents: ---
-About: ---
-"""
-os.system("")
+system("")
 
 
 class BGC:
@@ -19,10 +15,10 @@ class BGC:
     BGRAY = "\x1B[47m"
     GRAY = "\x1B[100m"
     BRED = "\x1B[101m"
-    BGREEN = "\x1B[102m"
+    LIME = "\x1B[102m"
     BYELLOW = "\x1B[103m"
     BBLUE = "\x1B[104m"
-    BPURPLE = "\x1B[105m"
+    MAGENTA = "\x1B[105m"
     BCYAN = "\x1B[106m"
     WHITE = "\x1B[107m"
 
@@ -38,80 +34,126 @@ class FGC:
     BGRAY = "\x1B[37m"
     GRAY = "\x1B[90m"
     BRED = "\x1B[91m"
-    BGREEN = "\x1B[92m"
+    LIME = "\x1B[92m"
     BYELLOW = "\x1B[93m"
     BBLUE = "\x1B[94m"
-    BPURPLE = "\x1B[95m"
+    MAGENTA = "\x1B[95m"
     BCYAN = "\x1B[96m"
     WHITE = "\x1B[97m"
 
 
-class CLU:
-    def arr_to_rgb(arr):
-        return f"\x1B[38;2;{arr[0]};{arr[1]};{arr[2]}m"
-
-
 class ACC:
-    AFTERCLEAN = "\x1B[K"
-    OLDRESET = "\x1B[0m"
-    RESET = "\x1B[0m" + "\x1B[x" + "\x1B[K"
-    UNDERLINE = "\x1B[4m"
-    SWAP = "\x1B[7m"
-    NOTNEGATIVE = "\x1B[27m"
-    TOBRIGHT = "\x1B[1m"
-    NOBRIGHT = "\x1B[2m"
+    RESET = "\x1B[0m"
+    RELOAD = "\x1B[!p"
     CLEARSCREEN = "\x1Bc"
 
-    def RANDOMRGB(mode="Color"):
-        if mode not in ["Color", "gray"]:
-            mode = "Color"
-        if mode == "Color":
+    BRIGHT = "\x1B[1m"
+    NO_BRIGHT = "\x1B[2m"
+
+    UNDERLINE = "\x1B[4m"
+    NO_UNDERLINE = "\x1B[24m"
+
+    REVERSE = "\x1B[7m"
+    NO_REVERSE = "\x1B[27m"
+
+    ALTERNATIVE_BUFF = "\x1B[?1049h"
+    ORIGINAL_BUFF = "\x1B[?1049l"
+
+    def title(title):
+        return f"\x1B]2;{title}\x07"
+
+    def rabdomrgb(self="Color"):
+        if self not in ["Color", "gray"]:
+            self = "Color"
+        if self == "Color":
             r, g, b = (
-                NewLifeUtils.Libs.random.randrange(0, 255),
-                NewLifeUtils.Libs.random.randrange(0, 255),
-                NewLifeUtils.Libs.random.randrange(0, 255),
+                randrange(0, 255),
+                randrange(0, 255),
+                randrange(0, 255),
             )
         else:
-            r = NewLifeUtils.Libs.random.randrange(0, 255)
+            r = randrange(0, 255)
             g = r
             b = r
         return f"\x1B[38;2;{r};{g};{b}m"
 
-    def RANDOMD():
-        n = NewLifeUtils.Libs.random.randrange(0, 255)
+    def randomd(n):
+        n = randrange(0, 255)
         return f"\x1B[38;5;{n}m"
 
-    def CUSTOMRGB(r, g, b):
+    def customrgb(r, g, b):
         return f"\x1B[38;2;{r};{g};{b}m"
 
-    def CUSTOMC(n):
+    def customc(n):
         return f"\x1B[38;5;{n}m"
 
-    def BCUSTOMRGB(r, g, b):
+    def bcustomrgb(r, g, b):
         return f"\x1B[48;2;{r};{g};{b}m"
 
-    def BCUSTOMC(n):
+    def bcustomc(n):
         return f"\x1B[48;5;{n}m"
 
 
 class MCC:
-    def UP(count):
-        return f"\x1B[{count}A"
+    cursor_dblink = "\x1B[?12h"
+    cursor_eblink = "\x1B[?12l"
+    cursor_hide = "\x1B[?25l"
+    cursor_show = "\x1B[?25h"
 
-    def DOWN(count):
-        return f"\x1B[{count}B"
+    erase_nxt_window = "\x1B[0J"
+    erase_prv_window = "\x1B[1J"
+    erase_all_window = "\x1B[2J"
+    erase_nxt_line = "\x1B[0K"
+    erase_prv_line = "\x1B[1K"
+    erase_all_line = "\x1B[2K"
+    set_tab = "\x1BH"
+    del_tab = "\x1B[0g"
+    res_tab = "\x1B[3g"
 
-    def RIGHT(count):
-        return f"\x1B[{count}V"
+    save_cursor = "\x1B[s"
+    load_cursor = "\x1B[u"
 
-    def LEFT(count):
-        return f"\x1B[{count}D"
+    def up(self=1):
+        return f"\x1B[{self}A"
 
-    def CURSORPOSITION(x, y):
+    def down(self=1):
+        return f"\x1B[{self}B"
+
+    def right(self=1):
+        return f"\x1B[{self}C"
+
+    def left(self=1):
+        return f"\x1B[{self}D"
+
+    def row(self=1):
+        return f"\x1B[{self}G"
+
+    def cursor_position(x, y):
         return f"\x1B[{x};{y}H"
 
-    FIRSTLINE = "\x1B[1G"
-    NEXTLINE = "\x1B[E"
-    PREVIOUSLINE = "\x1B[F"
-    ERASELINE = "\x1B[2K"
-    REWRITELINE = "\x1B[1G"
+    def scroll_down(self=1):
+        return f"\x1B[{self}T"
+
+    def scroll_up(self=1):
+        return f"\x1B[{self}S"
+
+    def push_right(self=1):
+        return f"\x1B[{self}@"
+
+    def erase_right(self=1):
+        return f"\x1B[{self}P"
+
+    def replace_right(self=1):
+        return f"\x1B[{self}X"
+
+    def push_down(self=1):
+        return f"\x1B[{self}L"
+
+    def erase_down(self=1):
+        return f"\x1B{self}M"
+
+    def next_tab(self):
+        return f"\x1B{self}I"
+
+    def prev_tab(self):
+        return f"\x1B{self}Z"

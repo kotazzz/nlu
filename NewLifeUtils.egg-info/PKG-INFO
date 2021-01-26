@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: NewLifeUtils
-Version: 5.0.2
+Version: 5.1.2
 Summary: UNKNOWN
 Home-page: https://github.com/NewLife1324/NewLifeUtils-Dev
 Author: New Life
@@ -16,7 +16,7 @@ Description: ## Contact me
         
         [My vk](https://vk.com/newlife2019_szhs)
         
-        My Mail: semechkagent@gmail.com
+        My Mail: [semechkagent@gmail.com](semechkagent@gmail.com)
         
         
         # NewLifeUtils
@@ -33,7 +33,10 @@ Description: ## Contact me
         ## Plans and current changes
         In fact, there are quite a lot of them, but they are constantly changing, I just don't have the strength to constantly change something in a bunch of files at the same time
         
+        ## Current plans
+        In progress... you can look at projects
         
+        ## Old Table
         | Module name  |  Description  |  Status       |
         | ------------ | ------------- | ------------- |
         | `ColorModule`          | Provides color output capabilities |  **Complete**  |
