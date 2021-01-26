@@ -1,23 +1,48 @@
-## Contact me
-[Test pypi](https://test.pypi.org/project/NewLifeUtils/5.0.1/)
+## stats
+![code-size](https://img.shields.io/github/languages/code-size/NewLife1324/NewLifeUtils-Dev)
+![lines](https://img.shields.io/tokei/lines/github/NewLife1324/NewLifeUtils-Dev)
+![issues](https://img.shields.io/github/issues/NewLife1324/NewLifeUtils-Dev)
+![issues](https://img.shields.io/github/issues-pr-raw/NewLife1324/NewLifeUtils-Dev)
+![release](https://img.shields.io/github/v/release/NewLife1324/NewLifeUtils-Dev)
+![pypi-v](https://img.shields.io/pypi/v/NewLifeUtils)
+![contributors](https://img.shields.io/github/contributors/NewLife1324/NewLifeUtils-Dev)
+![pypi-format](https://img.shields.io/pypi/format/NewLifeUtils)
+![license](https://img.shields.io/github/license/NewLife1324/NewLifeUtils-Dev)
+![downloads](https://img.shields.io/github/downloads/NewLife1324/NewLifeUtils-Dev/total)
+[![HitCount](http://hits.dwyl.com/NewLifeUtils/NewLifeUtils-Dev.svg)](http://hits.dwyl.com/NewLifeUtils/NewLifeUtils-Dev)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/NewLifeUtils/NewLifeUtils-Dev/issues)
+[![Inline docs](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev.svg?branch=main)](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev)
+![img](https://img.shields.io/badge/stage-dev--beta-blue)
 
-[Real pypi 5.0.1](https://pypi.org/project/NewLifeUtils/5.0.1/)
-[Real pypi 5.0.2](https://pypi.org/project/NewLifeUtils/5.0.2/)
+## Contact me
+[PyPI](https://test.pypi.org/project/NewLifeUtils)
 
 [My website](http://newlife-learn.h1n.ru)
 
 [My vk](https://vk.com/newlife2019_szhs)
 
-My Mail: [semechkagent@gmail.com](semechkagent@gmail.com)
+My Mail: semechkagent@gmail.com
+
+## News
+Recently, the code was rewritten, but without using notepad. I was able to understand and get used to PyCharm, which means that refactoring and quick code writing functions became available to me. This has greatly simplified the work and revealed a lot of bugs in my code, which means that my code is far from perfect and I have something to strive for. In any case, I have fixed quite important flaws in my code and partially rewritten my code once again. It's easier for me to start from scratch than to redo ¯\_(ツ)_/¯
+
+## Modules
+- ColorModule
+- CustomShellModule
+- DatabaseManageModule
+- ExceptModule
+- FileModule
+- LoggerModule
+- StringUtilModule
+- TableBuildModule
+- UtilsModule
+### ColorModule
+![alt text](https://github.com/[username]/[reponame]/blob/main/images/ColorModule.jpg?raw=true)
 
 
-# NewLifeUtils
-## Recent change
-The main preparation of all files for collaboration with github is completed. Now I can continue developing the ported code with github's participation. Over time, I will add full documentation and a lot of useful features
 
-## About the project
-In fact, there is active development, repeated rewriting of the code. All actions are published on github for orderly storage of changes and fixing all my actions. I don't encourage you to use my code. My goal is to learn how to write programs beautifully and learn how to use github. If you have any ideas, criticism, or suggestions , I'm happy to listen
-Now this is the 5th attempt to rewrite the code beautifully, each time I change the very structure of the code. In General, I didn't really study the language features, so my code will be disgusting to a professional programmer. Maybe someday I will achieve the effect that I need
+
+
 
 ## Project idea.
 Simplify the development of some elements of more significant and large projects with ready-made features. I'm not ready to use external Python modules, besides, it's better to write something yourself and experiment, gain experience. In the future, I will not publish such children's content on such a large platform. I'm just learning
@@ -28,20 +53,6 @@ In fact, there are quite a lot of them, but they are constantly changing, I just
 ## Current plans
 In progress... you can look at projects
 
-## Old Table
-| Module name  |  Description  |  Status       |
-| ------------ | ------------- | ------------- |
-| `ColorModule`          | Provides color output capabilities |  **Complete**  |
-| `LoggerModule`         | Provides the ability to display information in an orderly manner on the screen  |  **Complete**  |
-| `StringUtilModule`     | Module with additional options for processing and converting strings  |  **Complete**  |
-| `ExceptModule`         | An additional module for working with errors during the execution of your code   |  **Complete**  |
-| `CustomShellModule`    | CustomShellModule is a module that automates user input and output, creates the right          development environment, and provides the right API |  **Complete**  |
-| `TableBuildModule`     | Module for working with tables, displaying them on the screen and arranging them inside the table itself |  **Complete**  |
-| `UtilsModule`          | List of various other functions and add-ons that are not included in the above modules  |  **Complete**  |
-| `FileModule`           | Wrapper module for simplified file management |  **Complete**  |
-| `FilelogModule`        | Add-on for working with logs |  **Complete**  |
-| `DatabaseManageModule` | A specialized class for working with databases and data inside them. It allows you to simplify working with them as much as possible, but due to  size of the original API, it does not allow you to implement absolutely all functions, so this class also provides access to direct database management     |  **Complete**  |
-| `RandomModule`         | A module that provides a redesigned API for working with pseudo-random numbers  |  **Working**  |
 
 
 ***Translator used**
