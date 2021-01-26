@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="469f9753-51dd-4a2d-b1f8-877d4bff5dd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    <list default="true" id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/ColorModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/ColorModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/CustomShellModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/CustomShellModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/DatabaseManageModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/DatabaseManageModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/ExceptModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/ExceptModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/FileModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/FileModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/StringUtilModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/StringUtilModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/TableBuildModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/TableBuildModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/UtilsModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/UtilsModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/NewLifeUtils-5.1.1-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/NewLifeUtils-5.1.1-py3.9.egg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/NewLifeUtils-5.1.1.tar.gz" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Stub" />
         <option value="Python Script" />
       </list>
     </option>
@@ -29,8 +41,10 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProjectId" id="1nIHKB88hckhCrKKnYDT0tZTcXP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1nLYGJ5pviVF70hM0T6Xil2iio8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,8 +53,37 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last.edited.regexp" value="1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/NewLifeUtils" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\GitHub\NewLifeUtils\NewLifeUtils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration name="NewFile" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NewLifeUtils" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NewFile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NewLifeUtils" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,32 +108,22 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.NewFile" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="469f9753-51dd-4a2d-b1f8-877d4bff5dd7" name="Default Changelist" comment="" />
-      <created>1611070619448</created>
+      <changelist id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="" />
+      <created>1611170754253</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1611070619448</updated>
+      <updated>1611170754253</updated>
     </task>
     <servers />
   </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
