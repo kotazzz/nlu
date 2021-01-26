@@ -8,58 +8,70 @@ from NewLifeUtils.ColorModule import FGC
 from NewLifeUtils.CustomShellModule import Shell
 from NewLifeUtils.StringUtilModule import screate, parse_args, remove_csi
 
-selector = 0
+counter = 0
+current = ''
 
-current_text = ''
+
 def complete(readed, completes):
-    global selector
-    global current_text
-    #print(f'{ACC.CLEARSCREEN}')
-    if current_text == '':
-        current_text = readed
-    work_parsed = parse_args(readed)["split"]
-    if readed != '':
+    print(f'{ACC.CLEARSCREEN}')
+    next = False
+    if len(readed) > 0:
         if readed[-1] == ' ':
-            work_parsed.append('')
+            next = True
 
+    def build_readed(args, ins_spase=False):
+        new_readed = ' '.join(args)
+        if ins_spase:
+            new_readed += ' '
+        return new_readed
 
-    keys = completes.keys()
-
-
-    #print(readed)
-    #print(current_text)
-    aval = []
-    for argnum, arg in enumerate(work_parsed, start=1):
+    def find_aval(word, possible):
         aval = []
-        next_sel = False
-        for key in keys:
-            #print(f'{FGC.GREEN}arg: {arg}, key: {key}, result: {key.startswith(arg)}')
-            sys.stdout.flush()
-            if key.startswith(arg):
+        for key in possible:
+            if key.startswith(word):
                 aval.append(key)
-                next_sel = True
-                try:
-                    completes[key]
-                except KeyError:
-                    pass  # no completion next
-                    keys = {}
-                else:
-                    sys.stdout.flush()
-                    keys = completes[key]
-                    next_sel = True
+        return aval
 
-        if next_sel:
-            selector += 1
-            selector %= len(aval)
-        if len(aval) == 1:
-            work_parsed[argnum - 1] = aval[0]
-        elif len(aval) > 0:
-            work_parsed[argnum - 1] = aval[selector]
-            #print(f'{FGC.MAGENTA}com: {aval}, next: {keys}, CURRENT: {selector} - {aval[selector]}')
+    def predict(aval):
+        global counter
+        counter += 1
+        counter %= len(aval)
+        return aval[counter]
 
-    #print(ACC.RESET)
+    def next_layer(complete_words, key):
+        try:
+            complete_words = list(completes[key].keys())
+        except KeyError:
+            complete_words = []
+        return complete_words
 
-    return ' '.join(work_parsed), aval
+    complete_words = list(completes.keys())
+    parsed_readed = parse_args(readed)["split"]
+
+    for argnum, arg in enumerate(parsed_readed, start=0):
+        if len(find_aval(arg, complete_words)) == 0:
+            aval = []
+            predict_curr = ''
+    else:
+        for argnum, arg in enumerate(parsed_readed, start=0):
+            aval = find_aval(arg, complete_words)
+            global current
+            print(f'{FGC.BBLUE}{aval} ({current})')
+            if len(aval) == 1:
+                parsed_readed[argnum] = aval[0]
+                predict_curr = ''
+            if len(aval) > 1:
+                predict_curr = predict(arg, aval, next)
+            if next:
+                predict_curr = predict(aval)
+                return build_readed(parsed_readed, True), '', complete_words
+            complete_words = next_layer(complete_words, predict_curr)
+            print(f'{FGC.BYELLOW}aval - {aval}')
+            print(f'{FGC.BYELLOW}gen complete_words - {complete_words}')
+
+    print(f'{FGC.RED} RES: {predict_curr} / {" ".join(aval)}')
+    print(ACC.RESET)
+    return build_readed(parsed_readed, False), predict_curr, aval
 
 
 def smart_input(text='', completes={}, end='\n'):
@@ -69,9 +81,9 @@ def smart_input(text='', completes={}, end='\n'):
     while True:
         key = getwch()
         if ord(key) == 224:
-            pass
+            key = getwch()
         elif ord(key) == 0:
-            pass
+            key = getwch()
         else:
             if ord(key) == 8:
                 readed = readed[:-1]
@@ -80,23 +92,21 @@ def smart_input(text='', completes={}, end='\n'):
             elif ord(key) == 13:
                 break
             elif ord(key) == 9:
-                readed, aval = complete(readed, completes)
-                if len(aval) > 0:
-                    avalr = ', '.join(aval)
-                else:
-                    avalr = 'no suggestion'
-                avaltext = f'{FGC.GRAY} ({avalr}) {ACC.RESET}'
-                print(MCC.load_cursor + MCC.erase_nxt_line + readed + avaltext + MCC.left(len(remove_csi(avaltext))), end='')
+                readed, predict, aval = complete(readed, completes)
+                complete(readed, completes)
+                print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
             else:
                 readed += key
-                print(MCC.load_cursor + MCC.erase_nxt_line + readed, end='')
+                print(MCC.load_cursor + MCC.erase_nxt_window + readed, end='')
         sys.stdout.flush()
     print(end)
     return readed
 
 
 if __name__ == '__main__':
-    #inp = smart_input('Введите текст:', {"hello": {"world": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}})
+    # inp = smart_input('Введите текст:',
+    #                  {"hello": {"world": {}, "world2": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}})
     #print(f'Вы ввели: {inp}')
-    c = Shell()
-    c.main()
+    #c = Shell()
+    # c.main()
+# "hello": {"world": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}
