@@ -37,7 +37,7 @@ Recently, the code was rewritten, but without using notepad. I was able to under
 - TableBuildModule
 - UtilsModule
 ### ColorModule
-![alt text](https://github.com/[username]/[reponame]/blob/main/images/ColorModule.jpg?raw=true)
+![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/ColorModule.jpg?raw=true)
 
 
 
