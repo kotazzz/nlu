@@ -1,3 +1,6 @@
 5.1.3:
-    - Added RequestModule (8778255)
-    - Added requirements in setup.py (1a2415d
+    - + Added RequestModule (8778255)
+    - + Added requirements in setup.py (1a2415d)
+    - + Added license in setup.py ()
+    - + Added platforms in setup.py ()
+    - + Added CHANGELOG (c5c7247)
