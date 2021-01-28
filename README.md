@@ -13,6 +13,7 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/NewLifeUtils/NewLifeUtils-Dev/issues)
 [![Inline docs](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev.svg?branch=main)](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev)
 ![img](https://img.shields.io/badge/stage-dev--beta-blue)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ## Contact me
 [PyPI](https://test.pypi.org/project/NewLifeUtils)
