@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/NewLifeUtils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NewLifeUtils.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewLifeUtils/ColorModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/ColorModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +46,7 @@
     <property name="last.edited.regexp" value="1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/NewLifeUtils" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
