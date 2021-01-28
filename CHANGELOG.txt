@@ -1,3 +1,6 @@
+NewLifeUtils 5.1.5:
+    - Fix:          LM - rea() not working              (-------)
+
 NewLifeUtils 5.1.4:
     - Fix:          CSM - Shell() not working           (-------)
     - Fix:          LM - rea() not working              (-------)
