@@ -1,14 +1,9 @@
-import random
-
-from pynput.keyboard import Key, Listener
 from NewLifeUtils.ColorModule import MCC, ACC
-import pynput
 import sys
 from msvcrt import getwch
 
 from NewLifeUtils.ColorModule import FGC
-from NewLifeUtils.CustomShellModule import Shell
-from NewLifeUtils.StringUtilModule import screate, parse_args, remove_csi
+from NewLifeUtils.StringUtilModule import parse_args
 from NewLifeUtils.RequestModule import req_get
 
 counter = 0
@@ -107,10 +102,4 @@ def smart_input(text='', completes={}, end='\n'):
 
 
 if __name__ == '__main__':
-    req_get('vk.com',{'1':'v','3':123})
-    # inp = smart_input('Введите текст:',
-    #                  {"hello": {"world": {}, "world2": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}})
-    #print(f'Вы ввели: {inp}')
-    #c = Shell()
-    # c.main()
-# "hello": {"world": {}, "me": {}}, "hi": {"friend": {}}, "hem": {}
+    print('Hello World')
