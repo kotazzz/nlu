@@ -104,4 +104,8 @@ def smart_input(text="", completes={}, end="\n"):
 
 
 if __name__ == "__main__":
+    from NewLifeUtils.CustomShellModule import Shell
+    c = Shell()
+    c.main()
+
     print("Hello World")

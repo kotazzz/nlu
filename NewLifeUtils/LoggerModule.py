@@ -1207,7 +1207,7 @@ def read(message, tag="", completion=None):
         f"{ACC.bcustomrgb(0, 43, 112)}{ACC.customrgb(235, 54, 30)}{message}",
         end="",
     )
-    readed = smart_input(completes=completion)
+    readed = input()
 
     out(
         MCC.up(2)

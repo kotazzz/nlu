@@ -188,7 +188,6 @@ class Shell(object):
     class initDefaultTask_(Task):
         def execute(console):
             log(f'{translation["welcome"]} {console.cmdname}')
-            log(console.fist_completer)
 
     class exitDefaultTask_(Task):
         def execute(console):

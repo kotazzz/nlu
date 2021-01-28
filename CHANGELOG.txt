@@ -1,4 +1,10 @@
-5.1.3:
+NewLifeUtils 5.1.4:
+    - Fix:          CSM - Shell() not working           (-------)
+    - Fix:          LM - rea() not working              (-------)
+    - Removal:      Logger smart input future disabled  (-------)
+    - Removal:      CSM {} from start eveny             (-------)
+
+NewLifeUtils 5.1.3:
     - Addition:     RequestModule                       (8778255)
     - Addition:     requirements in setup.py            (1a2415d)
     - Addition:     license in setup.py                 (84c1215)
