@@ -105,4 +105,3 @@ def smart_input(text='', completes={}, end='\n'):
 
 if __name__ == '__main__':
     print('Hello World')
-    print().read())
