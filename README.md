@@ -1,19 +1,14 @@
 ## stats
 ![code-size](https://img.shields.io/github/languages/code-size/NewLife1324/NewLifeUtils-Dev)
-![lines](https://img.shields.io/tokei/lines/github/NewLife1324/NewLifeUtils-Dev)
 ![issues](https://img.shields.io/github/issues/NewLife1324/NewLifeUtils-Dev)
-![issues](https://img.shields.io/github/issues-pr-raw/NewLife1324/NewLifeUtils-Dev)
+![pr](https://img.shields.io/github/issues-pr-raw/NewLife1324/NewLifeUtils-Dev)
 ![release](https://img.shields.io/github/v/release/NewLife1324/NewLifeUtils-Dev)
 ![pypi-v](https://img.shields.io/pypi/v/NewLifeUtils)
 ![contributors](https://img.shields.io/github/contributors/NewLife1324/NewLifeUtils-Dev)
 ![pypi-format](https://img.shields.io/pypi/format/NewLifeUtils)
 ![license](https://img.shields.io/github/license/NewLife1324/NewLifeUtils-Dev)
-![downloads](https://img.shields.io/github/downloads/NewLife1324/NewLifeUtils-Dev/total)
-[![HitCount](http://hits.dwyl.com/NewLifeUtils/NewLifeUtils-Dev.svg)](http://hits.dwyl.com/NewLifeUtils/NewLifeUtils-Dev)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/NewLifeUtils/NewLifeUtils-Dev/issues)
 [![Inline docs](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev.svg?branch=main)](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev)
-![img](https://img.shields.io/badge/stage-dev--beta-blue)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ## Contact me
 [PyPI](https://test.pypi.org/project/NewLifeUtils)
