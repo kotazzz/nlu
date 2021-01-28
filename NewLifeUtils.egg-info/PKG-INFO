@@ -1,57 +1,111 @@
 Metadata-Version: 2.1
 Name: NewLifeUtils
-Version: 5.1.2
-Summary: UNKNOWN
+Version: 5.1.3
+Summary: View changelog.txt at https://raw.githubusercontent.com/NewLife1324/NewLifeUtils-Dev/main/CHANGELOG.txt
 Home-page: https://github.com/NewLife1324/NewLifeUtils-Dev
 Author: New Life
 Author-email: semechkagent@gmail.com
-License: UNKNOWN
-Description: ## Contact me
-        [Test pypi](https://test.pypi.org/project/NewLifeUtils/5.0.1/)
+License: MIT
+Description: ## stats
+        ![code-size](https://img.shields.io/github/languages/code-size/NewLife1324/NewLifeUtils-Dev)
+        ![issues](https://img.shields.io/github/issues/NewLife1324/NewLifeUtils-Dev)
+        ![pr](https://img.shields.io/github/issues-pr-raw/NewLife1324/NewLifeUtils-Dev)
+        ![release](https://img.shields.io/github/v/release/NewLife1324/NewLifeUtils-Dev)
+        ![pypi-v](https://img.shields.io/pypi/v/NewLifeUtils)
+        ![contributors](https://img.shields.io/github/contributors/NewLife1324/NewLifeUtils-Dev)
+        ![pypi-format](https://img.shields.io/pypi/format/NewLifeUtils)
+        ![license](https://img.shields.io/github/license/NewLife1324/NewLifeUtils-Dev)
+        [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/NewLifeUtils/NewLifeUtils-Dev/issues)
+        [![Inline docs](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev.svg?branch=main)](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev)
         
-        [Real pypi 5.0.1](https://pypi.org/project/NewLifeUtils/5.0.1/)
-        [Real pypi 5.0.2](https://pypi.org/project/NewLifeUtils/5.0.2/)
+        ## Contact me
+        [PyPI](https://test.pypi.org/project/NewLifeUtils)
         
         [My website](http://newlife-learn.h1n.ru)
         
         [My vk](https://vk.com/newlife2019_szhs)
         
-        My Mail: [semechkagent@gmail.com](semechkagent@gmail.com)
+        My Mail: semechkagent@gmail.com
         
+        ## News
+        Recently, the code was rewritten, but without using notepad. I was able to understand and get used to PyCharm, which means that refactoring and quick code writing functions became available to me. This has greatly simplified the work and revealed a lot of bugs in my code, which means that my code is far from perfect and I have something to strive for. In any case, I have fixed quite important flaws in my code and partially rewritten my code once again. It's easier for me to start from scratch than to redo ВЇ\_(гѓ„)_/ВЇ
         
-        # NewLifeUtils
-        ## Recent change
-        The main preparation of all files for collaboration with github is completed. Now I can continue developing the ported code with github's participation. Over time, I will add full documentation and a lot of useful features
+        ## Modules
+        - ColorModule
+        - LoggerModule
+        - ExceptModule
+        - FileModule
+        - StringUtilModule
+        - TableBuildModule
+        - UtilsModule
+        - CustomShellModule
+        - DatabaseManageModule (working)
+        ### ColorModule
+        ![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/ColorModule.jpg?raw=true)
+        ```py
+        from NewLifeUtils.ColorModule import FGC, ACC
         
-        ## About the project
-        In fact, there is active development, repeated rewriting of the code. All actions are published on github for orderly storage of changes and fixing all my actions. I don't encourage you to use my code. My goal is to learn how to write programs beautifully and learn how to use github. If you have any ideas, criticism, or suggestions , I'm happy to listen
-        Now this is the 5th attempt to rewrite the code beautifully, each time I change the very structure of the code. In General, I didn't really study the language features, so my code will be disgusting to a professional programmer. Maybe someday I will achieve the effect that I need
+        print(f'{FGC.RED}Red text')
+        print(f'{FGC.GREEN}Green text')
+        print(f'{ACC.UNDERLINE}UNDERLINE')
+        print(f'{ACC.RESET}No formating')
+        ```
         
-        ## Project idea.
-        Simplify the development of some elements of more significant and large projects with ready-made features. I'm not ready to use external Python modules, besides, it's better to write something yourself and experiment, gain experience. In the future, I will not publish such children's content on such a large platform. I'm just learning
+        ### LoggerModule
+        ![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/LoggerModule-1.jpg?raw=true)
+        ![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/LoggerModule-2.jpg?raw=true)
+        ```py
+        from NewLifeUtils.LoggerModule import log, wrn, err, tip, rea
         
-        ## Plans and current changes
-        In fact, there are quite a lot of them, but they are constantly changing, I just don't have the strength to constantly change something in a bunch of files at the same time
+        a = rea('input your data:')
+        log('My Event')
+        wrn('Something is wrong')
+        err('I broke something.')
+        tip('Tip #1, I recommend it to you...')
+        log('Event with tag', 'my tag')
+        ```
         
-        ## Current plans
-        In progress... you can look at projects
+        ### ExceptModule
+        ![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/ExceptModule.jpg?raw=true)
+        ```py
+        from NewLifeUtils.ExceptModule import except_print
         
-        ## Old Table
-        | Module name  |  Description  |  Status       |
-        | ------------ | ------------- | ------------- |
-        | `ColorModule`          | Provides color output capabilities |  **Complete**  |
-        | `LoggerModule`         | Provides the ability to display information in an orderly manner on the screen  |  **Complete**  |
-        | `StringUtilModule`     | Module with additional options for processing and converting strings  |  **Complete**  |
-        | `ExceptModule`         | An additional module for working with errors during the execution of your code   |  **Complete**  |
-        | `CustomShellModule`    | CustomShellModule is a module that automates user input and output, creates the right          development environment, and provides the right API |  **Complete**  |
-        | `TableBuildModule`     | Module for working with tables, displaying them on the screen and arranging them inside the table itself |  **Complete**  |
-        | `UtilsModule`          | List of various other functions and add-ons that are not included in the above modules  |  **Complete**  |
-        | `FileModule`           | Wrapper module for simplified file management |  **Complete**  |
-        | `FilelogModule`        | Add-on for working with logs |  **Complete**  |
-        | `DatabaseManageModule` | A specialized class for working with databases and data inside them. It allows you to simplify working with them as much as possible, but due to  size of the original API, it does not allow you to implement absolutely all functions, so this class also provides access to direct database management     |  **Complete**  |
-        | `RandomModule`         | A module that provides a redesigned API for working with pseudo-random numbers  |  **Working**  |
+        try:
+            a = [1,2,3]
+            a[3]
+        except Exception as e:
+            except_print(e,"fatal", tb=True)
+        ```
+        
+        ### StringUtilModule
+        ![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/StringUtilModule.jpg?raw=true)
+        ```py
+        from NewLifeUtils.StringUtilModule import screate,remove_csi
+        from NewLifeUtils.ColorModule import FGC, ACC
+        
+        text = f'{FGC.RED}r{FGC.GREEN}g{FGC.BLUE}b{ACC.RESET}'
+        print(f'Original: {text}')
+        print('|'+screate(text, size=10, insert="r", filler_symbol=" ")+'| - right 10 (" ")')
+        print('|'+screate(text, size=10, insert="l", filler_symbol=" ")+'| - left 10 (" ")')
+        print('|'+screate(text, size=10, insert="l", filler_symbol="@")+'| - left 10 ("@")')
+        print(remove_csi(text))
+        ```
+        
+        ### TableBuildModule
+        ![alt text](https://github.com/NewLife1324/NewLifeUtils-Dev/blob/main/images/TableBuildModule.jpg?raw=true)
+        ```py
+        from NewLifeUtils.TableBuildModule import *
+        data = [
+            "header", "header number 2", "num",
+            "data","tooooooooooooooooo long string", "123",
+            "data2", "small","15436"
+            ]
+        table = create_table(3,[],data)
+        print(table)
+        ```
         
         
         ***Translator used**
-Platform: UNKNOWN
+        
+Platform: Windows
 Description-Content-Type: text/markdown
