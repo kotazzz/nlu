@@ -1,3 +1,5 @@
+from os.path import join, dirname
+
 from NewLifeUtils.ColorModule import MCC, ACC
 import sys
 from msvcrt import getwch
