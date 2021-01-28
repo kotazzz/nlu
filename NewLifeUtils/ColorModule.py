@@ -3,6 +3,7 @@ from random import randrange
 
 system("")
 
+
 class BGC:
     """
     BLACK - The background color in the black.
@@ -22,6 +23,7 @@ class BGC:
     BCYAN - The background color in the bright cyan.
     WHITE - The background color in the white.
     """
+
     BLACK = "\x1B[40m"
     RED = "\x1B[41m"
     GREEN = "\x1B[42m"
@@ -42,23 +44,24 @@ class BGC:
 
 class FGC:
     """
-        BLACK - The text color in the black.
-        RED - The text color in the red.
-        GREEN - The text color in the green.
-        YELLOW - The text color in the yellow.
-        BLUE - The text color in the blue.
-        PURPLE - The text color in the purple.
-        CYAN - The text color in the cyan.
-        BGRAY - The text color in the bright gray.
-        GRAY - The text color in the gray.
-        BRED - The text color in the bright red.
-        LIME - The text color in the lime.
-        BYELLOW - The text color in the bright yellow.
-        BBLUE - The text color in the bright blue.
-        MAGENTA - The text color in the magenta.
-        BCYAN - The text color in the bright cyan.
-        WHITE - The text color in the white.
+    BLACK - The text color in the black.
+    RED - The text color in the red.
+    GREEN - The text color in the green.
+    YELLOW - The text color in the yellow.
+    BLUE - The text color in the blue.
+    PURPLE - The text color in the purple.
+    CYAN - The text color in the cyan.
+    BGRAY - The text color in the bright gray.
+    GRAY - The text color in the gray.
+    BRED - The text color in the bright red.
+    LIME - The text color in the lime.
+    BYELLOW - The text color in the bright yellow.
+    BBLUE - The text color in the bright blue.
+    MAGENTA - The text color in the magenta.
+    BCYAN - The text color in the bright cyan.
+    WHITE - The text color in the white.
     """
+
     BLACK = "\x1B[30m"
     RED = "\x1B[31m"
     GREEN = "\x1B[32m"
@@ -92,6 +95,7 @@ class ACC:
     ALTERNATIVE_BUFF - Enables an alternative buffer
     ORIGINAL_BUFF - Returns the original buffer
     """
+
     RESET = "\x1B[0m"
     RELOAD = "\x1B[!p"
     CLEARSCREEN = "\x1Bc"
@@ -115,7 +119,7 @@ class ACC:
         """
         return f"\x1B]2;{title}\x07"
 
-    def rabdomrgb( color="Color"):
+    def rabdomrgb(color="Color"):
         """
         :parameter: color - [gray|color]
         :return: return code of custom random rgb (gray) color
@@ -147,21 +151,21 @@ class ACC:
         """
         return f"\x1B[38;2;{r};{g};{b}m"
 
-    def customc( n):
+    def customc(n):
         """
         :param n: void variable
         :return: code of your color from color dictionary
         """
         return f"\x1B[38;5;{n}m"
 
-    def bcustomrgb( r, g, b):
+    def bcustomrgb(r, g, b):
         """
         :param n: void variable
         :return: code of your color from rgb (background)
         """
         return f"\x1B[48;2;{r};{g};{b}m"
 
-    def bcustomc( n):
+    def bcustomc(n):
         """
         :param n: void variable
         :return: code of your color from color dictionary (background)
@@ -188,6 +192,7 @@ class MCC:
       SAVE_CURSOR - Save the cursor position
       LOAD_CURSOR - Return to the saved cursor position
     """
+
     CURSOR_DBLINK = "\x1B[?12h"
     CURSOR_EBLINK = "\x1B[?12l"
     CURSOR_HIDE = "\x1B[?25l"
