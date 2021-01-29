@@ -1,8 +1,8 @@
-from NewLifeUtils.LoggerModule import *
-from NewLifeUtils.ColorModule import *
-from NewLifeUtils.StringUtilModule import *
-from NewLifeUtils.ExceptModule import *
 import os
+
+from NewLifeUtils.ExceptModule import *
+from NewLifeUtils.LoggerModule import *
+from NewLifeUtils.StringUtilModule import *
 
 default_translation = """
 default_cmd_name: "My CMD"

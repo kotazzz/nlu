@@ -81,7 +81,6 @@ class FGC:
 
 
 class ACC:
-
     """
     RESET - Removes all of the color codes
     RELOAD - Completely resets the console attributes
