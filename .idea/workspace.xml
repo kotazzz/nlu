@@ -4,8 +4,14 @@
     <list default="true" id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils.egg-info/PKG-INFO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/StringUtilModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/StringUtilModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewLifeUtils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/StringUtilModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/StringUtilModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.bat" beforeDir="false" afterPath="$PROJECT_DIR$/menu.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

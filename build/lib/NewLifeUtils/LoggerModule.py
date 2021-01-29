@@ -1062,7 +1062,6 @@ def to_format(pattern, args):
 
 
 def out(text):
-
     now = datetime.datetime.now()
     if enable_file_fog:
         if not file_exist("log"):
@@ -1099,7 +1098,7 @@ tip = lambda message, tag="": out(
         {"message": message, "tag": tag_check(tag, tip_default_tag)},
     )
 )
-cstm = lambda pattern, text, args: out(to_format(pattern, **args))
+cstm = lambda pattern, args: out(to_format(pattern, args))
 
 rea = lambda message, tag="", completion=None: read(message, tag, completion)
 
@@ -1210,7 +1209,7 @@ def read(message, tag="", completion=None):
     readed = input()
 
     out(
-        MCC.up(2)
+        MCC.up()
         + ACC.RESET
         + MCC.ERASE_ALL_LINE
         + to_format(
