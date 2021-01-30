@@ -81,7 +81,6 @@ class FGC:
 
 
 class ACC:
-
     """
     RESET - Removes all of the color codes
     RELOAD - Completely resets the console attributes
@@ -212,6 +211,9 @@ class MCC:
     LOAD_CURSOR = "\x1B[u"
 
     def up(self=1):
+        """
+        :param
+        """
         return f"\x1B[{self}A"
 
     def down(self=1):

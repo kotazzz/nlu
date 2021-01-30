@@ -1,5 +1,5 @@
-import random
 import inspect
+import random
 
 from NewLifeUtils.FileModule import get_files_from_dir
 from NewLifeUtils.LoggerModule import *

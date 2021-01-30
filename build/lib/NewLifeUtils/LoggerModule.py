@@ -1,9 +1,10 @@
-from NewLifeUtils.ColorModule import ACC, MCC, FGC
-from NewLifeUtils.FileModule import create_files, get_yaml, file_exist, file_apwrite
-from NewLifeUtils.StringUtilModule import screate, remove_csi, parse_args
 import datetime
 import sys
 from msvcrt import getwch
+
+from NewLifeUtils.ColorModule import ACC, MCC, FGC
+from NewLifeUtils.FileModule import create_files, get_yaml, file_exist, file_apwrite
+from NewLifeUtils.StringUtilModule import screate, remove_csi, parse_args
 
 default_colors = """
 indianred:
@@ -976,6 +977,19 @@ colormap_type = settings_config["colormap"]
 colormap = {}
 
 
+
+
+
+if colormap_type == 2:
+    settings_color2 = get_yaml("logger_colors2", default_colors2)
+    for color in settings_color2:
+        h = settings_color2[color].lstrip("#")
+        colormap[color] = tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
+else:
+    settings_color1 = get_yaml("logger_colors", default_colors)
+    for color in settings_color1:
+        colormap[color] = ACC.customrgb(*settings_color1[color])
+
 def set_settings(
     new_log_pattern=log_pattern,
     new_wrn_pattern=wrn_pattern,
@@ -1027,18 +1041,6 @@ def set_settings(
     enable_file_fog = new_enable_file_fog
     logtime = new_logtime
     logname = new_logname
-
-
-if colormap_type == 2:
-    settings_color2 = get_yaml("logger_colors2", default_colors2)
-    for color in settings_color2:
-        h = settings_color2[color].lstrip("#")
-        colormap[color] = tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
-else:
-    settings_color1 = get_yaml("logger_colors", default_colors)
-    for color in settings_color1:
-        colormap[color] = ACC.customrgb(*settings_color1[color])
-
 
 def tag_check(tag, default):
     if tag == "":
