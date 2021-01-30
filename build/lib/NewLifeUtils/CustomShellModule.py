@@ -69,10 +69,10 @@ class Shell(object):
         )
         def cls_(console):
             os.system("cls") \
- \
-            @ self.register_command(
-                "info", ["version", "ver"], translation["info_description"], [], []
-            )
+
+        @ self.register_command(
+            "info", ["version", "ver"], translation["info_description"], [], []
+        )
 
         def cls_(console):
             os.system("cls")
@@ -266,11 +266,11 @@ class Shell(object):
         if len(text) > maxlinesize:
             text = sslice(text, maxlinesize)
             for textid, textline in enumerate(text):
-                print(f"{MCC.scroll_down()}{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
+                print(f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
                 log_function[type](textline, f'{tag} ({textid + 1}/{len(text)})')
                 print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
         else:
-            print(f"{MCC.scroll_down()}{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
+            print(f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
             log_function[type](text, tag)
             print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
 

@@ -948,7 +948,7 @@ tag_length: 10
 colormap: 1
 
 file_log: true
-logtime: "%d-%m-%Y_%H-%M-%S"
+logtime: "%d-%m-%Y_%H-%M"
 logname: "log_{time}"
 """
 
@@ -975,7 +975,6 @@ logtime = settings_config["logtime"]
 logname = settings_config["logname"]
 colormap_type = settings_config["colormap"]
 colormap = {}
-
 
 
 
@@ -1053,7 +1052,7 @@ def to_format(pattern, args):
     now = datetime.datetime.now()
 
     return (
-               ACC.RESET +
+        ACC.RESET +
         pattern.format(
             **args,
             **colormap,
@@ -1073,7 +1072,6 @@ def out(text):
             )
 
         file_apwrite("log", remove_csi(text))
-
     sys.stdout.write(text+'\n')
 
 
@@ -1213,8 +1211,9 @@ def read(message, tag="", completion=None):
     readed = input()
 
     out(
-        MCC.up()
-        + ACC.RESET
+        ACC.RESET+
+        MCC.up(1)
+
         + MCC.ERASE_ALL_LINE
         + to_format(
             rea_pattern,

@@ -11,11 +11,11 @@
 [![Inline docs](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev.svg?branch=main)](http://inch-ci.org/github/NewLifeUtils/NewLifeUtils-Dev)
 
 ## Contact me
-[PyPI](https://test.pypi.org/project/NewLifeUtils)
+[PyPI Page](https://pypi.org/project/NewLifeUtils)
 
 [My website](http://newlife-learn.h1n.ru)
 
-[My vk](https://vk.com/newlife2019_szhs)
+[My VK](https://vk.com/newlife2019_szhs)
 
 My Mail: semechkagent@gmail.com
 

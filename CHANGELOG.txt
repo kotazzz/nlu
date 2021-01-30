@@ -1,3 +1,5 @@
+NewLifeUtils 5.1.8:
+
 NewLifeUtils 5.1.7:
     - Addition:  CSM -------    added insert_print()
     - Addition:  CSM -------    added threading
