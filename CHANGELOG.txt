@@ -1,27 +1,40 @@
 NewLifeUtils 5.1.7:
-    - Fix:                                              (-------)
+    - Addition:  CSM -------    added insert_print()
+    - Addition:  CSM -------    added threading
+    - Addition:  CSM -------    code from main to check_params
+    - Addition:  LM  -------    get_read_formatting()
+    - Addition:  UM  -------    safe_format
+    - Change:    CSM -------    Resorted config
+    - Change:    CSM -------    Rewrite registrations
+    - Change:    CSM -------    main() -> run()
+    - Change:    LM  -------    default log name
+    - Change:    LM  -------    print -> sys.stdout.write
+    - Change:    OTH -------    changelog rewrite
+    - Fix:       CSM -------    name changed from camelCase
+    - Fix:       EM  -------    invalid prints
+    - Fix:       LM  -------    completer commented
 
 NewLifeUtils 5.1.6:
-    - Fix:          LM - rea() print up                 (-------)
-    - Fix:          batch install global option         (-------)
-    - Fix:          cstm fix                            (-------)
-    - Removal:      batch uninstall global option       (-------)
-    - Change:       parse_args regex change             (-------)
+    - Change:    UM  -------    parse_args regex change
+    - Fix:       BAT -------    batch install global option
+    - Fix:       LM  -------    cstm fix
+    - Fix:       LM  -------    rea() print up
+    - Removal:   BAT -------    batch uninstall global option
 
 NewLifeUtils 5.1.5:
-    - Fix:          LM - rea() not working              (-------)
+    - Fix:       LM  -------    rea() not working
 
 NewLifeUtils 5.1.4:
-    - Fix:          CSM - Shell() not working           (-------)
-    - Fix:          LM - rea() not working              (-------)
-    - Removal:      Logger smart input future disabled  (-------)
-    - Removal:      CSM {} from start eveny             (-------)
+    - Fix:       CSM -------    Shell() not working
+    - Fix:       LM  -------    rea() not working
+    - Removal:   CSM -------    removed {} from start eveny
+    - Removal:   LM  -------    ogger smart input future disabled
 
 NewLifeUtils 5.1.3:
-    - Addition:     RequestModule                       (8778255)
-    - Addition:     requirements in setup.py            (1a2415d)
-    - Addition:     license in setup.py                 (84c1215)
-    - Addition:     platforms in setup.py               (84c1215)
-    - Addition:     CHANGELOG                           (c5c7247)
-    - Removal:      Copies of the test file             (00258d0)
-    - Update:       gitignore (.idea)                   (00258d0)
+    - Addition:  OTH c5c7247    CHANGELOG
+    - Addition:  RM  8778255    RequestModule
+    - Addition:  STP 1a2415d    requirements in setup.py
+    - Addition:  STP 84c1215    license in setup.py
+    - Addition:  STP 84c1215    platforms in setup.py
+    - Change:    OTH 00258d0    gitignore (.idea)
+    - Removal:   OTH 00258d0    Copies of the test file

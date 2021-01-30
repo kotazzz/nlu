@@ -1,3 +1,4 @@
+import threading
 import os
 
 from NewLifeUtils.ExceptModule import *
@@ -7,16 +8,17 @@ from NewLifeUtils.StringUtilModule import *
 default_translation = """
 default_cmd_name: "My CMD"
 default_cmd_description: "My new command line instance"
+
 welcome: "Welcome to"
+exit_code_label: "Exit with code"
+exit_from_label: "from"
+
 help_description: "This is the help"
 cls_description: "Clears display"
 hello_description: "Say 'Hello'"
 exit_description: "Exit from cmd"
-exit_code_label: "Exit with code"
-exit_from_label: "from"
-
+info_description: "Will provide some information about the system"
 invalid_usage: "Invalid usage. Syntax: {syntax}"
-
 
 same_command:
 - "Console commands with the same names were registered." 
@@ -34,7 +36,7 @@ class Shell(object):
             name=translation["default_cmd_name"],
             about=translation["default_cmd_description"],
     ):
-        self.runState = "init"
+        self.run_state = "init"
         self.cmdname = name
         self.cmdabout = about
 
@@ -42,8 +44,8 @@ class Shell(object):
         self.registered_commands = []
         self.registeredGlobalFunctions = {}
         self.registered_exit_task = []
-        self.run = None
-        self.runState = "setup"
+        self.current_executing = None
+        self.run_state = "setup"
         self.fist_completer = {}
 
         set_settings(
@@ -53,22 +55,29 @@ class Shell(object):
             new_err_default_tag=f"[E] {self.cmdname.title()}",
             new_tip_default_tag=f"[T] {self.cmdname.title()}",
             new_rea_default_tag=f"[R] {self.cmdname.title()}",
-            new_rea_pattern="{cyan}[{time}] {lightcyan}{tag}{snow} : {paleturquoise}{message} {mediumslateblue}[{readed}]",
+            new_rea_pattern="{cyan}[{time}] {lightcyan}{tag}{snow} : {mediumslateblue}{readed}",
         )
 
         @self.register_command(
             "exit", ["quit"], translation["exit_description"], [], []
         )
         def exit_(console):
-            console.runState = "quit"
+            console.run_state = "quit"
 
         @self.register_command(
             "cls", ["clearscreen"], translation["cls_description"], [], []
         )
         def cls_(console):
+            os.system("cls") \
+
+        @ self.register_command(
+            "info", ["version", "ver"], translation["info_description"], [], []
+        )
+
+        def cls_(console):
             os.system("cls")
 
-        @self.register_command("help", [], translation["help_description"], [], [])
+        @self.register_command("help", [], translation["help_description"], [], ["command|'commands'"])
         def help_(console):
             class CLR:
                 MDL = FGC.RED
@@ -135,7 +144,7 @@ class Shell(object):
                             f"{console.cmdname} HELP",
                         )
             else:
-                console.invalidUsage()
+                console.invalid_usage()
 
         @self.register_command(
             "hello", ["hi"], translation["hello_description"], [], ["name"]
@@ -153,7 +162,7 @@ class Shell(object):
         @self.register_exit_task()
         def goodbye(console):
             log(
-                f'{translation["exit_code_label"]}: {console.runState}, {translation["exit_from_label"]}: {console.run}'
+                f'{translation["exit_code_label"]}: {console.run_state}, {translation["exit_from_label"]}: {console.current_executing}'
             )
 
     def register_init_task(self):
@@ -216,7 +225,7 @@ class Shell(object):
 
         return register_from_decorator
 
-    def invalidUsage(self, command):
+    def invalid_usage(self, command):
         class CLR:
             SCMD = ACC.UNDERLINE + FGC.WHITE
             SREQ = FGC.BGRAY
@@ -245,22 +254,48 @@ class Shell(object):
                 tb=False,
             )
 
+    def insert_print(self, type, text, tag=''):
+        log_function = {
+            'log': log,
+            'wrn': wrn,
+            'err': err,
+            'tip': tip,
+            'rea': rea,
+        }
+        maxlinesize = 50
+        if len(text) > maxlinesize:
+            text = sslice(text, maxlinesize)
+            for textid, textline in enumerate(text):
+                print(f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
+                log_function[type](textline, f'{tag} ({textid + 1}/{len(text)})')
+                print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
+        else:
+            print(f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
+            log_function[type](text, tag)
+            print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
+
+        sys.stdout.flush()
+
     def check_params(self):
         return (
                 not (
                         self.paramCount
                         > (
-                                len(self.run["required"])
-                                + len(self.run["optional"])
+                                len(self.current_executing["required"])
+                                + len(self.current_executing["optional"])
                         )
-                        or self.paramCount < len(self.run["required"])
+                        or self.paramCount < len(self.current_executing["required"])
                 )
-                or self.run["skipcheck"]
+                or self.current_executing["skipcheck"]
         )
 
-    def main(self):
+    def run(self):
+        threading.Thread(target=lambda: self.main()).start()
+        while self.run_state != 'run':
+            pass
 
-        self.runState = "starting"
+    def main(self):
+        self.run_state = "starting"
 
         for itask in self.registered_init_task:
             itask(self)
@@ -268,8 +303,8 @@ class Shell(object):
         for command in self.registered_commands:
             self.fist_completer[command["command"]] = {}
 
-        self.runState = "run"
-        while self.runState == "run":
+        self.run_state = "run"
+        while self.run_state == "run":
             try:
                 readed = parse_args(
                     rea(f"{self.cmdname.title()} >", completion=self.fist_completer)
@@ -292,12 +327,12 @@ class Shell(object):
                     else:
                         for registered in self.registered_commands:
                             if self.command in registered["aliases"]:
-                                self.run = registered
+                                self.current_executing = registered
                                 if self.check_params():
                                     registered["run"](self)
                                 else:
-                                    self.invalidUsage(registered)
-                                self.run = None
+                                    self.invalid_usage(registered)
+                                self.current_executing = None
                                 break
                         else:
                             wrn('Unknown Command, type "help"')

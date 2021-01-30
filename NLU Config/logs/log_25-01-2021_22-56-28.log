@@ -1,7 +1,0 @@
-[22:56:28] [L] My Cmd  : Welcome to My CMD
-[22:56:28] [L] My Cmd  : {}
-[22:56:28] [R] My Cmd  : My Cmd > []
-[22:56:30] [R] My Cmd  : My Cmd > [учше]
-[22:56:30] [W] My Cmd  : Unknown Command, type "help"
-[22:56:31] [R] My Cmd  : My Cmd > [exit]
-[22:56:31] [L] My Cmd  : Exit with code: quit, from: None

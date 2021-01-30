@@ -37,13 +37,15 @@ def except_print(exception, exception_type="err", tb=True):
     error_text += "\n-------------- {ExceptionTitle} --------------------\n"
 
     if exception_type == "attention":
+        print()
         log(
             error_text.replace(
                 "{ExceptionTitle}",
                 screate(translation["attention"], 20),
             )
         )
-    if exception_type == "wrn":
+    elif exception_type == "wrn":
+        print()
         wrn(
             error_text.replace(
                 "{ExceptionTitle}",
@@ -51,6 +53,7 @@ def except_print(exception, exception_type="err", tb=True):
             )
         )
     elif exception_type == "err":
+        print()
         err(
             error_text.replace(
                 "{ExceptionTitle}",
@@ -58,6 +61,7 @@ def except_print(exception, exception_type="err", tb=True):
             )
         )
     elif exception_type == "fatal":
+        print()
         err(
             error_text.replace(
                 "{ExceptionTitle}",
@@ -66,6 +70,7 @@ def except_print(exception, exception_type="err", tb=True):
         )
         exit(-1)
     else:
+        print()
         err(
             error_text.replace(
                 "{ExceptionTitle}",
