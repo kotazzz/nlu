@@ -1,4 +1,5 @@
 import os
+
 import yaml
 
 wd_name = "NLU Config"
@@ -26,6 +27,7 @@ def file_exist(alias):
         return True
     except KeyError:
         return False
+
 
 def create_config(alias, filename, folderpath, default_obj={}):
     directory = os.path.join(cwd, folderpath)

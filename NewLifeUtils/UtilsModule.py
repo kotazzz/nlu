@@ -1,10 +1,8 @@
 import inspect
+import random
+import re
 
 from NewLifeUtils.LoggerModule import *
-import random
-
-from NewLifeUtils.FileModule import get_files_from_dir
-import re
 
 
 def select_rand_list(source, use_zero=False):

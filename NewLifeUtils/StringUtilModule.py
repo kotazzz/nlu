@@ -13,8 +13,8 @@ def remove_csi(text):
             "",
             text.encode("unicode_escape").decode(),
         )
-        .encode()
-        .decode("unicode_escape")
+            .encode()
+            .decode("unicode_escape")
     )
 
 
@@ -44,7 +44,7 @@ def sslice(text, chunk_size):
         chunk_size:
     """
     text = str(text)
-    return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
+    return [text[i: i + chunk_size] for i in range(0, len(text), chunk_size)]
 
 
 def parse_args(readed):

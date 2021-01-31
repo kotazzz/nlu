@@ -1,29 +1,28 @@
 import threading
-import os
 
 from NewLifeUtils.ExceptModule import *
+from NewLifeUtils.FileModule import *
 from NewLifeUtils.LoggerModule import *
 from NewLifeUtils.StringUtilModule import *
-from NewLifeUtils.FileModule import *
 
 default_translation = {
-  "default_cmd_name": "My CMD",
-  "default_cmd_description": "My new command line instance",
-  "welcome": "Welcome to",
-  "exit_code_label": "Exit with code",
-  "exit_from_label": "from",
-  "help_description": "This is the help",
-  "cls_description": "Clears display",
-  "hello_description": "Say 'Hello'",
-  "exit_description": "Exit from cmd",
-  "info_description": "Will provide some information about the system",
-  "parse_description": "Will provide some information about the system",
-  "invalid_usage": "Invalid usage. Syntax: {syntax}",
-  "same_command": [
-    "Console commands with the same names were registered.",
-    "Here is a list of registered console commands (their names):",
-    "{list}"
-  ]
+    "default_cmd_name": "My CMD",
+    "default_cmd_description": "My new command line instance",
+    "welcome": "Welcome to",
+    "exit_code_label": "Exit with code",
+    "exit_from_label": "from",
+    "help_description": "This is the help",
+    "cls_description": "Clears display",
+    "hello_description": "Say 'Hello'",
+    "exit_description": "Exit from cmd",
+    "info_description": "Will provide some information about the system",
+    "parse_description": "Will provide some information about the system",
+    "invalid_usage": "Invalid usage. Syntax: {syntax}",
+    "same_command": [
+        "Console commands with the same names were registered.",
+        "Here is a list of registered console commands (their names):",
+        "{list}"
+    ]
 }
 
 create_config("shell_translation", "lang.yml", "shell", default_translation)
@@ -32,9 +31,9 @@ translation = get_pointyaml("shell_translation")
 
 class Shell(object):
     def __init__(
-        self,
-        name=translation.default_cmd_name,
-        about=translation.default_cmd_description,
+            self,
+            name=translation.default_cmd_name,
+            about=translation.default_cmd_description,
     ):
         self.run_state = "init"
         self.cmdname = name
@@ -106,10 +105,10 @@ class Shell(object):
                             f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
                         )
                     helpPage += (
-                        f'\t{CLR.CMD}{command["command"]}\n'
-                        + f'\t\t{CLR.CMDDSK}Description {CLR.R}: {CLR.CMDDSK}{command["description"]}\n'
-                        + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
-                        + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
+                            f'\t{CLR.CMD}{command["command"]}\n'
+                            + f'\t\t{CLR.CMDDSK}Description {CLR.R}: {CLR.CMDDSK}{command["description"]}\n'
+                            + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
+                            + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
                     )
                 tip(helpPage, f"{console.cmdname} HELP")
             elif console.paramCount == 1:
@@ -129,10 +128,10 @@ class Shell(object):
                             if command["optional"]:
                                 syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
                             helpPage += (
-                                f'\t{CLR.CMD}{command["command"]}\n'
-                                + f'\t\t{CLR.CMDDSK}Description: {command["description"]}\n'
-                                + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
-                                + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
+                                    f'\t{CLR.CMD}{command["command"]}\n'
+                                    + f'\t\t{CLR.CMDDSK}Description: {command["description"]}\n'
+                                    + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
+                                    + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
                             )
                             tip(helpPage, f"{console.cmdname} HELP")
                             finded = True
@@ -228,13 +227,13 @@ class Shell(object):
             wrn(f"You can't get rid of the {name} command")
 
     def register_command(
-        self,
-        command,
-        aliases=[],
-        description="my simple command",
-        required=[],
-        optional=["param"],
-        skipcheck=False,
+            self,
+            command,
+            aliases=[],
+            description="my simple command",
+            required=[],
+            optional=["param"],
+            skipcheck=False,
     ):
         def register_from_decorator(command_function):
             self.registered_commands.append(
@@ -310,15 +309,15 @@ class Shell(object):
 
     def check_params(self):
         return (
-            not (
-                self.paramCount
-                > (
-                    len(self.current_executing["required"])
-                    + len(self.current_executing["optional"])
+                not (
+                        self.paramCount
+                        > (
+                                len(self.current_executing["required"])
+                                + len(self.current_executing["optional"])
+                        )
+                        or self.paramCount < len(self.current_executing["required"])
                 )
-                or self.paramCount < len(self.current_executing["required"])
-            )
-            or self.current_executing["skipcheck"]
+                or self.current_executing["skipcheck"]
         )
 
     def run(self):

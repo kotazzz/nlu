@@ -32,14 +32,14 @@ def find_max(row_count, data):
 
 
 def create_table(
-    row_count,
-    sizes,
-    data,
-    title="TABLE",
-    header=True,
-    table_element="",
-    color="",
-    align="l",
+        row_count,
+        sizes,
+        data,
+        title="TABLE",
+        header=True,
+        table_element="",
+        color="",
+        align="l",
 ):
     if not sizes:
         sizes = find_max(row_count, data)
@@ -101,13 +101,13 @@ def create_table(
 
 
 def create_multiline_table(
-    row_count,
-    sizes,
-    data,
-    title="TABLE",
-    table_element="",
-    color="",
-    align="l",
+        row_count,
+        sizes,
+        data,
+        title="TABLE",
+        table_element="",
+        color="",
+        align="l",
 ):
     if not sizes:
         sizes = find_max(row_count, data)
@@ -219,7 +219,7 @@ def join_column(columns):
 
 
 def get_record(row_count, data, record_id):
-    return data[row_count * record_id : row_count * record_id + row_count]
+    return data[row_count * record_id: row_count * record_id + row_count]
 
 
 def get_record_count(row_count, data):
