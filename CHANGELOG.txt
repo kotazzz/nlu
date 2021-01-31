@@ -1,4 +1,12 @@
 NewLifeUtils 5.1.8:
+    - Addition:  CSM -------    invalid_usage translation
+    - Addition:  UM  -------    hex_to_rgb function
+    - Change:    BAT -------    full Yaml support and dot notation
+    - Change:    CSM -------    For command use decorators
+    - Change:    LM  -------    lambda to function
+    - Change:    UM  -------    safe_format more abilities
+    - Fix:       SUM -------    parse_args fix
+    - Removal:   OTH -------    Removed env
 
 NewLifeUtils 5.1.7:
     - Addition:  CSM -------    added insert_print()
