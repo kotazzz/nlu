@@ -1210,39 +1210,43 @@ def out(text):
         file_apwrite("log", remove_csi(text))
     sys.stdout.write(text + "\n")
 
+def log(message, tag=""):
+  out(
+    to_format(
+      log_pattern,
+      {"message": message, "tag": tag_check(tag, log_default_tag)},
+    )
+  )
 
-log = lambda message, tag="": out(
+def wrn(message, tag=""):
+  out(
     to_format(
-        log_pattern,
-        {"message": message, "tag": tag_check(tag, log_default_tag)},
+      wrn_pattern,
+      {"message": message, "tag": tag_check(tag, wrn_default_tag)},
     )
-)
-wrn = lambda message, tag="": out(
+  )
+def err(message, tag=""):
+  out(
     to_format(
-        wrn_pattern,
-        {"message": message, "tag": tag_check(tag, wrn_default_tag)},
+      err_pattern,
+      {"message": message, "tag": tag_check(tag, err_default_tag)},
     )
-)
-err = lambda message, tag="": out(
+  )
+def tip(message, tag=""):
+  out(
     to_format(
-        err_pattern,
-        {"message": message, "tag": tag_check(tag, err_default_tag)},
-    )
-)
-tip = lambda message, tag="": out(
-    to_format(
-        tip_pattern,
-        {"message": message, "tag": tag_check(tag, tip_default_tag)},
-    )
-)
-cstm = lambda pattern, args: out(to_format(pattern, args))
+      tip_pattern,
+      {"message": message, "tag": tag_check(tag, tip_default_tag)},
+    ))
 
-rea = lambda message, tag="", completion=None: read(message, tag, completion)
+def cstm(pattern, args):
+  out(to_format(pattern, args))
+def rea(message, tag="", completion=None):
+  read(message, tag, completion)
 
 
 def get_read_formatting():
     return ACC.bcustomrgb(0, 43, 112) + ACC.customrgb(235, 54, 30)
-
 
 def read(message, tag="", completion=None):
     if completion is None:

@@ -3,43 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/exceptsettings/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NLU Config/exceptsettings/lang.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logger/color_schema.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NLU Config/logger/color_schema.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logger/color_schema_2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NLU Config/logger/color_schema_2.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logger/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NLU Config/logger/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_30-01-2021_20-04.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_08-58.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_08-59.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-11.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-13.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-25.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-26.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-28.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-32.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-33.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-34.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-37.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-41.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-43.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-44.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-45.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-46.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-48.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/logs/log_31-01-2021_09-49.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/shell/lang.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NLU Config/shell/lang.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NLU Config/tests/test.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewLifeUtils/CustomShellModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/CustomShellModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewLifeUtils/ExceptModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/ExceptModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewLifeUtils/FileModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/FileModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewLifeUtils/StringUtilModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/StringUtilModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/CustomShellModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/CustomShellModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/ExceptModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/ExceptModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/NewLifeUtils/LoggerModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/UtilsModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/UtilsModule.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
