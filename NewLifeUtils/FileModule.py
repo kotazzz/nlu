@@ -36,9 +36,7 @@ def create_config(alias, filename, folderpath, default_obj={}):
     create_dirs(directory)
     if not os.path.exists(os.path.join(directory, filename)) or rawread(alias) == "":
         f = open(os.path.join(directory, filename), "w")
-        yaml_write = yaml.dump(
-            default_obj,
-            default_flow_style=False)
+        yaml_write = yaml.dump(default_obj, default_flow_style=False)
         file_rewrite(alias, yaml_write)
         return False
 

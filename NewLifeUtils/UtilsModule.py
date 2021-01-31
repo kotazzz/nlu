@@ -78,8 +78,8 @@ def bprint(text, maxlinelength=9, font="default"):
 
 
 def format_number(
-        number=random.randrange(1111111111111111, 9999999999999999),
-        numform="4444",
+    number=random.randrange(1111111111111111, 9999999999999999),
+    numform="4444",
 ):
     # A total conversion
     number = int(number)
@@ -103,7 +103,7 @@ def format_number(
     result = str(number)
     shift = 0
     for pos in numform:
-        result = result[: int(pos) + shift] + " " + result[int(pos) + shift:]
+        result = result[: int(pos) + shift] + " " + result[int(pos) + shift :]
         shift += int(pos) + 1
     return result
 
@@ -133,11 +133,15 @@ def hex_to_rgb(hx, hsl=False):
         Tuple of length 3 consisting of either int or float values.
     Raise:
         ValueError: If given value is not a valid HEX code."""
-    if re.compile(r'#[a-fA-F0-9]{3}(?:[a-fA-F0-9]{3})?$').match(hx):
+    if re.compile(r"#[a-fA-F0-9]{3}(?:[a-fA-F0-9]{3})?$").match(hx):
         div = 255.0 if hsl else 0
         if len(hx) <= 4:
-            return tuple(int(hx[i] * 2, 16) / div if div else
-                         int(hx[i] * 2, 16) for i in (1, 2, 3))
-        return tuple(int(hx[i:i + 2], 16) / div if div else
-                     int(hx[i:i + 2], 16) for i in (1, 3, 5))
+            return tuple(
+                int(hx[i] * 2, 16) / div if div else int(hx[i] * 2, 16)
+                for i in (1, 2, 3)
+            )
+        return tuple(
+            int(hx[i : i + 2], 16) / div if div else int(hx[i : i + 2], 16)
+            for i in (1, 3, 5)
+        )
     raise ValueError(f'"{hx}" is not a valid HEX code.')

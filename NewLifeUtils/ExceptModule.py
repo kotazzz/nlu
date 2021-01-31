@@ -13,7 +13,7 @@ default_lang = {
     "warning": "Warn",
     "error": "Error",
     "fatal": "Fatal error",
-    "wrong": "Something wrong..."
+    "wrong": "Something wrong...",
 }
 create_config("except_translation", "lang.yml", "exceptsettings", default_lang)
 translation = get_pointyaml("except_translation")
@@ -24,7 +24,7 @@ def except_print(exception, exception_type="err", tb=True):
     error_text += f"{translation.type}: {type(exception).__name__}\n\n"
 
     if exception.args == 0:
-        error_text += f'{translation.unknown}\n'
+        error_text += f"{translation.unknown}\n"
     else:
         error_text += (
             f'{translation["about"]}:\n\t{(chr(10) + chr(9)).join(exception.args)}\t\n'
