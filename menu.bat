@@ -6,6 +6,8 @@ pause
 CLS
 :START_NOCLS
 SET M=''
+SET ENV=D:\Documents\Py_env\NewLifeUtils env
+SET CURRENT=%cd%
 setlocal
 call :setESC
 ECHO %ESC%[40;92m+--------------------------------------+-------+
@@ -56,11 +58,13 @@ ECHO FINISHING INSTALL ---------------------
 GOTO MENU
 
 :RTEST
-env\Scripts\python test.py
+"%ENV%\Scripts\python.exe" "%CURRENT%\test.py"
 GOTO MENU
 
 :RTSTM
-env\Scripts\python test.py
+"%ENV%\Scripts\python.exe" "%CURRENT%\test.py"
+PAUSE
+CLS
 GOTO RTSTM
 
 :CRCMD
