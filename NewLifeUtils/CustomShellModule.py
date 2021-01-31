@@ -18,6 +18,8 @@ cls_description: "Clears display"
 hello_description: "Say 'Hello'"
 exit_description: "Exit from cmd"
 info_description: "Will provide some information about the system"
+parse_description: "Will provide some information about the system"
+
 invalid_usage: "Invalid usage. Syntax: {syntax}"
 
 same_command:
@@ -32,9 +34,9 @@ translation = get_yaml("shell_translation", default_translation)
 
 class Shell(object):
     def __init__(
-            self,
-            name=translation["default_cmd_name"],
-            about=translation["default_cmd_description"],
+        self,
+        name=translation["default_cmd_name"],
+        about=translation["default_cmd_description"],
     ):
         self.run_state = "init"
         self.cmdname = name
@@ -68,16 +70,14 @@ class Shell(object):
             "cls", ["clearscreen"], translation["cls_description"], [], []
         )
         def cls_(console):
-            os.system("cls") \
-
-        @ self.register_command(
-            "info", ["version", "ver"], translation["info_description"], [], []
-        )
+            os.system("cls")
 
         def cls_(console):
             os.system("cls")
 
-        @self.register_command("help", [], translation["help_description"], [], ["command|'commands'"])
+        @self.register_command(
+            "help", [], translation["help_description"], [], ["command|'commands'"]
+        )
         def help_(console):
             class CLR:
                 MDL = FGC.RED
@@ -108,10 +108,10 @@ class Shell(object):
                             f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
                         )
                     helpPage += (
-                            f'\t{CLR.CMD}{command["command"]}\n'
-                            + f'\t\t{CLR.CMDDSK}Description {CLR.R}: {CLR.CMDDSK}{command["description"]}\n'
-                            + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
-                            + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
+                        f'\t{CLR.CMD}{command["command"]}\n'
+                        + f'\t\t{CLR.CMDDSK}Description {CLR.R}: {CLR.CMDDSK}{command["description"]}\n'
+                        + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
+                        + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
                     )
                 tip(helpPage, f"{console.cmdname} HELP")
             elif console.paramCount == 1:
@@ -131,10 +131,10 @@ class Shell(object):
                             if command["optional"]:
                                 syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
                             helpPage += (
-                                    f'\t{CLR.CMD}{command["command"]}\n'
-                                    + f'\t\t{CLR.CMDDSK}Description: {command["description"]}\n'
-                                    + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
-                                    + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
+                                f'\t{CLR.CMD}{command["command"]}\n'
+                                + f'\t\t{CLR.CMDDSK}Description: {command["description"]}\n'
+                                + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
+                                + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
                             )
                             tip(helpPage, f"{console.cmdname} HELP")
                             finded = True
@@ -154,6 +154,35 @@ class Shell(object):
                 log(f"Hello, {console.parametrs[0]}")
             else:
                 log(f"Hello, world!")
+
+        @self.register_command(
+            "parse", ["debug_args"], translation["parse_description"], [], [], False
+        )
+        def parse_(console):
+            p = parse_args(read("Input parse string"))["split"]
+            ps = []
+            for pn, s in enumerate(p):
+                ps.append(f"{pn}: {s}")
+            for psx in ps:
+                log(psx)
+
+        @self.register_command(
+            "info", ["version", "ver"], translation["info_description"], [], []
+        )
+        def info_(console):
+            v = sys.version_info
+            info = [
+                f"NewLifeUtils Version: {FGC.BBLUE}{NewLifeUtils.__version__}",
+                f"Platform: {FGC.BBLUE}{sys.platform} ({platform.system()})",
+                f"Machine: {FGC.BBLUE}{platform.machine()}",
+                f"Architecture: {FGC.BBLUE}{' '.join(platform.architecture())}",
+                f"Name: {FGC.BBLUE}{platform.node()}",
+                f"Encoding: {FGC.BBLUE}{sys.getdefaultencoding()}",
+                f"API: {FGC.BBLUE}{sys.api_version}",
+                f"Python: {FGC.BBLUE}{v.major}.{v.minor}.{v.micro} ({v.serial}) {v.releaselevel} ",
+            ]
+            for line in info:
+                log(line)
 
         @self.register_init_task()
         def welcome(console):
@@ -192,22 +221,22 @@ class Shell(object):
         return register_from_decorator
 
     def unregister_by_name(self, name):
-        if name not in ['exit', 'help']:
+        if name not in ["exit", "help"]:
             for commandid, command in enumerate(self.registered_commands, start=0):
-                if command['command'] == name:
+                if command["command"] == name:
                     self.registered_commands.pop(commandid)
                     break
         else:
             wrn(f"You can't get rid of the {name} command")
 
     def register_command(
-            self,
-            command,
-            aliases=[],
-            description="my simple command",
-            required=[],
-            optional=["param"],
-            skipcheck=False,
+        self,
+        command,
+        aliases=[],
+        description="my simple command",
+        required=[],
+        optional=["param"],
+        skipcheck=False,
     ):
         def register_from_decorator(command_function):
             self.registered_commands.append(
@@ -254,44 +283,49 @@ class Shell(object):
                 tb=False,
             )
 
-    def insert_print(self, type, text, tag=''):
+    def insert_print(self, type, text, tag=""):
         log_function = {
-            'log': log,
-            'wrn': wrn,
-            'err': err,
-            'tip': tip,
-            'rea': rea,
+            "log": log,
+            "wrn": wrn,
+            "err": err,
+            "tip": tip,
+            "rea": rea,
         }
         maxlinesize = 50
         if len(text) > maxlinesize:
             text = sslice(text, maxlinesize)
             for textid, textline in enumerate(text):
-                print(f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
-                log_function[type](textline, f'{tag} ({textid + 1}/{len(text)})')
+                print(
+                    f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}",
+                    end="",
+                )
+                log_function[type](textline, f"{tag} ({textid + 1}/{len(text)})")
                 print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
         else:
-            print(f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}", end="")
+            print(
+                f"{ACC.RESET}{MCC.SAVE_CURSOR}{MCC.push_down()}{MCC.ERASE_ALL_LINE}",
+                end="",
+            )
             log_function[type](text, tag)
             print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
-
         sys.stdout.flush()
 
     def check_params(self):
         return (
-                not (
-                        self.paramCount
-                        > (
-                                len(self.current_executing["required"])
-                                + len(self.current_executing["optional"])
-                        )
-                        or self.paramCount < len(self.current_executing["required"])
+            not (
+                self.paramCount
+                > (
+                    len(self.current_executing["required"])
+                    + len(self.current_executing["optional"])
                 )
-                or self.current_executing["skipcheck"]
+                or self.paramCount < len(self.current_executing["required"])
+            )
+            or self.current_executing["skipcheck"]
         )
 
     def run(self):
         threading.Thread(target=lambda: self.main()).start()
-        while self.run_state != 'run':
+        while self.run_state != "run":
             pass
 
     def main(self):

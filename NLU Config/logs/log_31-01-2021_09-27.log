@@ -1,0 +1,22 @@
+[09:27:53] [L] My Cmd  : Welcome to My CMD
+[09:27:55] [R] My Cmd  : cls
+[09:28:00] [R] My Cmd  : parse
+[09:28:10] [R] My Cmd  : Mycmd 1 2 hek
+[09:28:10] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: AttributeError
+
+More information:
+	'str' object has no attribute 'append'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 331, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 18, in parse
+    ps.append(f'{pn}: {s}')
+AttributeError: 'str' object has no attribute 'append'
+
+-------------- Error                --------------------
+
+[09:28:18] [R] My Cmd  : exit
+[09:28:18] [L] My Cmd  : Exit with code: quit, from: None

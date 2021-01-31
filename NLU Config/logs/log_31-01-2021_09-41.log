@@ -1,0 +1,13 @@
+[09:41:27] [L] My Cmd  : Welcome to My CMD
+[09:41:28] [R] My Cmd  : info2
+[09:41:28] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:41:28] [L] My Cmd  : Platform: win32Encoding: utf-8API: 1013VerInf: sys.version_info(major=3, minor=9, micro=1, releaselevel='final', serial=0)
+[09:41:59] [R] My Cmd  : exit
+[09:41:59] [L] My Cmd  : Exit with code: quit, from: None
+[09:41:59] [L] My Cmd  : Welcome to My CMD
+[09:42:02] [R] My Cmd  : info2
+[09:42:02] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:42:02] [L] My Cmd  : Platform: win32Encoding: utf-8API: 1013VerInf: sys.version_info(major=3, minor=9, micro=1, releaselevel='final', serial=0)
+[09:42:02] [L] My Cmd  : sys.version_info(major=3, minor=9, micro=1, releaselevel='final', serial=0)
+[09:43:51] [R] My Cmd  : exit
+[09:43:51] [L] My Cmd  : Exit with code: quit, from: None

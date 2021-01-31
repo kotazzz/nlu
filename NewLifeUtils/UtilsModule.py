@@ -78,8 +78,8 @@ def bprint(text, maxlinelength=9, font="default"):
 
 
 def format_number(
-        number=random.randrange(1111111111111111, 9999999999999999),
-        numform="4444",
+    number=random.randrange(1111111111111111, 9999999999999999),
+    numform="4444",
 ):
     # A total conversion
     number = int(number)
@@ -103,7 +103,7 @@ def format_number(
     result = str(number)
     shift = 0
     for pos in numform:
-        result = result[: int(pos) + shift] + " " + result[int(pos) + shift:]
+        result = result[: int(pos) + shift] + " " + result[int(pos) + shift :]
         shift += int(pos) + 1
     return result
 
@@ -111,7 +111,7 @@ def format_number(
 def safe_format(text, keys):
     class SafeDict(dict):
         def __missing__(self, key):
-            return '{' + key + '}'
+            return "{" + key + "}"
 
     return text.format_map(SafeDict(**keys))
 

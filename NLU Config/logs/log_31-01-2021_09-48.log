@@ -1,0 +1,60 @@
+[09:48:07] [L] My Cmd  : Welcome to My CMD
+[09:48:08] [R] My Cmd  : info2
+[09:48:08] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: AttributeError
+
+More information:
+	'tuple' object has no attribute 'reverse'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 331, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 31, in info_
+    f"Architecture: {FGC.BBLUE}{' '.join(platform.architecture().reverse())}",
+AttributeError: 'tuple' object has no attribute 'reverse'
+
+-------------- Error                --------------------
+
+[09:48:24] [R] My Cmd  : exit
+[09:48:24] [L] My Cmd  : Exit with code: quit, from: None
+[09:48:25] [L] My Cmd  : Welcome to My CMD
+[09:48:26] [R] My Cmd  : info2
+[09:48:26] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	can only join an iterable	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 331, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 31, in info_
+    f"Architecture: {FGC.BBLUE}{' '.join(list(platform.architecture()).reverse())}",
+TypeError: can only join an iterable
+
+-------------- Error                --------------------
+
+[09:48:41] [R] My Cmd  : exit
+[09:48:41] [L] My Cmd  : Exit with code: quit, from: None
+[09:48:41] [L] My Cmd  : Welcome to My CMD
+[09:48:42] [R] My Cmd  : info2
+[09:48:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	can only join an iterable	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 331, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 31, in info_
+    f"Architecture: {FGC.BBLUE}{' '.join([platform.architecture()].reverse())}",
+TypeError: can only join an iterable
+
+-------------- Error                --------------------
+
+[09:49:06] [R] My Cmd  : exit
+[09:49:06] [L] My Cmd  : Exit with code: quit, from: None

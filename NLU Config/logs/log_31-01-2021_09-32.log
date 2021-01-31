@@ -1,0 +1,11 @@
+[09:32:33] [L] My Cmd  : Welcome to My CMD
+[09:32:35] [R] My Cmd  : cls
+[09:32:41] [R] My Cmd  : info
+[09:32:52] [R] My Cmd  : exit
+[09:32:52] [L] My Cmd  : Exit with code: quit, from: None
+[09:32:52] [L] My Cmd  : Welcome to My CMD
+[09:32:55] [R] My Cmd  : info2
+[09:32:55] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:33:07] [R] My Cmd  : 
+[09:33:08] [R] My Cmd  : exit
+[09:33:08] [L] My Cmd  : Exit with code: quit, from: None

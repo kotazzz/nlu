@@ -1,0 +1,12 @@
+[09:46:44] [L] My Cmd  : Welcome to My CMD
+[09:46:46] [R] My Cmd  : info2
+[09:46:46] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:46:46] [L] My Cmd  : Platform: win32
+[09:46:46] [L] My Cmd  : Platform: AMD64
+[09:46:46] [L] My Cmd  : Platform: ('64bit', 'WindowsPE')
+[09:46:46] [L] My Cmd  : Platform: DESKTOP-MQG84BI
+[09:46:46] [L] My Cmd  : Encoding: utf-8
+[09:46:46] [L] My Cmd  : API: 1013
+[09:46:46] [L] My Cmd  : Python: 3.9.1 (0) final 
+[09:48:06] [R] My Cmd  : exit
+[09:48:06] [L] My Cmd  : Exit with code: quit, from: None

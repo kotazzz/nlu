@@ -1,0 +1,28 @@
+[09:26:31] [L] My Cmd  : Welcome to My CMD
+[09:26:34] [R] My Cmd  : exit
+[09:26:34] [L] My Cmd  : Exit with code: quit, from: None
+[09:26:40] [L] My Cmd  : Welcome to My CMD
+[09:26:41] [R] My Cmd  : exit
+[09:26:41] [L] My Cmd  : Exit with code: quit, from: None
+[09:26:41] [L] My Cmd  : Welcome to My CMD
+[09:26:54] [R] My Cmd  : parse
+[09:26:58] [R] My Cmd  : Hello world
+[09:26:58] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	string indices must be integers	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 331, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 15, in parse
+    p = read("Input parse string")["split"]
+TypeError: string indices must be integers
+
+-------------- Error                --------------------
+
+[09:27:51] [R] My Cmd  : 
+[09:27:52] [R] My Cmd  : exit
+[09:27:52] [L] My Cmd  : Exit with code: quit, from: None

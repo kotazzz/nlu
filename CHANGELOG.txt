@@ -30,7 +30,7 @@ NewLifeUtils 5.1.4:
     - Fix:       CSM -------    Shell() not working
     - Fix:       LM  -------    rea() not working
     - Removal:   CSM -------    removed {} from start eveny
-    - Removal:   LM  -------    ogger smart input future disabled
+    - Removal:   LM  -------    logger smart input future disabled
 
 NewLifeUtils 5.1.3:
     - Addition:  OTH c5c7247    CHANGELOG

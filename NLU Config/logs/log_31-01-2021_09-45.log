@@ -1,0 +1,10 @@
+[09:45:15] [L] My Cmd  : Welcome to My CMD
+[09:45:16] [R] My Cmd  : info2
+[09:45:16] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:45:16] [L] My Cmd  : Platform: win32
+[09:45:16] [L] My Cmd  : Platform: ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+[09:45:16] [L] My Cmd  : Encoding: utf-8
+[09:45:16] [L] My Cmd  : API: 1013
+[09:45:16] [L] My Cmd  : Python: 3.9.1 (0) final 
+[09:46:43] [R] My Cmd  : exit
+[09:46:43] [L] My Cmd  : Exit with code: quit, from: None

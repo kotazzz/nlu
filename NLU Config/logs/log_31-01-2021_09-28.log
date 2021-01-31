@@ -1,0 +1,18 @@
+[09:28:18] [L] My Cmd  : Welcome to My CMD
+[09:28:31] [R] My Cmd  : hello
+[09:28:31] [L] My Cmd  : Hello, world!
+[09:28:36] [R] My Cmd  : exe
+[09:28:36] [W] My Cmd  : Unknown Command, type "help"
+[09:28:41] [R] My Cmd  : parse
+[09:28:45] [R] My Cmd  : Hello world
+[09:28:45] [L] My Cmd  : 0: Hello
+[09:28:45] [L] My Cmd  : 1: world
+[09:28:49] [R] My Cmd  : parse
+[09:29:17] [R] My Cmd  : DemoDimalak2Сегодня, в 9:22
+[09:29:17] [L] My Cmd  : 0: DemoDimalak2Сегодня,
+[09:29:17] [L] My Cmd  : 1: в
+[09:29:17] [L] My Cmd  : 2: 9:22
+[09:29:19] [R] My Cmd  : я задолбался
+[09:29:19] [W] My Cmd  : Unknown Command, type "help"
+[09:32:33] [R] My Cmd  : exit
+[09:32:33] [L] My Cmd  : Exit with code: quit, from: None

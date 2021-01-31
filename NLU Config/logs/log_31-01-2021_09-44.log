@@ -1,0 +1,19 @@
+[09:44:13] [L] My Cmd  : Welcome to My CMD
+[09:44:15] [R] My Cmd  : info2
+[09:44:15] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:44:15] [L] My Cmd  : Platform: win32
+[09:44:15] [L] My Cmd  : Encoding: utf-8
+[09:44:15] [L] My Cmd  : API: 1013
+[09:44:15] [L] My Cmd  : VerInf: 3.9.1 (0) final 
+[09:45:06] [R] My Cmd  : exot
+[09:45:06] [W] My Cmd  : Unknown Command, type "help"
+[09:45:08] [R] My Cmd  : info2
+[09:45:08] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:45:08] [L] My Cmd  : Platform: win32
+[09:45:08] [L] My Cmd  : Encoding: utf-8
+[09:45:08] [L] My Cmd  : API: 1013
+[09:45:08] [L] My Cmd  : VerInf: 3.9.1 (0) final 
+[09:45:13] [R] My Cmd  : exot
+[09:45:13] [W] My Cmd  : Unknown Command, type "help"
+[09:45:15] [R] My Cmd  : exit
+[09:45:15] [L] My Cmd  : Exit with code: quit, from: None

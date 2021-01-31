@@ -3,40 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/build_env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cache.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/autocompletion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/base_command.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/cmdoptions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/command_context.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/main_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/progress_bars.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/req_command.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/spinners.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/cli/status_codes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/commands/cache.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/commands/check.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/commands/completion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/commands/configuration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/commands/debug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/commands/download.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/commands/freeze.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/appdirs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/_compat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/_structures.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/_typing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/markers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/requirements.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/specifiers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/tags.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/_vendor/packaging/version.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/extern/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pkg_resources/tests/data/my-test-package-source/setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.bat" beforeDir="false" afterPath="$PROJECT_DIR$/menu.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/CustomShellModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/CustomShellModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/FileModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/FileModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/locations.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/locations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/resolution/resolvelib/factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/__about__.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/__about__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/markers.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/markers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/requirements.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/requirements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/specifiers.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/specifiers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/packaging/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/vendor.txt" beforeDir="false" afterPath="$PROJECT_DIR$/env/Lib/site-packages/pip/_vendor/vendor.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Scripts/pip.exe" beforeDir="false" afterPath="$PROJECT_DIR$/env/Scripts/pip.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Scripts/pip3.9.exe" beforeDir="false" afterPath="$PROJECT_DIR$/env/Scripts/pip3.9.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/Scripts/pip3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/env/Scripts/pip3.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,0 +1,13 @@
+[09:34:13] [L] My Cmd  : Welcome to My CMD
+[09:34:14] [R] My Cmd  : info2
+[09:34:14] [L] My Cmd  : NewLifeUtils Version: 5.1.8Platform: win32
+[09:34:24] [R] My Cmd  : exit
+[09:34:24] [L] My Cmd  : Exit with code: quit, from: None
+[09:34:24] [L] My Cmd  : Welcome to My CMD
+[09:34:27] [R] My Cmd  : info2
+[09:34:27] [L] My Cmd  : NewLifeUtils Version: 5.1.8
+[09:34:27] [L] My Cmd  : Platform: win32
+[09:37:42] [R] My Cmd  : ex
+[09:37:42] [W] My Cmd  : Unknown Command, type "help"
+[09:37:43] [R] My Cmd  : exit
+[09:37:43] [L] My Cmd  : Exit with code: quit, from: None
