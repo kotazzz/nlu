@@ -1,6 +1,5 @@
 import os
 import yaml
-import collections
 
 wd_name = "NLU Config"
 cwd = os.path.join(os.getcwd(), wd_name)
@@ -21,6 +20,13 @@ def create_dirs(path):
         os.makedirs(path)
 
 
+def file_exist(alias):
+    try:
+        os.path.exists(files[alias])
+        return True
+    except KeyError:
+        return False
+
 def create_config(alias, filename, folderpath, default_obj={}):
     directory = os.path.join(cwd, folderpath)
     files[alias] = os.path.join(directory, filename)
@@ -28,13 +34,15 @@ def create_config(alias, filename, folderpath, default_obj={}):
     create_dirs(directory)
     if not os.path.exists(os.path.join(directory, filename)) or rawread(alias) == "":
         f = open(os.path.join(directory, filename), "w")
-        yaml_write = yaml.dump(default_obj, default_flow_style=False)
+        yaml_write = yaml.dump(
+            default_obj,
+            default_flow_style=False)
         file_rewrite(alias, yaml_write)
         return False
 
 
 def get_pointyaml(alias):
-    class AttrDict(collections.defaultdict):
+    class AttrDict(dict):
         __getattr__ = dict.__getitem__
         __setattr__ = dict.__setitem__
         __delattr__ = dict.__delitem__
