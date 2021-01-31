@@ -1,0 +1,20 @@
+
+default_cmd_name: "My CMD"
+default_cmd_description: "My new command line instance"
+
+welcome: "Welcome to"
+exit_code_label: "Exit with code"
+exit_from_label: "from"
+
+help_description: "This is the help"
+cls_description: "Clears display"
+hello_description: "Say 'Hello'"
+exit_description: "Exit from cmd"
+info_description: "Will provide some information about the system"
+invalid_usage: "Invalid usage. Syntax: {syntax}"
+
+same_command:
+- "Console commands with the same names were registered." 
+- "Here is a list of registered console commands (their names):"
+- "{list}"
+
