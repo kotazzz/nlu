@@ -1,0 +1,62 @@
+{}
+
+[15:58:02] Log        : 1
+[15:58:02] 1          : 1
+[15:58:02] Warn       : 1
+[15:58:02] Error      : 1
+[15:58:02] Tip        : 1
+[15:58:03] Read       : 1:  > [asd]
+[15:58:03] Warn       : 
+-------------- Warn                 --------------------
+Type: ZeroDivisionError
+
+More information:
+	division by zero	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 21, in <module>
+    0/0
+ZeroDivisionError: division by zero
+
+-------------- Warn                 --------------------
+
+[15:58:43] Log        : 1
+[15:58:43] 1          : 1
+[15:58:43] Warn       : 1
+[15:58:43] Error      : 1
+[15:58:43] Tip        : 1
+[15:58:44] Read       : 1:  > []
+[15:58:44] Warn       : 
+-------------- Warn                 --------------------
+Type: ZeroDivisionError
+
+More information:
+	division by zero	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 21, in <module>
+    0/0
+ZeroDivisionError: division by zero
+
+-------------- Warn                 --------------------
+
+[15:58:58] Log        : 1
+[15:58:58] 1          : 1
+[15:58:58] Warn       : 1
+[15:58:58] Error      : 1
+[15:58:58] Tip        : 1
+[15:58:59] Read       : 1:  > []
+[15:58:59] Warn       : 
+-------------- Warn                 --------------------
+Type: ZeroDivisionError
+
+More information:
+	division by zero	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 21, in <module>
+    0/0
+ZeroDivisionError: division by zero
+
+-------------- Warn                 --------------------
+

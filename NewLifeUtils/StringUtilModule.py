@@ -6,6 +6,7 @@ def remove_csi(text):
     Args:
         text:
     """
+    text = str(text)
     return (
         re.sub(
             r"\\x1[bB]\[[\d;]*[a-zA-Z]",
@@ -25,9 +26,11 @@ def screate(string, size=10, insert="r", filler_symbol=" "):
         insert:
         filler_symbol:
     """
-    calcstreeng = remove_csi(string)
+    string = str(string)
+    filler_symbol = str(filler_symbol)
+    calcstring = remove_csi(string)
 
-    spaces = str(filler_symbol) * (size - len(calcstreeng))
+    spaces = str(filler_symbol) * (size - len(calcstring))
     if insert == "r":
         return string + spaces
     if insert == "l":

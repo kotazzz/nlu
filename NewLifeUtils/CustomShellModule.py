@@ -4,39 +4,37 @@ import os
 from NewLifeUtils.ExceptModule import *
 from NewLifeUtils.LoggerModule import *
 from NewLifeUtils.StringUtilModule import *
+from NewLifeUtils.FileModule import *
 
-default_translation = """
-default_cmd_name: "My CMD"
-default_cmd_description: "My new command line instance"
+default_translation = {
+  "default_cmd_name": "My CMD",
+  "default_cmd_description": "My new command line instance",
+  "welcome": "Welcome to",
+  "exit_code_label": "Exit with code",
+  "exit_from_label": "from",
+  "help_description": "This is the help",
+  "cls_description": "Clears display",
+  "hello_description": "Say 'Hello'",
+  "exit_description": "Exit from cmd",
+  "info_description": "Will provide some information about the system",
+  "parse_description": "Will provide some information about the system",
+  "invalid_usage": "Invalid usage. Syntax: {syntax}",
+  "same_command": [
+    "Console commands with the same names were registered.",
+    "Here is a list of registered console commands (their names):",
+    "{list}"
+  ]
+}
 
-welcome: "Welcome to"
-exit_code_label: "Exit with code"
-exit_from_label: "from"
-
-help_description: "This is the help"
-cls_description: "Clears display"
-hello_description: "Say 'Hello'"
-exit_description: "Exit from cmd"
-info_description: "Will provide some information about the system"
-parse_description: "Will provide some information about the system"
-
-invalid_usage: "Invalid usage. Syntax: {syntax}"
-
-same_command:
-- "Console commands with the same names were registered." 
-- "Here is a list of registered console commands (their names):"
-- "{list}"
-"""
-
-create_files("shell_translation", "lang.yml", "shell", default_translation)
-translation = get_yaml("shell_translation", default_translation)
+create_config("shell_translation", "lang.yml", "shell", default_translation)
+translation = get_pointyaml("shell_translation")
 
 
 class Shell(object):
     def __init__(
         self,
-        name=translation["default_cmd_name"],
-        about=translation["default_cmd_description"],
+        name=translation.default_cmd_name,
+        about=translation.default_cmd_description,
     ):
         self.run_state = "init"
         self.cmdname = name
@@ -61,13 +59,13 @@ class Shell(object):
         )
 
         @self.register_command(
-            "exit", ["quit"], translation["exit_description"], [], []
+            "exit", ["quit"], translation.exit_description, [], []
         )
         def exit_(console):
             console.run_state = "quit"
 
         @self.register_command(
-            "cls", ["clearscreen"], translation["cls_description"], [], []
+            "cls", ["clearscreen"], translation.cls_description, [], []
         )
         def cls_(console):
             os.system("cls")

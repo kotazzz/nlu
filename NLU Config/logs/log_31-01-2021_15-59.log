@@ -1,0 +1,73 @@
+{}
+
+[15:59:10] Log        : 1
+[15:59:10] 1          : 1
+[15:59:10] Warn       : 1
+[15:59:10] Error      : 1
+[15:59:10] Tip        : 1
+[15:59:11] Read       : 1:  > []
+[15:59:11] Warn       : 
+-------------- Warn                 --------------------
+Type: ZeroDivisionError
+
+More information:
+	division by zero	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 21, in <module>
+    0/0
+ZeroDivisionError: division by zero
+
+-------------- Warn                 --------------------
+
+[15:59:50] Log        : 1
+[15:59:50] 1          : 1
+[15:59:50] Warn       : 1
+[15:59:50] Error      : 1
+[15:59:50] Tip        : 1
+[15:59:51] Read       : 1:  > []
+[15:59:51] Warn       : 
+-------------- Warn                 --------------------
+Type: ZeroDivisionError
+
+More information:
+	division by zero	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 21, in <module>
+    0/0
+ZeroDivisionError: division by zero
+
+-------------- Warn                 --------------------
+
+[15:59:51] [L] My Cmd  : Welcome to My CMD
+[15:59:52] [R] My Cmd  : asd
+[15:59:52] [W] My Cmd  : Unknown Command, type "help"
+[15:59:52] [R] My Cmd  : 
+[15:59:52] [R] My Cmd  : afsd
+[15:59:52] [W] My Cmd  : Unknown Command, type "help"
+[15:59:53] [R] My Cmd  : a
+[15:59:53] [W] My Cmd  : Unknown Command, type "help"
+[15:59:53] [R] My Cmd  : a
+[15:59:53] [W] My Cmd  : Unknown Command, type "help"
+[15:59:53] [R] My Cmd  : 
+[15:59:53] [R] My Cmd  : q
+[15:59:53] [W] My Cmd  : Unknown Command, type "help"
+[15:59:53] [R] My Cmd  : w 
+[15:59:53] [W] My Cmd  : Unknown Command, type "help"
+[15:59:53] [R] My Cmd  : fd
+[15:59:53] [W] My Cmd  : Unknown Command, type "help"
+[15:59:53] [R] My Cmd  : 
+[15:59:54] [R] My Cmd  : 
+[15:59:54] [R] My Cmd  : 
+[15:59:54] [R] My Cmd  : 
+[15:59:54] [R] My Cmd  : 
+[15:59:55] [R] My Cmd  : qwef
+[15:59:55] [W] My Cmd  : Unknown Command, type "help"
+[15:59:56] [R] My Cmd  : werf
+[15:59:56] [W] My Cmd  : Unknown Command, type "help"
+[15:59:57] [R] My Cmd  : werf
+[15:59:57] [W] My Cmd  : Unknown Command, type "help"
+[16:00:27] [R] My Cmd  : 
+[16:00:28] [R] My Cmd  : 4
+[16:00:28] [W] My Cmd  : Unknown Command, type "help"

@@ -1,31 +1,30 @@
 import traceback
 
-from NewLifeUtils.FileModule import create_files, get_yaml
+from NewLifeUtils.FileModule import create_config, get_pointyaml
 from NewLifeUtils.LoggerModule import err, log, wrn
 from NewLifeUtils.StringUtilModule import screate
 
-default_lang = """
-type: "Type"
-unknown: "Unknown Error"
-about: "More information"
-attention: "Attention"
-info: "Info"
-warning: "Warn"
-error: "Error"
-fatal: "Fatal error"
-wrong: "Something wrong..."
-
-"""
-create_files("except_translation", "lang.yml", "exceptsettings", default_lang)
-translation = get_yaml("except_translation", default_lang)
+default_lang = {
+  "type": "Type",
+  "unknown": "Unknown Error",
+  "about": "More information",
+  "attention": "Attention",
+  "info": "Info",
+  "warning": "Warn",
+  "error": "Error",
+  "fatal": "Fatal error",
+  "wrong": "Something wrong..."
+}
+create_config("except_translation", "lang.yml", "exceptsettings", default_lang)
+translation = get_pointyaml("except_translation")
 
 
 def except_print(exception, exception_type="err", tb=True):
     error_text = "\n-------------- {ExceptionTitle} --------------------\n"
-    error_text += f"{translation['type']}: {type(exception).__name__}\n\n"
+    error_text += f"{translation.type}: {type(exception).__name__}\n\n"
 
     if exception.args == 0:
-        error_text += f'{translation["unknown"]}\n'
+        error_text += f'{translation.unknown}\n'
     else:
         error_text += (
             f'{translation["about"]}:\n\t{(chr(10) + chr(9)).join(exception.args)}\t\n'

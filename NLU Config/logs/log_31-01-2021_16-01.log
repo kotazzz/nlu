@@ -1,0 +1,199 @@
+{}
+
+[16:01:46] Log        : 1
+[16:01:46] 1          : 1
+[16:01:46] Warn       : 1
+[16:01:46] Error      : 1
+[16:01:46] Tip        : 1
+[16:01:47] Read       : 1:  > []
+[16:01:47] Warn       : 
+-------------- Warn                 --------------------
+Type: ZeroDivisionError
+
+More information:
+	division by zero	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 21, in <module>
+    0/0
+ZeroDivisionError: division by zero
+
+-------------- Warn                 --------------------
+
+[16:01:47] [L] My Cmd  : Welcome to My CMD
+[16:01:48] [R] My Cmd  : 
+[16:01:48] [R] My Cmd  : 
+[16:01:48] [R] My Cmd  : 
+[16:01:48] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:49] [R] My Cmd  : 
+[16:01:50] [R] My Cmd  : asd
+[16:01:50] [W] My Cmd  : Unknown Command, type "help"
+[16:01:50] [R] My Cmd  : f
+[16:01:50] [W] My Cmd  : Unknown Command, type "help"
+[16:01:50] [R] My Cmd  : as
+[16:01:50] [W] My Cmd  : Unknown Command, type "help"
+[16:01:50] [R] My Cmd  : df
+[16:01:50] [W] My Cmd  : Unknown Command, type "help"
+[16:01:50] [R] My Cmd  : a
+[16:01:50] [W] My Cmd  : Unknown Command, type "help"
+[16:01:50] [R] My Cmd  : sdg
+[16:01:50] [W] My Cmd  : Unknown Command, type "help"
+[16:01:51] [R] My Cmd  : q
+[16:01:51] [W] My Cmd  : Unknown Command, type "help"
+[16:01:51] [R] My Cmd  : e
+[16:01:51] [W] My Cmd  : Unknown Command, type "help"
+[16:01:51] [R] My Cmd  :  f
+[16:01:51] [W] My Cmd  : Unknown Command, type "help"
+[16:01:51] [R] My Cmd  : h4t
+[16:01:51] [W] My Cmd  : Unknown Command, type "help"
+[16:01:51] [R] My Cmd  : XZT
+[16:01:51] [W] My Cmd  : Unknown Command, type "help"
+[16:01:52] [R] My Cmd  : 
+[16:01:52] [R] My Cmd  : 
+[16:01:52] [R] My Cmd  : a
+[16:01:52] [W] My Cmd  : Unknown Command, type "help"
+[16:01:53] [R] My Cmd  : e rg
+[16:01:53] [W] My Cmd  : Unknown Command, type "help"
+[16:01:53] [R] My Cmd  : w
+[16:01:53] [W] My Cmd  : Unknown Command, type "help"
+[16:01:53] [R] My Cmd  :  eag
+[16:01:53] [W] My Cmd  : Unknown Command, type "help"
+[16:01:53] [R] My Cmd  : v
+[16:01:53] [W] My Cmd  : Unknown Command, type "help"
+[16:01:53] [R] My Cmd  : 
+[16:01:53] [R] My Cmd  : ad
+[16:01:53] [W] My Cmd  : Unknown Command, type "help"
+[16:01:54] [R] My Cmd  : f
+[16:01:54] [W] My Cmd  : Unknown Command, type "help"
+[16:01:54] [R] My Cmd  : sdf
+[16:01:54] [W] My Cmd  : Unknown Command, type "help"
+[16:01:54] [R] My Cmd  : g
+[16:01:54] [W] My Cmd  : Unknown Command, type "help"
+[16:01:54] [R] My Cmd  : 2
+[16:01:54] [W] My Cmd  : Unknown Command, type "help"
+[16:01:54] [R] My Cmd  : w4 ht
+[16:01:54] [W] My Cmd  : Unknown Command, type "help"
+[16:01:54] [R] My Cmd  : bg
+[16:01:54] [W] My Cmd  : Unknown Command, type "help"
+[16:01:55] [R] My Cmd  : fv
+[16:01:55] [W] My Cmd  : Unknown Command, type "help"
+[16:01:55] [R] My Cmd  : sdg
+[16:01:55] [W] My Cmd  : Unknown Command, type "help"
+[16:01:55] [R] My Cmd  : sdf
+[16:01:55] [W] My Cmd  : Unknown Command, type "help"
+[16:01:55] [R] My Cmd  : 
+[16:01:55] [R] My Cmd  : b
+[16:01:55] [W] My Cmd  : Unknown Command, type "help"
+[16:01:56] [R] My Cmd  : svc
+[16:01:56] [W] My Cmd  : Unknown Command, type "help"
+[16:01:56] [R] My Cmd  : fd
+[16:01:56] [W] My Cmd  : Unknown Command, type "help"
+[16:01:56] [R] My Cmd  :  vw
+[16:01:56] [W] My Cmd  : Unknown Command, type "help"
+[16:01:56] [R] My Cmd  : th
+[16:01:56] [W] My Cmd  : Unknown Command, type "help"
+[16:01:56] [R] My Cmd  :  er
+[16:01:56] [W] My Cmd  : Unknown Command, type "help"
+[16:01:57] [R] My Cmd  : th
+[16:01:57] [W] My Cmd  : Unknown Command, type "help"
+[16:01:57] [R] My Cmd  :  er
+[16:01:57] [W] My Cmd  : Unknown Command, type "help"
+[16:01:57] [R] My Cmd  : ther
+[16:01:57] [W] My Cmd  : Unknown Command, type "help"
+[16:01:57] [R] My Cmd  : th
+[16:01:57] [W] My Cmd  : Unknown Command, type "help"
+[16:01:57] [R] My Cmd  :  e
+[16:01:57] [W] My Cmd  : Unknown Command, type "help"
+[16:01:57] [R] My Cmd  : rth
+[16:01:57] [W] My Cmd  : Unknown Command, type "help"
+[16:01:58] [R] My Cmd  :  e
+[16:01:58] [W] My Cmd  : Unknown Command, type "help"
+[16:01:58] [R] My Cmd  : rt
+[16:01:58] [W] My Cmd  : Unknown Command, type "help"
+[16:01:58] [R] My Cmd  : h 
+[16:01:58] [W] My Cmd  : Unknown Command, type "help"
+[16:01:58] [R] My Cmd  : ert
+[16:01:58] [W] My Cmd  : Unknown Command, type "help"
+[16:01:58] [R] My Cmd  :  h
+[16:01:58] [W] My Cmd  : Unknown Command, type "help"
+[16:01:58] [R] My Cmd  : ert
+[16:01:58] [W] My Cmd  : Unknown Command, type "help"
+[16:01:59] [R] My Cmd  : h e
+[16:01:59] [W] My Cmd  : Unknown Command, type "help"
+[16:01:59] [R] My Cmd  : tr
+[16:01:59] [W] My Cmd  : Unknown Command, type "help"
+[16:01:59] [R] My Cmd  : h e
+[16:01:59] [W] My Cmd  : Unknown Command, type "help"
+[16:01:59] [R] My Cmd  : rth
+[16:01:59] [W] My Cmd  : Unknown Command, type "help"
+[16:01:59] [R] My Cmd  :  
+[16:01:59] [R] My Cmd  : erth
+[16:01:59] [W] My Cmd  : Unknown Command, type "help"
+[16:02:00] [R] My Cmd  :  
+[16:02:00] [R] My Cmd  : ert
+[16:02:00] [W] My Cmd  : Unknown Command, type "help"
+[16:02:00] [R] My Cmd  : h 
+[16:02:00] [W] My Cmd  : Unknown Command, type "help"
+[16:02:00] [R] My Cmd  : ert
+[16:02:00] [W] My Cmd  : Unknown Command, type "help"
+[16:02:00] [R] My Cmd  : h 
+[16:02:00] [W] My Cmd  : Unknown Command, type "help"
+[16:02:00] [R] My Cmd  : ert
+[16:02:00] [W] My Cmd  : Unknown Command, type "help"
+[16:02:01] [R] My Cmd  : h 
+[16:02:01] [W] My Cmd  : Unknown Command, type "help"
+[16:02:01] [R] My Cmd  : ert
+[16:02:01] [W] My Cmd  : Unknown Command, type "help"
+[16:02:01] [R] My Cmd  : h e
+[16:02:01] [W] My Cmd  : Unknown Command, type "help"
+[16:02:01] [R] My Cmd  : rt
+[16:02:01] [W] My Cmd  : Unknown Command, type "help"
+[16:02:01] [R] My Cmd  :  he
+[16:02:01] [W] My Cmd  : Unknown Command, type "help"
+[16:02:01] [R] My Cmd  : tr 
+[16:02:01] [W] My Cmd  : Unknown Command, type "help"
+[16:02:02] [R] My Cmd  : 
+[16:02:02] [R] My Cmd  : hte 
+[16:02:02] [W] My Cmd  : Unknown Command, type "help"
+[16:02:02] [R] My Cmd  : 
+[16:02:02] [R] My Cmd  : ert
+[16:02:02] [W] My Cmd  : Unknown Command, type "help"
+[16:02:02] [R] My Cmd  :  h
+[16:02:02] [W] My Cmd  : Unknown Command, type "help"
+[16:02:02] [R] My Cmd  : et
+[16:02:02] [W] My Cmd  : Unknown Command, type "help"
+[16:02:03] [R] My Cmd  : hr 
+[16:02:03] [W] My Cmd  : Unknown Command, type "help"
+[16:02:03] [R] My Cmd  : et
+[16:02:03] [W] My Cmd  : Unknown Command, type "help"
+[16:02:03] [R] My Cmd  : 
+[16:02:03] [R] My Cmd  : e
+[16:02:03] [W] My Cmd  : Unknown Command, type "help"
+[16:02:03] [R] My Cmd  : rth 
+[16:02:03] [W] My Cmd  : Unknown Command, type "help"
+[16:02:03] [R] My Cmd  : 

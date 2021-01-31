@@ -1,12 +1,10 @@
-
-type: "Type"
-unknown: "Unknown Error"
-about: "More information"
-attention: "Attention"
-info: "Info"
-warning: "Warn"
-error: "Error"
-fatal: "Fatal error"
-wrong: "Something wrong..."
-
+about: More information
+attention: Attention
+error: Error
+fatal: Fatal error
+info: Info
+type: Type
+unknown: Unknown Error
+warning: Warn
+wrong: Something wrong...
 
