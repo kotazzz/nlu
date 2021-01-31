@@ -3,6 +3,7 @@ import random
 import re
 
 from NewLifeUtils.LoggerModule import *
+from NewLifeUtils.StringUtilModule import parse_args
 
 
 def select_rand_list(source, use_zero=False):
@@ -107,11 +108,26 @@ def format_number(
         shift += int(pos) + 1
     return result
 
+def safe_format(text, keys=None, func = None, smart=None):
+    if keys is None:
+        keys = {}
+    if smart is None:
+        smart = {}
 
-def safe_format(text, keys):
     class SafeDict(dict):
         def __missing__(self, key):
-            return "{" + key + "}"
+            nonlocal func
+            if smart is not {}:
+                keypr = parse_args(key)
+                name = keypr['command']
+                if name not in smart.keys():
+                    return "{" + key + "}"
+                else:
+                    return smart[name](*keypr['param'])
+            elif func is not None:
+                return "{" + str(func(key)) + "}"
+            else:
+                return "{" + key + "}"
 
     return text.format_map(SafeDict(**keys))
 
