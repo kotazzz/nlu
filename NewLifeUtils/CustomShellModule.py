@@ -4,6 +4,9 @@ from NewLifeUtils.ExceptModule import *
 from NewLifeUtils.ColorModule import *
 from NewLifeUtils.LoggerModule import *
 from NewLifeUtils.StringUtilModule import *
+import NewLifeUtils
+import platform
+import sys
 
 default_translation = {
     "default_cmd_name": "My CMD",
