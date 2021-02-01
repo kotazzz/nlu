@@ -1,0 +1,22 @@
+{}
+
+[19:58:30] [L] My Cmd  : Welcome to My CMD
+[19:58:51] [R] My Cmd  : 
+[19:58:52] [R] My Cmd  : 4
+[19:58:52] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: AttributeError
+
+More information:
+	'str' object has no attribute 'startwith'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 350, in main
+    readed = parse_args(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\StringUtilModule.py", line 72, in parse_args
+    if item.startswith('"'):
+AttributeError: 'str' object has no attribute 'startwith'
+
+-------------- Error                --------------------
+
+[19:58:56] [L] My Cmd  : Welcome to My CMD

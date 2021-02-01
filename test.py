@@ -4,6 +4,7 @@ import uuid
 from NewLifeUtils.UtilsModule import safe_format
 from NewLifeUtils.StringUtilModule import parse_args
 from NewLifeUtils.LoggerModule import *
+from NewLifeUtils.CustomShellModule import *
 from NewLifeUtils.TableBuildModule import *
 
 
@@ -46,40 +47,60 @@ def create_value(vartype, *params):
     else:
         return '{' + str(vartype) + '}'
 
+if __name__ == '__main__':
+    c = Shell()
 
-ex = {
-    "id": "{uid}",
-    "id2": "{uid}",
-    "name": "{name}",
-    "int": "{int}",
-    "int2": "{int2}",
-}
+    def run(console):
+        log("dev...")
+
+    @c.register_command(
+        "send", ["s"], "Отправка сообщения от имени бота", ["channel", "message"], []
+    )
+    def run(console):
+        log("dev...")
+    c.run()
 
 
-def obj_from_template(rawobj):
-    names = {
-        "int": create_value("int"),
-        "bool": create_value("bool"),
-        "uid": create_value("uid"),
-        "name": create_value("name"),
+
+def no():
+    ex = {
+        "id": "{uid}",
+        "id2": "{uid}",
+        "name": "{name}",
+        "int": "{int}",
+        "int2": "{int2}",
     }
-    for key in rawobj:
-        rawobj[key] = safe_format(rawobj[key], func=create_value)
-    return rawobj
 
 
-from pprint import pprint
-err('hi')
+    def obj_from_template(rawobj):
+        names = {
+            "int": create_value("int"),
+            "bool": create_value("bool"),
+            "uid": create_value("uid"),
+            "name": create_value("name"),
+        }
+        for key in rawobj:
+            rawobj[key] = safe_format(rawobj[key], func=create_value)
+        return rawobj
 
-# pprint(obj_from_template(ex))
-def sumfunc(a, b):
-    return int(a) + int(b)
 
-print(safe_format('{sum 1 2} - {sum 1 2}', smart={"sum": sumfunc}))
-log("Что то случилось")
-wrn("Что то случилось")
-err("Что то случилось")
-tip("Что то случилось")
-rea("Это я уже ввел - ")
-log(create_table(2,[],["1","2222222","text","text","text","text","text","text"]))
-rea("Это я сейчас пишу")
+    from pprint import pprint
+
+    err('hi')
+
+
+    # pprint(obj_from_template(ex))
+    def sumfunc(a, b):
+        return int(a) + int(b)
+
+    parse_args(read("hello: "))
+    print(safe_format('{sum 1 2} - {sum 1 2}', smart={"sum": sumfunc}))
+    """
+    log("Что то случилось")
+    wrn("Что то случилось")
+    err("Что то случилось")
+    tip("Что то случилось")
+    rea("Это я уже ввел - ")
+    log(create_table(2,[],["1","2222222","text","text","text","text","text","text"]))
+    rea("Это я сейчас пишу")
+    """
