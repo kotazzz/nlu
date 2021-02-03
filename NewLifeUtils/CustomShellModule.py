@@ -39,8 +39,8 @@ class Shell(object):
         about=translation.default_cmd_description,
     ):
         self.run_state = "init"
-        self.cmdname = name
-        self.cmdabout = about
+        self.cmd_name = name
+        self.cmd_about = about
 
         self.registered_init_task = []
         self.registered_commands = []
@@ -51,12 +51,12 @@ class Shell(object):
         self.fist_completer = {}
 
         set_settings(
-            new_tag_length=len(self.cmdname) + 5,
-            new_log_default_tag=f"[L] {self.cmdname.title()}",
-            new_wrn_default_tag=f"[W] {self.cmdname.title()}",
-            new_err_default_tag=f"[E] {self.cmdname.title()}",
-            new_tip_default_tag=f"[T] {self.cmdname.title()}",
-            new_rea_default_tag=f"[R] {self.cmdname.title()}",
+            new_tag_length=len(self.cmd_name) + 5,
+            new_log_default_tag=f"[L] {self.cmd_name.title()}",
+            new_wrn_default_tag=f"[W] {self.cmd_name.title()}",
+            new_err_default_tag=f"[E] {self.cmd_name.title()}",
+            new_tip_default_tag=f"[T] {self.cmd_name.title()}",
+            new_rea_default_tag=f"[R] {self.cmd_name.title()}",
             new_rea_pattern="{cyan}[{time}] {lightcyan}{tag}{snow} : {mediumslateblue}{readed}",
         )
 
@@ -79,7 +79,7 @@ class Shell(object):
         def help_(console):
             pattern = '{lightskyblue}{command} {snow}({lightsteelblue}{aliases}{snow}) {usage}\n   {powderblue}{description}\n'
             if console.paramCount == 0:
-                log(f"\n{console.cmdname} - {console.cmdabout}\n")
+                log(f"\n{console.cmd_name} - {console.cmd_about}\n")
                 for command in console.registered_commands:
                     usage = ''
                     if command["required"]:
@@ -158,7 +158,7 @@ class Shell(object):
 
         @self.register_init_task()
         def welcome(console):
-            log(f'{translation.welcome} {console.cmdname}')
+            log(f'{translation.welcome} {console.cmd_name}')
 
         @self.register_exit_task()
         def goodbye(console):
@@ -321,7 +321,7 @@ class Shell(object):
             try:
 
                 readed = parse_args(
-                    rea(f"{self.cmdname.title()} >", completion=self.fist_completer)
+                    rea(f"{self.cmd_name.title()} >", completion=self.fist_completer)
                 )
                 self.command = readed["command"]
                 self.parametrs = readed["param"]

@@ -1,107 +1,122 @@
-import random
-import uuid
-
-from NewLifeUtils.UtilsModule import safe_format
-from NewLifeUtils.StringUtilModule import parse_args
-from NewLifeUtils.LoggerModule import *
-from NewLifeUtils.CustomShellModule import *
-from NewLifeUtils.TableBuildModule import *
+from NewLifeUtils.LoggerModule import log, err
+from NewLifeUtils.StringUtilModule import screate
 
 
-def create_value(vartype, *params):
-    print()
-    if vartype == "int":
-        if len(params) == 2:
-            return random.randint(list(params)[0], list(params)[1])
+class Column(object):
+    def __init__(self, data, size=-1):
+        self.data = data
+        if size == -1:
+            self.size = max([len(str(d)) for d in data])
         else:
-            return random.randint(1, 1000)
+            self.size = size
 
-    elif vartype == "bool":
-        return random.choice([True, False])
+    def add_data(self, data):
+        self.data.append(data)
 
-    elif vartype == "uid":
-        return (uuid.UUID(bytes=random.randbytes(16)))
+    def build_column(self, type, separator):
+        build_line = lambda sep1, sep2: collumn.append(f'{sep1}{screate(data, self.size)}{sep2}')
+        collumn = []
+        if type == 1:
+            for data in self.data:
+                build_line(separator, separator)
+        elif type == 2:
+            for data in self.data:
+                build_line('', separator)
+        elif type == 3:
+            for data in self.data:
+                build_line('', separator)
+        elif type == 4:
+            for data in self.data:
+                build_line(separator, separator)
+        else:
+            raise ValueError('Invalid type (1, 2, 3 or 4)')
+        return collumn
 
-    elif vartype == "name":
-        return random.choice(["Abraham", "Adam", "Adrian", "Albert", "Alexander", "Alfred",
-                              "Anderson", "Andrew", "Anthony", "Arnold", "Arthur", "Ashley", "Austen",
-                              "Benjamin", "Bernard", "Brian", "Caleb", "Calvin", "Carl", "Chad",
-                              "Charles", "Christian", "Christopher", "Clayton", "Clifford", "Clinton",
-                              "Corey", "Cory", "Daniel", "Darren", "David", "Derek", "Dirk", "Donald",
-                              "Douglas", "Dwight", "Earl", "Edgar", "Edmund", "Edward", "Edwin", "Elliot",
-                              "Eric", "Ernest", "Ethan", "Ezekiel", "Felix", "Franklin", "Frederick",
-                              "Gabriel", "Gareth", "Geoffrey", "Gerald", "Graham", "Grant", "Gregory",
-                              "Harold", "Harry", "Henry", "Herbert", "Horace", "Hubert", "Hugh", "Ian",
-                              "Jack", "Jacob", "James", "Jason", "Jasper", "Jerome", "Jesse", "John",
-                              "Jonathan", "Joseph", "Joshua", "Julian", "Keith", "Kenneth", "Kevin",
-                              "Kurt", "Kyle", "Lawrence", "Leonard", "Lester", "Louis", "Lucas",
-                              "Malcolm", "Marcus", "Marshall", "Martin", "Matthew", "Maximilian",
-                              "Michael", "Miles", "Nathan", "Neil", "Nicholas", "Norman", "Oliver",
-                              "Oscar", "Oswald", "Otto", "Owen", "Patrick", "Paul", "Peter", "Philip",
-                              "Quentin", "Randall", "Raphael", "Raymond", "Richard", "Robert",
-                              "Roderick", "Rodger", "Rodney", "Ronald", "Rory", "Rufus", "Rupert",
-                              "Russell", "Samuel", "Scott", "Sebastian", "Shayne", "Sigmund", "Simon",
-                              "Stephen", "Steven", "Sylvester", "Terence", "Thomas", "Timothy", "Tobias",
-                              "Travis", "Tristan", "Tyler", "Valentine", "Victor", "Vincent", "Walter",
-                              "Wayne", "Wilfred", "William", "Winston", "Zachary"])
-    else:
-        return '{' + str(vartype) + '}'
+
+class Table(object):
+    def __init__(self, collumns, type=0, minify=True):
+        self.separators = "╔╦╗║═╠╬╣╚╩╝"
+        self.type = type
+        self.collumns = collumns
+        self.builded_collumns = []
+        self.minify = minify
+
+    def get_table(self):
+        def add_separator(sizes, type):
+            if type == 1:
+                sep1 = self.separators[0]
+                sep2 = self.separators[4]
+                sep3 = self.separators[1]
+                sep4 = self.separators[2]
+
+            elif type == 2:
+                sep1 = self.separators[5]
+                sep2 = self.separators[4]
+                sep3 = self.separators[6]
+                sep4 = self.separators[7]
+
+            else:
+                sep1 = self.separators[8]
+                sep2 = self.separators[4]
+                sep3 = self.separators[9]
+                sep4 = self.separators[10]
+
+            if type == 2:
+                sep = '\n' + sep1
+            else:
+                sep = sep1
+            for i in sizes:
+                sep += sep2 * i + sep3
+            l = list(sep)
+            l[-1] = sep4
+            sep = ''.join(l)
+            if type != 2:
+                sep += '\n'
+            return sep
+
+        collumn_length = [len(collumn.data) for collumn in self.collumns]
+        collumn_sizes = [collumn.size for collumn in self.collumns]
+        for collumn in self.collumns:
+            while len(collumn.data) < max(collumn_length):
+                collumn.add_data('')
+        sep = self.separators[3]
+        builded_collumns = []
+        if len(self.collumns) == 1:
+            builded_collumns.append(self.collumns[0].build_column(4, sep))
+        elif len(self.collumns) == 2:
+            builded_collumns.append(self.collumns[0].build_column(1, sep))
+            builded_collumns.append(self.collumns[1].build_column(3, sep))
+        else:
+            builded_collumns.append(self.collumns[0].build_column(1, sep))
+            builded_collumns.append(self.collumns[-1].build_column(3, sep))
+            for collumn in self.collumns[1:-1]:
+                builded_collumns.append(collumn.build_column(2, sep))
+        builded_table = add_separator(collumn_sizes, 1)
+        f = False
+        for i in range(len(self.collumns[0].data)):
+            for collumn in builded_collumns:
+                builded_table += collumn[i]
+            if not self.minify or not f:
+                builded_table += add_separator(collumn_sizes, 2)
+                f = True
+            builded_table += '\n'
+        builded_table += add_separator(collumn_sizes, 3)
+        return builded_table
+
 
 if __name__ == '__main__':
-    c = Shell()
-
-    @c.register_command(
-        "send", ["s"], "Отправка сообщения от имени бота", ["channel", "message"], []
-    )
-    def run(console):
-        log("dev...")
-    c.run()
-    while False:
-        import time
-        c.insert_print("log", "hi")
-        time.sleep(1)
-
-
-
-def no():
-    ex = {
-        "id": "{uid}",
-        "id2": "{uid}",
-        "name": "{name}",
-        "int": "{int}",
-        "int2": "{int2}",
-    }
-
-
-    def obj_from_template(rawobj):
-        names = {
-            "int": create_value("int"),
-            "bool": create_value("bool"),
-            "uid": create_value("uid"),
-            "name": create_value("name"),
-        }
-        for key in rawobj:
-            rawobj[key] = safe_format(rawobj[key], func=create_value)
-        return rawobj
-
-
-    from pprint import pprint
-
-    err('hi')
-
-
-    # pprint(obj_from_template(ex))
-    def sumfunc(a, b):
-        return int(a) + int(b)
-
-    parse_args(read("hello: "))
-    print(safe_format('{sum 1 2} - {sum 1 2}', smart={"sum": sumfunc}))
-    """
-    log("Что то случилось")
-    wrn("Что то случилось")
-    err("Что то случилось")
-    tip("Что то случилось")
-    rea("Это я уже ввел - ")
-    log(create_table(2,[],["1","2222222","text","text","text","text","text","text"]))
-    rea("Это я сейчас пишу")
-    """
+    data = ["мне",
+            "наплевать",
+            "еще",
+            "раз",
+            "между",
+            "вами",
+            "увижу",
+            "оскорбления",
+            "пизды",
+            "дам",
+            "огромных", ]
+    c1 = Column(data, )
+    c2 = Column(data[2:-3], )
+    t1 = Table([c1,c2, ])
+    log('\n' + t1.get_table())

@@ -1,6 +1,23 @@
 from NewLifeUtils.ColorModule import FGC, ACC
 from NewLifeUtils.StringUtilModule import remove_csi, screate, sslice
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 default = "double"
 
 custom = "╔╦╗║═╠╬╣╚╩╝"
