@@ -1,0 +1,21 @@
+{}
+
+[08:15:36] [L] My Cmd  : Welcome to My CMD
+[08:15:39] [R] My Cmd  : help
+[08:15:39] [L] My Cmd  : 
+My CMD - My new command line instance
+
+exit (exit, quit) 
+Exit from cmd
+cls (cls, clearscreen) 
+Clears display
+help (help) {lightgray}[command|'commands']
+This is the help
+hello (hello, hi) {lightgray}[name]
+Say 'Hello'
+parse (parse, debug_args) 
+Will provide some information about the system
+info (info, version, ver) 
+Will provide some information about the system
+send (send, s) {gray}<channel> <message>
+Отправка сообщения от имени бота

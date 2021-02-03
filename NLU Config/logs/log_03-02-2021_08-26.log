@@ -1,0 +1,45 @@
+{}
+
+[08:26:22] [L] My Cmd  : Welcome to My CMD
+[08:26:25] [R] My Cmd  : help
+[08:26:25] [L] My Cmd  : 
+My CMD - My new command line instance
+
+exit (exit, quit) 
+   Exit from cmd
+
+cls (cls, clearscreen) 
+   Clears display
+
+help (help) [command|'commands']
+   This is the help
+
+hello (hello, hi) [name]
+   Say 'Hello'
+
+parse (parse, debug_args) 
+   Will provide some information about the system
+
+info (info, version, ver) 
+   Will provide some information about the system
+
+send (send, s) <channel> <message>
+   Отправка сообщения от имени бота
+
+[08:26:39] [R] My Cmd  : help commands
+[08:26:39] [L] My Cmd  : 
+exit
+cls
+help
+hello
+parse
+info
+send
+[08:27:00] [R] My Cmd  : s
+[08:27:00] [W] My Cmd  : Invalid usage. Syntax: send <channel> <message> 
+[08:27:02] [R] My Cmd  : s 1
+[08:27:02] [W] My Cmd  : Invalid usage. Syntax: send <channel> <message> 
+[08:27:04] [R] My Cmd  : s 1 2
+[08:27:04] [L] My Cmd  : dev...
+[08:27:06] [R] My Cmd  : s 1 2 4 
+[08:27:06] [W] My Cmd  : Invalid usage. Syntax: send <channel> <message> 

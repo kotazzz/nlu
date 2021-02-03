@@ -311,7 +311,7 @@ class Shell(object):
                 end="",
             )
             log_function[type](text, tag)
-            print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
+            print(f"{MCC.LOAD_CURSOR}{MCC.down(1)}{get_read_formatting()}", end="")
         sys.stdout.flush()
 
     def check_params(self):

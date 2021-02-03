@@ -618,12 +618,15 @@ def tag_check(tag, default):
         return screate(tag, tag_length)
 
 
-def to_format(pattern, args):
+def to_format(pattern, args, erase = True):
     now = datetime.datetime.now()
-
+    if erase:
+        e = MCC.ERASE_ALL_LINE
+    else:
+        e = ''
     return (
         ACC.RESET
-        + MCC.ERASE_ALL_LINE
+        + e
         + pattern.format(
             **args,
             **colormap,

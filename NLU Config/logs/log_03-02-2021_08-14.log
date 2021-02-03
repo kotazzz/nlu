@@ -1,0 +1,29 @@
+{}
+
+[08:14:40] [L] My Cmd  : Welcome to My CMD
+[08:14:42] [R] My Cmd  : help
+[08:14:42] [L] My Cmd  : 
+My CMD - My new command line instance
+
+[08:14:42] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: KeyError
+
+More information:
+	description	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 344, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 95, in help_
+    cstm(pattern, pargs)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 686, in cstm
+    return out(to_format(pattern, args))
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 627, in to_format
+    + pattern.format(
+KeyError: 'description'
+
+-------------- Error                --------------------
+
+[08:15:33] [R] My Cmd  : exit
+[08:15:33] [L] My Cmd  : Exit with code: quit, from: None

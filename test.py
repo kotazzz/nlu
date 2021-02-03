@@ -50,15 +50,16 @@ def create_value(vartype, *params):
 if __name__ == '__main__':
     c = Shell()
 
-    def run(console):
-        log("dev...")
-
     @c.register_command(
         "send", ["s"], "Отправка сообщения от имени бота", ["channel", "message"], []
     )
     def run(console):
         log("dev...")
     c.run()
+    while False:
+        import time
+        c.insert_print("log", "hi")
+        time.sleep(1)
 
 
 

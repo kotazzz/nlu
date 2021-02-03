@@ -1,0 +1,50 @@
+{}
+
+[08:17:11] [L] My Cmd  : Welcome to My CMD
+[08:17:13] [R] My Cmd  : help
+[08:17:13] [L] My Cmd  : 
+My CMD - My new command line instance
+
+exit (exit, quit) exit 
+Exit from cmd
+cls (cls, clearscreen) cls 
+Clears display
+help (help) help {lightgray}[command|'commands']
+This is the help
+hello (hello, hi) hello {lightgray}[name]
+Say 'Hello'
+parse (parse, debug_args) parse 
+Will provide some information about the system
+info (info, version, ver) info 
+Will provide some information about the system
+send (send, s) send {gray}<channel> <message>
+Отправка сообщения от имени бота
+[08:17:18] [R] My Cmd  : help commands
+[08:17:18] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: AttributeError
+
+More information:
+	'Shell' object has no attribute 'parameters'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 99, in help_
+    if  console.parameters[0] == 'commands':
+AttributeError: 'Shell' object has no attribute 'parameters'
+
+-------------- Error                --------------------
+
+[08:17:41] [R] My Cmd  : exit
+[08:17:41] [L] My Cmd  : Exit with code: quit, from: None
+[08:17:43] [L] My Cmd  : Welcome to My CMD
+[08:17:45] [R] My Cmd  : help commands
+[08:17:45] [L] My Cmd  : 
+exit
+cls
+help
+hello
+parse
+info
+send

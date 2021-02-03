@@ -77,73 +77,47 @@ class Shell(object):
             "help", [], translation["help_description"], [], ["command|'commands'"]
         )
         def help_(console):
-            class CLR:
-                MDL = FGC.RED
-                MDLDSK = FGC.BRED
-                CMD = FGC.BLUE
-                CMDDSK = FGC.CYAN
-                ALS = FGC.PURPLE
-                ALSTXT = FGC.MAGENTA
-                STTL = FGC.GREEN
-                SCMD = ACC.UNDERLINE + FGC.WHITE
-                SREQ = FGC.BGRAY
-                SOPT = FGC.GRAY
-                R = ACC.RESET
-
-            helpPage = ""
+            pattern = '{lightskyblue}{command} {snow}({lightsteelblue}{aliases}{snow}) {usage}\n   {powderblue}{description}\n'
             if console.paramCount == 0:
-                helpPage += (
-                    f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
-                )
+                log(f"\n{console.cmdname} - {console.cmdabout}\n")
                 for command in console.registered_commands:
-                    syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
+                    usage = ''
                     if command["required"]:
-                        syntax += (
-                            f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
-                        )
+                        usage += '{cadetblue}'+f'<{"> <".join(command["required"])}>'
                     if command["optional"]:
-                        syntax += (
-                            f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
-                        )
-                    helpPage += (
-                        f'\t{CLR.CMD}{command["command"]}\n'
-                        + f'\t\t{CLR.CMDDSK}Description {CLR.R}: {CLR.CMDDSK}{command["description"]}\n'
-                        + f'\t\t{CLR.ALS}Aliases     {CLR.R}: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
-                        + f"\t\t{CLR.STTL}Usage       {CLR.R}: {syntax}{CLR.R}\n"
-                    )
-                tip(helpPage, f"{console.cmdname} HELP")
-            elif console.paramCount == 1:
-                if console.parametrs[0] == "commands":
-                    helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
-                    for command in console.registered_commands:
-                        helpPage += f'\t{CLR.CMD}{command["command"]}\n'
-                    tip(helpPage, f"{console.cmdname} HELP")
-                else:
-                    helpPage += f"\n{CLR.MDL}{console.cmdname} - {CLR.MDLDSK}{console.cmdabout}\n"
-                    finded = False
-                    for command in console.registered_commands:
-                        if command["command"] == console.parametrs[0]:
-                            syntax = f'{CLR.SCMD}{command["command"]}{CLR.R} '
-                            if command["required"]:
-                                syntax += f'{CLR.SREQ}<{"> <".join(command["required"])}>{CLR.R} '
-                            if command["optional"]:
-                                syntax += f'{CLR.SOPT}[{"] [".join(command["optional"])}]{CLR.R} '
-                            helpPage += (
-                                f'\t{CLR.CMD}{command["command"]}\n'
-                                + f'\t\t{CLR.CMDDSK}Description: {command["description"]}\n'
-                                + f'\t\t{CLR.ALS}Aliases: {CLR.ALSTXT}{", ".join(command["aliases"])}\n'
-                                + f"\t\t{CLR.CMDDSK}Usage: {syntax}{CLR.R}\n"
-                            )
-                            tip(helpPage, f"{console.cmdname} HELP")
-                            finded = True
-                    if not finded:
-                        wrn(
-                            f'Cannot find command "{console.parametrs[0]}"',
-                            f"{console.cmdname} HELP",
-                        )
-            else:
-                console.invalid_usage()
+                        usage += '{seashell}'+f'[{"] [".join(command["optional"])}]'
 
+                    pargs = {
+                        "command": command["command"],
+                        "aliases": ", ".join(command["aliases"]),
+                        "usage": to_format(usage, {},False),
+                        "description": command["description"],
+                    }
+                    cstm(pattern, pargs)
+            elif console.paramCount == 1:
+                cmdnames = [x['command'] for x in self.registered_commands]
+                if  console.parametrs[0] == 'commands':
+                    log(f'\n{chr(10).join(cmdnames)}')
+                elif console.parametrs[0] in cmdnames:
+                    for command in self.registered_commands:
+                        if console.parameters[0] == command['command']:
+                            usage = ''
+                            if command["required"]:
+                                usage += '{gray}' + f'<{"> <".join(command["required"])}>'
+                            if command["optional"]:
+                                usage += '{lightgray}' + f'[{"] [".join(command["optional"])}]'
+
+                            pargs = {
+                                "command": command["command"],
+                                "aliases": ", ".join(command["aliases"]),
+                                "usage": usage,
+                                "description": command["description"],
+                            }
+                            cstm(pattern, pargs)
+                    else:
+                        wrn('Something wrong')
+                else:
+                    wrn('No commands found')
         @self.register_command(
             "hello", ["hi"], translation["hello_description"], [], ["name"]
         )
@@ -311,7 +285,7 @@ class Shell(object):
                 end="",
             )
             log_function[type](text, tag)
-            print(f"{MCC.LOAD_CURSOR}{MCC.down()}{get_read_formatting()}", end="")
+            print(f"{MCC.LOAD_CURSOR}{MCC.down(1)}{get_read_formatting()}", end="")
         sys.stdout.flush()
 
     def check_params(self):
