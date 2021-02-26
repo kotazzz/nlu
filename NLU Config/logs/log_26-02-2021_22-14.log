@@ -1,0 +1,26 @@
+{}
+
+[22:14:51] [L] My Cmd  : Welcome to My CMD
+[22:14:55] [R] My Cmd  : userlist
+[22:14:55] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: NameError
+
+More information:
+	name 'DataCell' is not defined	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 36, in userlist
+    Student('Kotaz', 9)(),
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 24, in __init__
+    super(Student, self).__init__()
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 8, in __init__
+    self.uuid = DataCell(str(uuid.uuid4()))
+NameError: name 'DataCell' is not defined
+
+-------------- Error                --------------------
+
+[22:15:03] [R] My Cmd  : exit
+[22:15:03] [L] My Cmd  : Exit with code: quit, from: None

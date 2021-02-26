@@ -1,0 +1,31 @@
+{}
+
+[22:15:05] [L] My Cmd  : Welcome to My CMD
+[22:15:07] [R] My Cmd  : userlist
+[22:15:07] [L] My Cmd  : 
+- classnumber: 9
+  name: Kotaz
+  uuid: 7fbaea22-d09f-4b24-8037-b849f2e1bf7a
+- !!python/object:__main__.Subject
+  beginclass: 3
+  endclass: 9
+  name: Math
+  uuid: 6bcd621d-0fc0-44bc-8ab8-f1a7c7b7720c
+
+[22:15:07] [L] My Cmd  : [{'uuid': '7fbaea22-d09f-4b24-8037-b849f2e1bf7a', 'name': 'Kotaz', 'classnumber': 9}, <__main__.Subject object at 0x000002108454FE80>]
+[22:15:25] [R] My Cmd  : exit
+[22:15:25] [L] My Cmd  : Exit with code: quit, from: None
+[22:15:27] [L] My Cmd  : Welcome to My CMD
+[22:15:30] [R] My Cmd  : userlist
+[22:15:30] [L] My Cmd  : 
+- classnumber: 9
+  name: Kotaz
+  uuid: 89f40b2d-6f7c-462c-b505-52ddb33b62da
+- beginclass: 3
+  endclass: 9
+  name: Math
+  uuid: 964ced6d-b5f3-4198-b6c6-9340227a47e5
+
+[22:15:30] [L] My Cmd  : [{'uuid': '89f40b2d-6f7c-462c-b505-52ddb33b62da', 'name': 'Kotaz', 'classnumber': 9}, {'uuid': '964ced6d-b5f3-4198-b6c6-9340227a47e5', 'name': 'Math', 'beginclass': 3, 'endclass': 9}]
+[22:17:29] [R] My Cmd  : exit
+[22:17:29] [L] My Cmd  : Exit with code: quit, from: None

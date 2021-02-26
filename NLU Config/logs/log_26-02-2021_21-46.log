@@ -10,3 +10,5 @@
 - id: 3
   name: Kotaz
 
+[21:48:13] [R] My Cmd  : exit
+[21:48:13] [L] My Cmd  : Exit with code: quit, from: None

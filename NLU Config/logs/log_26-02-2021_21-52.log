@@ -1,0 +1,26 @@
+{}
+
+[21:52:41] [L] My Cmd  : Welcome to My CMD
+[21:52:43] [R] My Cmd  : userlist
+[21:52:43] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	__init__() takes 1 positional argument but 2 were given	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 40, in userlist
+    User('Kotaz')
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 31, in __init__
+    super(User, self).__init__()
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 20, in __init__
+    self.uuid = DataSector(uuid.uuid4())
+TypeError: __init__() takes 1 positional argument but 2 were given
+
+-------------- Error                --------------------
+
+[21:54:07] [R] My Cmd  : exit
+[21:54:07] [L] My Cmd  : Exit with code: quit, from: None

@@ -1,31 +1,31 @@
 from NewLifeUtils.CustomShellModule import *
+import uuid
 
 
 class DataSector():
-    def __init__(self, value):
-        self.val = value
-
-    def __call__(self, *args, **kwargs):
-        return self.val
-
-    def __repr__(self):
-        return f'DataSector({self.val} - {type(self.val).__name__})'
-
-    def __str__(self):
-        return str(self.val)
-
-
-class User():
-    def __init__(self, id, name):
-        self.id = DataSector(id)
-        self.name = DataSector(name)
+    def __init__(self):
+        self.uuid = str(uuid.uuid4())
 
     def __call__(self):
-        return dict((key, getattr(self, key)()) for key in self.__dict__.keys()
-            if type(getattr(self, key) is DataSector))
+        return dict((key, getattr(self, key)) for key in self.__dict__.keys()
+                    if not callable(getattr(self, key)) and not key.startswith('__')) | {'type': type(self).__name__}
 
-    def __str__(self):
-        return f'User<#{self.id} {self.name}>'
+
+########################################################################
+
+class Subject(DataSector):
+    def __init__(self, name, begin, end):
+        super(Subject, self).__init__()
+        self.name = name
+        self.beginclass = begin
+        self.endclass = end
+
+
+class Student(DataSector):
+    def __init__(self, name, classnumber):
+        super(Student, self).__init__()
+        self.name = name
+        self.classnumber = classnumber
 
 
 shell = Shell()
@@ -33,14 +33,14 @@ shell = Shell()
 
 @shell.register_command("userlist", description="userlist")
 def userlist(console):
+    data = [
+        Student('Kotaz', 9)(),
+        Subject('Math', 3, 9)()
+    ]
 
-    data =[
-            User(1, 'Volmur')(),
-            User(2, 'NewLife')(),
-            User(3, 'Kotaz')(),
-            ]
     import yaml
-    log('\n'+yaml.dump(data, default_flow_style=False))
+    log('\n' + yaml.dump(data, default_flow_style=False))
+    log(data)
 
 
 shell.run()
