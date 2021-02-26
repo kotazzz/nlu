@@ -1,127 +1,46 @@
-from NewLifeUtils.CustomShellModule import Shell
-from NewLifeUtils.LoggerModule import log, err
-from NewLifeUtils.StringUtilModule import screate
+from NewLifeUtils.CustomShellModule import *
 
 
-class Column(object):
-    def __init__(self, data, size=-1):
-        self.data = data
-        if size == -1:
-            self.size = max([len(str(d)) for d in data])
-        else:
-            self.size = size
+class DataSector():
+    def __init__(self, value):
+        self.val = value
 
-    def add_data(self, data):
-        self.data.append(data)
+    def __call__(self, *args, **kwargs):
+        return self.val
 
-    def build_column(self, type, separator):
-        build_line = lambda sep1, sep2: collumn.append(f'{sep1}{screate(data, self.size)}{sep2}')
-        collumn = []
-        if type == 1:
-            for data in self.data:
-                build_line(separator, separator)
-        elif type == 2:
-            for data in self.data:
-                build_line('', separator)
-        elif type == 3:
-            for data in self.data:
-                build_line('', separator)
-        elif type == 4:
-            for data in self.data:
-                build_line(separator, separator)
-        else:
-            raise ValueError('Invalid type (1, 2, 3 or 4)')
-        return collumn
+    def __repr__(self):
+        return f'DataSector({self.val} - {type(self.val).__name__})'
+
+    def __str__(self):
+        return str(self.val)
 
 
-class Table(object):
-    def __init__(self, collumns, type=0, minify=True):
-        self.separators = "╔╦╗║═╠╬╣╚╩╝"
-        self.type = type
-        self.collumns = collumns
-        self.builded_collumns = []
-        self.minify = minify
+class User():
+    def __init__(self, id, name):
+        self.id = DataSector(id)
+        self.name = DataSector(name)
 
-    def get_table(self):
-        def add_separator(sizes, type):
-            if type == 1:
-                sep1 = self.separators[0]
-                sep2 = self.separators[4]
-                sep3 = self.separators[1]
-                sep4 = self.separators[2]
+    def __call__(self):
+        return dict((key, getattr(self, key)()) for key in self.__dict__.keys()
+            if type(getattr(self, key) is DataSector))
 
-            elif type == 2:
-                sep1 = self.separators[5]
-                sep2 = self.separators[4]
-                sep3 = self.separators[6]
-                sep4 = self.separators[7]
-
-            else:
-                sep1 = self.separators[8]
-                sep2 = self.separators[4]
-                sep3 = self.separators[9]
-                sep4 = self.separators[10]
-
-            if type == 2:
-                sep = '\n' + sep1
-            else:
-                sep = sep1
-            for i in sizes:
-                sep += sep2 * i + sep3
-            l = list(sep)
-            l[-1] = sep4
-            sep = ''.join(l)
-            if type != 2:
-                sep += '\n'
-            return sep
-
-        collumn_length = [len(collumn.data) for collumn in self.collumns]
-        collumn_sizes = [collumn.size for collumn in self.collumns]
-        for collumn in self.collumns:
-            while len(collumn.data) < max(collumn_length):
-                collumn.add_data('')
-        sep = self.separators[3]
-        builded_collumns = []
-        if len(self.collumns) == 1:
-            builded_collumns.append(self.collumns[0].build_column(4, sep))
-        elif len(self.collumns) == 2:
-            builded_collumns.append(self.collumns[0].build_column(1, sep))
-            builded_collumns.append(self.collumns[1].build_column(3, sep))
-        else:
-            builded_collumns.append(self.collumns[0].build_column(1, sep))
-            builded_collumns.append(self.collumns[-1].build_column(3, sep))
-            for collumn in self.collumns[1:-1]:
-                builded_collumns.append(collumn.build_column(2, sep))
-        builded_table = add_separator(collumn_sizes, 1)
-        f = False
-        for i in range(len(self.collumns[0].data)):
-            for collumn in builded_collumns:
-                builded_table += collumn[i]
-            if not self.minify or not f:
-                builded_table += add_separator(collumn_sizes, 2)
-                f = True
-            builded_table += '\n'
-        builded_table += add_separator(collumn_sizes, 3)
-        return builded_table
+    def __str__(self):
+        return f'User<#{self.id} {self.name}>'
 
 
-if __name__ == '__main__':
-    shell = Shell()
-    shell.run()
-else:
+shell = Shell()
 
-    data = ["мне",
-            "наплевать",
-            "еще",
-            "раз",
-            "между",
-            "вами",
-            "увижу",
-            "оскорбления",
-            "пизды",
-            "дам",
-            "огромных", ]
-    c1 = Column(data, )
-    c2 = Column(data[2:-3], )
-    t1 = Table([c1,c2, ])
-    log('\n' + t1.get_table())
+
+@shell.register_command("userlist", description="userlist")
+def userlist(console):
+
+    data =[
+            User(1, 'Volmur')(),
+            User(2, 'NewLife')(),
+            User(3, 'Kotaz')(),
+            ]
+    import yaml
+    log('\n'+yaml.dump(data, default_flow_style=False))
+
+
+shell.run()

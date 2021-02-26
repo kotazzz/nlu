@@ -1,0 +1,8 @@
+{}
+
+[21:20:39] [L] My Cmd  : Welcome to My CMD
+[21:20:41] [R] My Cmd  : userlist
+[21:20:41] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:20:41] [L] My Cmd  : <class '__main__.User'>
+[21:30:27] [R] My Cmd  : exit
+[21:30:27] [L] My Cmd  : Exit with code: quit, from: None

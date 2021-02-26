@@ -1,0 +1,9 @@
+{}
+
+[21:43:09] [L] My Cmd  : Welcome to My CMD
+[21:43:12] [R] My Cmd  : userlist
+[21:43:12] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:43:12] [W] My Cmd  : {'id': DataSector(1 - int), 'name': DataSector(name - str)}
+[21:43:12] [L] My Cmd  : {'n': {'id': 1, 'name': 'name'}}
+[21:43:54] [R] My Cmd  : exit
+[21:43:54] [L] My Cmd  : Exit with code: quit, from: None

@@ -1,0 +1,10 @@
+{}
+
+[20:59:32] [L] My Cmd  : Welcome to My CMD
+[20:59:36] [R] My Cmd  : userlist
+[20:59:36] [L] My Cmd  : dict_keys(['id', 'name'])
+[20:59:36] [L] My Cmd  : <__main__.User object at 0x000001F4B844FE80>
+[21:01:53] [R] My Cmd  : уше
+[21:01:53] [W] My Cmd  : Unknown Command, type "help"
+[21:01:54] [R] My Cmd  : exit
+[21:01:54] [L] My Cmd  : Exit with code: quit, from: None

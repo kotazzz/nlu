@@ -1,0 +1,33 @@
+{}
+
+[21:07:05] [L] My Cmd  : Welcome to My CMD
+[21:07:08] [R] My Cmd  : userlist
+[21:07:08] [L] My Cmd  : dict_keys(['val'])
+[21:07:08] [L] My Cmd  : D1
+[21:07:08] [L] My Cmd  : 1
+[21:07:37] [R] My Cmd  : exit
+[21:07:37] [L] My Cmd  : Exit with code: quit, from: None
+[21:07:39] [L] My Cmd  : Welcome to My CMD
+[21:08:01] [R] My Cmd  : userlist
+[21:08:01] [L] My Cmd  : dict_keys(['val'])
+[21:08:01] [L] My Cmd  : D1
+[21:08:01] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: AttributeError
+
+More information:
+	'DataSector' object has no attribute 'value'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 72, in userlist
+    log(repr(user))
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 12, in __repr__
+    return f'DataSector({self.value} - {type(self.value)})'
+AttributeError: 'DataSector' object has no attribute 'value'
+
+-------------- Error                --------------------
+
+[21:08:22] [R] My Cmd  : exit
+[21:08:22] [L] My Cmd  : Exit with code: quit, from: None

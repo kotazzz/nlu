@@ -1,0 +1,29 @@
+{}
+
+[21:16:23] [L] My Cmd  : Welcome to My CMD
+[21:16:29] [R] My Cmd  : userlist
+[21:16:29] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:16:29] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	__repr__ returned non-string (type dict)	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 47, in userlist
+    log(data)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 654, in log
+    to_format(
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 630, in to_format
+    + pattern.format(
+TypeError: __repr__ returned non-string (type dict)
+
+-------------- Error                --------------------
+
+[21:20:36] [R] My Cmd  : 4
+[21:20:36] [W] My Cmd  : Unknown Command, type "help"
+[21:20:37] [R] My Cmd  : exit
+[21:20:37] [L] My Cmd  : Exit with code: quit, from: None

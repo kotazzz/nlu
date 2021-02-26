@@ -1,0 +1,11 @@
+{}
+
+[21:38:00] [L] My Cmd  : Welcome to My CMD
+[21:38:03] [R] My Cmd  : userlist
+[21:38:03] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:38:03] [W] My Cmd  : {'id': DataSector(1 - int), 'name': DataSector(name - str)}
+[21:38:03] [L] My Cmd  : {'n': {}}
+[21:39:11] [R] My Cmd  : EXIT
+[21:39:11] [W] My Cmd  : Unknown Command, type "help"
+[21:39:13] [R] My Cmd  : exit
+[21:39:13] [L] My Cmd  : Exit with code: quit, from: None

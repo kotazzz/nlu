@@ -1,0 +1,25 @@
+{}
+
+[21:34:05] [L] My Cmd  : Welcome to My CMD
+[21:34:08] [R] My Cmd  : userlist
+[21:34:08] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:34:08] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: NameError
+
+More information:
+	name 'key' is not defined	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 39, in userlist
+    'n' : user()
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 24, in __call__
+    wrn(getattr(self, key))
+NameError: name 'key' is not defined
+
+-------------- Error                --------------------
+
+[21:35:06] [R] My Cmd  : exit
+[21:35:06] [L] My Cmd  : Exit with code: quit, from: None

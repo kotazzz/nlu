@@ -1,0 +1,79 @@
+{}
+
+[21:32:08] [L] My Cmd  : Welcome to My CMD
+[21:32:10] [R] My Cmd  : userlisr
+[21:32:10] [W] My Cmd  : Unknown Command, type "help"
+[21:32:14] [R] My Cmd  : userlist
+[21:32:14] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:32:14] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: NameError
+
+More information:
+	name 'f' is not defined	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 38, in userlist
+    'n' : user()
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 24, in __call__
+    return dict((key, value) for key, value in f.__dict__.iteritems()
+NameError: name 'f' is not defined
+
+-------------- Error                --------------------
+
+[21:32:24] [R] My Cmd  : exit
+[21:32:24] [L] My Cmd  : Exit with code: quit, from: None
+[21:32:26] [L] My Cmd  : Welcome to My CMD
+[21:32:28] [R] My Cmd  : uselis
+[21:32:28] [W] My Cmd  : Unknown Command, type "help"
+[21:32:30] [R] My Cmd  : uselist
+[21:32:30] [W] My Cmd  : Unknown Command, type "help"
+[21:32:33] [R] My Cmd  : userlist
+[21:32:33] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:32:33] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: AttributeError
+
+More information:
+	'dict' object has no attribute 'iteritems'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 38, in userlist
+    'n' : user()
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 24, in __call__
+    return dict((key, value) for key, value in self.__dict__.iteritems()
+AttributeError: 'dict' object has no attribute 'iteritems'
+
+-------------- Error                --------------------
+
+[21:32:44] [R] My Cmd  : exit
+[21:32:44] [L] My Cmd  : Exit with code: quit, from: None
+[21:32:47] [L] My Cmd  : Welcome to My CMD
+[21:32:49] [R] My Cmd  : userlist
+[21:32:49] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:32:49] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: ValueError
+
+More information:
+	too many values to unpack (expected 2)	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 38, in userlist
+    'n' : user()
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 24, in __call__
+    return dict((key, value) for key, value in self.__dict__
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 24, in <genexpr>
+    return dict((key, value) for key, value in self.__dict__
+ValueError: too many values to unpack (expected 2)
+
+-------------- Error                --------------------
+
+[21:33:37] [R] My Cmd  : exit
+[21:33:37] [L] My Cmd  : Exit with code: quit, from: None

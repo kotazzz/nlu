@@ -1,0 +1,9 @@
+{}
+
+[21:36:55] [L] My Cmd  : Welcome to My CMD
+[21:37:01] [R] My Cmd  : userlist
+[21:37:01] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:37:01] [W] My Cmd  : name
+[21:37:01] [L] My Cmd  : {'n': {}}
+[21:37:58] [R] My Cmd  : exit
+[21:37:58] [L] My Cmd  : Exit with code: quit, from: None

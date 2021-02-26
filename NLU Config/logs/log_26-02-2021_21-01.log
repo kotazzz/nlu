@@ -1,0 +1,26 @@
+{}
+
+[21:01:56] [L] My Cmd  : Welcome to My CMD
+[21:01:58] [R] My Cmd  : userlist
+[21:01:58] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:01:58] [L] My Cmd  : <__main__.User object at 0x00000214A65EFE80>
+[21:01:58] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	'User' object is not callable	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 63, in userlist
+    log(user())
+TypeError: 'User' object is not callable
+
+-------------- Error                --------------------
+
+[21:02:39] [R] My Cmd  : учше
+[21:02:39] [W] My Cmd  : Unknown Command, type "help"
+[21:02:40] [R] My Cmd  : exit
+[21:02:40] [L] My Cmd  : Exit with code: quit, from: None

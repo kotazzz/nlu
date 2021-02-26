@@ -1,0 +1,19 @@
+{}
+
+[21:08:24] [L] My Cmd  : Welcome to My CMD
+[21:08:26] [R] My Cmd  : userlist
+[21:08:26] [L] My Cmd  : dict_keys(['val'])
+[21:08:26] [L] My Cmd  : D1
+[21:08:26] [L] My Cmd  : DataSector(1 - <class 'int'>)
+[21:08:26] [L] My Cmd  : 1
+[21:08:43] [R] My Cmd  : exit
+[21:08:43] [L] My Cmd  : Exit with code: quit, from: None
+[21:08:44] [L] My Cmd  : Welcome to My CMD
+[21:08:46] [R] My Cmd  : userlist
+[21:08:46] [L] My Cmd  : dict_keys(['val'])
+[21:08:46] [L] My Cmd  : D1
+[21:08:46] [L] My Cmd  : DataSector(1 - int)
+[21:08:46] [L] My Cmd  : 1
+[21:10:16] [R] My Cmd  : 
+[21:10:18] [R] My Cmd  : exit
+[21:10:18] [L] My Cmd  : Exit with code: quit, from: None

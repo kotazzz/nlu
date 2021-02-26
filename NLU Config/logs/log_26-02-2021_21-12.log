@@ -1,0 +1,19 @@
+{}
+
+[21:12:08] [L] My Cmd  : Welcome to My CMD
+[21:12:11] [R] My Cmd  : userlist
+[21:12:11] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:12:11] [L] My Cmd  : User<#1 name>
+[21:12:11] [L] My Cmd  : <__main__.User object at 0x00000204126EFE80>
+[21:12:36] [R] My Cmd  : 
+[21:12:38] [R] My Cmd  : eit
+[21:12:38] [W] My Cmd  : Unknown Command, type "help"
+[21:12:39] [R] My Cmd  : exit
+[21:12:39] [L] My Cmd  : Exit with code: quit, from: None
+[21:12:42] [L] My Cmd  : Welcome to My CMD
+[21:12:45] [R] My Cmd  : userlist
+[21:12:45] [L] My Cmd  : dict_keys(['id', 'name'])
+[21:12:45] [L] My Cmd  : User<#1 name>
+[21:12:45] [L] My Cmd  : User<#1 name>
+[21:13:36] [R] My Cmd  : exit
+[21:13:36] [L] My Cmd  : Exit with code: quit, from: None
