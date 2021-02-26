@@ -797,7 +797,7 @@ def read(message, tag="", completion=None):
     if message[-1] not in [" ", ">", ":"]:
         message += ": "
     print(
-        f"{ACC.bcustomrgb(0, 43, 112)}{ACC.customrgb(235, 54, 30)}{message}",
+        f"{ACC.bcustomrgb(75, 83, 94)}{ACC.customrgb(204, 224, 237)}{message}",
         end="",
     )
     readed = input()

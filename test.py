@@ -1,3 +1,4 @@
+from NewLifeUtils.CustomShellModule import Shell
 from NewLifeUtils.LoggerModule import log, err
 from NewLifeUtils.StringUtilModule import screate
 
@@ -105,6 +106,10 @@ class Table(object):
 
 
 if __name__ == '__main__':
+    shell = Shell()
+    shell.run()
+else:
+
     data = ["мне",
             "наплевать",
             "еще",

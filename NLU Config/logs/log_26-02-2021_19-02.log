@@ -1,0 +1,35 @@
+{}
+
+[19:02:56] [L] My Cmd  : Welcome to My CMD
+[19:02:57] [R] My Cmd  : asd
+[19:02:57] [W] My Cmd  : Unknown Command, type "help"
+[19:03:24] [R] My Cmd  : fuck
+[19:03:24] [W] My Cmd  : 
+-------------- Warn                 --------------------
+Type: Exception
+
+More information:
+	Why you so evil?...
+	:_(
+	TIP: you can be beter	
+
+-------------- Warn                 --------------------
+
+[19:04:14] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: EOFError
+
+More information:
+		
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 324, in main
+    rea(f"{self.cmd_name.title()} >", completion=self.fist_completer)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 693, in rea
+    return read(message, tag, completion)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\LoggerModule.py", line 803, in read
+    readed = input()
+EOFError
+
+-------------- Error                --------------------
+

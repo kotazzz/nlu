@@ -23,7 +23,7 @@ ECHO %ESC%[40;92m^| %ESC%[100;93m7%ESC%[40;92m   %ESC%[40;4;96mInstall new env%E
 ECHO %ESC%[40;92m+--------------------------------------+-------+
 ECHO %ESC%[40;92m^| %ESC%[40;93mPress enter without number to exit   %ESC%[40;92m        ^|
 ECHO %ESC%[40;92m+----------------------------------------------+%ESC%[0m
-SET /P M=Type 1, 2, 3, or 4 then press ENTER:
+SET /P M=%ESC%[40;94m^>^>^>%ESC%[0m
 CLS
 IF %M%==1 GOTO CPIPY
 IF %M%==2 GOTO PREAL
