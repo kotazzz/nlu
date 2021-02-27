@@ -1,0 +1,19 @@
+users:
+- classnumber: 9
+  name: Kotaz
+  uuid: 258f8853-cd76-4266-bdce-e7e148c9f885
+- classnumber: 4
+  name: Meow
+  uuid: eebb252d-acd5-4396-9e92-a78491c48241
+- classnumber: 3
+  name: SomePeople
+  uuid: 65656262-3235-3264-2d61-6364352d3433
+- classnumber: 4
+  name: Volmur
+  uuid: 2d396539-322d-6137-3834-393163343832
+- classnumber: 5
+  name: HowAreYou
+  uuid: 34310d0a-6565-6262-3235-32642d616364
+- classnumber: 6
+  name: Abness
+  uuid: 352d3433-3936-2d39-6539-322d61373834

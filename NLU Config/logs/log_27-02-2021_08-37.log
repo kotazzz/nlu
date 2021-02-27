@@ -1,0 +1,19 @@
+{}
+
+[08:37:51] [L] My Cmd  : Welcome to My CMD
+[08:37:52] [W] My Cmd  : Storage is broken/empty
+[08:37:58] [R] My Cmd  : studadd Kotaz 9
+[08:37:58] [L] My Cmd  : New student Kotaz (9)
+[08:38:02] [R] My Cmd  : studlist
+[08:38:02] [L] My Cmd  : 
+                   TABLE
+╔══╦═════╦═════╦════════════════════════════════════╗
+║id║name ║class║uuid                                ║
+╠══╬═════╬═════╬════════════════════════════════════╣
+║0 ║Kotaz║9    ║bfd5cb40-c9b7-4a36-9f4b-b109bdffee66║
+╚══╩═════╩═════╩════════════════════════════════════╝
+
+[08:38:05] [R] My Cmd  : exit
+[08:38:05] [L] My Cmd  : Exit with code: quit, from: None
+[08:38:05] [L] My Cmd  : Succesfull saved 1 users
+[08:38:05] [L] My Cmd  : Succesfull saved all data

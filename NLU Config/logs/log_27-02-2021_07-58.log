@@ -1,0 +1,38 @@
+{}
+
+[07:58:17] [L] My Cmd  : Welcome to My CMD
+[07:58:18] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg 123
+[07:58:18] [W] My Cmd  : Name too long
+[07:58:18] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	'>' not supported between instances of 'int' and 'str'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 63, in useradd
+    if not 11 > console.parametrs[1] > 1:
+TypeError: '>' not supported between instances of 'int' and 'str'
+
+-------------- Error                --------------------
+
+[07:58:36] [R] My Cmd  : exit
+[07:58:36] [L] My Cmd  : Exit with code: quit, from: None
+[07:58:39] [L] My Cmd  : Welcome to My CMD
+[07:58:41] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg 123
+[07:58:41] [W] My Cmd  : Name too long
+[07:58:41] [W] My Cmd  : Invalid class
+[07:58:43] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg 12
+[07:58:43] [W] My Cmd  : Name too long
+[07:58:43] [W] My Cmd  : Invalid class
+[07:58:44] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg 1
+[07:58:44] [W] My Cmd  : Name too long
+[07:58:44] [W] My Cmd  : Invalid class
+[08:00:07] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg 1
+[08:00:07] [W] My Cmd  : Name too long
+[08:00:07] [W] My Cmd  : Invalid class
+[08:00:08] [R] My Cmd  : exit
+[08:00:08] [L] My Cmd  : Exit with code: quit, from: None

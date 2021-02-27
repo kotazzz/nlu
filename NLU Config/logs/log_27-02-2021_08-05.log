@@ -1,0 +1,12 @@
+{}
+
+[08:05:04] [L] My Cmd  : Welcome to My CMD
+[08:05:14] [R] My Cmd  : studadd kotazzzzzzzzzzzzzzz 4
+[08:05:14] [W] My Cmd  : Name too long
+[08:05:17] [R] My Cmd  : studadd k
+[08:05:17] [W] My Cmd  : Invalid usage. Syntax: studadd <name> <class> 
+[08:05:19] [R] My Cmd  : studadd k a
+[08:05:19] [W] My Cmd  : Name too long
+[08:05:19] [W] My Cmd  : Class must be int
+[08:06:21] [R] My Cmd  : exit
+[08:06:21] [L] My Cmd  : Exit with code: quit, from: None

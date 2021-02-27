@@ -1,0 +1,26 @@
+{}
+
+[07:56:27] [L] My Cmd  : Welcome to My CMD
+[07:56:29] [R] My Cmd  : studadd
+[07:56:29] [W] My Cmd  : Invalid usage. Syntax: studadd <name> <class> 
+[07:56:34] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg
+[07:56:34] [W] My Cmd  : Invalid usage. Syntax: studadd <name> <class> 
+[07:56:38] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg 123
+[07:56:38] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	'>' not supported between instances of 'int' and 'str'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 54, in useradd
+    if not 15 > console.parametrs[0] > 3:
+TypeError: '>' not supported between instances of 'int' and 'str'
+
+-------------- Error                --------------------
+
+[07:58:14] [R] My Cmd  : exit
+[07:58:14] [L] My Cmd  : Exit with code: quit, from: None

@@ -1,0 +1,43 @@
+{}
+
+[22:24:11] [L] My Cmd  : Welcome to My CMD
+[22:24:13] [R] My Cmd  : userlist
+[22:24:13] [L] My Cmd  : 
+- classnumber: 9
+  name: Kotaz
+  type: Student
+  uuid: bc10f8af-2b94-4575-aec5-2146c8a877c4
+- beginclass: 3
+  endclass: 9
+  name: Math
+  type: Subject
+  uuid: 15f02a66-201f-41f0-bd6c-d2998fee5e5a
+- subject:
+    beginclass: 3
+    endclass: 9
+    name: Math
+    type: Subject
+    uuid: db70665f-613d-4825-b51e-900692d038c9
+  type: Mark
+  uuid: 572ff66b-a7c3-4ea6-a80f-971815f4f333
+- 4
+
+[22:24:13] [L] My Cmd  : 
+[{'classnumber': 9,
+  'name': 'Kotaz',
+  'type': 'Student',
+  'uuid': 'bc10f8af-2b94-4575-aec5-2146c8a877c4'},
+ {'beginclass': 3,
+  'endclass': 9,
+  'name': 'Math',
+  'type': 'Subject',
+  'uuid': '15f02a66-201f-41f0-bd6c-d2998fee5e5a'},
+ {'subject': {'beginclass': 3,
+              'endclass': 9,
+              'name': 'Math',
+              'type': 'Subject',
+              'uuid': 'db70665f-613d-4825-b51e-900692d038c9'},
+  'type': 'Mark',
+  'uuid': '572ff66b-a7c3-4ea6-a80f-971815f4f333'},
+ 4]
+[22:24:13] [L] My Cmd  : [{'uuid': 'bc10f8af-2b94-4575-aec5-2146c8a877c4', 'name': 'Kotaz', 'classnumber': 9, 'type': 'Student'}, {'uuid': '15f02a66-201f-41f0-bd6c-d2998fee5e5a', 'name': 'Math', 'beginclass': 3, 'endclass': 9, 'type': 'Subject'}, {'uuid': '572ff66b-a7c3-4ea6-a80f-971815f4f333', 'subject': {'uuid': 'db70665f-613d-4825-b51e-900692d038c9', 'name': 'Math', 'beginclass': 3, 'endclass': 9, 'type': 'Subject'}, 'type': 'Mark'}, 4]

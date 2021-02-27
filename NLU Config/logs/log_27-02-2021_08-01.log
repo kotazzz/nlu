@@ -1,0 +1,9 @@
+{}
+
+[08:01:38] [L] My Cmd  : Welcome to My CMD
+[08:01:54] [R] My Cmd  : exit
+[08:01:54] [L] My Cmd  : Exit with code: quit, from: None
+[08:01:57] [L] My Cmd  : <__main__.Student object at 0x00000214AD3F9460>
+[08:01:57] [L] My Cmd  : Welcome to My CMD
+[08:02:26] [R] My Cmd  : exit
+[08:02:26] [L] My Cmd  : Exit with code: quit, from: None

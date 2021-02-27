@@ -1,0 +1,29 @@
+{}
+
+[22:22:07] [L] My Cmd  : Welcome to My CMD
+[22:22:09] [R] My Cmd  : user
+[22:22:09] [W] My Cmd  : Unknown Command, type "help"
+[22:22:13] [R] My Cmd  : userlist
+[22:22:13] [L] My Cmd  : 
+- classnumber: 9
+  name: Kotaz
+  type: Student
+  uuid: 58e1a09b-ba6d-4556-9bfe-5d4e315b5535
+- beginclass: 3
+  endclass: 9
+  name: Math
+  type: Subject
+  uuid: c3686d39-a719-475e-acb9-ad79a32bd7dc
+- subject:
+    beginclass: 3
+    endclass: 9
+    name: Math
+    type: Subject
+    uuid: 87832d72-a80e-41da-bc4f-62aeaac22ee0
+  type: Mark
+  uuid: f46cc244-88e5-4061-95fa-1795e9c6e283
+- 4
+
+[22:22:13] [L] My Cmd  : [{'uuid': '58e1a09b-ba6d-4556-9bfe-5d4e315b5535', 'name': 'Kotaz', 'classnumber': 9, 'type': 'Student'}, {'uuid': 'c3686d39-a719-475e-acb9-ad79a32bd7dc', 'name': 'Math', 'beginclass': 3, 'endclass': 9, 'type': 'Subject'}, {'uuid': 'f46cc244-88e5-4061-95fa-1795e9c6e283', 'subject': {'uuid': '87832d72-a80e-41da-bc4f-62aeaac22ee0', 'name': 'Math', 'beginclass': 3, 'endclass': 9, 'type': 'Subject'}, 'type': 'Mark'}, 4]
+[22:23:55] [R] My Cmd  : exit
+[22:23:55] [L] My Cmd  : Exit with code: quit, from: None

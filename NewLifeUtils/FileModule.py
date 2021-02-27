@@ -53,6 +53,9 @@ def get_pointyaml(alias):
     yobj = AttrDict(yaml.load(rawread(alias), Loader=yaml.FullLoader))
     return yobj
 
+def get_yamlconfig(alias):
+    return yaml.load(rawread(alias), Loader=yaml.FullLoader)
+
 
 def rewrite_yaml(alias, obj):
     yaml_write = yaml.dump(obj, default_flow_style=False)

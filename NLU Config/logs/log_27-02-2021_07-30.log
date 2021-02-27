@@ -1,0 +1,22 @@
+{}
+
+[07:30:19] [L] My Cmd  : Welcome to My CMD
+[07:30:22] [R] My Cmd  : userlist
+[07:30:22] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	__init__() missing 2 required positional arguments: 'mark' and 'user'	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 49, in userlist
+    Mark(Subject('Math', 3, 9))(),
+TypeError: __init__() missing 2 required positional arguments: 'mark' and 'user'
+
+-------------- Error                --------------------
+
+[07:32:21] [R] My Cmd  : exit
+[07:32:21] [L] My Cmd  : Exit with code: quit, from: None

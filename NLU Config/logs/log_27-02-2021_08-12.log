@@ -1,0 +1,23 @@
+{}
+
+[08:12:33] [L] My Cmd  : Welcome to My CMD
+[08:12:38] [R] My Cmd  : studadd rr1 1
+[08:12:38] [L] My Cmd  : New student rr1 (1)
+[08:12:40] [R] My Cmd  : studadd rr2 2
+[08:12:40] [L] My Cmd  : New student rr2 (2)
+[08:12:47] [R] My Cmd  : studlist
+[08:12:47] [L] My Cmd  : 
+                   TABLE
+╔══╦════╦═════╦════════════════════════════════════╗
+║id║name║class║uuid                                ║
+╠══╬════╬═════╬════════════════════════════════════╣
+║0 ║rr1 ║1    ║1534f048-586d-47d4-822f-1b044ef2e0c9║
+║1 ║rr2 ║2    ║24f09666-f005-44fd-94d2-6a0daeeebe97║
+╚══╩════╩═════╩════════════════════════════════════╝
+
+[08:12:56] [R] My Cmd  : studview
+[08:12:56] [W] My Cmd  : Invalid usage. Syntax: studview <uuid> 
+[08:12:57] [R] My Cmd  : studview 1534f048-586d-47d4-822f-1b044ef2e0c9
+[08:12:57] [W] My Cmd  : Cannot find
+[08:13:25] [R] My Cmd  : exit
+[08:13:25] [L] My Cmd  : Exit with code: quit, from: None

@@ -16,3 +16,5 @@
   uuid: a75e2b30-2afc-45f7-b06d-4cd7aa9ee47f
 
 [22:17:41] [L] My Cmd  : [{'uuid': '90424cee-acff-4c2c-9715-1eba9185edc7', 'name': 'Kotaz', 'classnumber': 9, 'type': 'Student'}, {'uuid': 'a75e2b30-2afc-45f7-b06d-4cd7aa9ee47f', 'name': 'Math', 'beginclass': 3, 'endclass': 9, 'type': 'Subject'}]
+[22:20:53] [R] My Cmd  : exit
+[22:20:53] [L] My Cmd  : Exit with code: quit, from: None

@@ -1,0 +1,60 @@
+{}
+
+[07:33:37] [L] My Cmd  : Welcome to My CMD
+[07:33:40] [R] My Cmd  : userlist
+[07:33:40] [L] My Cmd  : 
+- classnumber: 9
+  name: Kotaz
+  type: Student
+  uuid: a858d729-0f04-4d6d-bcf1-8c9b634c67fc
+- beginclass: 3
+  endclass: 9
+  name: Math
+  type: Subject
+  uuid: 35b738c5-9151-4683-b842-c56a3b304f41
+- date: 27-02-2021 07:33:40
+  mark: 4
+  subject:
+    beginclass: 3
+    endclass: 9
+    name: Math
+    type: Subject
+    uuid: 35b738c5-9151-4683-b842-c56a3b304f41
+  type: Mark
+  user:
+    classnumber: 9
+    name: Kotaz
+    type: Student
+    uuid: a858d729-0f04-4d6d-bcf1-8c9b634c67fc
+  uuid: 4437d5ce-6988-40cd-a794-fb763f670726
+- 4
+
+[07:33:40] [L] My Cmd  : 
+[{'classnumber': 9,
+  'name': 'Kotaz',
+  'type': 'Student',
+  'uuid': 'a858d729-0f04-4d6d-bcf1-8c9b634c67fc'},
+ {'beginclass': 3,
+  'endclass': 9,
+  'name': 'Math',
+  'type': 'Subject',
+  'uuid': '35b738c5-9151-4683-b842-c56a3b304f41'},
+ {'date': '27-02-2021 07:33:40',
+  'mark': 4,
+  'subject': {'beginclass': 3,
+              'endclass': 9,
+              'name': 'Math',
+              'type': 'Subject',
+              'uuid': '35b738c5-9151-4683-b842-c56a3b304f41'},
+  'type': 'Mark',
+  'user': {'classnumber': 9,
+           'name': 'Kotaz',
+           'type': 'Student',
+           'uuid': 'a858d729-0f04-4d6d-bcf1-8c9b634c67fc'},
+  'uuid': '4437d5ce-6988-40cd-a794-fb763f670726'},
+ 4]
+[07:33:40] [L] My Cmd  : [{'uuid': 'a858d729-0f04-4d6d-bcf1-8c9b634c67fc', 'name': 'Kotaz', 'classnumber': 9, 'type': 'Student'}, {'uuid': '35b738c5-9151-4683-b842-c56a3b304f41', 'name': 'Math', 'beginclass': 3, 'endclass': 9, 'type': 'Subject'}, {'uuid': '4437d5ce-6988-40cd-a794-fb763f670726', 'subject': {'uuid': '35b738c5-9151-4683-b842-c56a3b304f41', 'name': 'Math', 'beginclass': 3, 'endclass': 9, 'type': 'Subject'}, 'mark': 4, 'user': {'uuid': 'a858d729-0f04-4d6d-bcf1-8c9b634c67fc', 'name': 'Kotaz', 'classnumber': 9, 'type': 'Student'}, 'date': '27-02-2021 07:33:40', 'type': 'Mark'}, 4]
+[07:44:10] [R] My Cmd  : exkt\\it
+[07:44:10] [W] My Cmd  : Unknown Command, type "help"
+[07:44:11] [R] My Cmd  : exit
+[07:44:11] [L] My Cmd  : Exit with code: quit, from: None

@@ -1,0 +1,37 @@
+{}
+
+[08:10:05] [L] My Cmd  : Welcome to My CMD
+[08:10:13] [R] My Cmd  : studadd uuuu1 1
+[08:10:13] [L] My Cmd  : New student uuuu1 (1)
+[08:10:15] [R] My Cmd  : studadd uuuu2 2
+[08:10:15] [L] My Cmd  : New student uuuu2 (2)
+[08:10:17] [R] My Cmd  : studadd uuuu3 3
+[08:10:17] [L] My Cmd  : New student uuuu3 (3)
+[08:10:19] [R] My Cmd  : studadd uuuu4 4
+[08:10:19] [L] My Cmd  : New student uuuu4 (4)
+[08:10:21] [R] My Cmd  : studlist
+[08:10:21] [L] My Cmd  : 
+                   TABLE
+╔══╦═════╦═════╦════════════════════════════════════╗
+║id║name ║class║uuid                                ║
+╠══╬═════╬═════╬════════════════════════════════════╣
+║0 ║uuuu1║1    ║12dd0843-fa05-4687-b055-73282c04ff20║
+║1 ║uuuu2║2    ║5e861f80-1d84-461e-bd7e-c577e2fb9acb║
+║2 ║uuuu3║3    ║27d673e1-8723-408b-b3ee-4a85185859c0║
+║3 ║uuuu4║4    ║a55b5e31-6115-4a11-886e-01b7ecfa479e║
+╚══╩═════╩═════╩════════════════════════════════════╝
+
+[08:10:34] [R] My Cmd  : studview 12dd0843-fa05-4687-b055-73282c04ff20
+[08:10:34] [W] My Cmd  : Cannot find
+[08:10:37] [R] My Cmd  : studview 12dd0843-fa05-4687-b055-73282c04ff2
+[08:10:37] [W] My Cmd  : invalid uuid
+[08:10:39] [R] My Cmd  : studview 12dd0843-fa05-4687-b055-73282c04ff
+[08:10:39] [W] My Cmd  : invalid uuid
+[08:10:41] [R] My Cmd  : studview 12dd0843-fa05-4687-b055-73282
+[08:10:41] [W] My Cmd  : invalid uuid
+[08:10:46] [R] My Cmd  : studview 12dd0843-fa05-4687-b055-73282c04ff20
+[08:10:46] [W] My Cmd  : Cannot find
+[08:10:51] [R] My Cmd  : studview 5e861f80-1d84-461e-bd7e-c577e2fb9acb
+[08:10:51] [W] My Cmd  : Cannot find
+[08:11:07] [R] My Cmd  : exit
+[08:11:07] [L] My Cmd  : Exit with code: quit, from: None

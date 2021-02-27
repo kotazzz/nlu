@@ -1,0 +1,21 @@
+{}
+
+[08:13:29] [L] My Cmd  : Welcome to My CMD
+[08:13:33] [R] My Cmd  : studadd rr1 1
+[08:13:33] [L] My Cmd  : New student rr1 (1)
+[08:13:34] [R] My Cmd  : studadd rr2 2
+[08:13:34] [L] My Cmd  : New student rr2 (2)
+[08:13:36] [R] My Cmd  : studlist
+[08:13:36] [L] My Cmd  : 
+                   TABLE
+╔══╦════╦═════╦════════════════════════════════════╗
+║id║name║class║uuid                                ║
+╠══╬════╬═════╬════════════════════════════════════╣
+║0 ║rr1 ║1    ║6072dee6-0c39-48fc-b053-078507ddf34c║
+║1 ║rr2 ║2    ║22792a2a-1591-49d8-8b26-08654921edf9║
+╚══╩════╩═════╩════════════════════════════════════╝
+
+[08:13:43] [R] My Cmd  : studview 6072dee6-0c39-48fc-b053-078507ddf34c
+[08:13:43] [W] My Cmd  : Cannot find
+[08:14:07] [R] My Cmd  : exit
+[08:14:07] [L] My Cmd  : Exit with code: quit, from: None

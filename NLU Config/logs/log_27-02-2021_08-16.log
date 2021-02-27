@@ -1,0 +1,63 @@
+{}
+
+[08:16:13] [L] My Cmd  : Welcome to My CMD
+[08:16:17] [R] My Cmd  : studadd rr1 1
+[08:16:17] [L] My Cmd  : New student rr1 (1)
+[08:16:18] [R] My Cmd  : studadd rr2 2
+[08:16:18] [L] My Cmd  : New student rr2 (2)
+[08:16:20] [R] My Cmd  : studlist
+[08:16:20] [L] My Cmd  : 
+                   TABLE
+╔══╦════╦═════╦════════════════════════════════════╗
+║id║name║class║uuid                                ║
+╠══╬════╬═════╬════════════════════════════════════╣
+║0 ║rr1 ║1    ║06472e78-c13e-40fd-aa10-ad24a8a4b247║
+║1 ║rr2 ║2    ║8af8fa04-2adc-4175-a0e7-64b464bdaa52║
+╚══╩════╩═════╩════════════════════════════════════╝
+
+[08:16:27] [R] My Cmd  : studview 06472e78-c13e-40fd-aa10-ad24a8a4b247
+[08:16:27] [L] My Cmd  : 06472e78-c13e-40fd-aa10-ad24a8a4b247
+[08:16:27] [L] My Cmd  : <class 'str'>
+[08:16:27] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: UnboundLocalError
+
+More information:
+	local variable 'srchuuid' referenced before assignment	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 106, in studview
+    log(srchuuid)
+UnboundLocalError: local variable 'srchuuid' referenced before assignment
+
+-------------- Error                --------------------
+
+[08:16:40] [R] My Cmd  : exit
+[08:16:40] [L] My Cmd  : Exit with code: quit, from: None
+[08:16:42] [L] My Cmd  : Welcome to My CMD
+[08:16:47] [R] My Cmd  : studadd rr1
+[08:16:47] [W] My Cmd  : Invalid usage. Syntax: studadd <name> <class> 
+[08:16:49] [R] My Cmd  : studadd rr1 1
+[08:16:49] [L] My Cmd  : New student rr1 (1)
+[08:16:51] [R] My Cmd  : studadd rr2 2
+[08:16:51] [L] My Cmd  : New student rr2 (2)
+[08:16:54] [R] My Cmd  : studlist
+[08:16:54] [L] My Cmd  : 
+                   TABLE
+╔══╦════╦═════╦════════════════════════════════════╗
+║id║name║class║uuid                                ║
+╠══╬════╬═════╬════════════════════════════════════╣
+║0 ║rr1 ║1    ║bfca44b6-55c0-4316-b4f7-ed1d96367a2d║
+║1 ║rr2 ║2    ║5ff351fd-1a1f-41c2-88ef-ddf2c386438d║
+╚══╩════╩═════╩════════════════════════════════════╝
+
+[08:17:01] [R] My Cmd  : studview bfca44b6-55c0-4316-b4f7-ed1d96367a2d
+[08:17:01] [L] My Cmd  : bfca44b6-55c0-4316-b4f7-ed1d96367a2d
+[08:17:01] [L] My Cmd  : <class 'str'>
+[08:17:01] [L] My Cmd  : bfca44b6-55c0-4316-b4f7-ed1d96367a2d
+[08:17:01] [L] My Cmd  : <class 'uuid.UUID'>
+[08:17:01] [W] My Cmd  : Cannot find
+[08:17:28] [R] My Cmd  : exit
+[08:17:28] [L] My Cmd  : Exit with code: quit, from: None

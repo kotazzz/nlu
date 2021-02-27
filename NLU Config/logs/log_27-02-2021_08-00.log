@@ -1,0 +1,27 @@
+{}
+
+[08:00:10] [L] My Cmd  : Welcome to My CMD
+[08:00:11] [R] My Cmd  : studadd odgimwpopwoierjopgwijerg 1
+[08:00:11] [W] My Cmd  : Name too long
+[08:00:11] [W] My Cmd  : Invalid class
+[08:00:20] [R] My Cmd  : studadd Kotaz
+[08:00:20] [W] My Cmd  : Invalid usage. Syntax: studadd <name> <class> 
+[08:00:23] [R] My Cmd  : studadd Kotaz 6
+[08:00:23] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: TypeError
+
+More information:
+	Student() takes 1 positional argument but 2 were given	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 346, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\test.py", line 67, in useradd
+    user = Student(console.parametrs[0],console.parametrs[1])
+TypeError: Student() takes 1 positional argument but 2 were given
+
+-------------- Error                --------------------
+
+[08:01:36] [R] My Cmd  : exit
+[08:01:36] [L] My Cmd  : Exit with code: quit, from: None

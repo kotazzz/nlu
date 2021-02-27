@@ -85,7 +85,7 @@ class Shell(object):
                     if command["required"]:
                         usage += '{cadetblue}'+f'<{"> <".join(command["required"])}>'
                     if command["optional"]:
-                        usage += '{seashell}'+f'[{"] [".join(command["optional"])}]'
+                        usage += '{seashell}'+f' [{"] [".join(command["optional"])}]'
 
                     pargs = {
                         "command": command["command"],
