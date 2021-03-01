@@ -68,10 +68,7 @@ class Shell(object):
             "cls", ["clearscreen"], translation["cls_description"], [], []
         )
         def cls_(console):
-            os.system("cls")
-
-        def cls_(console):
-            os.system("cls")
+            sys.stdout.write(ACC.CLEARSCREEN)
 
         @self.register_command(
             "help", [], translation["help_description"], [], ["command|'commands'"]
