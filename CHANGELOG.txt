@@ -1,5 +1,14 @@
-NewLifeUtils 5.1.8:
-    - Change:    LM  -------    rea colors update
+NewLifeUtils 5.1.9:
+    - Addition:  BAT -------    menu.bat updated
+    - Addition:  LM  -------    to_format() erase parametr added
+    - Addition:  UM  -------    remove_emoji() added
+    - Change:    CSM -------    Rewrite help command with new formatting
+    - Change:    FM  -------    Complete rewrite of FM
+    - Change:    LM  -------    rea() colors update
+    - Change:    OTH -------    Optimized imports and applied code formatting
+    - Fix:       CSM -------    Fix imports
+    - Fix:       CSM -------    The space after the required parameters was restored in the help command
+
 NewLifeUtils 5.1.8:
     - Addition:  CSM -------    invalid_usage translation
     - Addition:  UM  -------    hex_to_rgb function
@@ -27,20 +36,20 @@ NewLifeUtils 5.1.7:
     - Fix:       LM  -------    completer commented
 
 NewLifeUtils 5.1.6:
-    - Change:    UM  -------    parse_args regex change
-    - Fix:       BAT -------    batch install global option
-    - Fix:       LM  -------    cstm fix
-    - Fix:       LM  -------    rea() print up
-    - Removal:   BAT -------    batch uninstall global option
+    - Change:    UM  841e189    parse_args regex change
+    - Fix:       BAT 841e189    batch install global option
+    - Fix:       LM  841e189    cstm fix
+    - Fix:       LM  841e189    rea() print up
+    - Removal:   BAT 841e189    batch uninstall global option
 
 NewLifeUtils 5.1.5:
-    - Fix:       LM  -------    rea() not working
+    - Fix:       LM  7114664    rea() not working
 
 NewLifeUtils 5.1.4:
-    - Fix:       CSM -------    Shell() not working
-    - Fix:       LM  -------    rea() not working
-    - Removal:   CSM -------    removed {} from start eveny
-    - Removal:   LM  -------    logger smart input future disabled
+    - Fix:       CSM ff04dd3    Shell() not working
+    - Fix:       LM  ff04dd3    rea() not working
+    - Removal:   CSM ff04dd3    removed {} from start task
+    - Removal:   LM  ff04dd3    logger smart input future disabled
 
 NewLifeUtils 5.1.3:
     - Addition:  OTH c5c7247    CHANGELOG
