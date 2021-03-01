@@ -1,6 +1,6 @@
 import traceback
 
-from NewLifeUtils.FileModule import *
+from NewLifeUtils.FileModule import DataStorage
 from NewLifeUtils.LoggerModule import err, log, wrn
 from NewLifeUtils.StringUtilModule import screate
 

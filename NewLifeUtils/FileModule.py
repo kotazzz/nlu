@@ -1,4 +1,5 @@
 import os
+
 import yaml
 
 wd_name = "NLU Config"

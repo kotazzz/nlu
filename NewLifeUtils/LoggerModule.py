@@ -2,7 +2,7 @@ import datetime
 import sys
 
 from NewLifeUtils.ColorModule import ACC, MCC
-from NewLifeUtils.FileModule import *
+from NewLifeUtils.FileModule import DataStorage, LogFile
 from NewLifeUtils.StringUtilModule import screate, remove_csi
 
 default_colors = {
@@ -526,7 +526,6 @@ color_schema = DataStorage("color_schema.yml", "logger", default_colors)
 color_schema_2 = DataStorage("color_schema_2.yml", "logger", default_colors2)
 settings_config = DataStorage("config.yml", "logger", default_config)
 
-
 log_pattern = settings_config["log_pattern"]
 wrn_pattern = settings_config["wrn_pattern"]
 err_pattern = settings_config["err_pattern"]
@@ -549,33 +548,32 @@ colormap = {}
 now = datetime.datetime.now()
 logfile = LogFile(f"{logname.format(time=now.strftime(logtime))}.log", "logs")
 
-
 if colormap_type == 2:
     for color in color_schema_2:
         h = color_schema_2[color].lstrip("#")
-        colormap[color] = tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
+        colormap[color] = tuple(int(h[i: i + 2], 16) for i in (0, 2, 4))
 else:
     for color in color_schema.data:
         colormap[color] = ACC.customrgb(*color_schema[color])
 
 
 def set_settings(
-    new_log_pattern=log_pattern,
-    new_wrn_pattern=wrn_pattern,
-    new_err_pattern=err_pattern,
-    new_tip_pattern=tip_pattern,
-    new_rea_pattern=rea_pattern,
-    new_log_default_tag=log_default_tag,
-    new_wrn_default_tag=wrn_default_tag,
-    new_err_default_tag=err_default_tag,
-    new_tip_default_tag=tip_default_tag,
-    new_rea_default_tag=rea_default_tag,
-    new_date_format=date_format,
-    new_time_format=time_format,
-    new_tag_length=tag_length,
-    new_enable_file_fog=enable_file_fog,
-    new_logtime=logtime,
-    new_logname=logname,
+        new_log_pattern=log_pattern,
+        new_wrn_pattern=wrn_pattern,
+        new_err_pattern=err_pattern,
+        new_tip_pattern=tip_pattern,
+        new_rea_pattern=rea_pattern,
+        new_log_default_tag=log_default_tag,
+        new_wrn_default_tag=wrn_default_tag,
+        new_err_default_tag=err_default_tag,
+        new_tip_default_tag=tip_default_tag,
+        new_rea_default_tag=rea_default_tag,
+        new_date_format=date_format,
+        new_time_format=time_format,
+        new_tag_length=tag_length,
+        new_enable_file_fog=enable_file_fog,
+        new_logtime=logtime,
+        new_logname=logname,
 ):
     global log_pattern
     global wrn_pattern
@@ -626,20 +624,19 @@ def to_format(pattern, args, erase=True):
     else:
         e = ""
     return (
-        ACC.RESET
-        + e
-        + pattern.format(
-            **args,
-            **colormap,
-            date=now.strftime(date_format),
-            time=now.strftime(time_format),
-        )
-        + ACC.RESET
+            ACC.RESET
+            + e
+            + pattern.format(
+        **args,
+        **colormap,
+        date=now.strftime(date_format),
+        time=now.strftime(time_format),
+    )
+            + ACC.RESET
     )
 
 
 def out(text):
-
     if enable_file_fog:
         logfile.write(remove_csi(text))
     sys.stdout.write(text + "\n")

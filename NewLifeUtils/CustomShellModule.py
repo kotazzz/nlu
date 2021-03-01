@@ -1,12 +1,12 @@
-import threading
-
-from NewLifeUtils.ExceptModule import *
-from NewLifeUtils.ColorModule import *
-from NewLifeUtils.LoggerModule import *
-from NewLifeUtils.StringUtilModule import *
-import NewLifeUtils
 import platform
 import sys
+import threading
+
+import NewLifeUtils
+from NewLifeUtils.ColorModule import *
+from NewLifeUtils.ExceptModule import *
+from NewLifeUtils.LoggerModule import *
+from NewLifeUtils.StringUtilModule import *
 
 default_translation = {
     "default_cmd_name": "My CMD",
@@ -32,9 +32,9 @@ translation = DataStorage("lang.yml", "shell", default_translation)
 
 class Shell(object):
     def __init__(
-        self,
-        name=translation["default_cmd_name"],
-        about=translation["default_cmd_description"],
+            self,
+            name=translation["default_cmd_name"],
+            about=translation["default_cmd_description"],
     ):
         self.run_state = "init"
         self.cmd_name = name
@@ -104,12 +104,12 @@ class Shell(object):
                             usage = ""
                             if command["required"]:
                                 usage += (
-                                    "{gray}" + f'<{"> <".join(command["required"])}>'
+                                        "{gray}" + f'<{"> <".join(command["required"])}>'
                                 )
                             if command["optional"]:
                                 usage += (
-                                    "{lightgray}"
-                                    + f'[{"] [".join(command["optional"])}]'
+                                        "{lightgray}"
+                                        + f'[{"] [".join(command["optional"])}]'
                                 )
 
                             pargs = {
@@ -203,13 +203,13 @@ class Shell(object):
             wrn(f"You can't get rid of the {name} command")
 
     def register_command(
-        self,
-        command,
-        aliases=[],
-        description="my simple command",
-        required=[],
-        optional=["param"],
-        skipcheck=False,
+            self,
+            command,
+            aliases=[],
+            description="my simple command",
+            required=[],
+            optional=["param"],
+            skipcheck=False,
     ):
         def register_from_decorator(command_function):
             self.registered_commands.append(
@@ -297,15 +297,15 @@ class Shell(object):
 
     def check_params(self):
         return (
-            not (
-                self.paramCount
-                > (
-                    len(self.current_executing["required"])
-                    + len(self.current_executing["optional"])
+                not (
+                        self.paramCount
+                        > (
+                                len(self.current_executing["required"])
+                                + len(self.current_executing["optional"])
+                        )
+                        or self.paramCount < len(self.current_executing["required"])
                 )
-                or self.paramCount < len(self.current_executing["required"])
-            )
-            or self.current_executing["skipcheck"]
+                or self.current_executing["skipcheck"]
         )
 
     def run(self):
