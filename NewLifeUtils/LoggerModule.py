@@ -522,11 +522,10 @@ default_config = {
     "logtime": "%d-%m-%Y_%H-%M",
     "logname": "log_{time}",
 }
+color_schema = DataStorage('color_schema.yml', "logger", default_colors)
+color_schema_2 = DataStorage('color_schema_2.yml', "logger", default_colors2)
+settings_config = DataStorage('config.yml', "logger", default_config)
 
-create_config("logger_colors", "color_schema.yml", "logger", default_colors)
-create_config("logger_colors2", "color_schema_2.yml", "logger", default_colors2)
-create_config("logger_lang", "config.yml", "logger", default_config)
-settings_config = get_pointyaml("logger_lang")
 
 log_pattern = settings_config["log_pattern"]
 wrn_pattern = settings_config["wrn_pattern"]
@@ -547,15 +546,17 @@ logname = settings_config["logname"]
 colormap_type = settings_config["colormap"]
 colormap = {}
 
+now = datetime.datetime.now()
+logfile = LogFile(f"{logname.format(time=now.strftime(logtime))}.log", "logs")
+
+
 if colormap_type == 2:
-    settings_color2 = get_pointyaml("logger_colors2")
-    for color in settings_color2:
-        h = settings_color2[color].lstrip("#")
+    for color in color_schema_2:
+        h = color_schema_2[color].lstrip("#")
         colormap[color] = tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))
 else:
-    settings_color1 = get_pointyaml("logger_colors")
-    for color in settings_color1:
-        colormap[color] = ACC.customrgb(*settings_color1[color])
+    for color in color_schema.data:
+        colormap[color] = ACC.customrgb(*color_schema[color])
 
 
 def set_settings(
@@ -638,14 +639,9 @@ def to_format(pattern, args, erase = True):
 
 
 def out(text):
-    now = datetime.datetime.now()
-    if enable_file_fog:
-        if not file_exist("log"):
-            create_config(
-                "log", f"{logname.format(time=now.strftime(logtime))}.log", "logs"
-            )
 
-        file_apwrite("log", remove_csi(text))
+    if enable_file_fog:
+        logfile.write(remove_csi(text))
     sys.stdout.write(text + "\n")
 
 

@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="38336021-382e-4a99-b645-38c6230738a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLU Config/data/storage.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NLU Config/data/storage.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/CustomShellModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/CustomShellModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/ExceptModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/ExceptModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/FileModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/FileModule.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewLifeUtils/LoggerModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

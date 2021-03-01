@@ -1,101 +1,64 @@
 import os
-
 import yaml
 
 wd_name = "NLU Config"
 cwd = os.path.join(os.getcwd(), wd_name)
 
-files = {}
+
+class LogFile(object):
+    def __init__(self, filename, folder = '/'):
+        if not filename.endswith('.log'):
+            filename+='.log'
+        try:
+            os.makedirs(os.path.join(cwd, folder))
+        except FileExistsError:
+            pass
+        self.fullpath = os.path.join(cwd, os.path.join(folder, filename))
+        self.folder = dir
+        self.filename = filename
+
+    def write(self, data):
+        with open(self.fullpath, 'a') as file:
+            if data.endswith('\n'):
+                file.write(data)
+            else:
+                file.write(data+'\n')
+
+class DataStorage(object):
+    def __init__(self, filename, folder = '/', defaultdata = {}):
+        if not filename.endswith('.yml'):
+            filename+='.yml'
+        try:
+            os.makedirs(os.path.join(cwd, folder))
+        except FileExistsError:
+            pass
+        self.fullpath = os.path.join(cwd, os.path.join(folder, filename))
+        self.folder = dir
+        self.filename = filename
+        self.defaultdata = defaultdata
+        try:
+            with open(self.fullpath) as file:
+                self.data = yaml.load(file, yaml.FullLoader)
+            if self.data == None:
+                self.data = {}
+        except FileNotFoundError:
+            with open(self.fullpath, 'w') as file:
+                self.data = {}
+
+    def save(self):
+        with open(self.fullpath, 'w') as file:
+            yaml.dump(self.data, file, default_flow_style=False)
 
 
-def get_cfgfld_name():
-    return wd_name
-
-
-def get_cfgfld_path():
-    return os.path.join(cwd, wd_name)
-
-
-def create_dirs(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-
-def file_exist(alias):
-    try:
-        os.path.exists(files[alias])
-        return True
-    except KeyError:
-        return False
-
-
-def create_config(alias, filename, folderpath, default_obj={}):
-    directory = os.path.join(cwd, folderpath)
-    files[alias] = os.path.join(directory, filename)
-
-    create_dirs(directory)
-    if not os.path.exists(os.path.join(directory, filename)) or rawread(alias) == "":
-        f = open(os.path.join(directory, filename), "w")
-        yaml_write = yaml.dump(default_obj, default_flow_style=False)
-        file_rewrite(alias, yaml_write)
-        return False
-
-
-def get_pointyaml(alias):
-    class AttrDict(dict):
-        __getattr__ = dict.__getitem__
-        __setattr__ = dict.__setitem__
-        __delattr__ = dict.__delitem__
-
-        def __missing__(self, key):
-            return f"UNK: {key}"
-
-    yobj = AttrDict(yaml.load(rawread(alias), Loader=yaml.FullLoader))
-    return yobj
-
-def get_yamlconfig(alias):
-    return yaml.load(rawread(alias), Loader=yaml.FullLoader)
-
-
-def rewrite_yaml(alias, obj):
-    yaml_write = yaml.dump(obj, default_flow_style=False)
-    file_rewrite(alias, yaml_write)
-
-
-def get_from_alias(alias):
-    try:
-        files[alias]
-    except:
-        return False
-    else:
-        return os.path.exists(files[alias])
-
-
-def file_rewrite(filename, data, end="\n"):
-    f = open(files[filename], "w")
-    f.write(data + end)
-    f.close()
-
-
-def file_apwrite(filename, data, end="\n", coding="utf-8"):
-    f = open(files[filename], "a", encoding=coding)
-    f.write(data + end)
-    f.close()
-
-
-def rawread(alias):
-    f = open(files[alias], "r")
-    r = f.read()
-    f.close()
-    return r
-
-
-def get_files_from_dir(folder):
-    path = os.path.join(os.path.join(cwd, folder), "")
-    create_dirs(path)
-    path = os.listdir(path)
-    dirfiles = []
-    for some in path:
-        if path.isfile(os.path.join(path, some)):
-            dirfiles.append(some)
-    return dirfiles
+    def __getitem__(self, item):
+        try:
+            return self.data[item]
+        except KeyError:
+            try:
+                return self.defaultdata[item]
+            except KeyError as e:
+                raise KeyError(f'Key {item} is not defined in default data storage')
+    def __setitem__(self, key, value):
+        self.data[key] = value
+    def __delitem__(self, key):
+        self.data.__delitem__(key)

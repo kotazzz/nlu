@@ -68,15 +68,15 @@ def exit_task(console):
     log(f'Succesfull saved {len(users)} users')
 
     save_data['users'] = save_users
-    create_config('datastorage', 'storage.yml', 'data')
-    rewrite_yaml('datastorage', save_data)
+    storage = DataStorage('storage.yml', 'data')
+    storage.data = save_data
+    storage.save()
     log(f'Succesfull saved all data')
 
 @shell.register_init_task()
 def init_task(console):
     global users
-    create_config('datastorage', 'storage.yml', 'data')
-    storage = get_yamlconfig('datastorage')
+    storage = DataStorage('storage.yml', 'data')
     try:
         storage['users']
     except KeyError:
@@ -150,7 +150,7 @@ def studview(console):
     else:
 
         for num, user in enumerate(users):
-            if uuid.UUID(user.uuid) == srchuuid:
+            if uuid.UUID(str(user.uuid)) == srchuuid:
                 log('Succesfull finded')
                 log(f'Pos: {num}')
                 log(f'Name: {user.name}')

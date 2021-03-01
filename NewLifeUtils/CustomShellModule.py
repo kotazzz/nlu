@@ -27,16 +27,14 @@ default_translation = {
         "{list}",
     ],
 }
-
-create_config("shell_translation", "lang.yml", "shell", default_translation)
-translation = get_pointyaml("shell_translation")
+translation = DataStorage('lang.yml', "shell", default_translation)
 
 
 class Shell(object):
     def __init__(
         self,
-        name=translation.default_cmd_name,
-        about=translation.default_cmd_description,
+        name=translation["default_cmd_name"],
+        about=translation["default_cmd_description"],
     ):
         self.run_state = "init"
         self.cmd_name = name
@@ -60,12 +58,12 @@ class Shell(object):
             new_rea_pattern="{cyan}[{time}] {lightcyan}{tag}{snow} : {mediumslateblue}{readed}",
         )
 
-        @self.register_command("exit", ["quit"], translation.exit_description, [], [])
+        @self.register_command("exit", ["quit"], translation["exit_description"], [], [])
         def exit_(console):
             console.run_state = "quit"
 
         @self.register_command(
-            "cls", ["clearscreen"], translation.cls_description, [], []
+            "cls", ["clearscreen"], translation["cls_description"], [], []
         )
         def cls_(console):
             os.system("cls")
@@ -158,12 +156,12 @@ class Shell(object):
 
         @self.register_init_task()
         def welcome(console):
-            log(f'{translation.welcome} {console.cmd_name}')
+            log(f'{translation["welcome"]} {console.cmd_name}')
 
         @self.register_exit_task()
         def goodbye(console):
             log(
-                f'{translation.exit_code_label}: {console.run_state}, {translation["exit_from_label"]}: {console.current_executing}'
+                f'{translation["exit_code_label"]}: {console.run_state}, {translation["exit_from_label"]}: {console.current_executing}'
             )
 
     def register_init_task(self):
