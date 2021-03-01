@@ -15,7 +15,7 @@ default_lang = {
     "fatal": "Fatal error",
     "wrong": "Something wrong...",
 }
-translation = DataStorage('lang.yml', "exceptsettings", default_lang)
+translation = DataStorage("lang.yml", "exceptsettings", default_lang)
 
 
 def except_print(exception, exception_type="err", tb=True):

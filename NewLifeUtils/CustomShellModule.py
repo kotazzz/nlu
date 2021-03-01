@@ -27,7 +27,7 @@ default_translation = {
         "{list}",
     ],
 }
-translation = DataStorage('lang.yml', "shell", default_translation)
+translation = DataStorage("lang.yml", "shell", default_translation)
 
 
 class Shell(object):
@@ -58,7 +58,9 @@ class Shell(object):
             new_rea_pattern="{cyan}[{time}] {lightcyan}{tag}{snow} : {mediumslateblue}{readed}",
         )
 
-        @self.register_command("exit", ["quit"], translation["exit_description"], [], [])
+        @self.register_command(
+            "exit", ["quit"], translation["exit_description"], [], []
+        )
         def exit_(console):
             console.run_state = "quit"
 
@@ -75,35 +77,40 @@ class Shell(object):
             "help", [], translation["help_description"], [], ["command|'commands'"]
         )
         def help_(console):
-            pattern = '{lightskyblue}{command} {snow}({lightsteelblue}{aliases}{snow}) {usage}\n   {powderblue}{description}\n'
+            pattern = "{lightskyblue}{command} {snow}({lightsteelblue}{aliases}{snow}) {usage}\n   {powderblue}{description}\n"
             if console.paramCount == 0:
                 log(f"\n{console.cmd_name} - {console.cmd_about}\n")
                 for command in console.registered_commands:
-                    usage = ''
+                    usage = ""
                     if command["required"]:
-                        usage += '{cadetblue}'+f'<{"> <".join(command["required"])}>'
+                        usage += "{cadetblue}" + f'<{"> <".join(command["required"])}>'
                     if command["optional"]:
-                        usage += '{seashell}'+f' [{"] [".join(command["optional"])}]'
+                        usage += "{seashell}" + f' [{"] [".join(command["optional"])}]'
 
                     pargs = {
                         "command": command["command"],
                         "aliases": ", ".join(command["aliases"]),
-                        "usage": to_format(usage, {},False),
+                        "usage": to_format(usage, {}, False),
                         "description": command["description"],
                     }
                     cstm(pattern, pargs)
             elif console.paramCount == 1:
-                cmdnames = [x['command'] for x in self.registered_commands]
-                if  console.parametrs[0] == 'commands':
-                    log(f'\n{chr(10).join(cmdnames)}')
+                cmdnames = [x["command"] for x in self.registered_commands]
+                if console.parametrs[0] == "commands":
+                    log(f"\n{chr(10).join(cmdnames)}")
                 elif console.parametrs[0] in cmdnames:
                     for command in self.registered_commands:
-                        if console.parameters[0] == command['command']:
-                            usage = ''
+                        if console.parameters[0] == command["command"]:
+                            usage = ""
                             if command["required"]:
-                                usage += '{gray}' + f'<{"> <".join(command["required"])}>'
+                                usage += (
+                                    "{gray}" + f'<{"> <".join(command["required"])}>'
+                                )
                             if command["optional"]:
-                                usage += '{lightgray}' + f'[{"] [".join(command["optional"])}]'
+                                usage += (
+                                    "{lightgray}"
+                                    + f'[{"] [".join(command["optional"])}]'
+                                )
 
                             pargs = {
                                 "command": command["command"],
@@ -113,9 +120,10 @@ class Shell(object):
                             }
                             cstm(pattern, pargs)
                     else:
-                        wrn('Something wrong')
+                        wrn("Something wrong")
                 else:
-                    wrn('No commands found')
+                    wrn("No commands found")
+
         @self.register_command(
             "hello", ["hi"], translation["hello_description"], [], ["name"]
         )
@@ -182,6 +190,7 @@ class Shell(object):
         def register_from_decorator(command_function):
             self.registered_global_functions[name] = command_function
             return command_function
+
         return register_from_decorator
 
     def unregister_by_name(self, name):

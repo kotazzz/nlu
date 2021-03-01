@@ -522,9 +522,9 @@ default_config = {
     "logtime": "%d-%m-%Y_%H-%M",
     "logname": "log_{time}",
 }
-color_schema = DataStorage('color_schema.yml', "logger", default_colors)
-color_schema_2 = DataStorage('color_schema_2.yml', "logger", default_colors2)
-settings_config = DataStorage('config.yml', "logger", default_config)
+color_schema = DataStorage("color_schema.yml", "logger", default_colors)
+color_schema_2 = DataStorage("color_schema_2.yml", "logger", default_colors2)
+settings_config = DataStorage("config.yml", "logger", default_config)
 
 
 log_pattern = settings_config["log_pattern"]
@@ -619,12 +619,12 @@ def tag_check(tag, default):
         return screate(tag, tag_length)
 
 
-def to_format(pattern, args, erase = True):
+def to_format(pattern, args, erase=True):
     now = datetime.datetime.now()
     if erase:
         e = MCC.ERASE_ALL_LINE
     else:
-        e = ''
+        e = ""
     return (
         ACC.RESET
         + e
