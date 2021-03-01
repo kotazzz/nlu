@@ -4,26 +4,12 @@ from random import randrange
 system("")
 
 
-class BGC:
-    """
-    BLACK - The background color in the black.
-    RED - The background color in the red.
-    GREEN - The background color in the green.
-    YELLOW - The background color in the yellow.
-    BLUE - The background color in the blue.
-    PURPLE - The background color in the purple.
-    CYAN - The background color in the cyan.
-    BGRAY - The background color in the bright gray.
-    GRAY - The background color in the gray.
-    BRED - The background color in the bright red.
-    LIME - The background color in the lime.
-    BYELLOW - The background color in the bright yellow.
-    BBLUE - The background color in the bright blue.
-    MAGENTA - The background color in the magenta.
-    BCYAN - The background color in the bright cyan.
-    WHITE - The background color in the white.
-    """
 
+
+class BGC:
+    """This class contains variables that output a special sequence. This sequence is not displayed on the screen,
+    but affects the output of information. In this case, the code that changes the color of the text that is output after
+    the sequence is output is output. """
     BLACK = "\x1B[40m"
     RED = "\x1B[41m"
     GREEN = "\x1B[42m"
@@ -42,26 +28,13 @@ class BGC:
     WHITE = "\x1B[107m"
 
 
-class FGC:
-    """
-    BLACK - The text color in the black.
-    RED - The text color in the red.
-    GREEN - The text color in the green.
-    YELLOW - The text color in the yellow.
-    BLUE - The text color in the blue.
-    PURPLE - The text color in the purple.
-    CYAN - The text color in the cyan.
-    BGRAY - The text color in the bright gray.
-    GRAY - The text color in the gray.
-    BRED - The text color in the bright red.
-    LIME - The text color in the lime.
-    BYELLOW - The text color in the bright yellow.
-    BBLUE - The text color in the bright blue.
-    MAGENTA - The text color in the magenta.
-    BCYAN - The text color in the bright cyan.
-    WHITE - The text color in the white.
-    """
 
+
+
+class FGC:
+    """This class contains variables that output a special sequence. This sequence is not displayed on the screen,
+    but affects the output of information. In this case, a code is output that changes the background color behind the
+    text that is output after the sequence is output """
     BLACK = "\x1B[30m"
     RED = "\x1B[31m"
     GREEN = "\x1B[32m"
@@ -80,35 +53,36 @@ class FGC:
     WHITE = "\x1B[97m"
 
 
+
+
+
 class ACC:
     """
-    RESET - Removes all of the color codes
-    RELOAD - Completely resets the console attributes
-    CLEARSCREEN - Clears the console window
-    BRIGHT - Replaces colors with brighter counterparts
-    NO_BRIGHT - Disables BRIGHT
-    UNDERLINE - Underline the text
-    NO_UNDERLINE - Removes the underscore
-    REVERSE - Changes the colors of the text and the console in places
-    NO_REVERSE - Removes the substitution of flowers
-    ALTERNATIVE_BUFF - Enables an alternative buffer
-    ORIGINAL_BUFF - Returns the original buffer
+    This class contains variables that output a special sequence. This sequence is not displayed on the screen,
+    but affects the output of information. It contains different codes that may have different meanings and uses.
     """
 
+    """Resets all text and background properties-underline, highlight, color, and so on"""
     RESET = "\x1B[0m"
+    """Clears the screen as the cls (clear) command)"""
     RELOAD = "\x1B[!p"
+    """Highlights the text with a more expressive color"""
     CLEARSCREEN = "\x1Bc"
-
+    """Removes the effect of highlighting the text with a more expressive color"""
     BRIGHT = "\x1B[1m"
+    """Removes the effect of highlighting the text with a more expressive color"""
     NO_BRIGHT = "\x1B[2m"
-
+    """Removes the effect of highlighting the text with a more expressive color"""
     UNDERLINE = "\x1B[4m"
+    """Underlines the text that comes after the output"""
     NO_UNDERLINE = "\x1B[24m"
-
+    """Removes the underscore, if it was there before"""
     REVERSE = "\x1B[7m"
+    """Swaps the background and text colors"""
     NO_REVERSE = "\x1B[27m"
-
+    """Includes " alternative buffer\""""
     ALTERNATIVE_BUFF = "\x1B[?1049h"
+    """Turns off the " alternative buffer\""""
     ORIGINAL_BUFF = "\x1B[?1049l"
 
     def title(title: str):
@@ -121,7 +95,7 @@ class ACC:
     def rabdomrgb(color="Color"):
         """
         :parameter: color - [gray|color]
-        :return: return code of custom random rgb (gray) color
+        :return: Returns the random RGB color applied to the text
         """
         if color == "color":
             r, g, b = (
@@ -138,7 +112,7 @@ class ACC:
     def randomd(n):
         """
         :param n: void variable
-        :return: code of random color from color dictionary
+        :return: Returns a random RGB color applied to the text and taken from the dictionary
         """
         n = randrange(0, 255)
         return f"\x1B[38;5;{n}m"
@@ -146,114 +120,132 @@ class ACC:
     def customrgb(r, g, b):
         """
         :param n: void variable
-        :return: code of random color from rgb
+        :return: applies the RGB color you have assigned to the text
         """
         return f"\x1B[38;2;{r};{g};{b}m"
 
     def customc(n):
         """
         :param n: void variable
-        :return: code of your color from color dictionary
+        :return: applies the RGB color you assigned to the text using the dictionary.
         """
         return f"\x1B[38;5;{n}m"
 
     def bcustomrgb(r, g, b):
         """
         :param n: void variable
-        :return: code of your color from rgb (background)
+        :return: applies the RGB color you have assigned to the text (background)
         """
         return f"\x1B[48;2;{r};{g};{b}m"
 
     def bcustomc(n):
         """
         :param n: void variable
-        :return: code of your color from color dictionary (background)
+        :return: applies the RGB color you assigned to the text using the dictionary. (background)
         """
         return f"\x1B[48;5;{n}m"
 
 
 class MCC:
-    """
-    Attributes:
-      CURSOR_DBLINK - to turn Off the blinking cursor
-      CURSOR_EBLINK - Enable cursor flickering
-      CURSOR_HIDE - Hide the cursor
-      CURSOR_SHOW  -  Show the cursor
-      ERASE_NXT_WINDOW - Clear the window from the cursor to the end of the window
-      ERASE_PRV_WINDOW - Clear the window from the beginning of the window to the cursor
-      ERASE_ALL_WINDOW - Clear the entire window
-      ERASE_NXT_LINE - Clear to the end of the line
-      ERASE_PRV_LINE - Clear from the end of the line
-      ERASE_ALL_LINE  -  to Clear an entire line
-      SET_TAB  -  Set the tab position in the current location
-      DEL_TAB - Delete the tab position
-      RES_TAB - Reset tabs
-      SAVE_CURSOR - Save the cursor position
-      LOAD_CURSOR - Return to the saved cursor position
-    """
+    """This class contains variables that output a special sequence. This sequence is not displayed on the screen,
+    but affects the output of the information. In this case, the code that changes the cursor position """
+    """Hide cursor blinking"""
+    CURSOR_DBLINK = "\x1B[? 12h"
+    """Turn on cursor blinking"""
+    CURSOR_EBLINK = "\x1B[? 12l"
+    """Hide crusor"""
+    CURSOR_HIDE = "\x1B[? 25l"
+    """Show the crusor"""
+    CURSOR_SHOW = "\x1B[? 25h"
 
-    CURSOR_DBLINK = "\x1B[?12h"
-    CURSOR_EBLINK = "\x1B[?12l"
-    CURSOR_HIDE = "\x1B[?25l"
-    CURSOR_SHOW = "\x1B[?25h"
-
+    """Erase everything after the cursor"""
     ERASE_NXT_WINDOW = "\x1B[0J"
+    """Erase everything before the cursor"""
     ERASE_PRV_WINDOW = "\x1B[1J"
+    """Erase everything"""
     ERASE_ALL_WINDOW = "\x1B[2J"
+    """Erase everything after the cursor on the current line"""
     ERASE_NXT_LINE = "\x1B[0K"
+    """Erase everything up to the cursor on the current line"""
     ERASE_PRV_LINE = "\x1B[1K"
+    """Erase the entire line where the cursor is"""
     ERASE_ALL_LINE = "\x1B[2K"
-    SET_TAB = "\x1BH"
+    """Set tab stop"""
+    SET_TAB = "\ x1BH"
+    """Delete tab stop"""
     DEL_TAB = "\x1B[0g"
+    """Restore Tab Stop"""
     RES_TAB = "\x1B[3g"
-
+    """Save cursor position"""
     SAVE_CURSOR = "\x1B[s"
+    """Restore saved cursor position"""
     LOAD_CURSOR = "\x1B[u"
 
-    def up(self=1):
+    def up (self = 1):
         """
-        :param
+        Moves cursor up
+        :param number of positions to shift
         """
         return f"\x1B[{self}A"
 
-    def down(self=1):
+    def down (self = 1):
+        """
+        Moves cursor down
+        :param number of positions to shift
+        """
         return f"\x1B[{self}B"
 
-    def right(self=1):
+    def right (self = 1):
+        """
+        Move cursor to the right
+        :param number of positions to shift
+        """
         return f"\x1B[{self}C"
 
-    def left(self=1):
+    def left (self = 1):
+        """
+        Shifts cursor left
+        :param number of positions to shift
+        """
         return f"\x1B[{self}D"
 
-    def row(self=1):
+    def row (self = 1):
+        """
+        Set the row where the cursor is
+        :param row number
+        """
         return f"\x1B[{self}G"
 
-    def cursor_position(x, y):
-        return f"\x1B[{x};{y}H"
+    def cursor_position (x, y):
+        """
+        Set the position where the cursor is
+        :param row and column
+        """
+        return f"\x1B[{x}; {y} H"
 
-    def scroll_down(self=1):
+    def scroll_down (self = 1):
         return f"\x1B[{self}T"
 
-    def scroll_up(self=1):
+    def scroll_up (self = 1):
         return f"\x1B[{self}S"
 
-    def push_right(self=1):
+    def push_right (self = 1):
         return f"\x1B[{self}@"
 
-    def erase_right(self=1):
+    def erase_right (self = 1):
         return f"\x1B[{self}P"
 
-    def replace_right(self=1):
+    def replace_right (self = 1):
         return f"\x1B[{self}X"
 
-    def push_down(self=1):
+    def push_down (self = 1):
         return f"\x1B[{self}L"
 
-    def erase_down(self=1):
-        return f"\x1B{self}M"
+    def erase_down (self = 1):
+        return f"\ x1B {self}M"
 
-    def next_tab(self):
-        return f"\x1B{self}I"
+    def next_tab (self):
+        return f"\ x1B {self}I"
 
-    def prev_tab(self):
-        return f"\x1B{self}Z"
+    def prev_tab (self):
+        return f"\ x1B {self}Z"

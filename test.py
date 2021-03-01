@@ -1,8 +1,9 @@
 from NewLifeUtils.CustomShellModule import *
 from NewLifeUtils.TableBuildModule import *
+from NewLifeUtils.ColorModule import *
 import uuid
 
-
+ACC.RESET
 class DataSector():
     def __init__(self, customuuid = None):
         try:
