@@ -1,7 +1,6 @@
 import requests
 
-history = {}
-id_counter = 0
+history = []
 
 
 def req_get(url, params={}):
@@ -9,11 +8,8 @@ def req_get(url, params={}):
     Type: get
     :return: code of history if response.code != 404
     """
-    params_coverted = []
-    for param in params:
-        params_coverted.append(f"{param}={params[param]}")
+    params_coverted = [f"{param}={params[param]}" for param in params]
     url_out = f'{url}?{"&".join(params_coverted)}'
     resp = requests.get(url_out)
     global id_counter
-    history[id_counter] = {"url": url_out, resp: "resp"}
-    id_counter += 1
+    history.append({"url": url_out, resp: "resp"})
