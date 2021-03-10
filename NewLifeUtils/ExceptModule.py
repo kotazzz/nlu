@@ -1,8 +1,7 @@
 import traceback
 
 from NewLifeUtils.FileModule import DataStorage
-from NewLifeUtils.LoggerModule import err, log, wrn
-from NewLifeUtils.StringUtilModule import screate
+from NewLifeUtils.LoggerModule import *
 
 default_lang = {
     "type": "Type",
@@ -18,64 +17,42 @@ default_lang = {
 translation = DataStorage("lang.yml", "exceptsettings", default_lang)
 
 
-def except_print(exception, exception_type="err", tb=True):
-    error_text = "\n-------------- {ExceptionTitle} --------------------\n"
-    error_text += f"{translation['type']}: {type(exception).__name__}\n\n"
-
-    if exception.args == 0:
-        error_text += f"{translation['unknown']}\n"
-    else:
-        error_text += (
-            f'{translation["about"]}:\n\t{(chr(10) + chr(9)).join(exception.args)}\t\n'
-        )
-
+def except_print(type='fat', more ='', code=-1, tb = True):
     if tb:
-        error_text += f"\n{traceback.format_exc()}"
-
-    error_text += "\n-------------- {ExceptionTitle} --------------------\n"
-
-    if exception_type == "attention":
-        print()
-        log(
-            error_text.replace(
-                "{ExceptionTitle}",
-                screate(translation["attention"], 20),
-            )
-        )
-    elif exception_type == "wrn":
-        print()
-        wrn(
-            error_text.replace(
-                "{ExceptionTitle}",
-                screate(translation["warning"], 20),
-            )
-        )
-    elif exception_type == "err":
-        print()
-        err(
-            error_text.replace(
-                "{ExceptionTitle}",
-                screate(translation["error"], 20),
-            )
-        )
-    elif exception_type == "fatal":
-        print()
-        err(
-            error_text.replace(
-                "{ExceptionTitle}",
-                screate(translation["fatal"], 20),
-            )
-        )
-        exit(-1)
+        a = traceback.extract_tb(sys.exc_info()[2])
+        exception_text = ''
+        for f in a:
+            pattern = '{white}"{ul}{fn}{nul}{white}" {white}({yellow}{ln}{white}): {green}{n}\n{s}{white}> {lime}{lc}\n'
+            exception_text += to_format(pattern, {
+                'ul': ACC.UNDERLINE,
+                'nul': ACC.NO_UNDERLINE,
+                'fn': f.filename,
+                'ln': f.lineno,
+                'n': f.name,
+                'lc': f.line,
+                's': ' ' * 2,
+            })
+        exception_text += to_format('{lightblue}{err}', {'err': traceback.format_exc().splitlines()[-1]})
     else:
-        print()
-        err(
-            error_text.replace(
-                "{ExceptionTitle}",
-                screate(translation["wrong"], 20),
-            )
-        )
+        exception_text = to_format('{gray}Traceback is disabled', {})
+    kshortcuts = {
+            "unk": "unknown",
+            "att": "attention",
+            "inf": "info",
+            "wrn": "warning",
+            "err": "error",
+            "fat": "fatal",
+            "wrg": "wrong"}
 
-
-def get_etypes(self):
-    return ["attention", "wrn", "err", "fatal"]
+    pattern = '{magenta}{d}{ul}{title}{nul}{d}\n{text}\n{red}{a}\n{magenta}{d}{td}{d}'
+    cstm(pattern, {
+        'ul': ACC.UNDERLINE,
+        'nul': ACC.NO_UNDERLINE,
+        'd': '-' * 15,
+        'title': translation[kshortcuts[type]],
+        'text': exception_text,
+        'td': ' ' * len(translation[kshortcuts[type]]),
+        'a': f'More info: {more}' if more != '' else ''
+    })
+    if type == 'fat':
+        exit(code)
