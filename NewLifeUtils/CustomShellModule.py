@@ -32,9 +32,9 @@ translation = DataStorage("lang.yml", "shell", default_translation)
 
 class Shell(object):
     def __init__(
-            self,
-            name=translation["default_cmd_name"],
-            about=translation["default_cmd_description"],
+        self,
+        name=translation["default_cmd_name"],
+        about=translation["default_cmd_description"],
     ):
         self.run_state = "init"
         self.cmd_name = name
@@ -61,24 +61,29 @@ class Shell(object):
         @self.register_command(
             "exit", ["quit"], translation["exit_description"], [], []
         )
-        def exit_(console):
+        def _(console):
             console.run_state = "quit"
+
         @self.register_command(
-            "eval", ["calc"], translation["exit_description"], ["expression"], [] #TODO: make description
+            "eval",
+            ["calc"],
+            translation["exit_description"],
+            ["expression"],
+            [],  # TODO: make description
         )
-        def eval_(console):
+        def _(console):
             log(eval(console.parametrs[0]))
 
         @self.register_command(
             "cls", ["clearscreen"], translation["cls_description"], [], []
         )
-        def cls_(console):
+        def _(console):
             sys.stdout.write(ACC.CLEARSCREEN)
 
         @self.register_command(
             "help", [], translation["help_description"], [], ["command|'commands'"]
         )
-        def help_(console):
+        def _(console):
             pattern = "{lightskyblue}{command} {snow}({lightsteelblue}{aliases}{snow}) {usage}\n   {powderblue}{description}\n"
             if console.paramCount == 0:
                 log(f"\n{console.cmd_name} - {console.cmd_about}\n")
@@ -106,12 +111,12 @@ class Shell(object):
                             usage = ""
                             if command["required"]:
                                 usage += (
-                                        "{gray}" + f'<{"> <".join(command["required"])}>'
+                                    "{gray}" + f'<{"> <".join(command["required"])}>'
                                 )
                             if command["optional"]:
                                 usage += (
-                                        "{lightgray}"
-                                        + f'[{"] [".join(command["optional"])}]'
+                                    "{lightgray}"
+                                    + f'[{"] [".join(command["optional"])}]'
                                 )
 
                             pargs = {
@@ -129,7 +134,7 @@ class Shell(object):
         @self.register_command(
             "hello", ["hi"], translation["hello_description"], [], ["name"]
         )
-        def hello_(console):
+        def _(console):
             if console.paramCount == 1:
                 log(f"Hello, {console.parametrs[0]}")
             else:
@@ -138,7 +143,7 @@ class Shell(object):
         @self.register_command(
             "parse", ["debug_args"], translation["parse_description"], [], [], False
         )
-        def parse_(console):
+        def _(console):
             p = parse_args(read("Input parse string"))["split"]
             ps = []
             for pn, s in enumerate(p):
@@ -149,7 +154,7 @@ class Shell(object):
         @self.register_command(
             "info", ["version", "ver"], translation["info_description"], [], []
         )
-        def info_(console):
+        def _(console):
             v = sys.version_info
             info = [
                 f"NewLifeUtils Version: {FGC.BBLUE}{NewLifeUtils.__version__}",
@@ -165,11 +170,11 @@ class Shell(object):
                 log(line)
 
         @self.register_init_task()
-        def welcome(console):
+        def _(console):
             log(f'{translation["welcome"]} {console.cmd_name}')
 
         @self.register_exit_task()
-        def goodbye(console):
+        def _(console):
             log(
                 f'{translation["exit_code_label"]}: {console.run_state}, {translation["exit_from_label"]}: {console.current_executing}'
             )
@@ -205,13 +210,13 @@ class Shell(object):
             wrn(f"You can't get rid of the {name} command")
 
     def register_command(
-            self,
-            command,
-            aliases=[],
-            description="my simple command",
-            required=[],
-            optional=["param"],
-            skipcheck=False,
+        self,
+        command,
+        aliases=[],
+        description="my simple command",
+        required=[],
+        optional=["param"],
+        skipcheck=False,
     ):
         def register_from_decorator(command_function):
             self.registered_commands.append(
@@ -251,9 +256,7 @@ class Shell(object):
         if len(cmdnames) != len(set(cmdnames)):
             cmds = ", ".join(cmdnames)
             print(*[cmd.format(list=cmds) for cmd in translation["same_command"]])
-            except_print(
-                "fat", tb = False
-            )
+            except_print("fat", tb=False)
 
     def cstm_i_print(self, pattern, args):
 
@@ -296,15 +299,15 @@ class Shell(object):
 
     def check_params(self):
         return (
-                not (
-                        self.paramCount
-                        > (
-                                len(self.current_executing["required"])
-                                + len(self.current_executing["optional"])
-                        )
-                        or self.paramCount < len(self.current_executing["required"])
+            not (
+                self.paramCount
+                > (
+                    len(self.current_executing["required"])
+                    + len(self.current_executing["optional"])
                 )
-                or self.current_executing["skipcheck"]
+                or self.paramCount < len(self.current_executing["required"])
+            )
+            or self.current_executing["skipcheck"]
         )
 
     def run(self):
@@ -335,9 +338,11 @@ class Shell(object):
                 if self.command != "":
                     if self.command == "fuck":
                         except_print(
-                            "att", more='\n'.join(["Why you so evil?...",
-                                ":_(",
-                                "TIP: you can be beter"]),tb=False
+                            "att",
+                            more="\n".join(
+                                ["Why you so evil?...", ":_(", "TIP: you can be beter"]
+                            ),
+                            tb=False,
                         )
 
                     else:
@@ -354,7 +359,7 @@ class Shell(object):
                             wrn('Unknown Command, type "help"')
 
             except Exception as e:
-                except_print('err')
+                except_print("err")
 
         for itask in self.registered_exit_task:
             itask(self)

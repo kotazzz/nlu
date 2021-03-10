@@ -79,8 +79,8 @@ def bprint(text, maxlinelength=9, font="default"):
 
 
 def format_number(
-        number=random.randrange(1111111111111111, 9999999999999999),
-        numform="4444",
+    number=random.randrange(1111111111111111, 9999999999999999),
+    numform="4444",
 ):
     # A total conversion
     number = int(number)
@@ -104,7 +104,7 @@ def format_number(
     result = str(number)
     shift = 0
     for pos in numform:
-        result = result[: int(pos) + shift] + " " + result[int(pos) + shift:]
+        result = result[: int(pos) + shift] + " " + result[int(pos) + shift :]
         shift += int(pos) + 1
     return result
 
@@ -120,11 +120,11 @@ def safe_format(text, keys=None, func=None, smart=None):
             nonlocal func
             if smart is not {}:
                 keypr = parse_args(key)
-                name = keypr['command']
+                name = keypr["command"]
                 if name not in smart.keys():
                     return "{" + key + "}"
                 else:
-                    return smart[name](*keypr['param'])
+                    return smart[name](*keypr["param"])
             elif func is not None:
                 return "{" + str(func(key)) + "}"
             else:
@@ -158,7 +158,7 @@ def hex_to_rgb(hx, hsl=False):
                 for i in (1, 2, 3)
             )
         return tuple(
-            int(hx[i: i + 2], 16) / div if div else int(hx[i: i + 2], 16)
+            int(hx[i : i + 2], 16) / div if div else int(hx[i : i + 2], 16)
             for i in (1, 3, 5)
         )
     raise ValueError(f'"{hx}" is not a valid HEX code.')

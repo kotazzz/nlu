@@ -16,10 +16,11 @@ def req_get(url, params={}):
     history.append({"url": url_out, resp: "resp"})
 
 
-
 def vk_simple_get(method, args, gid, token, ver):
-    url = f'https://api.vk.com/method/{method}?'
+    url = f"https://api.vk.com/method/{method}?"
     for arg in args:
-        url += f'{arg}={args[arg]}&'
-    response = json.loads(requests.get(url + f'group_id={gid}&access_token={token}&v={ver}').text)
+        url += f"{arg}={args[arg]}&"
+    response = json.loads(
+        requests.get(url + f"group_id={gid}&access_token={token}&v={ver}").text
+    )
     return response

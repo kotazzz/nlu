@@ -1,0 +1,13 @@
+---------------Error---------------
+"D:\Documents\GitHub\NewLifeUtils\test.py" (12): <module>
+  > n()
+"D:\Documents\GitHub\NewLifeUtils\test.py" (11): n
+  > A()
+"D:\Documents\GitHub\NewLifeUtils\test.py" (7): __init__
+  > self.foo(0)
+"D:\Documents\GitHub\NewLifeUtils\test.py" (9): foo
+  > zero/zero
+ZeroDivisionError: division by zero
+
+---------------     ---------------
+[15:10:33] [L] My Cmd  : Welcome to My CMD
