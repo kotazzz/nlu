@@ -63,6 +63,11 @@ class Shell(object):
         )
         def exit_(console):
             console.run_state = "quit"
+        @self.register_command(
+            "eval", ["calc"], translation["exit_description"], ["expression"], [] #TODO: make description
+        )
+        def eval_(console):
+            log(eval(console.parametrs[0]))
 
         @self.register_command(
             "cls", ["clearscreen"], translation["cls_description"], [], []
@@ -245,12 +250,9 @@ class Shell(object):
 
         if len(cmdnames) != len(set(cmdnames)):
             cmds = ", ".join(cmdnames)
+            print(*[cmd.format(list=cmds) for cmd in translation["same_command"]])
             except_print(
-                Exception(
-                    *[cmd.format(list=cmds) for cmd in translation["same_command"]]
-                ),
-                exception_type="fatal",
-                tb=False,
+                "fat", tb = False
             )
 
     def cstm_i_print(self, pattern, args):
@@ -333,13 +335,9 @@ class Shell(object):
                 if self.command != "":
                     if self.command == "fuck":
                         except_print(
-                            Exception(
-                                "Why you so evil?...",
+                            "att", more='\n'.join(["Why you so evil?...",
                                 ":_(",
-                                "TIP: you can be beter",
-                            ),
-                            exception_type="wrn",
-                            tb=False,
+                                "TIP: you can be beter"]),tb=False
                         )
 
                     else:
@@ -356,7 +354,7 @@ class Shell(object):
                             wrn('Unknown Command, type "help"')
 
             except Exception as e:
-                except_print(e)
+                except_print('err')
 
         for itask in self.registered_exit_task:
             itask(self)
