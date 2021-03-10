@@ -4,12 +4,11 @@ from random import randrange
 system("")
 
 
-
-
 class BGC:
     """This class contains variables that output a special sequence. This sequence is not displayed on the screen,
     but affects the output of information. In this case, the code that changes the color of the text that is output after
-    the sequence is output is output. """
+    the sequence is output is output."""
+
     BLACK = "\x1B[40m"
     RED = "\x1B[41m"
     GREEN = "\x1B[42m"
@@ -28,13 +27,11 @@ class BGC:
     WHITE = "\x1B[107m"
 
 
-
-
-
 class FGC:
     """This class contains variables that output a special sequence. This sequence is not displayed on the screen,
     but affects the output of information. In this case, a code is output that changes the background color behind the
-    text that is output after the sequence is output """
+    text that is output after the sequence is output"""
+
     BLACK = "\x1B[30m"
     RED = "\x1B[31m"
     GREEN = "\x1B[32m"
@@ -51,9 +48,6 @@ class FGC:
     MAGENTA = "\x1B[95m"
     BCYAN = "\x1B[96m"
     WHITE = "\x1B[97m"
-
-
-
 
 
 class ACC:
@@ -85,6 +79,7 @@ class ACC:
     """Turns off the " alternative buffer\""""
     ORIGINAL_BUFF = "\x1B[?1049l"
 
+    @staticmethod
     def title(title: str):
         """
         :parameter title: The new window title
@@ -92,6 +87,7 @@ class ACC:
         """
         return f"\x1B]2;{title}\x07"
 
+    @staticmethod
     def rabdomrgb(color="Color"):
         """
         :parameter: color - [gray|color]
@@ -109,6 +105,7 @@ class ACC:
             b = r
         return f"\x1B[38;2;{r};{g};{b}m"
 
+    @staticmethod
     def randomd(n):
         """
         :param n: void variable
@@ -117,6 +114,7 @@ class ACC:
         n = randrange(0, 255)
         return f"\x1B[38;5;{n}m"
 
+    @staticmethod
     def customrgb(r, g, b):
         """
         :param n: void variable
@@ -124,6 +122,7 @@ class ACC:
         """
         return f"\x1B[38;2;{r};{g};{b}m"
 
+    @staticmethod
     def customc(n):
         """
         :param n: void variable
@@ -131,6 +130,7 @@ class ACC:
         """
         return f"\x1B[38;5;{n}m"
 
+    @staticmethod
     def bcustomrgb(r, g, b):
         """
         :param n: void variable
@@ -138,6 +138,7 @@ class ACC:
         """
         return f"\x1B[48;2;{r};{g};{b}m"
 
+    @staticmethod
     def bcustomc(n):
         """
         :param n: void variable
@@ -148,7 +149,8 @@ class ACC:
 
 class MCC:
     """This class contains variables that output a special sequence. This sequence is not displayed on the screen,
-    but affects the output of the information. In this case, the code that changes the cursor position """
+    but affects the output of the information. In this case, the code that changes the cursor position"""
+
     """Hide cursor blinking"""
     CURSOR_DBLINK = "\x1B[? 12h"
     """Turn on cursor blinking"""
@@ -171,7 +173,7 @@ class MCC:
     """Erase the entire line where the cursor is"""
     ERASE_ALL_LINE = "\x1B[2K"
     """Set tab stop"""
-    SET_TAB = "\ x1BH"
+    SET_TAB = "\x1BH"
     """Delete tab stop"""
     DEL_TAB = "\x1B[0g"
     """Restore Tab Stop"""
@@ -181,71 +183,86 @@ class MCC:
     """Restore saved cursor position"""
     LOAD_CURSOR = "\x1B[u"
 
-    def up (self = 1):
+    @staticmethod
+    def up(count=1):
         """
         Moves cursor up
         :param number of positions to shift
         """
         return f"\x1B[{self}A"
 
-    def down (self = 1):
+    @staticmethod
+    def down(count=1):
         """
         Moves cursor down
         :param number of positions to shift
         """
         return f"\x1B[{self}B"
 
-    def right (self = 1):
+    @staticmethod
+    def right(count=1):
         """
         Move cursor to the right
         :param number of positions to shift
         """
         return f"\x1B[{self}C"
 
-    def left (self = 1):
+    @staticmethod
+    def left(count=1):
         """
         Shifts cursor left
         :param number of positions to shift
         """
         return f"\x1B[{self}D"
 
-    def row (self = 1):
+    @staticmethod
+    def row(count=1):
         """
         Set the row where the cursor is
         :param row number
         """
         return f"\x1B[{self}G"
 
-    def cursor_position (x, y):
+    @staticmethod
+    def cursor_position(x, y):
         """
         Set the position where the cursor is
         :param row and column
         """
         return f"\x1B[{x}; {y} H"
 
-    def scroll_down (self = 1):
+    @staticmethod
+    def scroll_down(count=1):
         return f"\x1B[{self}T"
 
-    def scroll_up (self = 1):
+    @staticmethod
+    def scroll_up(count=1):
         return f"\x1B[{self}S"
 
-    def push_right (self = 1):
+    @staticmethod
+    def push_right(count=1):
         return f"\x1B[{self}@"
 
-    def erase_right (self = 1):
+    @staticmethod
+    def erase_right(count=1):
         return f"\x1B[{self}P"
 
-    def replace_right (self = 1):
+    @staticmethod
+    def replace_right(count=1):
         return f"\x1B[{self}X"
 
-    def push_down (self = 1):
+    @staticmethod
+    def push_down(count=1):
         return f"\x1B[{self}L"
 
-    def erase_down (self = 1):
-        return f"\ x1B {self}M"
+    @staticmethod
+    def erase_down(count=1):
+        return f"\x1B {self}M"
 
-    def next_tab (self):
-        return f"\ x1B {self}I"
+    @staticmethod
+    def next_tab(count):
+        return f"\x1B {self}I"
 
-    def prev_tab (self):
-        return f"\ x1B {self}Z"
+    @staticmethod
+    def prev_tab(count):
+        return f"\x1B {self}Z"
