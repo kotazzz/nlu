@@ -1,0 +1,37 @@
+[18:00:08] [L] My Cmd  : Welcome to My CMD
+---------------Fatal error---------------
+"D:\Documents\GitHub\NewLifeUtils\test.py" (13): <module>
+  > n()
+ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (12): n
+  > A()
+ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (8): __init__
+  > self.foo(0)
+ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (10): foo
+  > zero/zero
+ZeroDivisionError: division by zero
+
+---------------           ---------------
+[18:00:19] [R] My Cmd  : exit
+[18:00:19] [L] My Cmd  : Exit with code: quit, from: None
+[18:00:22] [L] My Cmd  : Welcome to My CMD
+[18:00:28] [R] My Cmd  : fuck
+---------------Attention---------------
+Traceback is disabled
+More info: Why you so evil?...
+:_(
+TIP: you can be beter
+---------------         ---------------
+[18:00:29] [R] My Cmd  : exit
+[18:00:29] [L] My Cmd  : Exit with code: quit, from: None
+---------------Fatal error---------------
+"D:\Documents\GitHub\NewLifeUtils\test.py" (13): <module>
+  > n()
+ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (12): n
+  > A()
+ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (8): __init__
+  > self.foo(0)
+ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (10): foo
+  > zero/zero
+ZeroDivisionError: division by zero
+
+---------------           ---------------

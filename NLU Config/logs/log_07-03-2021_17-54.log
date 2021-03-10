@@ -1,0 +1,12 @@
+[17:54:37] [L] My Cmd  : Welcome to My CMD
+[17:54:40] [R] My Cmd  : fuck
+---------------Error---------------
+"D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py" (337): main
+  > except_print(
+"D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\ExceptModule.py" (43): except_print
+  > exception_text += to_format('{lightblue}{err}', {'err': traceback.format_exc().splitlines()[-1]})
+UnboundLocalError: local variable 'exception_text' referenced before assignment
+
+---------------     ---------------
+[17:55:14] [R] My Cmd  : exit
+[17:55:14] [L] My Cmd  : Exit with code: quit, from: None

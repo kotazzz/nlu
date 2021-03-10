@@ -66,7 +66,7 @@ try:
     a = [1,2,3]
     a[3]
 except Exception as e:
-    except_print(e,"fatal", tb=True)
+    except_print(e,"fatal", tb=True) #Not more working
 ```
 
 ### StringUtilModule

@@ -1,0 +1,177 @@
+[17:53:29] [L] My Cmd  : Welcome to My CMD
+[17:53:31] [R] My Cmd  : eval 2a
+[17:53:31] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected EOF while parsing
+	('<string>', 1, 2, '2a')	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+    2a
+     ^
+SyntaxError: unexpected EOF while parsing
+
+-------------- Error                --------------------
+[17:53:40] [R] My Cmd  : eval 22a
+[17:53:40] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected EOF while parsing
+	('<string>', 1, 3, '22a')	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+    22a
+      ^
+SyntaxError: unexpected EOF while parsing
+
+-------------- Error                --------------------
+[17:53:57] [R] My Cmd  : eval 2+2\n2
+[17:53:57] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------
+[17:53:59] [R] My Cmd  : eval 2+2\n2
+[17:53:59] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------
+[17:54:00] [R] My Cmd  : eval 2+2\n2
+[17:54:00] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------
+[17:54:01] [R] My Cmd  : eval 2+2\n2
+[17:54:01] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------
+[17:54:01] [R] My Cmd  : eval 2+2\n2
+[17:54:01] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------
+[17:54:02] [R] My Cmd  : eval 2+2\n2
+[17:54:02] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------
+[17:54:02] [R] My Cmd  : eval 2+2\n2
+[17:54:02] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------
+[17:54:03] [R] My Cmd  : eval 2+2\n2
+[17:54:03] [E] My Cmd  : 
+-------------- Error                --------------------
+Type: SyntaxError
+
+More information:
+	unexpected character after line continuation character	
+
+Traceback (most recent call last):
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 355, in main
+    registered["run"](self)
+  File "D:\Documents\GitHub\NewLifeUtils\NewLifeUtils\CustomShellModule.py", line 70, in eval_
+    log(eval(console.parametrs[0]))
+  File "<string>", line 1
+SyntaxError: unexpected character after line continuation character
+
+-------------- Error                --------------------

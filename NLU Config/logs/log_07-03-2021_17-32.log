@@ -1,0 +1,9 @@
+"D:\Documents\GitHub\NewLifeUtils\test.py" (22): <module>
+  > n()
+"D:\Documents\GitHub\NewLifeUtils\test.py" (19): n
+  > A()
+"D:\Documents\GitHub\NewLifeUtils\test.py" (12): __init__
+  > self.foo(0)
+"D:\Documents\GitHub\NewLifeUtils\test.py" (15): foo
+  > zero / zero
+ZeroDivisionError: division by zero
