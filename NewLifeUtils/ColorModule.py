@@ -189,7 +189,7 @@ class MCC:
         Moves cursor up
         :param number of positions to shift
         """
-        return f"\x1B[{self}A"
+        return f"\x1B[{count}A"
 
     @staticmethod
     def down(count=1):
@@ -197,7 +197,7 @@ class MCC:
         Moves cursor down
         :param number of positions to shift
         """
-        return f"\x1B[{self}B"
+        return f"\x1B[{count}B"
 
     @staticmethod
     def right(count=1):
@@ -205,7 +205,7 @@ class MCC:
         Move cursor to the right
         :param number of positions to shift
         """
-        return f"\x1B[{self}C"
+        return f"\x1B[{count}C"
 
     @staticmethod
     def left(count=1):
@@ -213,7 +213,7 @@ class MCC:
         Shifts cursor left
         :param number of positions to shift
         """
-        return f"\x1B[{self}D"
+        return f"\x1B[{count}D"
 
     @staticmethod
     def row(count=1):
@@ -221,7 +221,7 @@ class MCC:
         Set the row where the cursor is
         :param row number
         """
-        return f"\x1B[{self}G"
+        return f"\x1B[{count}G"
 
     @staticmethod
     def cursor_position(x, y):
@@ -233,36 +233,36 @@ class MCC:
 
     @staticmethod
     def scroll_down(count=1):
-        return f"\x1B[{self}T"
+        return f"\x1B[{count}T"
 
     @staticmethod
     def scroll_up(count=1):
-        return f"\x1B[{self}S"
+        return f"\x1B[{count}S"
 
     @staticmethod
     def push_right(count=1):
-        return f"\x1B[{self}@"
+        return f"\x1B[{count}@"
 
     @staticmethod
     def erase_right(count=1):
-        return f"\x1B[{self}P"
+        return f"\x1B[{count}P"
 
     @staticmethod
     def replace_right(count=1):
-        return f"\x1B[{self}X"
+        return f"\x1B[{count}X"
 
     @staticmethod
     def push_down(count=1):
-        return f"\x1B[{self}L"
+        return f"\x1B[{count}L"
 
     @staticmethod
     def erase_down(count=1):
-        return f"\x1B {self}M"
+        return f"\x1B {count}M"
 
     @staticmethod
     def next_tab(count):
-        return f"\x1B {self}I"
+        return f"\x1B {count}I"
 
     @staticmethod
     def prev_tab(count):
-        return f"\x1B {self}Z"
+        return f"\x1B {count}Z"
