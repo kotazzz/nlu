@@ -17,7 +17,7 @@ default_lang = {
 translation = DataStorage("lang.yml", "exceptsettings", default_lang)
 
 
-def except_print(type="fat", more="", code=-1, tb=True):
+def except_print(type="fat", more="", code=-1, tb=True, run = True):
     if tb:
         a = traceback.extract_tb(sys.exc_info()[2])
         exception_text = ""
@@ -51,17 +51,29 @@ def except_print(type="fat", more="", code=-1, tb=True):
     }
 
     pattern = "{magenta}{d}{ul}{title}{nul}{d}\n{text}\n{red}{a}\n{magenta}{d}{td}{d}"
-    cstm(
-        pattern,
-        {
-            "ul": ACC.UNDERLINE,
-            "nul": ACC.NO_UNDERLINE,
-            "d": "-" * 15,
-            "title": translation[kshortcuts[type]],
-            "text": exception_text,
-            "td": " " * len(translation[kshortcuts[type]]),
-            "a": f"More info: {more}" if more != "" else "",
-        },
-    )
+    if run:
+        cstm(
+            pattern,
+            {
+                "ul": ACC.UNDERLINE,
+                "nul": ACC.NO_UNDERLINE,
+                "d": "-" * 15,
+                "title": translation[kshortcuts[type]],
+                "text": exception_text,
+                "td": " " * len(translation[kshortcuts[type]]),
+                "a": f"More info: {more}" if more != "" else "",
+            },
+        )
+    else:
+        return to_format(pattern,
+            {
+                "ul": ACC.UNDERLINE,
+                "nul": ACC.NO_UNDERLINE,
+                "d": "-" * 15,
+                "title": translation[kshortcuts[type]],
+                "text": exception_text,
+                "td": " " * len(translation[kshortcuts[type]]),
+                "a": f"More info: {more}" if more != "" else "",
+            },)
     if type == "fat":
         exit(code)
