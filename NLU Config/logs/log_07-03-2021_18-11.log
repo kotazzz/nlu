@@ -1,8 +1,0 @@
----------------Fatal error---------------
-"D:\Documents\GitHub\NewLifeUtils\test.py" (12): <module>
-  > n()ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (11): n
-  > A()ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (7): __init__
-  > self.foo(0)ZeroDivisionError: division by zero"D:\Documents\GitHub\NewLifeUtils\test.py" (9): foo
-  > zero/zeroZeroDivisionError: division by zero
-
----------------           ---------------

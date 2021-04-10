@@ -1,6 +1,7 @@
 import os
 
 import yaml
+yaml.Dumper.ignore_aliases = lambda *args : True
 
 wd_name = "NLU Config"
 cwd = os.path.join(os.getcwd(), wd_name)
@@ -19,7 +20,7 @@ class LogFile(object):
         self.filename = filename
 
     def write(self, data):
-        with open(self.fullpath, "a") as file:
+        with open(self.fullpath, "a", encoding='utf-8') as file:
             if data.endswith("\n"):
                 file.write(data)
             else:
@@ -47,9 +48,9 @@ class DataStorage(object):
             with open(self.fullpath, "w") as file:
                 self.data = {}
 
-    def save(self):
+    def save(self, *args, **kwargs):
         with open(self.fullpath, "w") as file:
-            yaml.dump(self.data, file, default_flow_style=False)
+            yaml.dump(self.data, file, default_flow_style=False, *args, **kwargs)
 
     def __getitem__(self, item):
         try:

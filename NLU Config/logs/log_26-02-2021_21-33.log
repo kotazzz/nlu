@@ -1,8 +1,0 @@
-{}
-
-[21:33:40] [L] My Cmd  : Welcome to My CMD
-[21:33:42] [R] My Cmd  : userlist
-[21:33:42] [L] My Cmd  : dict_keys(['id', 'name'])
-[21:33:42] [L] My Cmd  : {'n': {}}
-[21:34:03] [R] My Cmd  : exit
-[21:34:03] [L] My Cmd  : Exit with code: quit, from: None

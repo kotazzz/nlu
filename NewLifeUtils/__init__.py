@@ -5,6 +5,6 @@ NewLife [https://github.com/NewLife1324]
 semechkagent@gmail.com
 # License: MIT
 """
-__version__ = "5.2.0"
+__version__ = "5.2.0b"
 __author__ = 'NewLife'
 

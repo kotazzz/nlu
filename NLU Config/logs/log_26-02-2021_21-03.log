@@ -1,9 +1,0 @@
-{}
-
-[21:03:06] [L] My Cmd  : Welcome to My CMD
-[21:03:09] [R] My Cmd  : userlist
-[21:03:09] [L] My Cmd  : dict_keys(['val'])
-[21:03:09] [L] My Cmd  : 1
-[21:03:09] [L] My Cmd  : 1
-[21:06:38] [R] My Cmd  : exit
-[21:06:38] [L] My Cmd  : Exit with code: quit, from: None
