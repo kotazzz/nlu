@@ -1,7 +1,3 @@
 .vscode
-build
-dist
-NewLifeUtils.egg-info
 NLU Config
-menu.bat
 test.py

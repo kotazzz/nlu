@@ -43,10 +43,12 @@ class DataStorage(object):
             with open(self.fullpath) as file:
                 self.data = yaml.load(file, yaml.FullLoader)
             if self.data == None:
-                self.data = {}
+                self.data = defaultdata
+                self.save()
         except FileNotFoundError:
             with open(self.fullpath, "w") as file:
-                self.data = {}
+                self.data = defaultdata
+                self.save()
 
     def save(self, *args, **kwargs):
         with open(self.fullpath, "w") as file:
