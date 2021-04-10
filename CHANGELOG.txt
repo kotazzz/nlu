@@ -1,3 +1,15 @@
+NewLifeUtils 5.2.0:
+    - Addition:  CM  -------    Added documentation
+    - Addition:  CSM -------    Added eval command
+    - Addition:  RM  -------    Added vk_simple_get
+    - Change:    EM  -------    Full recode
+    - Change:    LM  -------    Full recode
+    - Change:    REP -------    Full cleanup repository
+    - Change:    RM  -------    Simplify code
+    - Fix:       CM  -------    Added @staticmethod
+    - Fix:       CM  -------    replace 'self' to normal name in args
+    - Fix:       FM  -------    Fix init save default data
+
 NewLifeUtils 5.1.9:
     - Addition:  BAT -------    menu.bat updated
     - Addition:  LM  -------    to_format() erase parametr added

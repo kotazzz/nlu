@@ -1,3 +1,6 @@
 .vscode
 NLU Config
 test.py
+dist
+NewLifeUtils.egg-info
+build
