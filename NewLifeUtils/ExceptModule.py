@@ -1,7 +1,8 @@
 import traceback
+import sys
 
 from NewLifeUtils.FileModule import DataStorage
-from NewLifeUtils.LoggerModule import *
+from NewLifeUtils.LoggerModule import cstm, smart_format
 
 default_lang = {
     "type": "Type",
@@ -22,24 +23,20 @@ def except_print(type="fat", more="", code=-1, tb=True, run = True):
         a = traceback.extract_tb(sys.exc_info()[2])
         exception_text = ""
         for f in a:
-            pattern = '{white}"{ul}{fn}{nul}{white}" {white}({yellow}{ln}{white}): {green}{n}\n{s}{white}> {lime}{lc}\n'
-            exception_text += to_format(
+            pattern = '{#fff}"{#under}{#7193c9}{file}{#fff}{#nounder}" {#fff}({#42eb77}{lineno}{#fff}): {#de6a50}{content}\n  {#fff}> {#22bf2a}{line}\n'
+            #'{white}"{ul}{fn}{nul}{white}" {white}({yellow}{ln}{white}): {green}{n}\n{s}{white}> {lime}{lc}\n'
+            exception_text += smart_format(
                 pattern,
-                {
-                    "ul": ACC.UNDERLINE,
-                    "nul": ACC.NO_UNDERLINE,
-                    "fn": f.filename,
-                    "ln": f.lineno,
-                    "n": f.name,
-                    "lc": f.line,
-                    "s": " " * 2,
-                },
+                file= f.filename,
+                lineno= f.lineno,
+                content= f.name,
+                line= f.line,
             )
-        exception_text += to_format(
-            "{lightblue}{err}", {"err": traceback.format_exc().splitlines()[-1]}
+        exception_text += smart_format(
+            "{#169181}{err}", err = traceback.format_exc().splitlines()[-1]
         )
     else:
-        exception_text = to_format("{gray}Traceback is disabled", {})
+        exception_text = smart_format("{#757575}Traceback is disabled")
     kshortcuts = {
         "unk": "unknown",
         "att": "attention",
@@ -50,30 +47,25 @@ def except_print(type="fat", more="", code=-1, tb=True, run = True):
         "wrg": "wrong",
     }
 
-    pattern = "{magenta}{d}{ul}{title}{nul}{d}\n{text}\n{red}{a}\n{magenta}{d}{td}{d}"
+    pattern = "{#db8e2a}{d}{#under}{title}{#nounder}{d}\n{text}\n{#e352d5}{a}\n{#db8e2a}{d}{td}{d}"
     if run:
         cstm(
             pattern,
-            {
-                "ul": ACC.UNDERLINE,
-                "nul": ACC.NO_UNDERLINE,
-                "d": "-" * 15,
-                "title": translation[kshortcuts[type]],
-                "text": exception_text,
-                "td": " " * len(translation[kshortcuts[type]]),
-                "a": f"More info: {more}" if more != "" else "",
-            },
+            
+                d= "-" * 15,
+                title= translation[kshortcuts[type]],
+                text= exception_text,
+                td= " " * len(translation[kshortcuts[type]]),
+                a=f"More info: {more}" if more else "",
         )
     else:
-        return to_format(pattern,
-            {
-                "ul": ACC.UNDERLINE,
-                "nul": ACC.NO_UNDERLINE,
-                "d": "-" * 15,
-                "title": translation[kshortcuts[type]],
-                "text": exception_text,
-                "td": " " * len(translation[kshortcuts[type]]),
-                "a": f"More info: {more}" if more != "" else "",
-            },)
+        return smart_format(pattern,
+            
+                d= "-" * 15,
+                title= translation[kshortcuts[type]],
+                text= exception_text,
+                td= " " * len(translation[kshortcuts[type]]),
+                a= f"More info: {more}" if more != "" else "",
+            )
     if type == "fat":
         exit(code)
