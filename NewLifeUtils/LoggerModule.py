@@ -80,7 +80,8 @@ def cstm(pattern, **kwargs):
     sys.stdout.write(
         ACC.RESET + pattern.format_map(Formatter(**kwargs)) + ACC.RESET + "\n"
     )
-
+def smart_format(pattern, **kwargs):
+    return pattern.format_map(Formatter(**kwargs))
 
 def init_from_cfg():
     default_config = {

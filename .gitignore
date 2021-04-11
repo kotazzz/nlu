@@ -4,3 +4,4 @@ test.py
 dist
 NewLifeUtils.egg-info
 build
+NewLifeUtils/__pycache__/*
