@@ -15,7 +15,7 @@ class Formatter(dict):
     def __missing__(self, key):
         if key == "time":
             return datetime.now().strftime(self.time_format)
-        elif key == "time":
+        elif key == "date":
             return datetime.now().strftime(self.date_format)
         elif key.startswith("#"):
             if key == "#reset":
